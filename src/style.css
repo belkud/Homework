@@ -16,3 +16,9 @@ body {
   background: rgb(119, 117, 117);
   border: 1px solid white;
 }
+#app {
+  background-color:black;
+  width: 100px;
+  text-align: center;
+  padding: 5px;
+}
