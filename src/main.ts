@@ -1,23 +1,49 @@
 import './style.css'
 
 
-const home = document.querySelector ('#home') as HTMLDivElement
-const app = document.querySelector ('#app') as HTMLDivElement
+const digitals = document.querySelector ('#digitals') as HTMLDivElement
+
+const digitalColor = document.querySelector ('#digitalColor') as HTMLDivElement
   setInterval(() => {
-    if (home.style.color =='orange') {
-      home.style.color= 'greenyellow'
-      app.innerHTML = `greenyellow`
-      app.style.color= 'greenyellow'
+    if (digitals.style.color =='orange') {
+      digitals.style.color= 'greenyellow'
+      digitalColor.innerHTML = `greenyellow`
+      digitalColor.style.color= 'greenyellow'
     } else {
-      home.style.color = 'orange'
-      app.innerHTML = `orange`
-      app.style.color = 'orange'
+      digitals.style.color = 'orange'
+      digitalColor.innerHTML = `orange`
+      digitalColor.style.color = 'orange'
     }
     
-  }, 1000);
+  }, 10000);
    
+  digitalColor.addEventListener ('click', ()=>{console.log(46);
+  })
+
+// console.log(digitals.style.color);
+
+
+
+
+// fetch ('https://jsonplaceholder.typicode.com/users')
+
+async function ozon() {
+  const response = await fetch ('https://www.ozon.ru/category/smartfony-15502/')
+  console.log(response);
+
+  const json = await response.text()
+  // console.log(json);
+  console.log(json);
   
+  
+}
+ozon()
 
-console.log(home.style.color);
+// digitals.innerHTML = ''
+
+// console.log('https://www.ozon.ru/category/smartfony-15502/')
 
 
+// console.log(
+//   fetch('https://www.ozon.ru/category/smartfony-15502/')
+//   );
