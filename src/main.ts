@@ -39,7 +39,10 @@ async function ozon() {
 }
 ozon()
 
-// digitals.innerHTML = ''
+digitals.innerHTML += `
+<img src=https://ir.ozone.ru/s3/multimedia-1/wc500/6847439437.jpg>
+<img id="avatar" src="https://avatars.githubusercontent.com/u/126806058?v=4 " alt="" srcset="">
+`
 
 // console.log('https://www.ozon.ru/category/smartfony-15502/')
 
