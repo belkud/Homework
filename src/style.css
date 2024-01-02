@@ -1,13 +1,41 @@
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  /* margin: 0; */
+  /* display: flex; */
+  /* place-items: center; */
+  /* min-width: 320px; */
+  /* min-height: 100vh; */
   background-color: lightgray;
 }
 
-#digitals{
+#avatar {
+  width: 150px;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #digitals{
   margin: 50px;
   color: greenyellow;
 }
@@ -25,4 +53,4 @@ body {
 
 img {
   width: 200px;
-}
+} */
