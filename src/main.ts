@@ -34,7 +34,7 @@ async function gitPhoto () {
                 persons.innerHTML += `<div id="request">Запрос выполнен</div>
                 <img id="avatar" src="https://avatars.githubusercontent.com/u/126806058?v=4" alt="">`
             },0) 
-            document.body.append('yyy')
+            document.body.append('uigiu')
             // setTimeout(() => {
             //    persons.innerHTML = `<div id="request">Запрос выполнен</div>` 
             // }, 6000);
@@ -54,9 +54,31 @@ async function gitPhoto () {
 
 gitPhoto()
 
+const check = document.querySelector('#check') as HTMLDivElement
+check.insertAdjacentHTML('afterbegin', '<p>afterbegin</p>')
+
+const pig = document.querySelector('#pig') as HTMLDivElement
+pig.style.backgroundColor = 'aqua'
+pig.append(' append')
+pig.style.border = '2px solid red'
+
+pig.insertAdjacentHTML('afterbegin', '<p>jjjjjjjjjjjjjjj</p>')
+
+
+
+
+let div3 = document.createElement('div') as HTMLDivElement
+div3.innerHTML = 'DIV создан в ts'
+div3.style.backgroundColor = 'pink'
+console.log(div3);
+
+
+
 const url2 = fetch('https://api.github.com/users/belkud')
 .then(mylog=>mylog.json())
 .then(login =>console.log(login.login))
+console.log(url2);
+
 
 async function learnJS () {
     const response = await fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits')
@@ -195,11 +217,15 @@ async function users() {
 //   console.log(response);
 
 //   const json = await response.text()
-//   console.log(json);
+//   console.log(json.slice(0,100));
   
   
 // }
 // ozon()
+
+
+
+
 
 // digitals.innerHTML += `
 // <img src=https://ir.ozone.ru/s3/multimedia-1/wc500/6847439437.jpg>
