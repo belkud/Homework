@@ -10,15 +10,44 @@ const persons = document.querySelector('#persons') as HTMLDivElement
 
 
 
+// let formData = new FormData([form])
+
+
+const name = document.querySelector('#name') as HTMLInputElement
+console.log(name);
+
+name.addEventListener('click', ()=> {
+   
+})
+
+
+// persons.innerHTML =''
+ 
+
+ 
+
+
+const form1 = document.forms[1]
+// const form2 = document.querySelector('#formElem')
+
+console.log(form1)
+// console.log(form2)
+// console.log(form1 == form2)
+
+const formData1 = new FormData(form1)
+// const formData2 = new FormData(form2 as any)
+
+console.log(formData1)
+// console.log(formData2)
+console.log(formData1.get('surname'))
+console.log(formData1.get('name'))
+// console.log(formData2.get('surname'))
 
 
 
 
 
 
-
-
-persons.innerHTML =''
 
 
 const url = fetch('https://api.github.com/users/belkud')
@@ -34,7 +63,6 @@ async function gitPhoto () {
                 persons.innerHTML += `<div id="request">Запрос выполнен</div>
                 <img id="avatar" src="https://avatars.githubusercontent.com/u/126806058?v=4" alt="">`
             },0) 
-            document.body.append('uigiu')
             // setTimeout(() => {
             //    persons.innerHTML = `<div id="request">Запрос выполнен</div>` 
             // }, 6000);
@@ -43,7 +71,8 @@ async function gitPhoto () {
         }
         const photo = await response.blob()
         console.log(response.ok);
-        console.log(response.status);
+        console.log(response.headers.get('Content-length'));
+        console.log(response.headers.get('Content-type'));
         
         console.log(photo);
         
@@ -59,25 +88,52 @@ check.insertAdjacentHTML('afterbegin', '<p>afterbegin</p>')
 
 const pig = document.querySelector('#pig') as HTMLDivElement
 pig.style.backgroundColor = 'aqua'
-pig.append(' append')
 pig.style.border = '2px solid red'
 
-pig.insertAdjacentHTML('afterbegin', '<p>jjjjjjjjjjjjjjj</p>')
+pig.insertAdjacentHTML('afterbegin', '<p>afterbegin</p>')
+pig.insertAdjacentHTML('beforebegin', '<p>beforebegin</p>')
+pig.insertAdjacentHTML('afterend', '<p>afterend</p>')
+pig.insertAdjacentHTML('beforeend', '<p>beforeend</p>')
+
+pig.innerHTML +='<img src="public/vite.svg">'
+
+
+
+let divStart = document.createElement('div') as HTMLDivElement
+divStart.innerHTML = 'DIV создан в ts prepend'
+divStart.style.backgroundColor = 'pink'
+divStart.style.color = 'aliceblue'
+
+// <img src=https://ir.ozone.ru/s3/multimedia-1/wc500/6847439437.jpg>
 
 
 
 
-let div3 = document.createElement('div') as HTMLDivElement
-div3.innerHTML = 'DIV создан в ts'
-div3.style.backgroundColor = 'pink'
-console.log(div3);
 
+
+let divEnd = document.createElement('div') 
+divEnd.innerHTML = 'создан в ts, метод prepand'
+divEnd.style.color = 'white'
+divEnd.style.backgroundColor = 'yellowgreen'
+pig.append(divEnd)
 
 
 const url2 = fetch('https://api.github.com/users/belkud')
 .then(mylog=>mylog.json())
 .then(login =>console.log(login.login))
 console.log(url2);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 async function learnJS () {
@@ -109,19 +165,24 @@ async function users() {
     try {
         
         const resp = await fetch('https://jsonplaceholder.typicode.com/users', {
-            //     method:'POST',
-            //     headers: {
-                //         "Content-type":"application/json"
-                //     },
-                //     body:JSON.stringify({
-                    //         name: "Mary"
-                    // })
+                method:'POST',
+                headers: {
+                        "Content-type":"application/json"
+                    },
+                    body:JSON.stringify({
+                            name: "Mary",
+                        formData: {
+                            "Content-Type": "multipart/form-data"
+                        }
+                    })
                 })
                 
-                const json = await resp.json()
+        const json = await resp.json()
+        console.log(json);
+        
                 
                 //! splice - выводит по id
-                console.log(json.splice(5,10));
+                // console.log(json.splice(5,10));
                 let key
                 for (key in json) {
                     json[key]
@@ -216,15 +277,15 @@ async function users() {
 //   const response = await fetch ('https://www.ozon.ru/category/smartfony-15502/')
 //   console.log(response);
 
-//   const json = await response.text()
+//   const json = await response.blob()
+//   console.log(json);
+  
 //   console.log(json.slice(0,100));
   
-  
+ 
+
 // }
 // ozon()
-
-
-
 
 
 // digitals.innerHTML += `
