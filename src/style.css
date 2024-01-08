@@ -11,10 +11,15 @@ body {
   width: 150px;
 }
  
-/* img {
-  width: 400px;
-} */
+#star {
+  display: flex;
+  gap: 10px;
+}
 
+#star>div {
+  cursor: pointer;
+  color: gray;
+}
 
 
 

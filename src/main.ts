@@ -1,6 +1,15 @@
 import './style.css'
 
 
+
+
+
+
+
+
+
+
+
 // await fetch('https://jsonplaceholder.typicode.com/photos')
 
 
@@ -90,6 +99,10 @@ const pig = document.querySelector('#pig') as HTMLDivElement
 pig.style.backgroundColor = 'aqua'
 pig.style.border = '2px solid red'
 
+//! два способа написания
+pig.style.height = '250px'
+// pig.style.height = 250 + 'px'
+
 pig.insertAdjacentHTML('afterbegin', '<p>afterbegin</p>')
 pig.insertAdjacentHTML('beforebegin', '<p>beforebegin</p>')
 pig.insertAdjacentHTML('afterend', '<p>afterend</p>')
@@ -139,7 +152,7 @@ console.log(url2);
 async function learnJS () {
     const response = await fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits')
     const json = await response.json()
-    console.log(json);
+    // console.log(json);
     
     
 }
@@ -186,7 +199,7 @@ async function users() {
                 let key
                 for (key in json) {
                     json[key]
-                    console.log(json[key]);
+                    // console.log(json[key]);
                 } 
             } catch (error) {
                 console.log(error);
@@ -299,3 +312,33 @@ async function users() {
 // console.log(
 //   fetch('https://www.ozon.ru/category/smartfony-15502/')
 //   );
+
+const stars = document.querySelectorAll('#star') as NodeListOf<HTMLDivElement>
+
+stars.forEach(star=> star.addEventListener('click', (event)=> {
+    let x = event.target.dataset.set 
+
+    // let redStar = star.children[x-1]
+    // redStar.style.color = 'red'
+    let num=0
+    setInterval(()=> {
+        num+=1
+        console.log(num);
+
+    },1000)
+    for (let i = 0; i <stars.length; i++) {
+        
+    if (redStar.style.color == 'red') {
+        star.children[x-5].style.color = 'red'
+        star.children[x-4].style.color = 'red'
+        star.children[x-2].style.color = 'red'
+        star.children[x-3].style.color = 'red'
+    }
+
+
+        
+        
+    }
+    console.log(star.ELEMENT_NODE);
+        
+    }))
