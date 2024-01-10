@@ -313,32 +313,21 @@ async function users() {
 //   fetch('https://www.ozon.ru/category/smartfony-15502/')
 //   );
 
-const stars = document.querySelectorAll('#star') as NodeListOf<HTMLDivElement>
+const stars = document.querySelector('#star') as HTMLDivElement
 
-stars.forEach(star=> star.addEventListener('click', (event)=> {
-    let x = event.target.dataset.set 
-
-    // let redStar = star.children[x-1]
-    // redStar.style.color = 'red'
-    let num=0
-    setInterval(()=> {
-        num+=1
-        console.log(num);
-
-    },1000)
-    for (let i = 0; i <stars.length; i++) {
-        
-    if (redStar.style.color == 'red') {
-        star.children[x-5].style.color = 'red'
-        star.children[x-4].style.color = 'red'
-        star.children[x-2].style.color = 'red'
-        star.children[x-3].style.color = 'red'
+stars.addEventListener('click', (event)=> {
+    const target = event.target as HTMLDivElement
+    
+    if (target.dataset.set) {
+        let x = +target.dataset.set 
+        for (let i of stars.children) {
+            const el = i as HTMLDivElement
+         if (el.dataset.set && +el.dataset.set<=x) {
+            el.style.color = 'red'
+        } else {
+            el.style.color = 'black'
+         }    
+        }
     }
-
-
-        
-        
-    }
-    console.log(star.ELEMENT_NODE);
-        
-    }))
+    
+})
