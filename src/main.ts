@@ -323,7 +323,7 @@ stars.addEventListener('click', (event)=> {
         for (let i of stars.children) {
             const el = i as HTMLDivElement
          if (el.dataset.set && +el.dataset.set<=x) {
-            el.style.color = 'red'
+            el.style.color = 'white'
         } else {
             el.style.color = 'black'
          }    
@@ -331,3 +331,4 @@ stars.addEventListener('click', (event)=> {
     }
     
 })
+
