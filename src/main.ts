@@ -716,5 +716,89 @@ console.log('Меня зовут ' + myName + ' Я живу в городе ' + 
 console.log(`Меня зовут ${myName}, я живу в городе ${city}`);
 
 
+function summ (a:number, b:number) {
+    console.log(a+b)
+    return
+}
+summ(5,7)
+summ(6,9)
+
+
+let test = function summMultiplier (a:any, b=8) {
+    let c = a*a + b*b
+    console.log(c);
+    return c
+}
+test (3,3)
+test (7)
+ 
+const yyy = function (a:number, b=8){
+    let c = a*a + b*b
+    // console.log(c);
+    return c
+}
+console.log(yyy(5));
+
+// сумма чисел от 1 до 10 
+
+let summNumber = 0
+for (let i = 0; i <= 100; i++) {
+    summNumber+=i
+}
+console.log(summNumber);
+// setTimeout(() => {
+//     document.body.innerHTML= ''
+// }, 10);
+
+
+
+// let random = Math.random()
+
+// let changeColor = setInterval(()=> {
+//     console.log;
+// },1000)
+// console.log(changeColor);
+
+
+
+// document.body.innerHTML = 'sdfsfgdfg'
+
+// setInterval(()=> {
+//     document.body.innerHTML += `Отложенное сообщение <br>`  
+//     let x = document.body.style
+
+//     let random = (Math.round(Math.random()*2+1))
+//     console.log(random);
+    
+//     if (random==1) {
+//         x.color = 'red'
+//     } else if(random==2){
+//         x.color = 'green'
+//     } else if(random==3){
+//         x.color = 'blue'
+//     } else {
+//         x.color = 'black'
+//     }
+
+// },1000)
+   
+
+
+
+    // console.log(x);
+        // if (x.color=='red') {
+        //     x.color='yellow' 
+        // } else if (x.color='yellow' ) {
+        //     x.color='orange' 
+        // } else {
+            
+        //     x.color='green' 
+        // }
+
+
+
+
+
+
 
 
