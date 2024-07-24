@@ -1,7 +1,7 @@
 import './style.css'
 
 
-
+let x1 = Date.now()
 
 
 
@@ -794,11 +794,51 @@ console.log(summNumber);
             
         //     x.color='green' 
         // }
+ 
+const noName = (a:any,b:any)=> {
+    let c = a+b
+    console.log(c)
+    return
+}
+noName(3,4)
+noName(8,4)
+noName(8,14)
+
+
+const post = (newPost:any, time=Date() )=> ({
+    newPost: 8,
+    time:Date()
+})
+
+console.log(post(1, Date().day));
+
+// let data = Date.now
 
 
 
+let x2 = Date.now()
 
 
 
+console.log(x1);
+console.log(x2);
+let extraInfo = 'обработка консоли произошла в '
+
+console.log(`${extraInfo} ${x2-x1} милисекунды`);
 
 
+const makeMistake = () => {
+    throw new Error("Есть ошибка");   
+}
+try {
+    // makeMistake()
+    console.log('ошибок нет');
+    
+} catch (error) {
+    console.log('ошибка обработана');
+        
+}
+
+console.log('проверочка');
+
+console.log (`на дворе сегодня ${new Date().getFullYear()}`)
