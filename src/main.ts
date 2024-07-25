@@ -876,3 +876,32 @@ try {
 }
 
 console.log(4);
+
+
+const textInTest = document.querySelector('.test') as HTMLDivElement
+textInTest.innerHTML = `${new Date().getDate()}`  
+textInTest.style.color = 'red'
+textInTest.style.fontWeight = 800 as any
+textInTest.style.fontSize = 2 +'em' 
+textInTest.style.padding = 5 +'px' 
+textInTest.style.marginTop = -15 +'px' 
+ 
+
+
+
+
+try {
+    let x = 5
+    if (x<6) {
+        throw new SyntaxError("Ошибочка");
+        
+    }
+    
+} catch (error) {
+    console.log(error.name);
+    console.log(error.message);
+    
+}
+
+
+console.log(12345);
