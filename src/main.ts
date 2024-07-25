@@ -842,3 +842,37 @@ try {
 console.log('проверочка');
 
 console.log (`на дворе сегодня ${new Date().getFullYear()}`)
+
+
+
+
+console.log(new Date().valueOf());
+
+
+console.log('_____________________________');
+
+
+
+
+try {
+    console.log(1);
+    console.log(2);
+    let user = 'Vasya'
+    
+    if (user == 'Petya' || !user) {
+        throw new SyntaxError("Ошибочка");
+    }
+    
+    console.log(3);
+
+} catch (error) {
+    console.log('есть ошибка');
+    console.log(error.name);
+    console.log(error.message);
+    
+} finally {
+    console.log('Запрос обработан');
+    
+}
+
+console.log(4);
