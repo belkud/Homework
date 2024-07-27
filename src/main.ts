@@ -904,3 +904,19 @@ try {
 
 
 console.log(12345);
+
+
+
+let z = 10
+z = (z+5) *3
+console.log(z);
+
+console.log('____________');
+
+let masss = [3, 5, 4, 8, 3, 6]
+let xxx = masss.forEach(el=>{
+    (el*2);
+})
+console.log(xxx);
+
+
