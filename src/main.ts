@@ -910,6 +910,8 @@ console.log(12345);
 let z = 10
 z = (z+5) *3
 console.log(z);
+console.log(z);
+console.log(z);
 
 console.log('____________');
 
