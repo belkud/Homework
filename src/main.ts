@@ -920,4 +920,5 @@ let xxx = masss.forEach(el=>{
     (el*2);
 })
 console.log(xxx);
+console.log(xxx);
 
