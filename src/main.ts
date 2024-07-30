@@ -922,3 +922,44 @@ let xxx = masss.forEach(el=>{
 console.log(xxx);
 console.log(xxx);
 
+let z2 = 10
+z2>9
+? console.log('верно')
+: console.log('неверно');
+
+let z3 = textInTest.style.color = 'red'
+z3 == 'red'
+?console.log('Правильно')
+:console.log('Неправильно');
+
+try {
+    let day = 9
+    switch (day) {  
+        case 1: console.log('понедельник');
+            break
+        case 2: console.log('Вторник');
+            break
+        case 3: console.log('Среда');
+            break
+        case 4: console.log('Четверг');
+            break
+        case 5: console.log('Пятница');
+            break
+        case 6: console.log('Суббота');
+            break
+        case 7: console.log('Воскресенье');
+            break
+        case x: console.log('это не число');
+            break
+        default: console.log('число не соответствует диапазону');    
+    }
+    throw new Error("проверка ошибки");
+    
+} catch (error) {
+    console.log(error.message);
+    console.log(error.name);
+    console.log('_введено неверное число_');
+
+}
+
+console.log('продолжение...');
