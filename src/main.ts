@@ -974,4 +974,20 @@ let numbers2= numbers.map(el=>{
     return el*3
     
 });
+console.log(numbers2.length);
+
+numbers2.push(6)
 console.log(numbers2);
+console.log(numbers2.length);
+
+numbers2[5] = 100
+console.log(numbers2);
+console.log(numbers2.length);
+
+numbers2.pop()
+console.log(numbers2);
+console.log(numbers2.length);
+
+
+
+
