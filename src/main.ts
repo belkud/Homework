@@ -932,8 +932,10 @@ z3 == 'red'
 ?console.log('Правильно')
 :console.log('Неправильно');
 
+console.log('____________');
+
 try {
-    let day = 9
+    let day = 3
     switch (day) {  
         case 1: console.log('понедельник');
             break
@@ -952,8 +954,8 @@ try {
         case x: console.log('это не число');
             break
         default: console.log('число не соответствует диапазону');    
+        throw new Error("проверка ошибки");
     }
-    throw new Error("проверка ошибки");
     
 } catch (error) {
     console.log(error.message);
@@ -963,3 +965,13 @@ try {
 }
 
 console.log('продолжение...');
+
+
+let numbers = [1, 2, 3, 4]
+console.log(numbers);
+
+let numbers2= numbers.map(el=>{
+    return el*3
+    
+});
+console.log(numbers2);
