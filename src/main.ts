@@ -991,3 +991,25 @@ console.log(numbers2.length);
 
 
 
+
+
+let t= 3
+
+
+
+try {
+if (t>5){
+
+    throw new Error("Проверить");
+}
+    
+} catch(error) {
+    console.log('непонятная ошибка');
+    
+}
+
+
+console.log('проверка');
+
+
+
