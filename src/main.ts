@@ -1013,3 +1013,48 @@ console.log('проверка');
 
 
 
+let massive = [3, 7, 2, 6, 9]
+console.log( massive.forEach((el)=>{
+   
+}))
+console.log(massive);
+
+
+// massive.push(8)
+// console.log(massive);
+
+// massive.pop()
+// console.log(massive);
+
+// massive.unshift(555)
+// console.log(massive);
+
+// massive.shift()
+// console.log(massive);
+
+
+let checkMap = massive.map((el)=> {
+    return el*el
+})
+console.log(checkMap);
+
+console.log(Date().valueOf().split(' ').join('___'));
+
+// let cherry = 'cherryyyyy'
+// console.log(cherry);
+
+
+
+
+let nums = [ 3, 5, 7, 9]
+nums.forEach((el)=> {
+    return console.log(el*5);    
+})
+console.log(nums);
+
+let mapNums = nums.map((el)=>{
+    return el*3
+})
+
+console.log(mapNums);
+
