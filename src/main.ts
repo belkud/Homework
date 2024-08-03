@@ -1231,3 +1231,17 @@ console.log(`В данной строке:
     букв'а' = ${accE} 
     букв 'е' = ${accE2},
     оставшиеся буквы = ${newMass.length-accE2-accE} `);
+
+    let mass = ['Дима','Петя','Даша','Вера']
+    let [pers1, pers2, pers3, pers4] = mass
+    console.log(pers3);
+    
+    let array = {
+        Дима: 17,
+        Петя: 19,
+        Даша: 15,
+        Вера: 16
+    }
+    let {Дима, Петя, Даша, Вера} = array
+    console.log(Петя);
+    
