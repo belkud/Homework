@@ -21,15 +21,15 @@ const persons = document.querySelector('#persons') as HTMLDivElement
 const name = document.querySelector('#name') as HTMLInputElement
 console.log(name);
 
-name.addEventListener('click', ()=> {
-   
+name.addEventListener('click', () => {
+
 })
 
 
 // persons.innerHTML =''
- 
 
- 
+
+
 
 
 const form1 = document.forms[1]
@@ -61,7 +61,7 @@ console.log(formData1.get('name'))
 // async function gitPhoto () {
 //     try {
 //         const response = await url
-  
+
 //         //! Проверка статуса сервера
 //         if(response.ok) {
 //             setTimeout(()=> {
@@ -78,9 +78,9 @@ console.log(formData1.get('name'))
 //         console.log(response.ok);
 //         console.log(response.headers.get('Content-length'));
 //         console.log(response.headers.get('Content-type'));
-        
+
 //         console.log(photo);
-        
+
 //     } catch (error:any) {
 //         persons.innerHTML += `ошибка: ${error.message}`
 //     }
@@ -149,8 +149,8 @@ console.log(formData1.get('name'))
 //     const response = await fetch('https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits')
 //     const json = await response.json()
 //     // console.log(json);
-    
-    
+
+
 // }
 
 // learnJS()
@@ -172,7 +172,7 @@ console.log(formData1.get('name'))
 
 // async function users() {
 //     try {
-        
+
 //         const resp = await fetch('https://jsonplaceholder.typicode.com/users', {
 //                 method:'POST',
 //                 headers: {
@@ -185,11 +185,11 @@ console.log(formData1.get('name'))
 //                         }
 //                     })
 //                 })
-                
+
 //         const json = await resp.json()
 //         console.log(json);
-        
-                
+
+
 //                 //! splice - выводит по id
 //                 // console.log(json.splice(5,10));
 //                 let key
@@ -199,43 +199,43 @@ console.log(formData1.get('name'))
 //                 } 
 //             } catch (error) {
 //                 console.log(error);
-                
+
 //             }
 //         }
-    
+
 //         users()
 
-    
-        // async function loadJson(url) {
-        //     const response = await fetch(url)
-        //     const json = await response.json()
-            
-            
-        //     if (response.status == 200) {
-        //             return json
-        //         } else {
-        //           throw new Error(response.status);
-        //         } 
-        //   }
 
-        //   loadJson('no-such-user.json')
-        //   .catch(alert)
-          
+// async function loadJson(url) {
+//     const response = await fetch(url)
+//     const json = await response.json()
+
+
+//     if (response.status == 200) {
+//             return json
+//         } else {
+//           throw new Error(response.status);
+//         } 
+//   }
+
+//   loadJson('no-such-user.json')
+//   .catch(alert)
+
 
 //! response.json() - преобразовывает ответ в JSON-объект
 //! response.text() - возращает объект в обычный текст
 //! response.formData() - возвращает объект как formData()
 //! response.blob() - возращает объект как Blob (бинарные данные с типом)
 
-    // for (let i = 0; i < json.length; i++) {
-    //     console.log(json[i].name);
-    //     persons.innerHTML += `<br>${json[i].name}`
-    // }
-   
+// for (let i = 0; i < json.length; i++) {
+//     console.log(json[i].name);
+//     persons.innerHTML += `<br>${json[i].name}`
+// }
+
 //! можно выбрать определенные айдишники как с помощью json.splice(3,8) 
 //! - в данном случае вырезает с 3 по 8 'id'
 //! так и с помощью цикла for
-    
+
 
 
 
@@ -269,9 +269,9 @@ console.log(formData1.get('name'))
 //       digitalColor.innerHTML = `orange`
 //       digitalColor.style.color = 'orange'
 //     }
-    
+
 //   }, 10000);
-   
+
 //   digitalColor.addEventListener ('click', ()=>{console.log(46);
 //   })
 
@@ -288,10 +288,10 @@ console.log(formData1.get('name'))
 
 //   const json = await response.blob()
 //   console.log(json);
-  
+
 //   console.log(json.slice(0,100));
-  
- 
+
+
 
 // }
 // ozon()
@@ -311,102 +311,102 @@ console.log(formData1.get('name'))
 
 const stars = document.querySelector('#star') as HTMLDivElement
 
-stars.addEventListener('click', (event)=> {
+stars.addEventListener('click', (event) => {
     const pressStar = event.target as HTMLDivElement
-    
+
     if (pressStar.dataset.set) {
-        let x = +pressStar.dataset.set 
+        let x = +pressStar.dataset.set
         for (let i of stars.children) {
             const el = i as HTMLDivElement
-         if (el.dataset.set && +el.dataset.set<=x) {
-            el.style.color = 'white'
-        } else {
-            el.style.color = 'black'
-         }    
+            if (el.dataset.set && +el.dataset.set <= x) {
+                el.style.color = 'white'
+            } else {
+                el.style.color = 'black'
+            }
         }
     }
-    
+
 })
 
- console.log('___________');
- 
- 
- 
- const text = document.querySelector('#check2') as HTMLDivElement
- text.addEventListener('click', ()=> {
-    
-        text.style.color='red'
+console.log('___________');
+
+
+
+const text = document.querySelector('#check2') as HTMLDivElement
+text.addEventListener('click', () => {
+
+    text.style.color = 'red'
     text.innerHTML += 'k'
-    })
-    text.style.cursor = 'POINTER'
-    console.log(text.style.cursor);
-    
+})
+text.style.cursor = 'POINTER'
+console.log(text.style.cursor);
+
 
 
 // document.body.innerHTML += 'adsfsdfsdfsdf'
 
 
-    
- 
- console.log('hi');
- console.dir('hi')
- console.table('hi')
- 
- const anim = 'pig'
- console.log(anim);
- 
- const animMass = {
-    color:'pink',
-    age:3
- }
+
+
+console.log('hi');
+console.dir('hi')
+console.table('hi')
+
+const anim = 'pig'
+console.log(anim);
+
+const animMass = {
+    color: 'pink',
+    age: 3
+}
 console.table(animMass);
 
 const digit = [3, 5, 7]
 
-console.log(digit.map(el=>el*2));
+console.log(digit.map(el => el * 2));
 
 
 
 // округлять к ближайшему нечетному числу
 
 const x = 5.3
-console.log(2*Math.ceil(x/2));
+console.log(2 * Math.ceil(x / 2));
 
 
 
 const oddNumber = [2, 3, 6, 8, 5, 0] as any
 oddNumber.forEach(el => {
- if (el%2!=0) {
-     console.log(el);
- }   
-}) 
+    if (el % 2 != 0) {
+        console.log(el);
+    }
+})
 
 let acc = 0
-oddNumber.forEach (el=> {
+oddNumber.forEach(el => {
     acc += el
 })
 console.log(acc);
 
 
 
-const odd = (el) => el%2!=0
+const odd = (el) => el % 2 != 0
 console.log(oddNumber.filter(odd));
 
 
 let acc2 = 0
 for (let i = 0; i < oddNumber.length; i++) {
-    acc2+=oddNumber[i]    
+    acc2 += oddNumber[i]
 }
 console.log('acc2 = ' + acc2);
 
 
-let letter = [ 'a', 'b', 'a', 'e', 'a', 'e']
+let letter = ['a', 'b', 'a', 'e', 'a', 'e']
 
 let letterAcc = 0 as any
-letter.forEach(el=> {
+letter.forEach(el => {
     if (el == 'a') {
         letterAcc += 1
-    } 
+    }
 })
 
 console.log(letterAcc);
@@ -447,9 +447,9 @@ console.log(memory.bird);
 
 
 let equipment = {
- 10:10,
- b:111,
- c:555
+    10: 10,
+    b: 111,
+    c: 555
 }
 console.log(equipment);
 
@@ -459,8 +459,8 @@ console.log(equipment);
 
 
 
-function corn () {
-console.log('hjk');
+function corn() {
+    console.log('hjk');
 
 }
 console.log(corn);
@@ -468,7 +468,7 @@ console.log(corn);
 
 
 
-function www () {
+function www() {
     console.log(123);
 }
 www()
@@ -483,16 +483,16 @@ const macesta = {
     street1: 'Lechebnya',
     street2: 'Lechebnya2',
     street3: {
-        str:'Lechebnya111',
-        str2:'Lechebnya222',
+        str: 'Lechebnya111',
+        str2: 'Lechebnya222',
 
     },
-    macestaDictrict:function(){
+    macestaDictrict: function () {
         console.log('hi');
-        
+
     },
     www
-    
+
 }
 console.log(macesta);
 
@@ -507,20 +507,20 @@ console.log(antiJs);
 
 
 const person = {
-    name:'Dima',
-    age:30
+    name: 'Dima',
+    age: 30
 }
 console.log(person);
 
 
-function changeName(newName:any) {
-    newName.name+='aaa'
+function changeName(newName: any) {
+    newName.name += 'aaa'
     return newName
- }
+}
 console.log(changeName(person));
 
 
-const person3 = {...person}
+const person3 = { ...person }
 person3.name = 'Petya'
 
 console.log(person3);
@@ -534,13 +534,13 @@ console.log(person2);
 
 
 
-function fn (a:any, b:any) {
-    a = a+100
-   return a+b
+function fn(a: any, b: any) {
+    a = a + 100
+    return a + b
 }
 
-console.log(fn(5,8));
-console.log(fn(15,14));
+console.log(fn(5, 8));
+console.log(fn(15, 14));
 
 
 
@@ -560,9 +560,9 @@ const time = {
     mounth: 'March'
 }
 
-function changeYear (newYear:any, newMounth:any) {
-    newYear.year+=10
-    newMounth.mounth='April'
+function changeYear(newYear: any, newMounth: any) {
+    newYear.year += 10
+    newMounth.mounth = 'April'
 
     return newMounth
 }
@@ -580,15 +580,15 @@ console.log(changeYear(time, time));
 
 
 
- 
-let aa =9 
-let bb =19
 
-if (aa>=10 && bb>=10){
+let aa = 9
+let bb = 19
+
+if (aa >= 10 && bb >= 10) {
     console.log('выше допустимого значения');
-}else {
+} else {
     console.log('ниже допустимого значения');
-    
+
 }
 
 
@@ -602,7 +602,7 @@ if (aa>=10 && bb>=10){
 
 
 
-console.log(typeof(aa)==typeof(bb));
+console.log(typeof (aa) == typeof (bb));
 
 
 // let mass = [3, 2, 5]
@@ -617,22 +617,22 @@ console.log(typeof(aa)==typeof(bb));
 let switchers = document.querySelector('.switcher') as HTMLDivElement
 let score = 0
 
-setInterval(()=> {
-    let x = score+=1
-    switchers.innerHTML=x
-    
-    if (switchers.innerHTML%2==0) {
-        switchers.style.backgroundColor= 'red'
+setInterval(() => {
+    let x = score += 1
+    switchers.innerHTML = x
+
+    if (switchers.innerHTML % 2 == 0) {
+        switchers.style.backgroundColor = 'red'
     } else {
-        switchers.style.backgroundColor= 'blue'
+        switchers.style.backgroundColor = 'blue'
     }
-    if (switchers.innerHTML>=3 && switchers.innerHTML<=10) {
-        switchers.style.backgroundColor='green'
+    if (switchers.innerHTML >= 3 && switchers.innerHTML <= 10) {
+        switchers.style.backgroundColor = 'green'
     }
 
 
-},10000)
- 
+}, 10000)
+
 console.log(false || 'Vladimir');
 
 const battery = '500 mah'
@@ -660,7 +660,7 @@ console.log(capacity3);
 //     console.log('anonim');
 //     console.log('anonim');
 //     console.log('anonim');
-    
+
 // }, 500);
 
 // console.log(anonim);
@@ -674,13 +674,13 @@ console.log(capacity3);
 //     try {
 //         findError()
 //         console.log('without mistake');
-        
+
 //     } catch (error) {
 //         console.log('with mistake');
 //         console.log(error);
-        
-    
-    
+
+
+
 // }
 
 // findError()
@@ -716,24 +716,24 @@ console.log('Меня зовут ' + myName + ' Я живу в городе ' + 
 console.log(`Меня зовут ${myName}, я живу в городе ${city}`);
 
 
-function summ (a:number, b:number) {
-    console.log(a+b)
+function summ(a: number, b: number) {
+    console.log(a + b)
     return
 }
-summ(5,7)
-summ(6,9)
+summ(5, 7)
+summ(6, 9)
 
 
-let test = function summMultiplier (a:any, b=8) {
-    let c = a*a + b*b
+let test = function summMultiplier(a: any, b = 8) {
+    let c = a * a + b * b
     console.log(c);
     return c
 }
-test (3,3)
-test (7)
- 
-const yyy = function (a:number, b=8){
-    let c = a*a + b*b
+test(3, 3)
+test(7)
+
+const yyy = function (a: number, b = 8) {
+    let c = a * a + b * b
     // console.log(c);
     return c
 }
@@ -743,7 +743,7 @@ console.log(yyy(5));
 
 let summNumber = 0
 for (let i = 0; i <= 100; i++) {
-    summNumber+=i
+    summNumber += i
 }
 console.log(summNumber);
 // setTimeout(() => {
@@ -769,7 +769,7 @@ console.log(summNumber);
 
 //     let random = (Math.round(Math.random()*2+1))
 //     console.log(random);
-    
+
 //     if (random==1) {
 //         x.color = 'red'
 //     } else if(random==2){
@@ -781,33 +781,33 @@ console.log(summNumber);
 //     }
 
 // },1000)
-   
 
 
 
-    // console.log(x);
-        // if (x.color=='red') {
-        //     x.color='yellow' 
-        // } else if (x.color='yellow' ) {
-        //     x.color='orange' 
-        // } else {
-            
-        //     x.color='green' 
-        // }
- 
-const noName = (a:any,b:any)=> {
-    let c = a+b
+
+// console.log(x);
+// if (x.color=='red') {
+//     x.color='yellow' 
+// } else if (x.color='yellow' ) {
+//     x.color='orange' 
+// } else {
+
+//     x.color='green' 
+// }
+
+const noName = (a: any, b: any) => {
+    let c = a + b
     console.log(c)
     return
 }
-noName(3,4)
-noName(8,4)
-noName(8,14)
+noName(3, 4)
+noName(8, 4)
+noName(8, 14)
 
 
-const post = (newPost:any, time=Date() )=> ({
+const post = (newPost: any, time = Date()) => ({
     newPost: 8,
-    time:Date()
+    time: Date()
 })
 
 console.log(post(1, Date().day));
@@ -824,24 +824,24 @@ console.log(x1);
 console.log(x2);
 let extraInfo = 'обработка консоли произошла в '
 
-console.log(`${extraInfo} ${x2-x1} милисекунды`);
+console.log(`${extraInfo} ${x2 - x1} милисекунды`);
 
 
 const makeMistake = () => {
-    throw new Error("Есть ошибка");   
+    throw new Error("Есть ошибка");
 }
 try {
     // makeMistake()
     console.log('ошибок нет');
-    
+
 } catch (error) {
     console.log('ошибка обработана');
-        
+
 }
 
 console.log('проверочка');
 
-console.log (`на дворе сегодня ${new Date().getFullYear()}`)
+console.log(`на дворе сегодня ${new Date().getFullYear()}`)
 
 
 
@@ -858,48 +858,48 @@ try {
     console.log(1);
     console.log(2);
     let user = 'Vasya'
-    
+
     if (user == 'Petya' || !user) {
         throw new SyntaxError("Ошибочка");
     }
-    
+
     console.log(3);
 
 } catch (error) {
     console.log('есть ошибка');
     console.log(error.name);
     console.log(error.message);
-    
+
 } finally {
     console.log('Запрос обработан');
-    
+
 }
 
 console.log(4);
 
 
 const textInTest = document.querySelector('.test') as HTMLDivElement
-textInTest.innerHTML = `${new Date().getDate()}`  
+textInTest.innerHTML = `${new Date().getDate()}`
 textInTest.style.color = 'red'
 textInTest.style.fontWeight = 800 as any
-textInTest.style.fontSize = 2 +'em' 
-textInTest.style.padding = 5 +'px' 
-textInTest.style.marginTop = -15 +'px' 
- 
+textInTest.style.fontSize = 2 + 'em'
+textInTest.style.padding = 5 + 'px'
+textInTest.style.marginTop = -15 + 'px'
+
 
 
 
 try {
     let x = 5
-    if (x<6) {
+    if (x < 6) {
         throw new SyntaxError("Ошибочка");
-        
+
     }
-    
+
 } catch (error) {
     console.log(error.name);
     console.log(error.message);
-    
+
 }
 
 
@@ -908,7 +908,7 @@ console.log(12345);
 
 
 let z = 10
-z = (z+5) *3
+z = (z + 5) * 3
 console.log(z);
 console.log(z);
 console.log(z);
@@ -916,27 +916,27 @@ console.log(z);
 console.log('____________');
 
 let masss = [3, 5, 4, 8, 3, 6]
-let xxx = masss.forEach(el=>{
-    (el*2);
+let xxx = masss.forEach(el => {
+    (el * 2);
 })
 console.log(xxx);
 console.log(xxx);
 
 let z2 = 10
-z2>9
-? console.log('верно')
-: console.log('неверно');
+z2 > 9
+    ? console.log('верно')
+    : console.log('неверно');
 
 let z3 = textInTest.style.color = 'red'
 z3 == 'red'
-?console.log('Правильно')
-:console.log('Неправильно');
+    ? console.log('Правильно')
+    : console.log('Неправильно');
 
 console.log('____________');
 
 try {
     let day = 3
-    switch (day) {  
+    switch (day) {
         case 1: console.log('понедельник');
             break
         case 2: console.log('Вторник');
@@ -953,10 +953,10 @@ try {
             break
         case x: console.log('это не число');
             break
-        default: console.log('число не соответствует диапазону');    
-        throw new Error("проверка ошибки");
+        default: console.log('число не соответствует диапазону');
+            throw new Error("проверка ошибки");
     }
-    
+
 } catch (error) {
     console.log(error.message);
     console.log(error.name);
@@ -970,9 +970,9 @@ console.log('продолжение...');
 let numbers = [1, 2, 3, 4]
 console.log(numbers);
 
-let numbers2= numbers.map(el=>{
-    return el*3
-    
+let numbers2 = numbers.map(el => {
+    return el * 3
+
 });
 console.log(numbers2.length);
 
@@ -993,19 +993,19 @@ console.log(numbers2.length);
 
 
 
-let t= 3
+let t = 3
 
 
 
 try {
-if (t>5){
+    if (t > 5) {
 
-    throw new Error("Проверить");
-}
-    
-} catch(error) {
+        throw new Error("Проверить");
+    }
+
+} catch (error) {
     console.log('непонятная ошибка');
-    
+
 }
 
 
@@ -1014,8 +1014,8 @@ console.log('проверка');
 
 
 let massive = [3, 7, 2, 6, 9]
-console.log( massive.forEach((el)=>{
-   
+console.log(massive.forEach((el) => {
+
 }))
 console.log(massive);
 
@@ -1033,12 +1033,12 @@ console.log(massive);
 // console.log(massive);
 
 
-let checkMap = massive.map((el)=> {
-    return el*el
+let checkMap = massive.map((el) => {
+    return el * el
 })
 console.log(checkMap);
 
-console.log(Date().valueOf().split(' ').join('___'));
+console.log(Date().split(' ').join('___'));
 
 // let cherry = 'cherryyyyy'
 // console.log(cherry);
@@ -1046,15 +1046,188 @@ console.log(Date().valueOf().split(' ').join('___'));
 
 
 
-let nums = [ 3, 5, 7, 9]
-nums.forEach((el)=> {
-    return console.log(el*5);    
+let nums = [3, 5, 7, 9]
+nums.forEach((el) => {
+    return console.log(el * 5);
 })
 console.log(nums);
 
-let mapNums = nums.map((el)=>{
-    return el*3
+let mapNums = nums.map((el) => {
+    return Math.floor(Math.random() * el)
 })
 
 console.log(mapNums);
 
+// console.log(Math.round(Math.random()*3));
+
+
+let numeric = 5.878776
+console.log(typeof numeric);
+console.log(numeric.toFixed(2));
+
+
+let numeric2 = numeric.toFixed(2)
+console.log(numeric2);
+console.log(parseInt(numeric2));
+console.log(parseFloat(numeric2));
+
+//! проверка на число/строку
+console.log(typeof numeric2);
+
+
+
+
+const My = {
+    name: 'Vova',
+    age: 33
+}
+console.log(My);
+const { age } = My
+console.log(age);
+
+
+// const changeMy = {name}
+// console.log(changeMy);
+
+
+
+
+
+
+let temperature = 25
+console.log(typeof temperature);
+
+
+
+//! реструктуризация массивов
+
+let colors = ['white', 'yellow', 'blue']
+console.log(colors);
+
+const [firstCol, secondCol] = colors
+console.log(firstCol);
+console.log(secondCol);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//! Рестуктуризация объектов
+const Mike = {
+    age2: 45,
+    village: 'Myrtle Beach',
+    country: 'USA',
+    greet: function hey() {
+        "Hello, I'm " + age2
+    }
+}
+console.log(Mike);
+
+const { age2, village } = Mike
+console.log(age2);
+console.log(village);
+console.log();
+
+
+
+const { greet } = Mike
+console.log(greet);
+
+
+
+
+
+
+
+let vegetables = ['tomato', 'potato', 'cucumber']
+console.log(vegetables);
+
+const [firstVeg, secondVeg, thirdVeg] = vegetables
+console.log(firstVeg);
+
+
+
+
+
+const letters = ['a', 'b', 'c', 'd']
+
+const [letA, letB, letC, letD] = letters
+console.log(letA);
+console.log(letB);
+console.log(letC);
+console.log(letD);
+
+
+
+const numm = {
+    num1: 1,
+    num2: 2,
+    num3: 3,
+    num4: 4,
+}
+console.log(numm);
+
+const { num2, num1, num3, num4 } = numm
+console.log(num1);
+console.log(num2);
+console.log(num3);
+console.log(num4);
+
+console.log('____________');
+
+
+let letterFindQuantity = 0
+
+let findQuantity = ['a', 'b', 'a', 'e', 'a', 'e']
+console.log(findQuantity)
+findQuantity.forEach((el) => {
+    if (el == 'a') {
+        letterFindQuantity += 1
+    }
+})
+console.log(letterFindQuantity)
+ 
+
+
+
+//! Посчтитать буквы 'е' в тексте
+
+let accE = 0 
+let accE2 = 0 
+let accE3 = 0 
+
+const scoreE = 'Заметьте, что свойство   — это также объект со своими собственными свойствами '
+console.log(typeof scoreE);
+
+
+const newMass = scoreE.split('') 
+console.log(typeof newMass);
+
+console.log(newMass);
+
+newMass.forEach((el)=> {
+    if (el=='а') {
+        accE+=1
+    }
+    else if (el=='е') {
+        accE2+=1
+    } else {
+        // accE3+=1
+        
+    }
+    
+})
+console.log(`В данной строке:
+    букв'а' = ${accE} 
+    букв 'е' = ${accE2},
+    оставшиеся буквы = ${newMass.length-accE2-accE} `);
