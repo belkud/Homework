@@ -1291,7 +1291,9 @@ console.log(`В данной строке:
 
 let graf = document.querySelector('#diagram') as HTMLDivElement
 graf.addEventListener('click', (event)=> {
+    console.log(event.stopImmediatePropagation());
     
+    event.stopImmediatePropagation()
     const graffics = event.target as HTMLDivElement
     let x = graffics.style
 
@@ -1309,17 +1311,21 @@ graf.addEventListener('click', (event)=> {
         graffics.style.transition = 1+'s'
         // graffics.innerHTML = graffics.style.height
         
-        setInterval(() => {
-            acc++
-            graffics.innerHTML =acc
-            if (graffics.innerHTML>=growHeight) {
-                graffics.innerHTML =growHeight
-                
-            }
-            console.log(graffics.innerHTML);
+        const intervalId = setInterval(function func () {
             
-        
-    }, 4);
+            acc++
+            if (acc>=growHeight) {
+                acc =growHeight           
+                }
+                
+            graffics.innerHTML =acc
+                
+                
+            }, 4);
+
+            setTimeout(() => {
+                clearInterval(intervalId)     
+            }, 2000);
 
     },1000)
     // graffics.style.color = 'white'
@@ -1329,8 +1335,11 @@ graf.addEventListener('click', (event)=> {
  
 
 
-
-
+const intervalId = setInterval(function() {
+    console.log('Я выполняюсь каждую секунду')
+  }, 1000)
+  
+  clearInterval(intervalId)
 
 
 
