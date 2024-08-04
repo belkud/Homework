@@ -1232,10 +1232,14 @@ console.log(`В данной строке:
     букв 'е' = ${accE2},
     оставшиеся буквы = ${newMass.length-accE2-accE} `);
 
+
+
     let mass = ['Дима','Петя','Даша','Вера']
     let [pers1, pers2, pers3, pers4] = mass
     console.log(pers3);
     
+
+
     let array = {
         Дима: 17,
         Петя: 19,
@@ -1245,3 +1249,111 @@ console.log(`В данной строке:
     let {Дима, Петя, Даша, Вера} = array
     console.log(Петя);
     
+
+    const newUser = {
+        name: 'Petya',
+        age: 25,
+        city: 'Moscow'
+    }
+    console.log(newUser);
+    
+    const addNewUser = ({name, age})=> {
+        if (!name) {
+            console.log('Нет имени');
+        } else if (!age) {
+            console.log('Нет возраста');
+        } else (
+            console.log(`Добро пожаловать ${name}, ваш возраст ${age}`)
+        )
+    }
+    addNewUser(newUser)
+
+
+
+    //! циклы
+        let accumulation = 0
+        let numers = 5
+    for (let i = 0; i <= numers; i++) {
+        console.log('цикл ' + `${i}`);
+        console.log(accumulation);
+        
+        accumulation+=i
+    }
+
+    console.log(accumulation);
+
+
+
+    //! через forEach сделать граффик для массива
+
+
+
+
+let graf = document.querySelector('#diagram') as HTMLDivElement
+graf.addEventListener('click', (event)=> {
+    
+    const graffics = event.target as HTMLDivElement
+    let x = graffics.style
+
+    // console.log(graffics.dataset.set);
+    if (x.backgroundColor == 'blue') {
+        x.backgroundColor  = 'orange'
+    } else {
+        x.backgroundColor  = 'blue'
+    }
+
+    let growHeight = 100+graffics.dataset.set*10
+    let acc = 0
+    setTimeout(()=>{
+        graffics.style.height = growHeight+'px'
+        graffics.style.transition = 1+'s'
+        // graffics.innerHTML = graffics.style.height
+        
+        setInterval(() => {
+            acc++
+            graffics.innerHTML =acc
+            if (graffics.innerHTML>=growHeight) {
+                graffics.innerHTML =growHeight
+                
+            }
+            console.log(graffics.innerHTML);
+            
+        
+    }, 4);
+
+    },1000)
+    // graffics.style.color = 'white'
+    // console.log(graffics.style.height+'px');
+    
+})
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// stars.addEventListener('click', (event) => {
+//     const pressStar = event.target as HTMLDivElement
+
+//     if (pressStar.dataset.set) {
+//         let x = +pressStar.dataset.set
+//         for (let i of stars.children) {
+//             const el = i as HTMLDivElement
+//             if (el.dataset.set && +el.dataset.set <= x) {
+//                 el.style.color = 'white'
+//             } else {
+//                 el.style.color = 'black'
+//             }
+//         }
+//     }
+
+// })

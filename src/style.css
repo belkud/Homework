@@ -37,9 +37,23 @@ body {
 
 
 
-
-
-
+#diagram {
+  /* border:  1px solid red; */
+  display: flex;
+  height: 200px !important;
+  background-color: lightgray !important;
+  align-items: flex-end;
+}
+#diagram>div {
+  border:  1px solid red;
+  height: 100px;
+  width: 50px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white !important;
+}
 
 
 
