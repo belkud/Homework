@@ -1292,8 +1292,7 @@ console.log(`В данной строке:
 let graf = document.querySelector('#diagram') as HTMLDivElement
 graf.addEventListener('click', (event)=> {
     console.log(event.stopImmediatePropagation());
-    
-    event.stopImmediatePropagation()
+    // event.stopImmediatePropagation()
     const graffics = event.target as HTMLDivElement
     let x = graffics.style
 
