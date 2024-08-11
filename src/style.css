@@ -40,7 +40,7 @@ body {
 #diagram {
   display: flex;
   height: 200px !important;
-  /* background-color: lightgray !important; */
+  background-color: greenyellow !important;
   align-items: flex-end;
 }
 #diagram>div {

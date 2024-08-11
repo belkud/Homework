@@ -1099,7 +1099,7 @@ console.log(typeof temperature);
 
 
 
-//! реструктуризация массивов
+//! деструктуризация массивов
 
 let colors = ['white', 'yellow', 'blue']
 console.log(colors);
@@ -1291,8 +1291,6 @@ console.log(`В данной строке:
 
 let graf = document.querySelector('#diagram') as HTMLDivElement
 graf.addEventListener('click', (event)=> {
-    console.log(event.stopImmediatePropagation());
-    // event.stopImmediatePropagation()
     const graffics = event.target as HTMLDivElement
     let x = graffics.style
 
@@ -1365,3 +1363,56 @@ const intervalId = setInterval(function() {
 //     }
 
 // })
+
+
+
+
+
+
+
+//! посчитать количество симоволов 'о' в этой строке 
+
+let letterO = 'посчитать количество симоволов о в этой строке '
+console.log(typeof letterO);
+
+let accO = 0 as any
+
+let findO = letterO.split('').forEach((el)=> {
+    if (el=='о'){
+        accO+=1
+    }
+})
+
+console.log(accO);
+
+
+
+//! деструктуризация функции
+const planet = ['Mars', 'Venus', 'Earth', 'Saturn']
+let [first, second, third] = planet 
+console.log(planet);
+console.log(second);
+
+//! деструктуризация массива
+const solaryPlanet = {
+    Earth: ' blue',
+    Mars:'red',
+    Venus:'orange',
+    Saturn:'violet'
+}
+
+console.log(solaryPlanet);
+let {Earth, Mars, Venus, Saturn} = solaryPlanet
+console.log(Earth);
+
+
+
+//! Найти сколько планет имеет 4 буквы в названии 
+
+
+
+
+
+
+
+
