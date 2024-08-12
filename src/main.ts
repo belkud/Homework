@@ -1196,147 +1196,147 @@ findQuantity.forEach((el) => {
     }
 })
 console.log(letterFindQuantity)
- 
+
 
 
 
 //! Посчтитать буквы 'е' в тексте
 
-let accE = 0 
-let accE2 = 0 
-let accE3 = 0 
+let accE = 0
+let accE2 = 0
+let accE3 = 0
 
 const scoreE = 'Заметьте, что свойство   — это также объект со своими собственными свойствами '
 console.log(typeof scoreE);
 
 
-const newMass = scoreE.split('') 
+const newMass = scoreE.split('')
 console.log(typeof newMass);
 
 console.log(newMass);
 
-newMass.forEach((el)=> {
-    if (el=='а') {
-        accE+=1
+newMass.forEach((el) => {
+    if (el == 'а') {
+        accE += 1
     }
-    else if (el=='е') {
-        accE2+=1
+    else if (el == 'е') {
+        accE2 += 1
     } else {
         // accE3+=1
-        
+
     }
-    
+
 })
 console.log(`В данной строке:
     букв'а' = ${accE} 
     букв 'е' = ${accE2},
-    оставшиеся буквы = ${newMass.length-accE2-accE} `);
+    оставшиеся буквы = ${newMass.length - accE2 - accE} `);
 
 
 
-    let mass = ['Дима','Петя','Даша','Вера']
-    let [pers1, pers2, pers3, pers4] = mass
-    console.log(pers3);
-    
-
-
-    let array = {
-        Дима: 17,
-        Петя: 19,
-        Даша: 15,
-        Вера: 16
-    }
-    let {Дима, Петя, Даша, Вера} = array
-    console.log(Петя);
-    
-
-    const newUser = {
-        name: 'Petya',
-        age: 25,
-        city: 'Moscow'
-    }
-    console.log(newUser);
-    
-    const addNewUser = ({name, age})=> {
-        if (!name) {
-            console.log('Нет имени');
-        } else if (!age) {
-            console.log('Нет возраста');
-        } else (
-            console.log(`Добро пожаловать ${name}, ваш возраст ${age}`)
-        )
-    }
-    addNewUser(newUser)
+let mass = ['Дима', 'Петя', 'Даша', 'Вера']
+let [pers1, pers2, pers3, pers4] = mass
+console.log(pers3);
 
 
 
-    //! циклы
-        let accumulation = 0
-        let numers = 5
-    for (let i = 0; i <= numers; i++) {
-        console.log('цикл ' + `${i}`);
-        console.log(accumulation);
-        
-        accumulation+=i
-    }
+let array = {
+    Дима: 17,
+    Петя: 19,
+    Даша: 15,
+    Вера: 16
+}
+let { Дима, Петя, Даша, Вера } = array
+console.log(Петя);
 
+
+const newUser = {
+    name: 'Petya',
+    age: 25,
+    city: 'Moscow'
+}
+console.log(newUser);
+
+const addNewUser = ({ name, age }) => {
+    if (!name) {
+        console.log('Нет имени');
+    } else if (!age) {
+        console.log('Нет возраста');
+    } else (
+        console.log(`Добро пожаловать ${name}, ваш возраст ${age}`)
+    )
+}
+addNewUser(newUser)
+
+
+
+//! циклы
+let accumulation = 0
+let numers = 5
+for (let i = 0; i <= numers; i++) {
+    console.log('цикл ' + `${i}`);
     console.log(accumulation);
 
+    accumulation += i
+}
+
+console.log(accumulation);
 
 
-    //! через forEach сделать граффик для массива
+
+//! через forEach сделать граффик для массива
 
 
 
 
 let graf = document.querySelector('#diagram') as HTMLDivElement
-graf.addEventListener('click', (event)=> {
+graf.addEventListener('click', (event) => {
     const graffics = event.target as HTMLDivElement
     let x = graffics.style
 
     // console.log(graffics.dataset.set);
     if (x.backgroundColor == 'blue') {
-        x.backgroundColor  = 'orange'
+        x.backgroundColor = 'orange'
     } else {
-        x.backgroundColor  = 'blue'
+        x.backgroundColor = 'blue'
     }
 
-    let growHeight = 100+graffics.dataset.set*10
+    let growHeight = 100 + graffics.dataset.set * 10
     let acc = 0
-    setTimeout(()=>{
-        graffics.style.height = growHeight+'px'
-        graffics.style.transition = 1+'s'
+    setTimeout(() => {
+        graffics.style.height = growHeight + 'px'
+        graffics.style.transition = 1 + 's'
         // graffics.innerHTML = graffics.style.height
-        
-        const intervalId = setInterval(function func () {
-            
+
+        const intervalId = setInterval(function func() {
+
             acc++
-            if (acc>=growHeight) {
-                acc =growHeight           
-                }
-                
-            graffics.innerHTML =acc
-                
-                
-            }, 4);
+            if (acc >= growHeight) {
+                acc = growHeight
+            }
 
-            setTimeout(() => {
-                clearInterval(intervalId)     
-            }, 2000);
+            graffics.innerHTML = acc
 
-    },1000)
+
+        }, 4);
+
+        setTimeout(() => {
+            clearInterval(intervalId)
+        }, 2000);
+
+    }, 1000)
     // graffics.style.color = 'white'
     // console.log(graffics.style.height+'px');
-    
+
 })
- 
 
 
-const intervalId = setInterval(function() {
+
+const intervalId = setInterval(function () {
     console.log('Я выполняюсь каждую секунду')
-  }, 1000)
-  
-  clearInterval(intervalId)
+}, 1000)
+
+clearInterval(intervalId)
 
 
 
@@ -1377,9 +1377,9 @@ console.log(typeof letterO);
 
 let accO = 0 as any
 
-let findO = letterO.split('').forEach((el)=> {
-    if (el=='о'){
-        accO+=1
+let findO = letterO.split('').forEach((el) => {
+    if (el == 'о') {
+        accO += 1
     }
 })
 
@@ -1394,15 +1394,15 @@ let accLengthPlanet = 0
 let accLength = 0
 
 const planet = ['Mars', 'Venus', 'Earth', 'Saturn']
-let [first, second, third] = planet 
+let [first, second, third] = planet
 
 
-planet.forEach((el)=> {
-    if (el.length==5) {
+planet.forEach((el) => {
+    if (el.length == 5) {
         accLength = el.length
-        accLengthPlanet+=1
+        accLengthPlanet += 1
         console.log(el);
-        
+
     }
 });
 console.log(`количество планет, имеющих ${accLength} символов = ${accLengthPlanet}`);
@@ -1415,19 +1415,19 @@ console.log(second);
 //! деструктуризация объекта
 const solaryPlanet = {
     Earth: ' blue',
-    Mars:'red',
-    Venus:'orange',
-    Saturn:'violet'
+    Mars: 'red',
+    Venus: 'orange',
+    Saturn: 'violet'
 }
 
 console.log(solaryPlanet);
-let {Earth, Mars, Venus, Saturn} = solaryPlanet
+let { Earth, Mars, Venus, Saturn } = solaryPlanet
 console.log(Earth);
 
 for (const el in solaryPlanet) {
-        // const element = solaryPlanet[el];
-        console.log(el[0]);
-        
+    // const element = solaryPlanet[el];
+    console.log(el[0]);
+
 }
 
 //! Найти сколько планет имеет 4 буквы в названии 
@@ -1440,10 +1440,76 @@ for (const el in solaryPlanet) {
 
 
 //! дест массива
-const checkCity = ['Moscow', 'Sochi', 'Peterburg'] 
-let [first1, second2, third3 ] = checkCity
+const checkCity = ['Moscow', 'Sochi', 'Peterburg']
+const [first1, second2, third3] = checkCity
+// ! после const идут скобки и значения в них без кавычек, 
+// ! после скобок снова имя переменной
 console.log(first1);
 
+ 
 
-// const planet = ['Mars', 'Venus', 'Earth', 'Saturn']
-// let [first, second, third] = planet 
+
+
+
+
+let translate = ['один', 'два', 'три']
+let [one, two, three] = translate
+console.log(one);
+try {
+    console.log(two);
+    
+} catch (error) {
+    console.log(error.message);
+    console.log(ReferenceError());
+    
+}
+
+console.log('продолжение');
+
+//! дест массива
+console.log('__________');
+
+let mas = ['dog', 'cat', 'unicorn']
+let [animal1, animal2, animal3] = mas
+console.log(animal1);
+console.log(animal2);
+console.log(animal3);
+
+
+//! дест объекта
+let words = {
+    sun: 'Солнце',
+    landscape: 'Пейзаж',
+    sea: 'Море',
+    number: 10
+}
+
+let {sun, sea, landscape} = words
+console.log(sun);
+console.log(sea);
+console.log(landscape);
+
+
+//! дест функции
+ 
+const user =  {
+    name: 'Vova',
+    age:33,
+    answer: ''
+}
+const checkUSer=({name, answer})=>{
+    if(!answer) {
+         console.log(`у пользователя ${name} нет комментариев`)
+    } else if (answer<=10){
+         console.log(`у пользователя ${name} мало (${answer} комментариев)`) 
+    } else {
+         console.log(`у пользователя ${name} много (${answer} комментариев)`)
+    }
+    
+}
+
+checkUSer(user)
+
+
+
+
