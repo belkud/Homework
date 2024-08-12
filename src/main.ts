@@ -1511,5 +1511,90 @@ const checkUSer=({name, answer})=>{
 checkUSer(user)
 
 
+//! тернарный оператор
+
+let y = 14
+let h = 12
+h>y?console.log('"h" будет больше'):console.log('"y" будет больше')
+
+
+
+
+
+//! дест объекта
+let fruit = {
+    apple: 'яблоко',
+    banana: 'банан',
+    orange: 'апельсин'
+}
+
+let {apple, orange} = fruit
+console.log(orange);
+console.log(apple);
+
+//! дест массива
+
+let vegetable = ['cabage', 'potato', 'tomato' ]
+
+let [veget1, veget2, veget3] = vegetable
+console.log(veget1);
+
+
+//! дест функции
+let eats = ({apple, banana, orange})=>{
+    console.log(apple);
+    console.log(banana);
+
+}
+
+eats(fruit)
+
+
+console.log(new Date().getMonth());
+
+console.log('__________');
+
+let accI=0
+
+ for (let i = 1; i<=5; i++) {
+
+    accI+=i
+    console.log(i);
+    
+ }
+ console.log(accI);
+ 
+
+
+ let filterNumber = [5, 2, 8, 12, 15, 3, 23]
+//! найти числа больше 10
+
+let newFilterNumber = []  as any
+filterNumber.map((el)=> {
+    if (el>10) {
+        newFilterNumber.push(el)
+        return 
+    }
+})
+console.log(newFilterNumber);
+
+
+//! сложить элементы в новом массиве
+
+let accNewFilter = 0
+
+newFilterNumber.forEach((el)=> {
+    accNewFilter+=el
+})
+console.log(accNewFilter);
+
+
+
+
+
+
+
+
+
 
 
