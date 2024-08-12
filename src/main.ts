@@ -1387,13 +1387,32 @@ console.log(accO);
 
 
 
-//! деструктуризация функции
+//! деструктуризация массива
+
+console.log('____________');
+let accLengthPlanet = 0
+let accLength = 0
+
 const planet = ['Mars', 'Venus', 'Earth', 'Saturn']
 let [first, second, third] = planet 
-console.log(planet);
+
+
+planet.forEach((el)=> {
+    if (el.length==5) {
+        accLength = el.length
+        accLengthPlanet+=1
+        console.log(el);
+        
+    }
+});
+console.log(`количество планет, имеющих ${accLength} символов = ${accLengthPlanet}`);
+console.log('____________');
+
+
 console.log(second);
 
-//! деструктуризация массива
+
+//! деструктуризация объекта
 const solaryPlanet = {
     Earth: ' blue',
     Mars:'red',
@@ -1405,7 +1424,11 @@ console.log(solaryPlanet);
 let {Earth, Mars, Venus, Saturn} = solaryPlanet
 console.log(Earth);
 
-
+for (const el in solaryPlanet) {
+        // const element = solaryPlanet[el];
+        console.log(el[0]);
+        
+}
 
 //! Найти сколько планет имеет 4 буквы в названии 
 
@@ -1416,3 +1439,11 @@ console.log(Earth);
 
 
 
+//! дест массива
+const checkCity = ['Moscow', 'Sochi', 'Peterburg'] 
+let [first1, second2, third3 ] = checkCity
+console.log(first1);
+
+
+// const planet = ['Mars', 'Venus', 'Earth', 'Saturn']
+// let [first, second, third] = planet 
