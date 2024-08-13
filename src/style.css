@@ -55,9 +55,27 @@ body {
 }
 
 
+#createDiv {
+  background:linear-gradient(45deg, blue, red);
+  width: 120px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 20px;
+}
 
-
-
+#settings {
+  background-color: red;
+  width: 100px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 5px;
+}
 
 
 

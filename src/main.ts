@@ -1013,11 +1013,11 @@ console.log('проверка');
 
 
 
-let massive = [3, 7, 2, 6, 9]
-console.log(massive.forEach((el) => {
+// let massive = [3, 7, 2, 6, 9]
+// console.log(massive.forEach((el) => {
 
-}))
-console.log(massive);
+// }))
+// console.log(massive);
 
 
 // massive.push(8)
@@ -1033,12 +1033,12 @@ console.log(massive);
 // console.log(massive);
 
 
-let checkMap = massive.map((el) => {
-    return el * el
-})
-console.log(checkMap);
+// let checkMap = massive.map((el) => {
+//     return el * el
+// })
+// console.log(checkMap);
 
-console.log(Date().split(' ').join('___'));
+// console.log(Date().split(' ').join('___'));
 
 // let cherry = 'cherryyyyy'
 // console.log(cherry);
@@ -1046,17 +1046,17 @@ console.log(Date().split(' ').join('___'));
 
 
 
-let nums = [3, 5, 7, 9]
-nums.forEach((el) => {
-    return console.log(el * 5);
-})
-console.log(nums);
+// let nums = [3, 5, 7, 9]
+// nums.forEach((el) => {
+//     return console.log(el * 5);
+// })
+// console.log(nums);
 
-let mapNums = nums.map((el) => {
-    return Math.floor(Math.random() * el)
-})
+// let mapNums = nums.map((el) => {
+//     return Math.floor(Math.random() * el)
+// })
 
-console.log(mapNums);
+// console.log(mapNums);
 
 // console.log(Math.round(Math.random()*3));
 
@@ -1077,13 +1077,13 @@ console.log(typeof numeric2);
 
 
 
-const My = {
-    name: 'Vova',
-    age: 33
-}
-console.log(My);
-const { age } = My
-console.log(age);
+// const My = {
+//     name: 'Vova',
+//     age: 33
+// }
+// console.log(My);
+// const { age } = My
+// console.log(age);
 
 
 // const changeMy = {name}
@@ -1098,92 +1098,46 @@ let temperature = 25
 console.log(typeof temperature);
 
 
-
-//! деструктуризация массивов
-
-let colors = ['white', 'yellow', 'blue']
-console.log(colors);
-
-const [firstCol, secondCol] = colors
-console.log(firstCol);
-console.log(secondCol);
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
 
 
 //! Рестуктуризация объектов
-const Mike = {
-    age2: 45,
-    village: 'Myrtle Beach',
-    country: 'USA',
-    greet: function hey() {
-        "Hello, I'm " + age2
-    }
-}
-console.log(Mike);
+// const Mike = {
+//     age2: 45,
+//     village: 'Myrtle Beach',
+//     country: 'USA',
+//     greet: function hey() {
+//         "Hello, I'm " + age2
+//     }
+// }
+// console.log(Mike);
 
-const { age2, village } = Mike
-console.log(age2);
-console.log(village);
-console.log();
-
-
-
-const { greet } = Mike
-console.log(greet);
+// const { age2, village } = Mike
+// console.log(age2);
+// console.log(village);
+// console.log();
 
 
+
+// const { greet } = Mike
+// console.log(greet);
 
 
 
 
 
-let vegetables = ['tomato', 'potato', 'cucumber']
-console.log(vegetables);
-
-const [firstVeg, secondVeg, thirdVeg] = vegetables
-console.log(firstVeg);
 
 
+// let vegetables = ['tomato', 'potato', 'cucumber']
+// console.log(vegetables);
 
-
-
-const letters = ['a', 'b', 'c', 'd']
-
-const [letA, letB, letC, letD] = letters
-console.log(letA);
-console.log(letB);
-console.log(letC);
-console.log(letD);
+// const [firstVeg, secondVeg, thirdVeg] = vegetables
+// console.log(firstVeg);
 
 
 
-const numm = {
-    num1: 1,
-    num2: 2,
-    num3: 3,
-    num4: 4,
-}
-console.log(numm);
-
-const { num2, num1, num3, num4 } = numm
-console.log(num1);
-console.log(num2);
-console.log(num3);
-console.log(num4);
-
-console.log('____________');
+ 
 
 
 let letterFindQuantity = 0
@@ -1234,20 +1188,20 @@ console.log(`В данной строке:
 
 
 
-let mass = ['Дима', 'Петя', 'Даша', 'Вера']
-let [pers1, pers2, pers3, pers4] = mass
-console.log(pers3);
+// let mass = ['Дима', 'Петя', 'Даша', 'Вера']
+// let [pers1, pers2, pers3, pers4] = mass
+// console.log(pers3);
 
 
 
-let array = {
-    Дима: 17,
-    Петя: 19,
-    Даша: 15,
-    Вера: 16
-}
-let { Дима, Петя, Даша, Вера } = array
-console.log(Петя);
+// let array = {
+//     Дима: 17,
+//     Петя: 19,
+//     Даша: 15,
+//     Вера: 16
+// }
+// let { Дима, Петя, Даша, Вера } = array
+// console.log(Петя);
 
 
 const newUser = {
@@ -1386,57 +1340,9 @@ let findO = letterO.split('').forEach((el) => {
 console.log(accO);
 
 
-
-//! деструктуризация массива
-
-console.log('____________');
-let accLengthPlanet = 0
-let accLength = 0
-
-const planet = ['Mars', 'Venus', 'Earth', 'Saturn']
-let [first, second, third] = planet
-
-
-planet.forEach((el) => {
-    if (el.length == 5) {
-        accLength = el.length
-        accLengthPlanet += 1
-        console.log(el);
-
-    }
-});
-console.log(`количество планет, имеющих ${accLength} символов = ${accLengthPlanet}`);
-console.log('____________');
-
-
-console.log(second);
-
-
-//! деструктуризация объекта
-const solaryPlanet = {
-    Earth: ' blue',
-    Mars: 'red',
-    Venus: 'orange',
-    Saturn: 'violet'
-}
-
-console.log(solaryPlanet);
-let { Earth, Mars, Venus, Saturn } = solaryPlanet
-console.log(Earth);
-
-for (const el in solaryPlanet) {
-    // const element = solaryPlanet[el];
-    console.log(el[0]);
-
-}
-
-//! Найти сколько планет имеет 4 буквы в названии 
-
-
-
-
-
-
+ 
+ 
+ 
 
 
 //! дест массива
@@ -1450,46 +1356,8 @@ console.log(first1);
 
 
 
-
-
-let translate = ['один', 'два', 'три']
-let [one, two, three] = translate
-console.log(one);
-try {
-    console.log(two);
-    
-} catch (error) {
-    console.log(error.message);
-    console.log(ReferenceError());
-    
-}
-
-console.log('продолжение');
-
-//! дест массива
-console.log('__________');
-
-let mas = ['dog', 'cat', 'unicorn']
-let [animal1, animal2, animal3] = mas
-console.log(animal1);
-console.log(animal2);
-console.log(animal3);
-
-
-//! дест объекта
-let words = {
-    sun: 'Солнце',
-    landscape: 'Пейзаж',
-    sea: 'Море',
-    number: 10
-}
-
-let {sun, sea, landscape} = words
-console.log(sun);
-console.log(sea);
-console.log(landscape);
-
-
+ 
+ 
 //! дест функции
  
 const user =  {
@@ -1513,9 +1381,9 @@ checkUSer(user)
 
 //! тернарный оператор
 
-let y = 14
-let h = 12
-h>y?console.log('"h" будет больше'):console.log('"y" будет больше')
+// let y = 14
+// let h = 12
+// h>y?console.log('"h" будет больше'):console.log('"y" будет больше')
 
 
 
@@ -1552,21 +1420,41 @@ eats(fruit)
 
 console.log(new Date().getMonth());
 
-console.log('__________');
 
 let accI=0
 
- for (let i = 1; i<=5; i++) {
-
+for (let i = 1; i<=5; i++) {
+    
     accI+=i
     console.log(i);
     
- }
- console.log(accI);
- 
+}
+console.log(accI);
 
 
- let filterNumber = [5, 2, 8, 12, 15, 3, 23]
+
+let filterNumber = [5, 2, 8, 12, 15, 3, 23]
+
+//!  Создайте функцию, которая принимает массив чисел 
+//!  и число. Эта функция должна умножать каждый элемент 
+//!  массива на входящее число и выводить на экран. Нужно 
+//!  задать значение по умолчанию для массива и для числа.
+
+    console.log('__________');
+    
+
+        let summDigitals = filterNumber.map ((el)=> {
+            return el*10
+        })
+    
+        console.log(summDigitals);
+
+    
+    
+
+
+    console.log('__________');
+
 //! найти числа больше 10
 
 let newFilterNumber = []  as any
@@ -1576,22 +1464,171 @@ filterNumber.map((el)=> {
         return 
     }
 })
-console.log(newFilterNumber);
+console.log(...newFilterNumber);
 
 
 //! сложить элементы в новом массиве
 
-let accNewFilter = 0
+// let accNewFilter = 0
 
-newFilterNumber.forEach((el)=> {
-    accNewFilter+=el
+// newFilterNumber.forEach((el)=> {
+//     accNewFilter+=el
+// })
+// console.log(accNewFilter);
+
+
+
+
+//    Необходимо выполнить такие задачи с помощью деструктуризации:
+//    ■ Записать в переменные все поля объекта и вывести 
+//    их на экран:
+//    ■ Записать в переменные все поля объекта, кроме полей 
+//    age и course.
+//    ■ Записать в переменные поля name, surname и age. Так 
+//    же, если какое-либо значение отсутствует, то в переменную должно записываться значение по умолчанию.
+
+let student = {
+    Nickname: 'Ivan',
+    surname: 'Petrov',
+    subjects: ["English", "History", "Marketing"],
+    course: 3
+   } 
+
+console.log(student);
+      
+ let stud = ({Nickname, surname, subjects, course})=>{
+     console.log(Nickname);
+     console.log(surname);
+     console.log(subjects);
+     if (course==3){
+         console.log(`Вам осталось учиться ${5- course} года`);
+
+     }
+
+ }
+stud(student)
+
+
+//! Задача 1. Определить сколько раз каждый элемент встречается в массиве.
+
+// const fruits = ['kiwi', 'apple', 'kiwi', 'orange', 'kiwi', 'apple'];
+
+// console.log(fruits);
+
+// let accum1 = 0
+// let accum2 = 0 
+// let accum3 = 0
+
+// fruits.forEach((el)=> {
+//     if (el=='kiwi') {
+//         accum1+=1
+//     } else if (el =='apple') {
+//         accum2+=1
+//     } else {
+//         accum3+=1
+//     }
+// })
+
+// console.log(`киви ${accum1}, apple ${accum2}, orange ${accum3} раз`);
+
+//! Задача 2. Создать массив который содержит только уникальные 
+//! значения исходного массива.
+
+// let uniqItem = fruits.map(el=> {
+//     console.log(el);
+    
+//     if (el!=el) {
+        
+//     }
+//     return
+// })
+
+// console.log(uniqItem);
+
+console.log('____________');
+
+//! На выходе требуется получить объект, где ключ - возраст, 
+//! а значение - массив студентов, которые относятся
+//!  к данной возрастной группе.
+
+// const students = [
+//     { name: 'alex', age: 20 },
+//     { name: 'mike', age: 24 },
+//     { name: 'masha', age: 20 },
+//     { name: 'stas', age: 18 },
+//   ];
+// console.log(students);
+
+// students.forEach(el=> {
+//     if (el.age==20) {
+//         console.log(el);
+//     } else if (el.age==24) {
+//         console.log(el);
+//     } else {
+//         console.log(el);
+        
+//     }
+// })
+
+
+// '20': [{ name: 'alex', age: 20 }, { name: 'masha', age: 20 }],
+// '24': [{ name: 'mike', age: 24 }],
+// '18': [{ name: 'stas', age: 18 }]
+
+
+
+//! рест массива
+
+// let col = [ 'puple', 'blue', 'white']
+// let [one1, two2, three3] = col
+
+// console.log(two2);
+// console.log(three3);
+
+//! рест объекта
+// let day = {
+//     понед: 'первый',
+//     вторник: 'второй',
+//     среда: 'третий'
+// }
+// let {понед, вторник, среда} = day
+// console.log(понед);
+// console.log(среда);
+
+//! рест функции
+
+// let funcs = ({понед, вторник})=>{
+//     console.log(понед);
+//     console.log(вторник);   
+// }
+
+// funcs(day)
+
+
+
+
+//! выучить методы массивов 
+
+//! выучить методы объектов
+
+
+
+
+const button = document.querySelector('#createDiv') as HTMLDivElement
+const container = document.querySelector('#containDiv') as HTMLDivElement
+
+let num = 0
+
+button.addEventListener('click', ()=> {
+
+    let x = prompt('введите текст')
+
+    let newDiv = `<div id="settings">${num+=1} ${x}</div>`
+    container.innerHTML += newDiv
+
+    console.log(x);
+    
 })
-console.log(accNewFilter);
-
-
-
-
-
 
 
 
