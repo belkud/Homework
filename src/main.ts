@@ -1545,93 +1545,258 @@ stud(student)
 
 // console.log(uniqItem);
 
-console.log('____________');
 
 //! На выходе требуется получить объект, где ключ - возраст, 
 //! а значение - массив студентов, которые относятся
 //!  к данной возрастной группе.
 
 // const students = [
-//     { name: 'alex', age: 20 },
-//     { name: 'mike', age: 24 },
-//     { name: 'masha', age: 20 },
-//     { name: 'stas', age: 18 },
-//   ];
-// console.log(students);
-
-// students.forEach(el=> {
-//     if (el.age==20) {
-//         console.log(el);
-//     } else if (el.age==24) {
-//         console.log(el);
-//     } else {
-//         console.log(el);
-        
-//     }
-// })
-
-
-// '20': [{ name: 'alex', age: 20 }, { name: 'masha', age: 20 }],
-// '24': [{ name: 'mike', age: 24 }],
-// '18': [{ name: 'stas', age: 18 }]
-
-
-
-//! рест массива
-
-// let col = [ 'puple', 'blue', 'white']
-// let [one1, two2, three3] = col
-
-// console.log(two2);
-// console.log(three3);
-
-//! рест объекта
-// let day = {
-//     понед: 'первый',
-//     вторник: 'второй',
-//     среда: 'третий'
-// }
-// let {понед, вторник, среда} = day
-// console.log(понед);
-// console.log(среда);
-
-//! рест функции
-
-// let funcs = ({понед, вторник})=>{
-//     console.log(понед);
-//     console.log(вторник);   
-// }
-
-// funcs(day)
-
-
-
-
-//! выучить методы массивов 
-
-//! выучить методы объектов
-
-
-
-
+    //     { name: 'alex', age: 20 },
+    //     { name: 'mike', age: 24 },
+    //     { name: 'masha', age: 20 },
+    //     { name: 'stas', age: 18 },
+    //   ];
+    // console.log(students);
+    
+    // students.forEach(el=> {
+        //     if (el.age==20) {
+            //         console.log(el);
+            //     } else if (el.age==24) {
+                //         console.log(el);
+                //     } else {
+                    //         console.log(el);
+                    
+                    //     }
+                    // })
+                    
+                    
+                    // '20': [{ name: 'alex', age: 20 }, { name: 'masha', age: 20 }],
+                    // '24': [{ name: 'mike', age: 24 }],
+                    // '18': [{ name: 'stas', age: 18 }]
+                    
+                    
+                    
+                    //! рест массива
+                    
+                    // let col = [ 'puple', 'blue', 'white']
+                    // let [one1, two2, three3] = col
+                    
+                    // console.log(two2);
+                    // console.log(three3);
+                    
+                    //! рест объекта
+                    // let day = {
+                        //     понед: 'первый',
+                        //     вторник: 'второй',
+                        //     среда: 'третий'
+                        // }
+                        // let {понед, вторник, среда} = day
+                        // console.log(понед);
+                        // console.log(среда);
+                        
+                        //! рест функции
+                        
+                        // let funcs = ({понед, вторник})=>{
+                            //     console.log(понед);
+                            //     console.log(вторник);   
+                            // }
+                            
+                            // funcs(day)
+                            
+                            
+                            
+                            
+                            //! выучить методы массивов 
+                            
+                            //! выучить методы объектов
+                            
+                            
+                            
+                            
 const button = document.querySelector('#createDiv') as HTMLDivElement
 const container = document.querySelector('#containDiv') as HTMLDivElement
 
 let num = 0
 
 button.addEventListener('click', ()=> {
-
-    let x = prompt('введите текст')
-
+    
+    let x = Math.random().toFixed(2)
+    
     let newDiv = `<div id="settings">${num+=1} ${x}</div>`
     container.innerHTML += newDiv
+    
+    // setTimeout(() => {
+        //     container.style.background = 'green'
+        //     container.innerHTML += newDiv
+        
+        // }, 3000);
+    })
+    
+    let accAge = 0
+    
+    const workers = [
+        {name: 'Anna', age:23},
+        {name: 'Masha', age:33},
+        {name: 'Katya', age:27},
+        {name: 'Vika', age:29},
+        {name: 'Sveta', age:36},
+    ]
+    
+    
+    //! найти Катю
+    //! find......
+    
+const cate = workers.find(cate=> cate.name === 'Katya')
+console.log(cate);
 
-    console.log(x);
+const cateIndex = workers.findIndex(cate=> cate.name === 'Katya')
+console.log(cateIndex);
+
+
+
+    
+    //! сумма возрастов
+    
+    //! 1
+    workers.forEach(el=>{
+        accAge += el.age
+    })
+    console.log(accAge);
+    console.log('____________');
+    
+    
+    //! 2
+    let accAge2 = 0
+    for (let i = 0; i < workers.length; i++) {
+            accAge2+=workers[i].age
+
+    }
+console.log(accAge2);
+
+    //! 3 reduce...........
+    let accAge3 = workers.reduce((total, worker)=>total+worker.age, 0)
+    console.log(accAge3);
+     
+
+
+
+
+
+
+
+
+//! оставить старше 25  
+
+    //! filter..............
+
+let more30Age = workers.filter(el=> {
+    if (el.age>=30) {
+        return `${el.name}`
+    }
+})
+
+console.log(...more30Age);
+
+const checkMetod = []
+
+for (let i = 0; i < workers.length; i++) {
+    if(workers[i].age>=30) {   
+     checkMetod.push(workers[i])
+    }
+}
+
+console.log(...checkMetod);
+
+
+
+console.log('___________');
+
+
+// businessmans.forEach(age=> {
+//     if(age.age>=30) {
+//         console.log(age);
+//     }
+// })
+
+// let lettersInName = businessmans.map (letter=>{
+//     if(letter.name.length==4) {
+//         return `${letter.name} имеет 4 буквы`
+//     }else {
+//         return letter.name = ''
+
+//     }
+// })
+// console.log(...lettersInName);
+
+
+
+
+
+
+
+
+
+
+const businessmans = [
+    {name: 'Anna', age:23, budget:30000},
+    {name: 'Masha', age:33, budget:50000},
+    {name: 'Katya', age:17, budget:45000},
+    {name: 'Vika', age:16, budget:32000},
+    {name: 'Sveta', age:36, budget:47000},
+]
+
+//! (forEach, map, filter, reduce, find, findIndex).
+
+
+//! сложить бюджет через forEach
+
+let allBudget = 0
+businessmans.forEach(el=>{
+    allBudget+=el.budget
+})
+console.log(allBudget);
+
+
+//! индексация бюджета каждому отдельно на 10% через map
+
+let newBudget = businessmans.map(budget=> 
+{
+    return Math.round(budget.budget*1.1)
+})
+console.log(newBudget);
+
+//! Поиск по списку несовершеннолетних методом filter
+
+let underAge = businessmans.filter(el=> {
+    if(el.age<18) 
+        return el
     
 })
 
+let names = underAge.map(el=> {
+    return el.name
+    
+})
+console.log(names);
 
 
 
+// console.log(...underAge);
+
+// console.log(JSON.stringify(underAge));
 
 
+
+    // //! Поиск по списку несовершеннолетних методом filter
+    
+    // businessmans.filter(el=> {
+    //     if(el.age<18){ 
+    //         console.log(el.name)
+    //     }
+    // })
+ 
+    
+    //! сложить бюджет через reduce
+    
+    let budgets = businessmans.reduce((money, el)=> money+el.budget,0)
+    console.log(budgets);
