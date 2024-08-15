@@ -1642,7 +1642,30 @@ button.addEventListener('click', ()=> {
         {name: 'Sveta', age:36},
     ]
     
+    const totalAge = workers.reduce((agess, workers)=>agess+=workers.age,0)
+    console.log(totalAge);
+
+
+const youngestPerson = workers.map(el=> {
+        return el.age
+}) 
+console.log(Math.min(...youngestPerson));
+ 
+  
+
+console.log('-----------');
+
+try {
     
+    console.log(_.min(youngestPerson));
+} catch (error) {
+    console.log(error.message);
+    console.log(ReferenceError());
+    
+}
+
+
+
     //! найти Катю
     //! find......
     
@@ -1800,3 +1823,55 @@ console.log(names);
     
     let budgets = businessmans.reduce((money, el)=> money+el.budget,0)
     console.log(budgets);
+
+
+
+
+
+
+
+
+    //! (forEach, map, filter, reduce, find, findIndex).
+    let car = [
+        {brand: 'Kia', price:1200000, mileage:100000},
+        {brand: 'Mazda', price:6000000, mileage:860000},
+        {brand: 'Bmw', price:1800000, mileage:25000},
+        {brand: 'Volkswagen', price:2300000, mileage:120000},
+        {brand: 'Jeep', price:1500000, mileage:100000},
+        ]
+
+  
+
+// вывести бренды через forEach
+
+let brands = [] as any
+car.forEach(el=> {
+    brands.push(el.brand)
+})
+console.log(brands);
+
+// через filter вывести массив с машинами дешевле 1.5 млн
+
+let shortBrands = [] as any
+car.filter(symbol=> {
+    if (symbol.price<=1500000) {
+        shortBrands.push(`${symbol.brand} : ${symbol.price}`);
+   }
+})
+console.log(shortBrands);
+
+
+// посчитать стоимость всех машин через reduce
+
+let totalPrice = car.reduce((total, car)=>total+=car.price, 0)
+console.log(totalPrice);
+
+
+// find Volkswagen
+let findCar = car.filter(el=> {
+    if (el.mileage==100000)
+    return el.brand
+})
+console.log(...findCar);
+// сложить обе стоимости
+
