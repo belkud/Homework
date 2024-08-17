@@ -18,12 +18,12 @@ const persons = document.querySelector('#persons') as HTMLDivElement
 // let formData = new FormData([form])
 
 
-const name = document.querySelector('#name') as HTMLInputElement
-console.log(name);
+// const name = document.querySelector('#name') as HTMLInputElement
+// console.log(name);
 
-name.addEventListener('click', () => {
+// name.addEventListener('click', () => {
 
-})
+// })
 
 
 // persons.innerHTML =''
@@ -1874,4 +1874,113 @@ let findCar = car.filter(el=> {
 })
 console.log(...findCar);
 // сложить обе стоимости
+
+let carsPrice = findCar.reduce((carsPrice, el)=>carsPrice+=el.price,0)
+console.log(carsPrice);
+
+
+let bothPrice = 0
+findCar.forEach((el)=> bothPrice+=el.price)
+console.log(bothPrice);
+
+
+
+let index = car.find(el=> el.brand === 'Jeep')
+console.log(index?.brand);
+
+let fIndex = car.findIndex(el=> el.brand === 'Jeep')
+console.log(fIndex);
+
+
+
+
+
+
+
+
+
+
+// let nums = [5, 2, 6, 7, 4, - 5, - 9, 8]
+
+// //! 1-ый способ
+// let accnums = 0 
+// nums.forEach(num=> {
+//     accnums+=num
+// })
+// console.log(accnums);
+
+// //! 2-ой способ
+// let summNums = nums.reduce((summ, el)=>summ+=el,0)
+// console.log(summNums);
+
+// //! 3-ой способ
+
+// let summnum = 0 
+// for (let i = 0; i < nums.length; i++) {
+//     summnum+=nums[i]    
+// }
+// console.log(summnum);
+
+
+
+const name = ['Мария', 'Елена', 'Ирина', 'Светлана', 'Есения'];
+const job = ['teacher', 'lawyer', 'journalist', 'doctor', 'seller'];
+// const jobName = name.forEach(el=>{ console.log(el)}) + job.forEach(el=>{ console.log(el)})
+
+console.log(name[0] + '-' + job[0]);
+
+const jobName = []
+
+for (let i = 0; i < name.length; i++) {
+    jobName.push(name[i])
+}
+
+for (let j = 0; j < job.length; j++) {
+    jobName.push(job[j])   
+}
+
+console.log(jobName);
+
+let date = '2025-12-31'
+console.log(date.split('-').reverse().join('/'));
+
+
+
+let products = {     
+    "15": {"category": "fruit"},
+    "2": {"category": "fruit"},
+    "31": {"category": "fruit"},
+    "4": {"category": "vegetable"},
+    "5": {"category": "vegetable"},
+    "65": {"category": "vegetable"}
+}
+
+
+let newMas = []
+for (const el in products) {
+    if (el!=='fruit') {
+        newMas.push(el)
+        
+    }
+}
+console.log(...newMas);
+
+
+
+
+
+
+
+ //! (forEach, map, filter, reduce, find, findIndex).
+ 
+
+
+ //! (forEach, map, filter, reduce, find, findIndex).
+ let bus = [
+    {brand: 'Kia', price:1200000, mileage:100000},
+    {brand: 'Mazda', price:6000000, mileage:860000},
+    {brand: 'Bmw', price:1800000, mileage:25000},
+    {brand: 'Volkswagen', price:2300000, mileage:120000},
+    {brand: 'Jeep', price:1500000, mileage:100000},
+    ]
 
