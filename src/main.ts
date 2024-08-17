@@ -1923,23 +1923,7 @@ console.log(fIndex);
 
 
 
-const name = ['Мария', 'Елена', 'Ирина', 'Светлана', 'Есения'];
-const job = ['teacher', 'lawyer', 'journalist', 'doctor', 'seller'];
-// const jobName = name.forEach(el=>{ console.log(el)}) + job.forEach(el=>{ console.log(el)})
 
-console.log(name[0] + '-' + job[0]);
-
-const jobName = []
-
-for (let i = 0; i < name.length; i++) {
-    jobName.push(name[i])
-}
-
-for (let j = 0; j < job.length; j++) {
-    jobName.push(job[j])   
-}
-
-console.log(jobName);
 
 let date = '2025-12-31'
 console.log(date.split('-').reverse().join('/'));
@@ -1983,4 +1967,26 @@ console.log(...newMas);
     {brand: 'Volkswagen', price:2300000, mileage:120000},
     {brand: 'Jeep', price:1500000, mileage:100000},
     ]
+
+
+// в массив по отдельности вывести пробек и суммарный потом
+
+let miles = 0 
+let milesArray = [] as any
+bus.forEach(el=> {
+    miles+=el.mileage
+    milesArray.push(el.brand + ' : ' + el.mileage)    
+})
+
+console.log('суммарный километраж: ' + miles, milesArray);
+
+
+
+const name = ['Мария', 'Елена', 'Ирина', 'Светлана', 'Есения'];
+const job = ['teacher', 'lawyer', 'journalist', 'doctor', 'seller'];
+
+
+for (let i = 0; i < 5; i++) {
+    console.log(name[i]+' - '+job[i])
+}
 
