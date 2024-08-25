@@ -1990,4 +1990,109 @@ for (let i = 0; i < 5; i++) {
     console.log(name[i]+' - '+job[i])
 }
 
-// xcv
+
+
+
+
+
+
+
+
+//! (forEach, map, filter, reduce, find, findIndex).
+let aircrafts = [
+    {brand: 'Kia', price:1200000, mileage:100000},
+    {brand: 'Mazda', price:6000000, mileage:860000},
+    {brand: 'Bmw', price:1800000, mileage:25000},
+    {brand: 'Volkswagen', price:2300000, mileage:120000},
+    {brand: 'Jeep', price:1500000, mileage:100000},
+]
+
+
+
+
+
+
+
+
+
+
+
+
+// // Самое большое число
+
+// // Второе самое большое число
+// nums.forEach(el=>{
+// if (el ==Math.max(...nums)){
+// console.log('наибольшее число = '+ el);
+
+// // } else if(el ==Math.max(...nums)){
+//     //     console.log('наибольшее число = '+ el);
+    
+// } else {
+//     console.log('наименьшее число = '+ el);
+
+// }
+
+// })
+
+
+const array = [21, 19, 34, 28, 32];
+let arrX = [...array].sort().reverse()
+console.log(arrX[1]);
+
+
+
+//!     !!!     Методы массивов    !!!
+//! .sort() - сортирует по возрастанию
+//! .splice - удаляет элементы (1 - индекс, 1 -  количество)
+//  найти предпоследний наибольший
+console.log([...array].sort()[array.length-2]);
+
+
+
+
+// и наименьший элемент
+console.log([...array].sort().reverse()[array.length-2]);
+console.log('_______');
+
+
+
+
+let nums = [5, 2, 3, 6, 4, - 5, - 9, 8]
+let addMeansInNums = [5, 7, 9]
+console.log(`${addMeansInNums}, ${nums}`);
+
+let xx = []
+xx.push(3)
+  
+console.log(xx);
+console.log(typeof xx);
+
+
+
+console.log('_______');
+
+let numsY = [...nums].sort().reverse().splice(1, 1)
+console.log(Math.max(...numsY));
+
+let numsX = Math.max(...numsY)
+
+console.log(typeof numsY);
+console.log(typeof numsX);
+
+
+
+// let numsX = [...nums.splice(Math.max())]
+// console.log(numsX);
+// console.log(typeof numsX);
+
+
+
+let check = [
+    {name: 'Masha', age: 23},
+    {name: 'Katya', age: 27},
+    {name: 'Natasha', age: 33},
+    {name: 'Sveta', age: 36}
+]
+// старше 30 
+
