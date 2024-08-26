@@ -2094,5 +2094,54 @@ let check = [
     {name: 'Natasha', age: 33},
     {name: 'Sveta', age: 36}
 ]
-// старше 30 
+//! старше 30 
+
+    //! первый способ
+    const zzz = check.filter(age=> {
+        if(age.age>=30) {
+            return age.name
+        }
+    })
+    console.log(...zzz);
+    
+    //! второй способ
+    let zzzName = zzz.map(el=> {
+        return el.name
+    })
+    console.log(zzzName);
+    
+    
+    //! третий способ
+    let massName = []
+
+    for (let i = 0; i < check.length; i++) {
+        if(check[i].age>=30) {
+            massName.push(check[i].name);
+        }
+}
+console.log(massName);
+
+// одна буква в секунду выводилась с имени Natasha
+
+const nameN = document.querySelector('#name') as HTMLDivElement
+
+
+
+let letterName = 'Добро пожаловать'
+
+let natashaArray = letterName.split('')
+
+let timer = 0
+
+let stopInterval = setInterval(() => {
+    nameN.innerHTML +=natashaArray[timer]
+    timer+=1
+    if (timer==16) {
+        clearInterval (stopInterval)
+    }
+    
+}, 200);
+ 
+
+
 
