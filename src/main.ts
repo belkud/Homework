@@ -2294,6 +2294,7 @@ buttons.forEach(el=>{
 
 
 
+
 // stars.addEventListener('click', (event) => {
 //     const pressStar = event.target as HTMLDivElement
 
