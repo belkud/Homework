@@ -2208,17 +2208,6 @@ Object.values({name:'Vova', age:33}).forEach (el=>{
 
 
 
- 
- //!     !!!     Методы массивов    !!!
-//! .sort() - сортирует по возрастанию
-//! .splice - удаляет элементы (1 - индекс, 1 -  количество)
-//! .every - true если все элементы соответствуют 
-//! .some - true если хотя бы один элемент соответствует
-
-//! forEach - ничего не возвращает (undefined) 
-//! map - возвращает новый массив того же размера в отличие от forEach
-//! toFixed() - преобразует число в строку и округляет при необходимости
-// reduce - используются для вычисления единого значения на основе всего массива.
 
 
 let d = 5.456456
@@ -2250,28 +2239,13 @@ console.log(typeof Number(str));
 
 
 
- 
-
-
-let stuff = [
-    {name: 'Masha', age: 23, salary: 32000},
-    {name: 'Katya', age: 27, salary: 50000},
-    {name: 'Natasha', age: 33, salary: 80000},
-    {name: 'Sveta', age: 36, salary: 95000}
-]
-//! посчтитать общую зарплату и добавить подоходный налог в 30 процентов
- 
-
-
-let scoreSalary = stuff.reduce((score, el)=>(score+=el.salary), 0)
-console.log(scoreSalary*1.1);
 
 
 let buttons = document.querySelectorAll('#btn') 
 buttons.forEach(el=>{
     el.addEventListener('click', (event)=> {
         const btn = event.target as HTMLDivElement
-        const btn2 = btn.dataset.set
+        const btn2 = btn.dataset.set as any
         if (btn2==1) {
             console.log('Вы нажали кнопку 1');   
             btn.style.backgroundColor = 'green'
@@ -2289,25 +2263,51 @@ buttons.forEach(el=>{
 })
 
 
+ 
+
+
+let stuff = [
+    {name: 'Katya', age: 27, salary: 50000},
+    {name: 'Natasha', age: 33, salary: 80000},
+    {name: 'Masha', age: 23, salary: 32000},
+    {name: 'Sveta', age: 36, salary: 95000},
+]
+//! посчтитать общую зарплату и добавить подоходный налог в 30 процентов
+ 
+let scoreSalary = stuff.reduce((score, el)=>(score+=el.salary), 0)
+console.log(scoreSalary*1.1);
+
+//! Проверить у всех ли сотрудников зп ниже 100 тысяч
+let cheсkSalary = stuff.every(el=> el.salary<100000) 
+console.log(cheсkSalary);
+
+let cheсkSalary2 = stuff.some(el=> el.salary>50000) 
+console.log(cheсkSalary2);
+
+//! Найти сотрудника с наименьшей зарплатой и увеличить оклад на 20.000
+let salaries = stuff.map(el=>{
+    return el.salary
+})
+console.log(salaries);
+
+let smalestSalary = Number(salaries.sort().splice(0,1)) + 20000 
+
+console.log(smalestSalary);
 
 
 
 
 
 
-// stars.addEventListener('click', (event) => {
-//     const pressStar = event.target as HTMLDivElement
 
-//     if (pressStar.dataset.set) {
-//         let x = +pressStar.dataset.set
-//         for (let i of stars.children) {
-//             const el = i as HTMLDivElement
-//             if (el.dataset.set && +el.dataset.set <= x) {
-//                 el.style.color = 'white'
-//             } else {
-//                 el.style.color = 'black'
-//             }
-//         }
-//     }
+ 
+ //!     !!!     Методы массивов    !!!
+//! .sort() - сортирует по возрастанию
+//! .splice - удаляет элементы (1 - индекс, 1 -  количество)
+//! .every - true если все элементы соответствуют 
+//! .some - true если хотя бы один элемент соответствует
 
-// })
+//! forEach - ничего не возвращает (undefined) 
+//! map - возвращает новый массив того же размера в отличие от forEach
+//! toFixed() - преобразует число в строку и округляет при необходимости
+// reduce - используются для вычисления единого значения на основе всего массива.
