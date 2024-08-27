@@ -2042,9 +2042,7 @@ console.log(arrX[1]);
 
 
 
-//!     !!!     Методы массивов    !!!
-//! .sort() - сортирует по возрастанию
-//! .splice - удаляет элементы (1 - индекс, 1 -  количество)
+
 //  найти предпоследний наибольший
 console.log([...array].sort()[array.length-2]);
 
@@ -2208,6 +2206,53 @@ Object.values({name:'Vova', age:33}).forEach (el=>{
     
 })
 
+
+
+ 
+ //!     !!!     Методы массивов    !!!
+//! .sort() - сортирует по возрастанию
+//! .splice - удаляет элементы (1 - индекс, 1 -  количество)
+//! .every - true если все элементы соответствуют 
+//! .some - true если хотя бы один элемент соответствует
+
+//! forEach - ничего не возвращает (undefined) 
+//! map - возвращает новый массив того же размера в отличие от forEach
+//! toFixed() - преобразует число в строку и округляет при необходимости
+// reduce - используются для вычисления единого значения на основе всего массива.
+
+
+let d = 5.456456
+console.log(d.toFixed(2));
+
+
+
+// указать дату рождения и через reduce вычислить сумму чисел
+//  и потом повторно сложить между собой общую сумму
+ 
+
+
+
+let dateObBirth = '28.03.1991'
+
+let summNumbers = 
+dateObBirth.split('.').reduce((acc,el)=>acc+=+el,0)
+.toFixed().split('').reduce((acc,el)=>acc+=+el,0)
+console.log(summNumbers);
+
+
+
+
+
+let str = '123'
+console.log(typeof str);
+//! преобразование строки в число
+console.log(typeof Number(str));
+
+
+
+ 
+
+
 let stuff = [
     {name: 'Masha', age: 23, salary: 32000},
     {name: 'Katya', age: 27, salary: 50000},
@@ -2218,13 +2263,9 @@ let stuff = [
  
 
 
-let scoreSalary = stuff.reduce((score, el)=>score+=el.salary, 0)
-console.log(scoreSalary);
+let scoreSalary = stuff.reduce((score, el)=>(score+=el.salary), 0)
+console.log(scoreSalary*1.1);
 
 
 
-
-
-
- 
  
