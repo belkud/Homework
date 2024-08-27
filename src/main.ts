@@ -2267,5 +2267,46 @@ let scoreSalary = stuff.reduce((score, el)=>(score+=el.salary), 0)
 console.log(scoreSalary*1.1);
 
 
+let buttons = document.querySelectorAll('#btn') 
+buttons.forEach(el=>{
+    el.addEventListener('click', (event)=> {
+        const btn = event.target as HTMLDivElement
+        const btn2 = btn.dataset.set
+        if (btn2==1) {
+            console.log('Вы нажали кнопку 1');   
+            btn.style.backgroundColor = 'green'
+        } else if(btn2==2){
+        console.log('Вы нажали кнопку 2');   
+        btn.style.backgroundColor = 'yellow'
+    } else {
+        console.log('Вы нажали кнопку 3'); 
+        btn.style.backgroundColor = 'red'
+    }
+    setTimeout(() => {
+        btn.style.backgroundColor = 'rgb(9, 132, 132)'
+    }, 500);
+})
+})
 
- 
+
+
+
+
+
+
+// stars.addEventListener('click', (event) => {
+//     const pressStar = event.target as HTMLDivElement
+
+//     if (pressStar.dataset.set) {
+//         let x = +pressStar.dataset.set
+//         for (let i of stars.children) {
+//             const el = i as HTMLDivElement
+//             if (el.dataset.set && +el.dataset.set <= x) {
+//                 el.style.color = 'white'
+//             } else {
+//                 el.style.color = 'black'
+//             }
+//         }
+//     }
+
+// })

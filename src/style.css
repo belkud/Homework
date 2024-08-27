@@ -94,22 +94,17 @@ body {
 
 
 
-/* #digitals{
-  margin: 50px;
-  color: greenyellow;
-}
-#digitals>div{
-  padding: 10px;
-  background: rgb(119, 117, 117);
-  border: 1px solid white;
-}
-#digitalColor {
-  background-color:black;
+#btn>button {
   width: 100px;
-  text-align: center;
+  margin: 15px;
+  background-color: rgb(9, 132, 132);
+  color: white;
   padding: 5px;
+  border-radius: 5px;
 }
 
-img {
-  width: 200px;
-} */
+#btn>button:hover {
+  background-color: rgb(31, 186, 186);
+  transition: .5s;
+  
+}
