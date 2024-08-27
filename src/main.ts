@@ -2129,19 +2129,102 @@ const nameN = document.querySelector('#name') as HTMLDivElement
 
 let letterName = 'Добро пожаловать'
 
-let natashaArray = letterName.split('')
+let greetArray = letterName
 
 let timer = 0
 
 let stopInterval = setInterval(() => {
-    nameN.innerHTML +=natashaArray[timer]
+    nameN.innerHTML +=greetArray[timer]
     timer+=1
-    if (timer==16) {
+    if (timer==letterName.length) {
         clearInterval (stopInterval)
     }
     
 }, 200);
  
 
+let arrPush = [] as any
+arrPush.push(letterName + ' друг')
+console.log(arrPush);
 
 
+let namesInСycle= [
+    {name: 'Masha', age: 23},
+    {name: 'Katya', age: 27},
+    {name: 'Natasha', age: 33},
+    {name: 'Sveta', age: 36}
+]
+
+let kia = {brand: 'Kia', price:1200000, mileage:100000}
+
+//! for of для массивов
+    for (const key of namesInСycle) {
+    console.log(key.name);
+}
+
+
+//! for in для объектов
+    for (const key in kia) {
+    console.log(key, kia[key]);
+}
+
+
+
+let xyz = {
+    x:10,
+    y:12,
+    z:5
+}
+
+for (const key in xyz) {
+    console.log(key + ' =', xyz[key]);
+    
+}
+
+
+console.log(Object.values(xyz))
+console.log(Object.keys(xyz))
+
+
+
+Object.values(xyz).forEach(el=> {
+    console.log( el)
+})
+
+Object.keys(xyz).filter(el=> {
+    console.log( el)
+})
+
+
+
+
+
+
+
+
+
+Object.values({name:'Vova', age:33}).forEach (el=>{
+    console.log(el);
+    
+})
+
+let stuff = [
+    {name: 'Masha', age: 23, salary: 32000},
+    {name: 'Katya', age: 27, salary: 50000},
+    {name: 'Natasha', age: 33, salary: 80000},
+    {name: 'Sveta', age: 36, salary: 95000}
+]
+//! посчтитать общую зарплату и добавить подоходный налог в 30 процентов
+ 
+
+
+let scoreSalary = stuff.reduce((score, el)=>score+=el.salary, 0)
+console.log(scoreSalary);
+
+
+
+
+
+
+ 
+ 
