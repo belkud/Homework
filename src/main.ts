@@ -2276,6 +2276,7 @@ let stuff = [
  
 let scoreSalary = stuff.reduce((score, el)=>(score+=el.salary), 0)
 console.log(scoreSalary*1.1);
+console.log(scoreSalary*1.1);
 
 //! Проверить у всех ли сотрудников зп ниже 100 тысяч
 let cheсkSalary = stuff.every(el=> el.salary<100000) 
@@ -2297,11 +2298,8 @@ console.log(smalestSalary);
 
 
 
-
-
-
  
- //!     !!!     Методы массивов    !!!
+//!     !!!     Методы массивов    !!!
 //! .sort() - сортирует по возрастанию
 //! .splice - удаляет элементы (1 - индекс, 1 -  количество)
 //! .every - true если все элементы соответствуют 
@@ -2311,3 +2309,50 @@ console.log(smalestSalary);
 //! map - возвращает новый массив того же размера в отличие от forEach
 //! toFixed() - преобразует число в строку и округляет при необходимости
 // reduce - используются для вычисления единого значения на основе всего массива.
+
+
+
+
+let massNums = [1,2,3,4,5]
+
+let massNumsReduce = massNums.reduce((acc, el)=> acc*=el, 1)
+console.log(massNumsReduce);
+
+let massNumsMap = massNums.map(el=>{ return el+10 })
+console.log(massNumsMap);
+
+let massNumsSome = massNums.some ((el)=>el>3)
+console.log(massNumsSome);
+
+let massNumsEvery = massNums.every(el=> el>=1)
+console.log(massNumsEvery);
+
+
+
+
+// let y = Number(Math.random().toFixed(3))
+// console.log(y);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
