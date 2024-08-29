@@ -2252,9 +2252,12 @@ buttons.forEach(el=>{
         } else if(btn2==2){
         console.log('Вы нажали кнопку 2');   
         btn.style.backgroundColor = 'yellow'
-    } else {
-        console.log('Вы нажали кнопку 3'); 
+        } else if(btn2==3){
+        console.log('Вы нажали кнопку 3');   
         btn.style.backgroundColor = 'red'
+    } else {
+        console.log('Вы нажали на div'); 
+        btn.style.backgroundColor = 'gold'
     }
     setTimeout(() => {
         btn.style.backgroundColor = 'rgb(9, 132, 132)'
@@ -2298,25 +2301,88 @@ console.log(smalestSalary);
 
 
 
- 
-//!     !!!     Методы массивов    !!!
-//! .sort() - сортирует по возрастанию
-//! .splice - удаляет элементы (1 - индекс, 1 -  количество)
-//! .every - true если все элементы соответствуют 
-//! .some - true если хотя бы один элемент соответствует
 
-//! forEach - ничего не возвращает (undefined) 
-//! map - возвращает новый массив того же размера в отличие от forEach
-//! toFixed() - преобразует число в строку и округляет при необходимости
-// reduce - используются для вычисления единого значения на основе всего массива.
+
+
+
+
+
+
+let stuffs = [
+    {name: 'Katya', age: 27, salary: 50000},
+    {name: 'Natasha', age: 33, salary: 80000},
+    {name: 'Masha', age: 23, salary: 32000},
+    {name: 'Sveta', age: 36, salary: 95000},
+]
+
+//! Найти сотрудника с наибольшим количеством символов в имени
+let longestName = stuffs.map(el=>el.name.length).sort().pop()
+console.log(longestName);
+
+stuffs.map(el=>{
+    if (longestName== el.name.length) {
+        return console.log(el);
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//! Найти Катю через find
+let namess = stuffs.map(el=> {
+    return el.name})
+console.log(namess)
+
+let Kate = namess.splice(0,1)
+console.log(Kate);
+
+
+
+
+console.log('_______________________________________');
+
 
 
 
 
 let massNums = [1,2,3,4,5]
 
-let massNumsReduce = massNums.reduce((acc, el)=> acc*=el, 1)
+let massNumsReduce = massNums.reduce((acc, el)=> acc*el)
 console.log(massNumsReduce);
+
+
+let massNumsReduce2 = massNums.reduce((acc, el, index)=> {
+    acc.push(el*3)
+    return acc
+},[])
+console.log(massNumsReduce2);
+
+
 
 let massNumsMap = massNums.map(el=>{ return el+10 })
 console.log(massNumsMap);
@@ -2327,32 +2393,65 @@ console.log(massNumsSome);
 let massNumsEvery = massNums.every(el=> el>=1)
 console.log(massNumsEvery);
 
+let massFind = massNums.find(el=>el==2)
+console.log(massFind);
 
+let massFindIndex = massNums.findIndex(el=>el==2)
+console.log(massFindIndex);
 
+console.log(massNums);
 
-// let y = Number(Math.random().toFixed(3))
-// console.log(y);
+massNums.push(17)
+console.log(massNums);
 
+massNums.unshift(10, 12)
+console.log(massNums);
 
+massNums.pop()
+console.log(massNums);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+massNums.shift()
+console.log(massNums);
 
 
 
 
 
 
+//! возвести элементы в степень через reduce
+
+
+massNums.shift()
+
+let powerOfNumber = massNums.reduce((acc,el)=> {
+    acc.push(el*el)
+    return acc
+},[])
+console.log(powerOfNumber);
+
+
+
+
+
+
+//! или {} вместе с return 
+//! или опускаем 
+
+
+
+
+ 
+//!     !!!     Методы массивов    !!!
+//! .sort() - сортирует по возрастанию
+//! .reverse() - сортирует в обратном порядке
+//! .splice - удаляет элементы (1 - индекс, 1 -  количество)
+//! .every - true если все элементы соответствуют 
+//! .some - true если хотя бы один элемент соответствует
+
+//! forEach - ничего не возвращает (undefined) 
+//! map - возвращает новый массив того же размера в отличие от forEach
+//! toFixed() - преобразует число в строку и округляет при необходимости
+//! push - вставляет элементы в конец массива
+//! reduce - перебор элеметов массива и возврат новой структуры данных
+//! unshift - вставляет элементы вначало массива
+//! shift - удаляет элемент из начала массива
