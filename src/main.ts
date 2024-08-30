@@ -2354,12 +2354,8 @@ stuffs.map(el=>{
 
 
 //! Найти Катю через find
-let namess = stuffs.map(el=> {
-    return el.name})
-console.log(namess)
-
-let Kate = namess.splice(0,1)
-console.log(Kate);
+let namess = stuffs.find(el=>el.name=='Katya')
+console.log(namess.name)
 
 
 
@@ -2455,3 +2451,20 @@ console.log(powerOfNumber);
 //! reduce - перебор элеметов массива и возврат новой структуры данных
 //! unshift - вставляет элементы вначало массива
 //! shift - удаляет элемент из начала массива
+
+
+
+// Задача 1. Определить сколько раз каждый элемент встречается в массиве.
+// Имеется исходный массив:
+
+const fruits = ['kiwi', 'apple', 'kiwi', 'orange', 'kiwi', 'apple'];
+
+let ac = [] as any
+fruits.forEach(el=> {
+    if (!ac[el]) {
+        ac[el]=1
+    } else {
+        ac[el]++
+    }
+})
+console.log(ac);  
