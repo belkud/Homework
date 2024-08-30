@@ -2459,12 +2459,19 @@ console.log(powerOfNumber);
 
 const fruits = ['kiwi', 'apple', 'kiwi', 'orange', 'kiwi', 'apple'];
 
-let ac = [] as any
-fruits.forEach(el=> {
-    if (!ac[el]) {
-        ac[el]=1
+
+
+let scoreFruits = [] as any
+
+fruits.map ((el)=> {
+    if (!scoreFruits[el]) {
+        scoreFruits[el]=1
+        return scoreFruits[el]
     } else {
-        ac[el]++
+        scoreFruits[el]++
+        return scoreFruits[el]
     }
 })
-console.log(ac);  
+console.log(scoreFruits);
+
+ 
