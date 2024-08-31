@@ -2454,6 +2454,35 @@ console.log(powerOfNumber);
 
 
 
+
+// рест массива
+const cities = ['Sochi', 'Moscow','Peter']
+let [first, second, third] = cities
+console.log(first);
+
+
+
+
+
+let day = {
+  понед: 'первый',
+  вторник: 'второй',
+  среда: 'третий'
+ }
+ let {понед, вторник, среда} = day
+ console.log(понед, среда);
+ 
+
+
+
+
+
+
+
+
+
+
+
 // Задача 1. Определить сколько раз каждый элемент встречается в массиве.
 // Имеется исходный массив:
 
@@ -2474,4 +2503,24 @@ fruits.map ((el)=> {
 })
 console.log(scoreFruits);
 
- 
+
+
+// посчитать количество букв
+let rest ='архитектурный стиль для сложных интернет сервисов'
+let scoreRest = rest.split('')
+
+let scoreLetters = [] as any
+
+scoreRest.map((el)=> {
+    if(!scoreLetters[el]){
+        scoreLetters[el]=1
+        return scoreLetters[el]
+    } else {
+        scoreLetters[el]+=1
+        return scoreLetters[el]
+    }
+})
+console.log(scoreLetters);
+
+
+
