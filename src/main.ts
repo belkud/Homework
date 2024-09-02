@@ -2429,32 +2429,6 @@ console.log(powerOfNumber);
 
 
 
-
-//! или {} вместе с return 
-//! или опускаем 
-
-
-
-
- 
-//!     !!!     Методы массивов    !!!
-//! .sort() - сортирует по возрастанию
-//! .reverse() - сортирует в обратном порядке
-//! .splice - удаляет элементы (1 - индекс, 1 -  количество)
-//! .every - true если все элементы соответствуют 
-//! .some - true если хотя бы один элемент соответствует
-
-//! forEach - ничего не возвращает (undefined) 
-//! map - возвращает новый массив того же размера в отличие от forEach
-//! toFixed() - преобразует число в строку и округляет при необходимости
-//! push - вставляет элементы в конец массива
-//! reduce - перебор элеметов массива и возврат новой структуры данных
-//! unshift - вставляет элементы вначало массива
-//! shift - удаляет элемент из начала массива
-
-
-
-
 // рест массива
 const cities = ['Sochi', 'Moscow','Peter']
 let [first, second, third] = cities
@@ -2483,44 +2457,108 @@ let day = {
 
 
 
-// Задача 1. Определить сколько раз каждый элемент встречается в массиве.
-// Имеется исходный массив:
-
-const fruits = ['kiwi', 'apple', 'kiwi', 'orange', 'kiwi', 'apple'];
-
-
-
-let scoreFruits = [] as any
-
-fruits.map ((el)=> {
-    if (!scoreFruits[el]) {
-        scoreFruits[el]=1
-        return scoreFruits[el]
-    } else {
-        scoreFruits[el]++
-        return scoreFruits[el]
-    }
-})
-console.log(scoreFruits);
-
-
-
-// посчитать количество букв
-let rest ='архитектурный стиль для сложных интернет сервисов'
-let scoreRest = rest.split('')
-
-let scoreLetters = [] as any
-
-scoreRest.map((el)=> {
-    if(!scoreLetters[el]){
-        scoreLetters[el]=1
-        return scoreLetters[el]
-    } else {
-        scoreLetters[el]+=1
-        return scoreLetters[el]
-    }
-})
-console.log(scoreLetters);
+ 
+ 
+ // посчитать количество букв
+ let rest ='архитектурный стиль для сложных интернет сервисов'
+ let scoreRest = rest.split('')
+ 
+ let scoreLetters = [] as any
+ 
+ scoreRest.map((el)=> {
+     if(!scoreLetters[el]){
+         scoreLetters[el]=1
+         return scoreLetters[el]
+        } else {
+            scoreLetters[el]+=1
+            return scoreLetters[el]
+        }
+    })
+    console.log(scoreLetters);
+    
+    
+    
+    
+    const fruits = ['kiwi', 'apple', 'kiwi', 'orange', 'kiwi', 'apple'];
+    
+    // Задача 1. Создать массив который содержит только уникальные 
+    // значения исходного массива.
+    
+    let uniqFruits = {} as any
+        fruits.filter(el=>{
+            if(uniqFruits[el]=1){
+                 return uniqFruits[el]
+                
+            }
+        })    
+    console.log(uniqFruits);
+    
 
 
 
+    
+    
+    
+    
+    // Задача 2. Определить сколько раз каждый элемент встречается в массиве.
+    // Имеется исходный массив:
+    
+    let scoreFruits = [] as any
+    fruits.map ((el)=> {
+        if (!scoreFruits[el]) {
+            scoreFruits[el]=1
+            return scoreFruits[el]
+        } else {
+            scoreFruits[el]++
+            return scoreFruits[el]
+        }
+    })
+    console.log(scoreFruits);
+
+    
+
+
+    //! stringify - из объекта в строку
+
+    const apples = ['kiwi', 'apple', 'kiwi', 'orange', 'kiwi', 'apple'];
+    console.log(JSON.stringify(apples))
+        console.log(apples);
+
+
+
+
+
+
+
+//! или {} вместе с return 
+//! или опускаем 
+
+
+
+
+
+ 
+//!     !!!     Методы массивов    !!!
+//! .sort() - сортирует по возрастанию
+//! .reverse() - сортирует в обратном порядке
+//! .splice - удаляет элементы (1 - индекс, 1 -  количество)
+//! .every - true если все элементы соответствуют 
+//! .some - true если хотя бы один элемент соответствует
+
+//! forEach - ничего не возвращает (undefined) 
+//! map - возвращает новый массив того же размера в отличие от forEach
+//! toFixed() - преобразует число в строку и округляет при необходимости
+//! push - вставляет элементы в конец массива
+//! reduce - перебор элеметов массива и возврат новой структуры данных
+//! unshift - вставляет элементы вначало массива
+//! shift - удаляет элемент из начала массива
+
+
+
+ 
+// let arr = Array(5).fill(1)
+// console.log(arr)
+
+
+let arr = Array(3).fill(0).map(() => {return Array(3).fill(0)});
+console.log (...arr)
