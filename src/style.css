@@ -55,7 +55,7 @@ body {
 }
 
 
-#createDiv {
+#createDiv, #deleteDiv {
   background:linear-gradient(45deg, blue, red);
   width: 120px;
   height: 30px;
@@ -64,6 +64,9 @@ body {
   align-items: center;
   color: white;
   margin: 20px;
+}
+#deleteDiv {
+  background: black;
 }
 
 #settings {

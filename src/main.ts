@@ -1614,24 +1614,26 @@ stud(student)
                             
                             
 const button = document.querySelector('#createDiv') as HTMLDivElement
+const button2 = document.querySelector('#deleteDiv') as HTMLDivElement
 const container = document.querySelector('#containDiv') as HTMLDivElement
 
-let num = 0
-
+let sum = 0
 button.addEventListener('click', ()=> {
-    
-    let x = Math.random().toFixed(2)
-    
-    let newDiv = `<div id="settings">${num+=1} ${x}</div>`
+    sum++
+    // let x = Math.random().toFixed(2)
+    let newDiv = `<div id="settings"> ${sum}</div>`
     container.innerHTML += newDiv
-    
-    // setTimeout(() => {
-        //     container.style.background = 'green'
-        //     container.innerHTML += newDiv
-        
-        // }, 3000);
-    })
-    
+
+})
+
+
+button2.addEventListener('click',()=> {
+    container.childNodes[0].remove()
+})  
+
+
+
+
     let accAge = 0
     
     const workers = [
@@ -2645,18 +2647,21 @@ console.log(colorNumber);
 
 let temp = 15
 switch (temp) {
-    case 15:
-        console.log('Прохладно');
-        break;
-        case 20:
-            console.log('Приемлемо');
-            break;
-            case 25:
-                console.log('Тепло');
-                break;
-                default:
-                    console.log('Данные вне диапазона');        
-                }
+  case 15:
+    console.log('Прохладно');
+  break;
+  
+  case 20:
+    console.log('Приемлемо');
+  break;
+  
+  case 25:
+    console.log('Тепло');
+  break;
+  
+  default:
+    console.log('Данные вне диапазона');        
+}
                 
                 
 const newArr3 = [1, 8, 2, 2, 4, 5, 6, 6]
@@ -2664,8 +2669,31 @@ console.log(newArr3[0]);
 
 newArr3[0]==1 ? console.log('верно') : console.log('Неверно');
 
-console.log(Date().split(' ').splice(1,1));
 
-textInTest.innerHTML +=' ' + Date().split(' ').splice(1,1)
+textInTest.innerHTML += ' ' + Date().split(' ').splice(1,1)
 
+const arr5 = ['red', 'yellow', 'white', 'green']
+let [an, bn, cn, dn] = arr5
+
+
+
+
+
+
+let mounth = {
+    январь: 'первый',
+    февраль: 'второй',
+    март: 'третий'
+}
+
+let {январь, февраль, март} = mounth
+console.log(март);
+
+
+// посчитать сумму первых 10-ти чисел
+let u = 0
+for (let i = 0; i <= 10; i++) {
+        u+=i    
+}
+console.log(u);
 
