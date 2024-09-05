@@ -2562,3 +2562,110 @@ let day = {
 
 let arr = Array(3).fill(0).map(() => {return Array(3).fill(0)});
 console.log (...arr)
+
+
+
+const newArr = [1, 8, 2, 2, 4, 5, 6, 6]
+
+// общая сумма элементов
+const summNewArr = newArr.reduce((acc, el)=>acc+=el)
+console.log(summNewArr);
+
+// или
+let newArrAcc = 0
+for (let i = 0; i < newArr.length; i++) {
+    newArrAcc+=newArr[i]
+}
+console.log(newArrAcc);
+
+
+// наибольшее число в массиве
+let max = newArr[5]
+for (let i = 0; i < newArr.length; i++) {
+    if (newArr[i]>max) {
+        max=newArr[i]
+    }
+}
+console.log(max);
+
+// или
+console.log(Math.max(...newArr));
+
+// найти четвертое число в массиве
+
+const fourthNumber = newArr.sort().splice(newArr.length-4, 1)
+console.log(fourthNumber);
+
+const pushMaxNumber = []
+pushMaxNumber.push(Math.max(...newArr))
+console.log(pushMaxNumber);
+
+
+// проверка слова на палиндром
+let palindrom = 'а роза упала на лапу азора'
+console.log(palindrom); 
+
+
+
+let checkPalindrom = palindrom.split('').reverse().join('').split(' ').join('') 
+// console.log(checkPalindrom);
+
+if (palindrom.split(' ').join('')==checkPalindrom) {
+    console.log('Данная фраза палиндром');
+} else {
+    console.log('Это не палиндром');
+    
+}
+
+
+const newArr2 = [1, 8, 2, 2, 4, 5, 6, 6]
+
+const maxNum = newArr2.reduce((acc, el)=>Math.max(acc, el),1 )
+console.log(maxNum);
+
+
+const arr3 = ['red', 'yellow', 'white', 'green', 'red', 'yellow', 'red', 'yellow']
+console.log(arr3);
+
+let colorNumber = [] as any
+
+let arr4 = arr3.forEach(el=> {    
+    if(!colorNumber[el]) {
+        colorNumber[el]=true
+    }
+})
+
+console.log(arr4);
+
+
+
+
+console.log(colorNumber);
+
+
+let temp = 15
+switch (temp) {
+    case 15:
+        console.log('Прохладно');
+        break;
+        case 20:
+            console.log('Приемлемо');
+            break;
+            case 25:
+                console.log('Тепло');
+                break;
+                default:
+                    console.log('Данные вне диапазона');        
+                }
+                
+                
+const newArr3 = [1, 8, 2, 2, 4, 5, 6, 6]
+console.log(newArr3[0]);
+
+newArr3[0]==1 ? console.log('верно') : console.log('Неверно');
+
+console.log(Date().split(' ').splice(1,1));
+
+textInTest.innerHTML +=' ' + Date().split(' ').splice(1,1)
+
+

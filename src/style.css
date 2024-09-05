@@ -115,7 +115,9 @@ body {
   padding: 3px;
   font-size: 1.2em;
   margin: 5px -10px;
-  animation: adver 10s linear infinite;
+  animation: adver 8s linear;
+  animation-iteration-count:1;
+  margin-left: -650px;
 }
 
 @keyframes adver {
@@ -123,7 +125,7 @@ body {
     margin-left: 250px;
   }
   100% {
-    margin-left: -580px;
+    /* margin-left: -580px; */
     
   }
 }
@@ -140,4 +142,9 @@ body {
   white-space: nowrap;
   font-family: sans-serif;
   
+  
 }
+
+
+
+
