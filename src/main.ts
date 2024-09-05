@@ -2683,17 +2683,44 @@ let [an, bn, cn, dn] = arr5
 let mounth = {
     январь: 'первый',
     февраль: 'второй',
-    март: 'третий'
+    март: 'третий',
+    апрель: 'четвёртый',
+    май: 'пятый',
+    июнь: 'шестой',
+    июль: 'седьмой',
 }
+
+
+let oddMounth = Object.keys(mounth)
+
+for (let i = 0; i < oddMounth.length; i++) {
+     if (i%2==0) {
+        console.log(oddMounth[i]);        
+     }
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let {январь, февраль, март} = mounth
-console.log(март);
 
 
-// посчитать сумму первых 10-ти чисел
-let u = 0
-for (let i = 0; i <= 10; i++) {
-        u+=i    
-}
-console.log(u);
+
 
