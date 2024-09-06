@@ -7,4 +7,9 @@ const nam = ()=> {
     console.log('Vladimir');
 }
 
-export default nam 
+const surname = ()=> {
+    console.log('Kudarenko');
+}
+
+export   {nam, surname}
+// export default surname

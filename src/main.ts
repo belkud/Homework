@@ -2725,11 +2725,28 @@ dateDate2.push(Object.values(mounth).concat(Object.values(days)))
 console.log(...dateDate2);
 console.log(typeof dateDate2);
 
+import {nam,surname} from "./name.ts";
+nam()
+surname()
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+import loc from './locations.ts'
+
+console.log(loc);
 
 
 
