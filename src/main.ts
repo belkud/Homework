@@ -2725,11 +2725,23 @@ dateDate2.push(Object.values(mounth).concat(Object.values(days)))
 console.log(...dateDate2);
 console.log(typeof dateDate2);
 
-import {nam,surname} from "./name.ts";
+import {nam,surname, mounthMounth, multNumbers, objObj } from "./name.ts";
 nam()
 surname()
+console.table(mounthMounth);
 
 
+multNumbers(7,9)
+
+objObj
+let splObj = objObj.ответ.name.split('').map(el=> {
+    
+    if (el=='u') {
+        el = 'UUU'
+    }
+    return el
+})
+console.log(splObj.join(''));
 
 
 
