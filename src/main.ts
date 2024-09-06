@@ -2679,6 +2679,22 @@ let [an, bn, cn, dn] = arr5
 
 
 
+// Найти нечётные месяцы
+// let oddMounzth = Object.keys(mounth)
+
+// for (let i = 0; i < oddMounth.length; i++) {
+//      if (i%2==0) {
+//         console.log(oddMounth[i]);        
+//      }
+// }
+
+
+// for (const key in mounth) {
+    
+//     console.log(key, mounth[key]);
+    
+// }
+
 
 let mounth = {
     январь: 'первый',
@@ -2690,36 +2706,30 @@ let mounth = {
     июль: 'седьмой',
 }
 
-
-let oddMounth = Object.keys(mounth)
-
-for (let i = 0; i < oddMounth.length; i++) {
-     if (i%2==0) {
-        console.log(oddMounth[i]);        
-     }
+let days = {
+    день: 'воскресенье'
 }
- 
+console.log(days.день);
+
+
+let dateDate = {
+    ...mounth,
+    ...days
+}
+console.log(dateDate);
+
+
+
+let dateDate2 = [] as any
+dateDate2.push(Object.values(mounth).concat(Object.values(days)))
+console.log(...dateDate2);
+console.log(typeof dateDate2);
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-let {январь, февраль, март} = mounth
 
 
 
