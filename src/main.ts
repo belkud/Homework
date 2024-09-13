@@ -1,6 +1,8 @@
 import './style.css'
 
 
+
+
 let x1 = Date.now()
 
 
@@ -154,9 +156,6 @@ console.log(formData1.get('name'))
 // }
 
 // learnJS()
-
-
-
 
 
 
