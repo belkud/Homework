@@ -2760,5 +2760,75 @@ import loc from './locations.ts'
 console.log(loc);
 
 
+class Comment {
+    constructor(text) {
+        this.text = text
+        this.votesQty = 0
+
+    }
+
+    upvote(){
+        this.votesQty+=1
+    }
+
+
+}
+
+const firstComment = new Comment('first comment')
+
+firstComment.upvote()
+console.log(firstComment);
+
+
+
+
+
+
+
+
+
+ 
+
+class Modem {
+    constructor (link) {
+        this.link = link
+        this.text = text
+    }
+    action () {
+        console.log('Подключено');
+        
+    }
+}
+const firstModem = new Modem('first modem')
+
+console.log(firstModem);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
