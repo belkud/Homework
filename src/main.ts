@@ -2818,6 +2818,27 @@ console.log(firstModem);
 
 
 
+class Rocket {
+    constructor(name) {
+        this.name =name
+        this.oil= 'oil'
+    }
+    launch(){
+        console.log('Запуск');
+    }
+    static location(){
+        console.log('слово static не наследуется');
+    }
+}
+
+const xyy = new Rocket('первая ракета')
+const xyy2 = new Rocket('вторая ракета')
+
+console.log(xyy.hasOwnProperty('oil'))
+console.log(xyy.name);
+
+console.log(xyy.launch()==xyy2.launch());
+Rocket.location()
 
 
 
@@ -2829,6 +2850,70 @@ console.log(firstModem);
 
 
 
+
+
+
+
+
+
+
+class Texnics{
+    constructor(name){
+        this.name = name
+        this.country = 'Rus'
+    }
+}
+
+// console.log(Texnics.hasOwnProperty('length'));
+
+
+
+let computer = new Texnics ('ноутбук')
+computer.color = 'white'
+console.log(computer.hasOwnProperty('color'));
+// console.log(Texnics);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Pets {
+    constructor(name){
+        this.name = name
+        this.color = 'white'
+        this.habbit = 'eat'
+    }
+
+    
+    feed() {
+        console.log('Кормёжка ' + this.name);
+    }
+}
+
+const catty = new Pets ('Кошка Кэтти') 
+const doggy = new Pets ('Собачка Чип') 
+
+catty.feedCheck = 'Выполнено'
+
+console.log(catty);
+doggy.feed()
+catty.feed()
 
 
 
