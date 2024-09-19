@@ -2848,59 +2848,20 @@ Rocket.location()
 
 
 
-
-
-
-
-
-
-
-
-
-class Texnics{
-    constructor(name){
-        this.name = name
-        this.country = 'Rus'
-    }
-}
-
-// console.log(Texnics.hasOwnProperty('length'));
-
-
-
-let computer = new Texnics ('ноутбук')
-computer.color = 'white'
-console.log(computer.hasOwnProperty('color'));
-// console.log(Texnics);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Pets {
     constructor(name){
         this.name = name
         this.color = 'white'
         this.habbit = 'eat'
     }
+    static funct() {
+        console.log('статика');
+        
+    }
+    static weight(potato, meat) {
+        return console.log(potato + meat + ' грамм')
+    }
 
-    
     feed() {
         console.log('Кормёжка ' + this.name);
     }
@@ -2914,6 +2875,123 @@ catty.feedCheck = 'Выполнено'
 console.log(catty);
 doggy.feed()
 catty.feed()
+
+console.log(doggy);
+Pets.funct()
+Pets.weight(200, 300)
+
+console.log(doggy.hasOwnProperty('color'));
+
+console.log('_______________');
+
+
+//! Расширение класса
+class extraPet extends Pets {
+    action() {
+        console.log('Погладить животное');
+    }
+}
+console.log(extraPet.prototype.action());
+
+console.log('_______________');
+
+
+
+let pers = [
+    { name: 'Кошка Кэтти', salary: 85000},
+    { name: 'Собачка Чип', salary: 15000},
+    { name: 'Котик мяу', salary: 65000},
+    { name: 'Собачка Гав', salary: 55000},
+]
+
+
+
+
+//! посчитать общую, вывести мин, макс и среднюю
+
+let persSumm2 = pers.reduce((acc, el)=>acc+= el.salary, 0)
+console.log(persSumm2);
+
+let minSalary = [] as any
+pers.filter(el=> {
+    minSalary.push(el.salary)    
+})
+console.log(minSalary.sort().slice(0,1));
+
+
+
+let minSalary2 = pers.map(el=>{
+    return el.salary
+})
+console.log(Math.min (...minSalary2));
+
+// const youngestPerson = workers.map(el=> {
+//     return el.age
+// }) 
+// console.log(Math.min(...youngestPerson));
+
+
+console.log(...pers);
+
+
+
+console.log(minSalary.sort().slice(minSalary.length-1));
+
+let accSalary = 0
+pers.map(el=>{
+    accSalary+=el.salary
+    return accSalary
+})
+console.log(`средняя зарплата животных = ${accSalary/4}`);
+
+
+// let persSumm = []
+// pers.forEach(el=> {
+//     persSumm.push(el.salary)
+// })
+// console.log(persSumm);
+
+let persSumm = 0
+pers.forEach(el=> {
+    persSumm+= el.salary
+})
+// console.log(persSumm);
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Message {
+    constructor(type){
+        this.type = type
+        this.media = type
+        this.memory = '5 megabate'
+    }
+    write(){console.log('Вы напечатали сообщение')}
+    static send() {return + 'Вы отправили сообщение'}
+}
+
+const audioMessage = new Message ('аудиосообщение')
+audioMessage.write()
+
+console.log(audioMessage.hasOwnProperty('memory'));
+
+
+
+
+// console.log(Message.send());
+
+
+
+
 
 
 
