@@ -2983,6 +2983,7 @@ const audioMessage = new Message ('аудиосообщение')
 audioMessage.write()
 
 console.log(audioMessage.hasOwnProperty('memory'));
+console.log(Message.hasOwnProperty('write'));
 
 
 
@@ -2991,7 +2992,26 @@ console.log(audioMessage.hasOwnProperty('memory'));
 
 
 
+class Planet {
+    constructor(name){
+        this.name = name
+        this.system = 'Solar system'
+        this.galaxy = 'MilkyWay'
+    }
+    action(){
+        console.log(this.name + ' has rotation');
+    }
+}
 
+const Earth = new Planet('Земля')
+console.log(Earth);
+
+
+
+
+
+const jjj = [ 2, 4, 6, 5, 9]
+console.log(jjj);
 
 
 
