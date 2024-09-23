@@ -2538,21 +2538,6 @@ let day = {
 
 
 
- 
-//!     !!!     Методы массивов    !!!
-//! .sort() - сортирует по возрастанию
-//! .reverse() - сортирует в обратном порядке
-//! .splice - удаляет элементы (1 - индекс, 1 -  количество)
-//! .every - true если все элементы соответствуют 
-//! .some - true если хотя бы один элемент соответствует
-
-//! forEach - ничего не возвращает (undefined) 
-//! map - возвращает новый массив того же размера в отличие от forEach
-//! toFixed() - преобразует число в строку и округляет при необходимости
-//! push - вставляет элементы в конец массива
-//! reduce - перебор элеметов массива и возврат новой структуры данных
-//! unshift - вставляет элементы вначало массива
-//! shift - удаляет элемент из начала массива
 
 
 
@@ -2771,7 +2756,7 @@ class Comment {
         this.votesQty+=1
     }
 
-
+    
 }
 
 const firstComment = new Comment('first comment')
@@ -3013,5 +2998,40 @@ console.log(Earth);
 const jjj = [ 2, 4, 6, 5, 9]
 console.log(jjj);
 
+const jjjPush = []
+jjj.forEach (el=> {
+    if (el>5) {
+        jjjPush.push(el)
+    }
+})
+
+console.log(jjjPush);
 
 
+
+//!     !!!     Методы массивов    !!!
+//! .sort() - сортирует по возрастанию
+//! .reverse() - сортирует в обратном порядке
+//! .splice - удаляет элементы (1 - индекс, 1 -  количество)
+//! .every - true если все элементы соответствуют 
+//! .some - true если хотя бы один элемент соответствует
+
+//! forEach - ничего не возвращает (undefined) 
+//! map - возвращает новый массив того же размера в отличие от forEach
+//! toFixed() - преобразует число в строку и округляет при необходимости
+//! push - вставляет элементы в конец массива
+//! reduce - перебор элеметов массива и возврат новой структуры данных
+//! unshift - вставляет элементы вначало массива
+//! shift - удаляет элемент из начала массива
+
+
+let translate = 'border-left-width'
+
+let newArray = translate.split('-').map(el=> {
+    return el.slice(0,1).toUpperCase() + el.slice(1);
+})
+console.log(newArray);
+
+
+let newWord = JSON.stringify(newArray).split('","').join('')
+console.log(newWord.slice(2,3).toLowerCase()+ newWord.slice(3, newWord.length-2));
