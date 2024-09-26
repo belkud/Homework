@@ -3035,3 +3035,68 @@ console.log(newArray);
 
 let newWord = JSON.stringify(newArray).split('","').join('')
 console.log(newWord.slice(2,3).toLowerCase()+ newWord.slice(3, newWord.length-2));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const world = 'world'
+console.log(typeof world);
+
+const moon = JSON.stringify(world)
+console.log(typeof moon);
+
+
+
+const promise = new Promise((resolve, reject)=> {
+
+})
+console.log(promise);
+
+
+
+let as = 8
+console.log(as);
+
+let bs = new Promise((resolve,reject)=>{
+    setTimeout(() => {
+        let as =99
+        console.log(as);
+    }, 2000);
+})
+bs.then(()=> {
+    console.log(as);
+    
+})
+
+
+let prom = new Promise((resolve, reject)=> {
+    setTimeout(()=> {
+            resolve('Выполнено')
+    }, 2000)
+})
+console.log(prom);
+
+// prom.then(onFulfilled, onRejected) 
+
+
+
+
