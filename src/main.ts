@@ -3044,20 +3044,6 @@ console.log(newWord.slice(2,3).toLowerCase()+ newWord.slice(3, newWord.length-2)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const world = 'world'
 console.log(typeof world);
 
@@ -3073,30 +3059,134 @@ console.log(promise);
 
 
 
-let as = 8
-console.log(as);
+// let as = 8
+// console.log(as);
 
-let bs = new Promise((resolve,reject)=>{
-    setTimeout(() => {
-        let as =99
-        console.log(as);
-    }, 2000);
-})
-bs.then(()=> {
-    console.log(as);
+// let bs = new Promise((resolve,reject)=>{
+//     setTimeout(() => {
+//         let as =99
+//         console.log(as);
+//     }, 2000);
+// })
+// bs.then(()=> {
+//     console.log(as);
     
+// })
+
+
+// let prom = new Promise((resolve, reject)=> {
+//     setTimeout(()=> {
+//             resolve('Выполнено')
+//     }, 2000)
+// })
+// console.log(prom);
+
+// // prom.then(onFulfilled, onRejected) 
+
+// console.log('___________');
+
+
+// let catchError = new Promise((resolve,reject)=>{
+//     // throw new Error("Ошибка");
+//     setTimeout(()=>{
+//         resolve('обработана')
+//     },1000)
+
+//     // reject будет проигнорирован
+//     setTimeout(()=>{
+//         reject('произошла ошибка')
+//     },2000)
+// })
+
+// console.log(catchError.catch())
+
+// catchError.then(result=>console.log('выполнено успешно, '+ result))
+
+
+// console.log(catchError);
+
+
+
+
+
+
+
+
+// let res = new Promise((resolve, reject)=> {
+//     setTimeout(() => {
+//         resolve('обработано')
+//     }, 1000);
+// })
+// res.then(el=>console.log('выполнено ' + el))
+
+// console.log(res);
+
+
+
+
+
+
+// const f = new Promise((resolve,reject)=> {
+//     resolve ('повторное выполнение')
+//     reject ('повторное НЕ выполнение')
+// })
+
+// console.log(f);
+
+// f.then((el)=>{
+//     console.log(el+ ' hhh');
+// })
+// .catch((el)=> {
+//     console.log(el + ' НЕ выполнилось');    
+// })
+
+
+// let checkProm = new Promise((resolve,reject)=> {
+//     resolve('успешно')
+//     reject ('не выполнено')
+// })
+
+// checkProm.then(el=>{
+//     console.log(el)
+// })
+// .catch(el=> {
+//     console.log(el);
+// })
+
+
+
+//! 1 пример
+// const asyncFn = async ()=> {
+//         return 'success'
+// }
+
+// asyncFn()
+//     .then(el=> console.log(el))
+
+
+//! найти наибольше число
+let massive = [
+    [1,2,3],
+    [7,2,9],
+    [8,4,6],
+]
+console.log(...massive);
+console.log('__________');
+
+
+let numms = [] as any
+
+massive.forEach(el=> {
+    numms.push(Math.max(...el))    
 })
 
+console.log(numms);
+console.log(Math.max(...numms));
 
-let prom = new Promise((resolve, reject)=> {
-    setTimeout(()=> {
-            resolve('Выполнено')
-    }, 2000)
-})
-console.log(prom);
-
-// prom.then(onFulfilled, onRejected) 
-
-
+let person10 = {
+    name: 'John',
+    age: 31,
+    city: 'Sochi'
+}
 
 
