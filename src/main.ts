@@ -3186,7 +3186,56 @@ console.log(Math.max(...numms));
 let person10 = {
     name: 'John',
     age: 31,
-    city: 'Sochi'
+    'Russian Federation': 'country'
 }
+
+
+// console.log(person10==person11);
+
+// person10.job = true
+// console.log(person10);
+
+// delete person10.age
+// console.log(person10);
+
+// person10.name = 'Dima'
+// console.log(person10['name']);
+// console.log(person10.name);
+// console.log(person10['name']==person10.name)
+
+
+// console.log(person10['Russian Federation'])
+
+let person11 = {
+    name: 'John',
+    age: 31,
+    'Russian Federation': 'country'
+}
+console.log(person11);
+
+// let y = prompt ('что вы хотите узнать о' + JSON.stringify(person11),'Введите данные')
+    
+// console.log(person11[y]);
+
+// Object.keys(person11).forEach(el=> {
+//     if(y=='name' || y=='age' || y=='Russian Federation') {
+//         console.log(person11[y])
+        
+//     }else {
+//         console.log('данные некорректны');
+        
+//     }
+    
+// })
+
+// let writeFruitss = prompt('введите данные','apple')
+
+// let fruitss = {
+//     [writeFruitss]: 5,
+// }
+
+// console.log(fruitss.apple);
+
+
 
 
