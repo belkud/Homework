@@ -4,7 +4,7 @@ body {
   /* place-items: center; */
   /* min-width: 320px; */
   /* min-height: 100vh; */
-  background-color: lightgray;
+  background-color: rgb(178, 175, 175);
 }
 
 
@@ -63,7 +63,7 @@ font-family: cursive;
 #diagram {
   display: flex;
   height: 200px !important;
-  background-color: greenyellow !important;
+  background-color: rgb(127, 193, 28) !important;
   align-items: flex-end;
 }
 #diagram>div {
