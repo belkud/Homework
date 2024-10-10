@@ -3242,10 +3242,7 @@ console.log(person11);
 // 1. Написать функцию, которая принимает строку и выводит 
 // статистику о ней: количество букв, количество цифр и 
 // количество других знаков.
-
-
-console.log('34534');
-
+ 
 function showSymbols(str) {
     str = str.toLowerCase() // переводит буквы в нижний регистр
     let res= {
@@ -3267,18 +3264,18 @@ function showSymbols(str) {
             console.log(el);
         }
     }
-    
-
-
     console.log(res);
     return str
 }
 
-showSymbols('ВЕчерsdfgsdf YUGYUGYGU добрый 8534534 4572^%^&% @#$');
+showSymbols('ВЕчер добрый 85345344572^%^&% @#$ abcde '); //вызываем функцию иначе данные не отобразятся
 showSymbols('Привет мой друг')
-
 showSymbols('Компьютер555')
 
+
+
+// оператор if else как правило используется для диапазона значений
+// switch используется для конкретного значения
 
 // 1. Запросить у пользователя его возраст и определить, кем он 
 // является: ребенком (0–2), 
@@ -3288,20 +3285,21 @@ showSymbols('Компьютер555')
 // пенсионером (60– 90).
 // значение вне диапазона
 
-// let age = prompt('Введите возраст')
-// if (age>=0 && age<3) {  
-//     console.log('Ребенок ' + age); 
-// } else if(age>=3 && age<12) {
-//     console.log('подрастающий ребенок ' + age); 
-// } else if (age>=12 && age<19) {
-//     console.log('подросток ' + age); 
-// } else if (age>=18 && age<61) {
-//     console.log('взрослый ' + age); 
-// } else if (age>=60 && age<91 ) {
-//     console.log('пенсионер ' + age); 
-// } else {
-//     console.log('Значение вне диапазона')
-// }
+let age = Number(prompt('Введите возраст')) //в диалоговом окне вводим возраст пользователя
+if (age>=0 && age<3) {  
+    console.log('Ребенок ' + age); 
+} else if(age>=3 && age<12) {
+    console.log('подрастающий ребенок ' + age); 
+} else if (age>=12 && age<19) {
+    console.log('подросток ' + age); 
+} else if (age>=18 && age<61) {
+    console.log('взрослый ' + age); 
+} else if (age>=60 && age<91 ) {
+    console.log('пенсионер ' + age); 
+} else {
+    console.log('Значение вне диапазона')
+}
+
 
 // Если автомобиль едет со скоростью меньше 30 км/ч то скорость
 // медленная, иначе быстрая
@@ -3318,10 +3316,7 @@ if (speed<30) {
 // спецсимвол, который расположен на этой клавише (1–!, 
 // 2–@, 3–# и т. д)
 
-// оператор if else как правило используется для диапазона значений
-// switch используется для конкретного значения
-
-let symbol = 100
+let symbol = 5
  switch (symbol) {
     case 1:
         console.log('!');
@@ -3356,6 +3351,8 @@ let symbol = 100
 }
 
 
+// вывести день недели
+
 let day = 5
 switch (day) {
     case 1:
@@ -3385,9 +3382,7 @@ switch (day) {
         break;
 }
 
-
-console.log(typeof '20');
-console.log(typeof +'20');
+ 
 
 console.log('========================');
 
@@ -3427,9 +3422,7 @@ let checkPalindrom = palindrom.split('').reverse().join('')
 .split('') // метод разделяет строку по символам
 .reverse() // метод, переставляющий символы в обратном порядке (то есть наоборот)
 .join('') // метод соединяет строку по символам
-
-
-
+ 
 if (palindrom==checkPalindrom) {
     console.log('число является палиндромом' );
 } else {
