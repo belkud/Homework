@@ -2439,13 +2439,13 @@ console.log(first);
 
 
 
-let day = {
-  понед: 'первый',
-  вторник: 'второй',
-  среда: 'третий'
- }
- let {понед, вторник, среда} = day
- console.log(понед, среда);
+// let day = {
+//   понед: 'первый',
+//   вторник: 'второй',
+//   среда: 'третий'
+//  }
+//  let {понед, вторник, среда} = day
+//  console.log(понед, среда);
  
 
 
@@ -2566,13 +2566,13 @@ console.log(newArrAcc);
 
 
 // наибольшее число в массиве
-let max = newArr[5]
-for (let i = 0; i < newArr.length; i++) {
-    if (newArr[i]>max) {
-        max=newArr[i]
-    }
-}
-console.log(max);
+// let max = newArr[5]
+// for (let i = 0; i < newArr.length; i++) {
+//     if (newArr[i]>max) {
+//         max=newArr[i]
+//     }
+// }
+// console.log(max);
 
 // или
 console.log(Math.max(...newArr));
@@ -2588,20 +2588,20 @@ console.log(pushMaxNumber);
 
 
 // проверка слова на палиндром
-let palindrom = 'а роза упала на лапу азора'
-console.log(palindrom); 
+// let palindrom = 'а роза упала на лапу азора'
+// console.log(palindrom); 
 
 
 
-let checkPalindrom = palindrom.split('').reverse().join('').split(' ').join('') 
+// let checkPalindrom = palindrom.split('').reverse().join('').split(' ').join('') 
 // console.log(checkPalindrom);
 
-if (palindrom.split(' ').join('')==checkPalindrom) {
-    console.log('Данная фраза палиндром');
-} else {
-    console.log('Это не палиндром');
+// if (palindrom.split(' ').join('')==checkPalindrom) {
+//     console.log('Данная фраза палиндром');
+// } else {
+//     console.log('Это не палиндром');
     
-}
+// }
 
 
 const newArr2 = [1, 8, 2, 2, 4, 5, 6, 6]
@@ -2690,22 +2690,22 @@ let mounth = {
     июль: 'седьмой',
 }
 
-let days = {
-    день: 'воскресенье'
-}
-console.log(days.день);
+// let days = {
+//     день: 'воскресенье'
+// }
+// console.log(days.день);
 
 
-let dateDate = {
-    ...mounth,
-    ...days
-}
-console.log(dateDate);
+// let dateDate = {
+//     ...mounth,
+//     ...days
+// }
+// console.log(dateDate);
 
 
 
 let dateDate2 = [] as any
-dateDate2.push(Object.values(mounth).concat(Object.values(days)))
+// dateDate2.push(Object.values(mounth).concat(Object.values(days)))
 console.log(...dateDate2);
 console.log(typeof dateDate2);
 
@@ -3236,6 +3236,205 @@ console.log(person11);
 
 // console.log(fruitss.apple);
 
+
+
+// Объекты
+// 1. Написать функцию, которая принимает строку и выводит 
+// статистику о ней: количество букв, количество цифр и 
+// количество других знаков.
+
+
+console.log('34534');
+
+function showSymbols(str) {
+    str = str.toLowerCase() // переводит буквы в нижний регистр
+    let res= {
+        letter: 0,
+        number: 0,
+        symbol: 0,
+    }
+    for (const el of str) {
+        if (el>='а' && el<='я') {  // подсчёт кирилицы
+            res.letter++
+        }else if (el>='a' && el<='z') {  // подсчёт латиницы
+            res.letter++
+        }else if (el>='a' && el<='z') {  // подсчёт латиницы
+            res.letter++
+        }else if (el>='0' && el<='9') { // подсчёт чисел
+            res.number++  
+        } else {  // подсчёт символов
+            res.symbol++
+            console.log(el);
+        }
+    }
+    
+
+
+    console.log(res);
+    return str
+}
+
+showSymbols('ВЕчерsdfgsdf YUGYUGYGU добрый 8534534 4572^%^&% @#$');
+showSymbols('Привет мой друг')
+
+showSymbols('Компьютер555')
+
+
+// 1. Запросить у пользователя его возраст и определить, кем он 
+// является: ребенком (0–2), 
+// подрастающий ребенок(3-11), 
+// подростком (12–18), 
+// взрослым (18_60)
+// пенсионером (60– 90).
+// значение вне диапазона
+
+// let age = prompt('Введите возраст')
+// if (age>=0 && age<3) {  
+//     console.log('Ребенок ' + age); 
+// } else if(age>=3 && age<12) {
+//     console.log('подрастающий ребенок ' + age); 
+// } else if (age>=12 && age<19) {
+//     console.log('подросток ' + age); 
+// } else if (age>=18 && age<61) {
+//     console.log('взрослый ' + age); 
+// } else if (age>=60 && age<91 ) {
+//     console.log('пенсионер ' + age); 
+// } else {
+//     console.log('Значение вне диапазона')
+// }
+
+// Если автомобиль едет со скоростью меньше 30 км/ч то скорость
+// медленная, иначе быстрая
+
+let speed = 3
+if (speed<30) {
+    console.log('ваша скорость медленная ' + speed);
+} else {
+    console.log('ваша скорость быстрая ' + speed);
+}
+
+
+// Запросить у пользователя число от 0 до 9 и вывести ему 
+// спецсимвол, который расположен на этой клавише (1–!, 
+// 2–@, 3–# и т. д)
+
+// оператор if else как правило используется для диапазона значений
+// switch используется для конкретного значения
+
+let symbol = 100
+ switch (symbol) {
+    case 1:
+        console.log('!');
+        break;
+    case 2:
+        console.log('@');
+        break;
+    case 3:
+        console.log('#');
+        break;
+    case 4:
+        console.log('$');
+        break;
+    case 5:
+        console.log('%');
+        break;
+    case 6:
+        console.log('^');
+        break;
+    case 7:
+        console.log('&');
+        break;
+    case 8:
+        console.log('*');
+        break;
+    case 9:
+        console.log('(');
+        break;
+    default:
+        console.log('Значение не найдено');
+        break;
+}
+
+
+let day = 5
+switch (day) {
+    case 1:
+        console.log('Понедельник');
+        break;
+    case 2:
+        console.log('Вторник');
+        break;
+    case 3:
+        console.log('Среда');
+        break;
+    case 4:
+        console.log('Четверг');
+        break;
+    case 5:
+        console.log('Пятница');
+        break;
+    case 6:
+        console.log('Суббота');
+        break;
+    case 7:
+        console.log('Воскресенье');
+        break;
+
+    default:
+        console.log('Введите корректное число');
+        break;
+}
+
+
+console.log(typeof '20');
+console.log(typeof +'20');
+
+console.log('========================');
+
+// 1. Подсчитать сумму всех чисел в заданном пользователем 
+// диапазоне.
+
+let min = 1
+let max = 6
+
+let accumulator = 0
+console.log('значение ДО = ' + accumulator);
+
+// 1 2 3 4 5 6
+
+for (let i = min; i < max; i++) { // i++ - шаг равен единице по умолачанию
+    
+    accumulator+=i
+    console.log(i + ' шаг');
+    
+
+    console.log(accumulator);
+    
+}
+
+console.log('значение ПОСЛЕ = ' + accumulator);
+
+
+
+// 5. Запросить у пользователя пятиразрядное число и 
+// определить, является ли оно палиндромом
+
+let palindrom = '12321'
+console.log(palindrom);
+
+let checkPalindrom = palindrom.split('').reverse().join('')  
+
+.split('') // метод разделяет строку по символам
+.reverse() // метод, переставляющий символы в обратном порядке (то есть наоборот)
+.join('') // метод соединяет строку по символам
+
+
+
+if (palindrom==checkPalindrom) {
+    console.log('число является палиндромом' );
+} else {
+    console.log('число не является палиндромом' );
+}
 
 
 
