@@ -173,4 +173,30 @@ font-family: cursive;
 
 
 
+#title {
+  color:  red;
+  background-color: aqua;
+  /* font-size: 26px; */
+  padding: 30px;
+  margin: 15px;
+}
 
+.title2 {
+  color:  rgb(40, 5, 95);
+  background-color: darkgoldenrod;
+  width: 100px;
+  margin: 10px;
+}
+
+.name {
+  color:  rgb(40, 5, 95);
+  background-color: rgb(24, 119, 5);
+  width: 100px;
+  margin: 10px;
+}
+
+.text {
+font-size: 25px;
+font-weight: 600;
+
+}

@@ -3285,20 +3285,20 @@ showSymbols('Компьютер555')
 // пенсионером (60– 90).
 // значение вне диапазона
 
-let age = Number(prompt('Введите возраст')) //в диалоговом окне вводим возраст пользователя
-if (age>=0 && age<3) {  
-    console.log('Ребенок ' + age); 
-} else if(age>=3 && age<12) {
-    console.log('подрастающий ребенок ' + age); 
-} else if (age>=12 && age<19) {
-    console.log('подросток ' + age); 
-} else if (age>=18 && age<61) {
-    console.log('взрослый ' + age); 
-} else if (age>=60 && age<91 ) {
-    console.log('пенсионер ' + age); 
-} else {
-    console.log('Значение вне диапазона')
-}
+// let age = Number(prompt('Введите возраст')) //в диалоговом окне вводим возраст пользователя
+// if (age>=0 && age<3) {  
+//     console.log('Ребенок ' + age); 
+// } else if(age>=3 && age<12) {
+//     console.log('подрастающий ребенок ' + age); 
+// } else if (age>=12 && age<19) {
+//     console.log('подросток ' + age); 
+// } else if (age>=18 && age<61) {
+//     console.log('взрослый ' + age); 
+// } else if (age>=60 && age<91 ) {
+//     console.log('пенсионер ' + age); 
+// } else {
+//     console.log('Значение вне диапазона')
+// }
 
 
 // Если автомобиль едет со скоростью меньше 30 км/ч то скорость
@@ -3306,7 +3306,7 @@ if (age>=0 && age<3) {
 
 let speed = 3
 if (speed<30) {
-    console.log('ваша скорость медленная ' + speed);
+    console.log('ваша скорость медленная ' + speed); // скорость автомобиля
 } else {
     console.log('ваша скорость быстрая ' + speed);
 }
