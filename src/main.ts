@@ -339,7 +339,7 @@ text.addEventListener('click', () => {
 })
 text.style.cursor = 'POINTER'
 console.log(text.style.cursor);
-
+text.innerHTML += '333333333333333333333333333'
 
 
 // document.body.innerHTML += 'adsfsdfsdfsdf'
