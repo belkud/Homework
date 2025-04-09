@@ -3432,3 +3432,13 @@
 console.log(5);
 
 
+// 8. Написать функцию, которая возвращает самое длинное 
+// слово из предложения.
+
+function longestWord(str:any) {
+    let splStr = str.split(' ')
+    let word = splStr.sort((a,b)=>b.length-a.length)    
+    return word[0]
+}
+console.log(longestWord(`Написать функцию, которая 
+    возвращает самое длинное слово из предложения.`));
