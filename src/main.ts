@@ -3637,4 +3637,169 @@ console.log(countElemInString('сколько всего раз встречае
 console.log(countElemInString('сколько всего раз встречается этот', 'е'));
 console.log(countElemInString('сколько всего раз встречается этот', 'о'));
 
+function sayHi () {
+    return this?.name;
+}
+console.log(sayHi());
+
+
+
+let user = {
+    name: 'Ivan',
+    age:20,
+    sayHi:sayHi, 
+}
+console.log(user.sayHi());
+console.log(user['sayHi']());
+
+
+//? let user2 = {
+//?     name: 'Ivan',
+//?     age:20,
+//?     sayHi: ()=> {
+//?         let arrow = ()=> console.log(this?.name);
+//?         arrow()
+//?     }    
+//? }
+//? 
+//? user2.sayHi()
+//? console.log(user2.sayHi())
+//? 
+
+
+
+//! Задание
+//!  1. Написать функцию, которая принимает 2 строки и срав
+//! нивает их длину. Функция возвращает 1, если в первой 
+//! строке больше символов, чем во второй; -1 –  если во вто
+//! рой больше символов, чем в первой; или 0 – если строки 
+//! одинаковой длины.
+
+function compareLength (str1:string, str2:string) {
+    if (str1.length>str2.length) {
+        return 1
+    } else if (str1.length<str2.length){
+        return -1
+    } else { 
+        return 0
+
+    }
+}
+ 
+console.log(compareLength('Написать функцию, которая принимает 2 строки', 'строке больше символов, чем во второй'));
+
+
+
+
+//!  2. написать функцию, которая переводит в верхний регистр 
+//! первый символ переданной строки.
+
+function changeFirstLetterRegister (str:string) {
+
+    return str.slice(0,1).toUpperCase() + str.slice(1) 
+}
+console.log(changeFirstLetterRegister('написать функцию, которая переводит в верхний регистр'));
+console.log(changeFirstLetterRegister('переводит в верхний регистр'));
+
+
+
+
+
+//!  3. Написать функцию, которая считает количество гласных 
+//! букв в переданной строке. 
+
+function findlowelSymbol (str:string) {
+    let mass = ['а','ы','о','э','ю','й','у','е','и','я',]
+    let acc = 0
+    for (let i = 0; i < str.length; i++) {
+        for (let j = 0; j < mass.length; j++) {
+            if (str[i]==mass[j]){
+                acc++            
+            } 
+        }        
+    }
+    return acc
+
+}
+console.log(findlowelSymbol(`Написать`));
+
+
+
+//! 4. Написать функцию для проверки спама в переданной 
+//! строке. Функция возвращает true, если строка содержит 
+//! спам. Спамом считать следующие слова: 100% бесплатно, 
+//! увеличение продаж, только сегодня, не удаляйте, ххх. 
+//! Функция должна быть нечувствительна к регистру.
+
+function checkSpams (str:string) {
+    let check = str.toLowerCase() 
+    if (check.includes('100% бесплатно') ||
+        check.includes('увеличение продаж') || 
+        check.includes('только сегодня') || 
+        check.includes('не удаляйте') || 
+        check.includes('ххх') 
+    ){
+        return 'спам'
+    }
+    return 'это не спам'
+}
+console.log(checkSpams(' Спамом считать увеличение продаж следующие слова: 100% беывпсПлатно'));
+
+
+
+//!  5. Написать функцию сокращения строки. Функция прини
+//! мает строку и ее максимальную длину. Если длина строки 
+//! больше, чем максимальная, то необходимо отбросить 
+//! лишние символы, добавив вместо них троеточие. 
+//! Например: truncate(“Hello, world!”, 8) должна вернуть 
+//! “Hello...”.
+
+function reduceStrings (str:string, num:number) {
+    return str.slice(0,num) + '...'
+}
+console.log(reduceStrings('добавив вместо них троеточие', 10));
+
+
+//!  6. Написать функцию, которая проверяет, является ли пере
+//! данная строка палиндромом.
+
+
+
+//!  7. Написать функцию, которая считает количество слов в 
+//! предложении.
+//!  8. Написать функцию, которая возвращает самое длинное 
+//! слово из предложения.
+//!  9. Написать функцию, которая считает среднюю длину слова 
+//! в предложении.
+
+function averageLongOfletter (str:string) {
+    let mass = str.split(' ').join('').length
+    let word = str.split(' ').length
+    return (mass/word).toFixed(2)
+}
+console.log(averageLongOfletter(`Написать функцию, которая считает среднюю длину слова в предложении`));
+
+
+
+//!  10. Написать функцию, которая принимает строку и символ 
+//! и выводит индексы, по которым находится этот символ в 
+//! строке. Также вывести, сколько всего раз встречается этот 
+//! символ в строке. 
+
+function showSymbolsAndIndex (str:string, symb:string) {
+    let mass = []
+    let acc = 0
+    for (let i = 0; i < str.length; i++) {
+        if (str[i]==symb) {
+            mass.push(i)
+            acc++ 
+        }
+    }
+
+    return `индекс символа i = ${mass}, количество повторений: ${acc}`
+}
+
+console.log(showSymbolsAndIndex('Написать функцию, которая принимает строку и символ', 'а'));
+console.log(showSymbolsAndIndex('Написать функцию, которая принимает', 'о'));
+
 
