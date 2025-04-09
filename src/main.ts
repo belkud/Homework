@@ -3429,5 +3429,6 @@ if (palindrom==checkPalindrom) {
     console.log('число не является палиндромом' );
 }
 
+console.log(5);
 
 
