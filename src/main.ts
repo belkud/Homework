@@ -3732,18 +3732,17 @@ console.log(findlowelSymbol(`Написать`));
 //! Функция должна быть нечувствительна к регистру.
 
 function checkSpams (str:string) {
-    let check = str.toLowerCase() 
-    if (check.includes('100% бесплатно') ||
-        check.includes('увеличение продаж') || 
-        check.includes('только сегодня') || 
-        check.includes('не удаляйте') || 
-        check.includes('ххх') 
-    ){
-        return 'спам'
-    }
+    let check = str.toLowerCase()
+    let mass = ['100% бесплатно', 'увеличение продаж', 'только сегодня', 'не удаляйте', 'ххх']
+    for (let i = 0; i < mass.length; i++) {
+        if (check.includes(mass[i])){
+            return 'спам'
+        }
+    } 
     return 'это не спам'
 }
-console.log(checkSpams(' Спамом считать увеличение продаж следующие слова: 100% беывпсПлатно'));
+console.log(checkSpams('Спамом считать увеличение продаж следующие слова: 100% беывпсПлатно'));
+console.log(checkSpams('Функция возвращает true'));
 
 
 
