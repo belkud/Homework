@@ -3637,37 +3637,6 @@ console.log(countElemInString('сколько всего раз встречае
 console.log(countElemInString('сколько всего раз встречается этот', 'е'));
 console.log(countElemInString('сколько всего раз встречается этот', 'о'));
 
-function sayHi () {
-    return this?.name;
-}
-console.log(sayHi());
-
-
-
-let user = {
-    name: 'Ivan',
-    age:20,
-    sayHi:sayHi, 
-}
-console.log(user.sayHi());
-console.log(user['sayHi']());
-
-
-//? let user2 = {
-//?     name: 'Ivan',
-//?     age:20,
-//?     sayHi: ()=> {
-//?         let arrow = ()=> console.log(this?.name);
-//?         arrow()
-//?     }    
-//? }
-//? 
-//? user2.sayHi()
-//? console.log(user2.sayHi())
-//? 
-
-
-
 //! Задание
 //!  1. Написать функцию, которая принимает 2 строки и срав
 //! нивает их длину. Функция возвращает 1, если в первой 
@@ -3800,5 +3769,159 @@ function showSymbolsAndIndex (str:string, symb:string) {
 
 console.log(showSymbolsAndIndex('Написать функцию, которая принимает строку и символ', 'а'));
 console.log(showSymbolsAndIndex('Написать функцию, которая принимает', 'о'));
+
+// console.log(this);
+// console.log(globalThis);
+
+
+function sayHi () {
+    return this?.name;
+}
+console.log(sayHi());
+
+
+
+let user = {
+    name: 'Ivan',
+    age:20,
+    sayHi:sayHi, 
+}
+console.log(user.sayHi());
+console.log(user['sayHi']());
+
+
+//? let user2 = {
+//?     name: 'Ivan',
+//?     age:20,
+//?     sayHi: ()=> {
+//?         let arrow = ()=> console.log(this?.name);
+//?         arrow()
+//?     }    
+//? }
+//? 
+//? user2.sayHi()
+//? console.log(user2.sayHi())
+//? 
+
+
+
+ 
+
+
+
+
+
+
+ let person = {
+    name: 'Evgeniy',
+    age: 25,
+    hello:hello,
+    liter() {
+        console.log('test liter');
+    }
+ }
+
+console.log(person);
+person.liter()
+
+function hello () {
+    return 'Привет ' + this.name
+}
+
+console.log(person.hello());
+
+console.log(person);
+
+
+person.city = function() {
+    console.log('Moscow');
+}
+ 
+//! Функцию, которая является свойством объекта, называют методом этого объекта.
+
+person.city();
+
+
+
+
+
+
+person.color = () => {
+    console.log('orange');
+}
+
+person.color()
+
+console.log(JSON.stringify(person));
+
+
+
+
+person.number = ()=> {
+    console.log('555');
+    
+}
+
+person.number()
+
+
+person.test ='testt'
+console.log(person);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//! Функцию, которая является свойством объекта, называют методом этого объекта.
+
+let telephone = {
+    screen: 6.5,
+    model: 'Poco',
+    city: function() { //! 'длинный' синтаксис для методов в литерале объекта:
+        'Sochi'
+    },
+    country: ()=> { //! короткий синтаксис для методов в литерале объекта:
+        'Russia'
+    }, 
+    
+    
+    switchTelephone:switchTelephone //! первый способ
+}
+
+
+function switchTelephone () {    
+    return 'Включился'
+}
+console.log(telephone.switchTelephone());
+
+
+
+telephone.reduceFunc = () => { //! второй способ    
+    return 'Телефон включился'
+}
+
+console.log(telephone.reduceFunc());
+
+
+console.log(telephone); 
+
+
+
+
+
+
+
+
+
+
 
 
