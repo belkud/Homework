@@ -3886,35 +3886,124 @@ console.log(person);
 let telephone = {
     screen: 6.5,
     model: 'Poco',
-    city: function() { //! 'длинный' синтаксис для методов в литерале объекта:
-        'Sochi'
+
+    //* 1-ый способ записи
+    city: function () { //! 'длинный' синтаксис для методов в литерале объекта:
+        return 'Sochi'
     },
+
+    //* 2-ой способ записи
     country: ()=> { //! короткий синтаксис для методов в литерале объекта:
-        'Russia'
+        return 'Russia'
     }, 
     
+    //* 3-ий способ записи
+    switchTelephone:switchTelephone 
     
-    switchTelephone:switchTelephone //! первый способ
 }
 
 
+//* 3-ий способ записи
 function switchTelephone () {    
-    return 'Включился'
+     console.log('Включился')
 }
-console.log(telephone.switchTelephone());
+// console.log(telephone.switchTelephone());
 
 
-
-telephone.reduceFunc = () => { //! второй способ    
+//* 4-ый способ записи
+telephone.reduceFunc = () => {   
     return 'Телефон включился'
 }
 
 console.log(telephone.reduceFunc());
 
 
-console.log(telephone); 
+console.log(telephone.country()); 
+console.log(telephone.city()); 
+
+telephone.switchTelephone()
 
 
+
+let color = {
+    green: 'Зеленый',
+    yellow: function () {
+        return 'Жёлтый'
+    },
+    orange: ()=> {
+        console.log('Оранжевый')
+    },
+    white:white
+}
+
+console.log(color);
+
+console.log(color.yellow());
+color.orange()
+
+function white () {
+    return 'Белый'
+}
+console.log(color.white())
+
+
+color.aliceblue = ()=> {
+    console.log('Слоновый')
+}
+
+color.aliceblue()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let y = () => {
+    console.log('yyy')
+}
+y()
+
+let buttons = {
+    a: function () {
+        return('aaa');
+        
+    },
+    e: () => {
+        return'eee'
+    },
+    i: i,
+    y: y,
+    name: 'кнопки кнопочки',
+    call() {
+        return 'нажмите ' + this.name
+    }
+}
+
+console.log(buttons.call());
+
+console.log(buttons);
+console.log(buttons.a())
+console.log(buttons.e())
+
+function i () {
+    console.log('iii')
+}
+i()
+
+buttons.o = () => {
+    console.log('ooo');
+    return'ooo';
+    
+}
+buttons.o()
 
 
 
