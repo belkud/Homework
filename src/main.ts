@@ -3982,6 +3982,8 @@ let buttons = {
     i: i,
     y: y,
     name: 'кнопки кнопочки',
+
+//! Для доступа к информации внутри объекта метод может использовать ключевое слово this.
     call() {
         return 'нажмите ' + this.name
     }
@@ -3994,7 +3996,7 @@ console.log(buttons.a())
 console.log(buttons.e())
 
 function i () {
-    console.log('iii')
+    console.log(buttons.name)
 }
 i()
 
@@ -4010,7 +4012,15 @@ buttons.o()
 
 
 
+function ppp () {
+    console.log(this.name);
+    
+}
+
+buttons.check = ppp
 
 
+
+ 
 
 
