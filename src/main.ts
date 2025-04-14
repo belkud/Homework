@@ -1099,7 +1099,7 @@ import { nam } from "./name";
 // console.log(typeof temperature);
 
 
-  
+
 
 
 
@@ -1138,7 +1138,7 @@ import { nam } from "./name";
 
 
 
- 
+
 
 
 // let letterFindQuantity = 0
@@ -1341,9 +1341,9 @@ import { nam } from "./name";
 // console.log(accO);
 
 
- 
- 
- 
+
+
+
 
 
 // //! дест массива
@@ -1353,14 +1353,14 @@ import { nam } from "./name";
 // // ! после скобок снова имя переменной
 // console.log(first1);
 
- 
 
 
 
- 
- 
+
+
+
 // //! дест функции
- 
+
 // const user =  {
 //     name: 'Vova',
 //     age:33,
@@ -1374,7 +1374,7 @@ import { nam } from "./name";
 //     } else {
 //          console.log(`у пользователя ${name} много (${answer} комментариев)`)
 //     }
-    
+
 // }
 
 // checkUSer(user)
@@ -1425,10 +1425,10 @@ import { nam } from "./name";
 // let accI=0
 
 // for (let i = 1; i<=5; i++) {
-    
+
 //     accI+=i
 //     console.log(i);
-    
+
 // }
 // console.log(accI);
 
@@ -1442,16 +1442,16 @@ import { nam } from "./name";
 // //!  задать значение по умолчанию для массива и для числа.
 
 //     console.log('__________');
-    
+
 
 //         let summDigitals = filterNumber.map ((el)=> {
 //             return el*10
 //         })
-    
+
 //         console.log(summDigitals);
 
-    
-    
+
+
 
 
 //     console.log('__________');
@@ -1496,7 +1496,7 @@ import { nam } from "./name";
 //    } 
 
 // console.log(student);
-      
+
 //  let stud = ({Nickname, surname, subjects, course})=>{
 //      console.log(Nickname);
 //      console.log(surname);
@@ -1537,9 +1537,9 @@ import { nam } from "./name";
 
 // // let uniqItem = fruits.map(el=> {
 // //     console.log(el);
-    
+
 // //     if (el!=el) {
-        
+
 // //     }
 // //     return
 // // })
@@ -1558,7 +1558,7 @@ import { nam } from "./name";
 //     //     { name: 'stas', age: 18 },
 //     //   ];
 //     // console.log(students);
-    
+
 //     // students.forEach(el=> {
 //         //     if (el.age==20) {
 //             //         console.log(el);
@@ -1566,25 +1566,25 @@ import { nam } from "./name";
 //                 //         console.log(el);
 //                 //     } else {
 //                     //         console.log(el);
-                    
+
 //                     //     }
 //                     // })
-                    
-                    
+
+
 //                     // '20': [{ name: 'alex', age: 20 }, { name: 'masha', age: 20 }],
 //                     // '24': [{ name: 'mike', age: 24 }],
 //                     // '18': [{ name: 'stas', age: 18 }]
-                    
-                    
-                    
+
+
+
 //                     //! рест массива
-                    
+
 //                     // let col = [ 'puple', 'blue', 'white']
 //                     // let [one1, two2, three3] = col
-                    
+
 //                     // console.log(two2);
 //                     // console.log(three3);
-                    
+
 //                     //! рест объекта
 //                     // let day = {
 //                         //     понед: 'первый',
@@ -1594,26 +1594,26 @@ import { nam } from "./name";
 //                         // let {понед, вторник, среда} = day
 //                         // console.log(понед);
 //                         // console.log(среда);
-                        
+
 //                         //! рест функции
-                        
+
 //                         // let funcs = ({понед, вторник})=>{
 //                             //     console.log(понед);
 //                             //     console.log(вторник);   
 //                             // }
-                            
+
 //                             // funcs(day)
-                            
-                            
-                            
-                            
+
+
+
+
 //                             //! выучить методы массивов 
-                            
+
 //                             //! выучить методы объектов
-                            
-                            
-                            
-                            
+
+
+
+
 // const button = document.querySelector('#createDiv') as HTMLDivElement
 // const button2 = document.querySelector('#deleteDiv') as HTMLDivElement
 // const container = document.querySelector('#containDiv') as HTMLDivElement
@@ -1636,7 +1636,7 @@ import { nam } from "./name";
 
 
 //     let accAge = 0
-    
+
 //     const workers = [
 //         {name: 'Anna', age:23},
 //         {name: 'Masha', age:33},
@@ -1644,7 +1644,7 @@ import { nam } from "./name";
 //         {name: 'Vika', age:29},
 //         {name: 'Sveta', age:36},
 //     ]
-    
+
 //     const totalAge = workers.reduce((agess, workers)=>agess+=workers.age,0)
 //     console.log(totalAge);
 
@@ -1653,25 +1653,25 @@ import { nam } from "./name";
 //         return el.age
 // }) 
 // console.log(Math.min(...youngestPerson));
- 
-  
+
+
 
 // console.log('-----------');
 
 // try {
-    
+
 //     console.log(_.min(youngestPerson));
 // } catch (error) {
 //     console.log(error.message);
 //     console.log(ReferenceError());
-    
+
 // }
 
 
 
 //     //! найти Катю
 //     //! find......
-    
+
 // const cate = workers.find(cate=> cate.name === 'Katya')
 // console.log(cate);
 
@@ -1680,17 +1680,17 @@ import { nam } from "./name";
 
 
 
-    
+
 //     //! сумма возрастов
-    
+
 //     //! 1
 //     workers.forEach(el=>{
 //         accAge += el.age
 //     })
 //     console.log(accAge);
 //     console.log('____________');
-    
-    
+
+
 //     //! 2
 //     let accAge2 = 0
 //     for (let i = 0; i < workers.length; i++) {
@@ -1702,7 +1702,7 @@ import { nam } from "./name";
 //     //! 3 reduce...........
 //     let accAge3 = workers.reduce((total, worker)=>total+worker.age, 0)
 //     console.log(accAge3);
-     
+
 
 
 
@@ -1796,12 +1796,12 @@ import { nam } from "./name";
 // let underAge = businessmans.filter(el=> {
 //     if(el.age<18) 
 //         return el
-    
+
 // })
 
 // let names = underAge.map(el=> {
 //     return el.name
-    
+
 // })
 // console.log(names);
 
@@ -1814,16 +1814,16 @@ import { nam } from "./name";
 
 
 //     // //! Поиск по списку несовершеннолетних методом filter
-    
+
 //     // businessmans.filter(el=> {
 //     //     if(el.age<18){ 
 //     //         console.log(el.name)
 //     //     }
 //     // })
- 
-    
+
+
 //     //! сложить бюджет через reduce
-    
+
 //     let budgets = businessmans.reduce((money, el)=> money+el.budget,0)
 //     console.log(budgets);
 
@@ -1843,7 +1843,7 @@ import { nam } from "./name";
 //         {brand: 'Jeep', price:1500000, mileage:100000},
 //         ]
 
-  
+
 
 // // вывести бренды через forEach
 
@@ -1947,7 +1947,7 @@ import { nam } from "./name";
 // for (const el in products) {
 //     if (el!=='fruit') {
 //         newMas.push(el)
-        
+
 //     }
 // }
 // console.log(...newMas);
@@ -1959,7 +1959,7 @@ import { nam } from "./name";
 
 
 //  //! (forEach, map, filter, reduce, find, findIndex).
- 
+
 
 
 //  //! (forEach, map, filter, reduce, find, findIndex).
@@ -2030,7 +2030,7 @@ import { nam } from "./name";
 
 // // // } else if(el ==Math.max(...nums)){
 // //     //     console.log('наибольшее число = '+ el);
-    
+
 // // } else {
 // //     console.log('наименьшее число = '+ el);
 
@@ -2065,7 +2065,7 @@ import { nam } from "./name";
 
 // let xx = []
 // xx.push(3)
-  
+
 // console.log(xx);
 // console.log(typeof xx);
 
@@ -2104,14 +2104,14 @@ import { nam } from "./name";
 //         }
 //     })
 //     console.log(...zzz);
-    
+
 //     //! второй способ
 //     let zzzName = zzz.map(el=> {
 //         return el.name
 //     })
 //     console.log(zzzName);
-    
-    
+
+
 //     //! третий способ
 //     let massName = []
 
@@ -2140,9 +2140,9 @@ import { nam } from "./name";
 //     if (timer==letterName.length) {
 //         clearInterval (stopInterval)
 //     }
-    
+
 // }, 200);
- 
+
 
 // let arrPush = [] as any
 // arrPush.push(letterName + ' друг')
@@ -2179,7 +2179,7 @@ import { nam } from "./name";
 
 // for (const key in xyz) {
 //     console.log(key + ' =', xyz[key]);
-    
+
 // }
 
 
@@ -2206,7 +2206,7 @@ import { nam } from "./name";
 
 // Object.values({name:'Vova', age:33}).forEach (el=>{
 //     console.log(el);
-    
+
 // })
 
 
@@ -2220,7 +2220,7 @@ import { nam } from "./name";
 
 // // указать дату рождения и через reduce вычислить сумму чисел
 // //  и потом повторно сложить между собой общую сумму
- 
+
 
 
 
@@ -2269,7 +2269,7 @@ import { nam } from "./name";
 // })
 
 
- 
+
 
 
 // let stuff = [
@@ -2279,7 +2279,7 @@ import { nam } from "./name";
 //     {name: 'Sveta', age: 36, salary: 95000},
 // ]
 // //! посчтитать общую зарплату и добавить подоходный налог в 30 процентов
- 
+
 // let scoreSalary = stuff.reduce((score, el)=>(score+=el.salary), 0)
 // console.log(scoreSalary*1.1);
 // console.log(scoreSalary*1.1);
@@ -2448,7 +2448,6 @@ import { nam } from "./name";
 // //  }
 // //  let {понед, вторник, среда} = day
 // //  console.log(понед, среда);
- 
 
 
 
@@ -2460,14 +2459,15 @@ import { nam } from "./name";
 
 
 
- 
- 
+
+
+
 //  // посчитать количество букв
 //  let rest ='архитектурный стиль для сложных интернет сервисов'
 //  let scoreRest = rest.split('')
- 
+
 //  let scoreLetters = [] as any
- 
+
 //  scoreRest.map((el)=> {
 //      if(!scoreLetters[el]){
 //          scoreLetters[el]=1
@@ -2478,34 +2478,34 @@ import { nam } from "./name";
 //         }
 //     })
 //     console.log(scoreLetters);
-    
-    
-    
-    
+
+
+
+
 //     const fruits = ['kiwi', 'apple', 'kiwi', 'orange', 'kiwi', 'apple'];
-    
+
 //     // Задача 1. Создать массив который содержит только уникальные 
 //     // значения исходного массива.
-    
+
 //     let uniqFruits = {} as any
 //         fruits.filter(el=>{
 //             if(uniqFruits[el]=1){
 //                  return uniqFruits[el]
-                
+
 //             }
 //         })    
 //     console.log(uniqFruits);
-    
 
 
 
-    
-    
-    
-    
+
+
+
+
+
 //     // Задача 2. Определить сколько раз каждый элемент встречается в массиве.
 //     // Имеется исходный массив:
-    
+
 //     let scoreFruits = [] as any
 //     fruits.map ((el)=> {
 //         if (!scoreFruits[el]) {
@@ -2518,7 +2518,7 @@ import { nam } from "./name";
 //     })
 //     console.log(scoreFruits);
 
-    
+
 
 
 //     //! stringify - из объекта в строку
@@ -2543,7 +2543,7 @@ import { nam } from "./name";
 
 
 
- 
+
 // // let arr = Array(5).fill(1)
 // // console.log(arr)
 
@@ -2602,7 +2602,7 @@ import { nam } from "./name";
 // //     console.log('Данная фраза палиндром');
 // // } else {
 // //     console.log('Это не палиндром');
-    
+
 // // }
 
 
@@ -2636,20 +2636,20 @@ import { nam } from "./name";
 //   case 15:
 //     console.log('Прохладно');
 //   break;
-  
+
 //   case 20:
 //     console.log('Приемлемо');
 //   break;
-  
+
 //   case 25:
 //     console.log('Тепло');
 //   break;
-  
+
 //   default:
 //     console.log('Данные вне диапазона');        
 // }
-                
-                
+
+
 // const newArr3 = [1, 8, 2, 2, 4, 5, 6, 6]
 // console.log(newArr3[0]);
 
@@ -2676,9 +2676,9 @@ import { nam } from "./name";
 
 
 // // for (const key in mounth) {
-    
+
 // //     console.log(key, mounth[key]);
-    
+
 // // }
 
 
@@ -2721,7 +2721,7 @@ import { nam } from "./name";
 
 // objObj
 // let splObj = objObj.ответ.name.split('').map(el=> {
-    
+
 //     if (el=='u') {
 //         el = 'UUU'
 //     }
@@ -2758,7 +2758,7 @@ import { nam } from "./name";
 //         this.votesQty+=1
 //     }
 
-    
+
 // }
 
 // const firstComment = new Comment('first comment')
@@ -2774,7 +2774,7 @@ import { nam } from "./name";
 
 
 
- 
+
 
 // class Modem {
 //     constructor (link) {
@@ -2783,7 +2783,7 @@ import { nam } from "./name";
 //     }
 //     action () {
 //         console.log('Подключено');
-        
+
 //     }
 // }
 // const firstModem = new Modem('first modem')
@@ -2843,7 +2843,7 @@ import { nam } from "./name";
 //     }
 //     static funct() {
 //         console.log('статика');
-        
+
 //     }
 //     static weight(potato, meat) {
 //         return console.log(potato + meat + ' грамм')
@@ -3072,7 +3072,7 @@ import { nam } from "./name";
 // // })
 // // bs.then(()=> {
 // //     console.log(as);
-    
+
 // // })
 
 
@@ -3216,18 +3216,18 @@ import { nam } from "./name";
 // console.log(person11);
 
 // // let y = prompt ('что вы хотите узнать о' + JSON.stringify(person11),'Введите данные')
-    
+
 // // console.log(person11[y]);
 
 // // Object.keys(person11).forEach(el=> {
 // //     if(y=='name' || y=='age' || y=='Russian Federation') {
 // //         console.log(person11[y])
-        
+
 // //     }else {
 // //         console.log('данные некорректны');
-        
+
 // //     }
-    
+
 // // })
 
 // // let writeFruitss = prompt('введите данные','apple')
@@ -3244,7 +3244,7 @@ import { nam } from "./name";
 // // 1. Написать функцию, которая принимает строку и выводит 
 // // статистику о ней: количество букв, количество цифр и 
 // // количество других знаков.
- 
+
 // function showSymbols(str) {
 //     str = str.toLowerCase() // переводит буквы в нижний регистр
 //     let res= {
@@ -3384,7 +3384,7 @@ import { nam } from "./name";
 //         break;
 // }
 
- 
+
 
 // console.log('========================');
 
@@ -3400,13 +3400,13 @@ import { nam } from "./name";
 // // 1 2 3 4 5 6
 
 // for (let i = min; i < max; i++) { // i++ - шаг равен единице по умолачанию
-    
+
 //     accumulator+=i
 //     console.log(i + ' шаг');
-    
+
 
 //     console.log(accumulator);
-    
+
 // }
 
 // console.log('значение ПОСЛЕ = ' + accumulator);
@@ -3424,7 +3424,7 @@ import { nam } from "./name";
 // .split('') // метод разделяет строку по символам
 // .reverse() // метод, переставляющий символы в обратном порядке (то есть наоборот)
 // .join('') // метод соединяет строку по символам
- 
+
 // if (palindrom==checkPalindrom) {
 //     console.log('число является палиндромом' );
 // } else {
@@ -3437,16 +3437,16 @@ console.log(5);
 // 8. Написать функцию, которая возвращает самое длинное 
 // слово из предложения.
 
-function longestWord(str:any) {
+function longestWord(str: any) {
     let splStr = str.split(' ')
-    let word = splStr.sort((a,b)=>b.length-a.length)    
+    let word = splStr.sort((a, b) => b.length - a.length)
     return word[0]
 }
 console.log(longestWord(`Написать функцию, которая 
     возвращает самое длинное слово из предложения.`));
 
 
-    
+
 
 //!  <=========================JS_PZ_Modul_2_Week_3======================>
 
@@ -3456,11 +3456,11 @@ console.log(longestWord(`Написать функцию, которая
 //! рой больше символов, чем в первой; или 0 – если строки 
 //! одинаковой длины.
 
-function compareStrings (str1:string, str2:string) {
-    if (str1.length>str2.length) {
+function compareStrings(str1: string, str2: string) {
+    if (str1.length > str2.length) {
         return 1
     }
-    if (str1.length<str2.length) {
+    if (str1.length < str2.length) {
         return -1
     }
     return 0
@@ -3473,7 +3473,7 @@ console.log(compareStrings('qwdr', 'dssd'));
 //! 2. Написать функцию, которая переводит в верхний регистр 
 //! первый символ переданной строки.
 
-function changeFirstLetter (str:string) {
+function changeFirstLetter(str: string) {
 
     return str[0].toUpperCase() + str.slice(1)
 }
@@ -3484,13 +3484,13 @@ console.log(changeFirstLetter('hello friend'));
 //! 3. Написать функцию, которая считает количество гласных 
 //! букв в переданной строке. 
 
-function countVowel (str:string) {
+function countVowel(str: string) {
     let count = 0
     for (let i = 0; i < str.length; i++) {
         let x = str[i]
-            if (x=='а' || x=='е' || x=='и'|| x=='о'|| x=='у'|| x=='ю'|| x=='я'|| x=='ы') {
-                count+=1
-            }        
+        if (x == 'а' || x == 'е' || x == 'и' || x == 'о' || x == 'у' || x == 'ю' || x == 'я' || x == 'ы') {
+            count += 1
+        }
     }
     return `${count} гласных`
 }
@@ -3505,19 +3505,19 @@ console.log(countVowel('Написать функцию,  считает кол�
 //! Функция должна быть нечувствительна к регистру.
 
 
-function checkSpam (param:string) {
-let str = param.toLowerCase()
+function checkSpam(param: string) {
+    let str = param.toLowerCase()
 
-    if (str.includes('100% бесплатно') || 
-    str.includes('увеличение продаж') ||
-    str.includes('только сегодня') ||
-    str.includes('не удаляйте') ||
-    str.includes('ххх') 
+    if (str.includes('100% бесплатно') ||
+        str.includes('увеличение продаж') ||
+        str.includes('только сегодня') ||
+        str.includes('не удаляйте') ||
+        str.includes('ххх')
     ) {
         return 'Спам!'
     }
-    
-    return  param
+
+    return param
 }
 console.log(checkSpam('текст прошел'));
 console.log(checkSpam('Спамом считать следующие слова: 100% бесплатно, увеличение продаж, только сегодня, не удаляйте, ххх. '));
@@ -3530,8 +3530,8 @@ console.log(checkSpam('Спамом считать следующие слова
 //! Например: truncate(“Hello, world!”, 8) должна вернуть 
 //! “Hello...”.
 
-function reduceString (param:any, num:number) {
-let reduceStr = param.slice(0,num) 
+function reduceString(param: any, num: number) {
+    let reduceStr = param.slice(0, num)
 
     return reduceStr + '...'
 }
@@ -3541,10 +3541,10 @@ console.log(reduceString('Добавив вместо них троеточие'
 //! 6. Написать функцию, которая проверяет, является ли пере
 //! данная строка палиндромом.
 
-function checkPalindrom (str:string) {
+function checkPalindrom(str: string) {
     let pol = str.split('').reverse().join('')
-    return pol.toLowerCase()==str.toLowerCase() ? 'Число панидром' : 'Число не является палиндромом'
-    
+    return pol.toLowerCase() == str.toLowerCase() ? 'Число панидром' : 'Число не является палиндромом'
+
 }
 console.log(checkPalindrom('сес'));
 console.log(checkPalindrom('сетс стеС'));
@@ -3553,7 +3553,7 @@ console.log(checkPalindrom('сетс стеС'));
 //!  7. Написать функцию, которая считает количество слов в 
 //! предложении.
 
-function countWords(word:string) {
+function countWords(word: string) {
     return `Предложение имеет ${word.split(' ').length} слов`
 }
 console.log(countWords('Написать функцию, которая считает количество слов'));
@@ -3563,23 +3563,23 @@ console.log(countWords('Написать функцию, которая счит
 //!  8. Написать функцию, которая возвращает самое длинное 
 //! слово из предложения.
 
-function findLongWord (str:string) {
+function findLongWord(str: string) {
     let mass = str.split(' ')
-    
+
     //! первый способ
 
     // let length = mass.map(el=>el.length).sort((a,b)=>b-a).slice(0,1)
     // let xxx = mass.find(el=>(el.length == length) )
     // return xxx
-    
+
     //! второй способ
 
-    let length = mass.map(el=>el.length)
+    let length = mass.map(el => el.length)
     for (let i = 0; i < mass.length; i++) {
-        if (mass[i].length == Math.max(...length)) 
-            return mass[i] 
+        if (mass[i].length == Math.max(...length))
+            return mass[i]
     }
-    
+
 }
 
 console.log(findLongWord('Написать функцию, котоdfsdfdрая возвращает самое длинное'));
@@ -3591,16 +3591,16 @@ console.log(findLongWord('Написать функцию, котоdfsdfdрая 
 //!  9. Написать функцию, которая считает среднюю длину слова 
 //! в предложении.
 
-function countAverageWordLength(str:string) {
-let words = str.split(' ').length
-let letters = str.split('')
-let strWithoutSpace = ''
+function countAverageWordLength(str: string) {
+    let words = str.split(' ').length
+    let letters = str.split('')
+    let strWithoutSpace = ''
 
-for (let i = 0; i < letters.length; i++) {
-    if (!letters[i].includes(' ') && !letters[i].includes(',')) {
-        strWithoutSpace+=letters[i]
-    }    
-}
+    for (let i = 0; i < letters.length; i++) {
+        if (!letters[i].includes(' ') && !letters[i].includes(',')) {
+            strWithoutSpace += letters[i]
+        }
+    }
 
     return `средняя длина слова = ${(strWithoutSpace.length / words).toFixed(1)} символов`
 }
@@ -3618,17 +3618,17 @@ console.log(countAverageWordLength('Написать функцию, котор�
 //! символ в строке. 
 
 
-function countElemInString(str:string, e:string) {
-let countEl = str.split('')
-let acc = 0
-let massI:number[] = []
+function countElemInString(str: string, e: string) {
+    let countEl = str.split('')
+    let acc = 0
+    let massI: number[] = []
 
-for (let i = 0; i < countEl.length; i++) {
-    if (countEl[i]==e) {
-        acc++
-        massI.push(i)
-    }      
-}
+    for (let i = 0; i < countEl.length; i++) {
+        if (countEl[i] == e) {
+            acc++
+            massI.push(i)
+        }
+    }
 
     return `
     Индексы элемента '${e}': ${massI},
@@ -3639,6 +3639,8 @@ console.log(countElemInString('сколько всего раз встречае
 console.log(countElemInString('сколько всего раз встречается этот', 'е'));
 console.log(countElemInString('сколько всего раз встречается этот', 'о'));
 
+
+
 //! Задание
 //!  1. Написать функцию, которая принимает 2 строки и срав
 //! нивает их длину. Функция возвращает 1, если в первой 
@@ -3646,17 +3648,17 @@ console.log(countElemInString('сколько всего раз встречае
 //! рой больше символов, чем в первой; или 0 – если строки 
 //! одинаковой длины.
 
-function compareLength (str1:string, str2:string) {
-    if (str1.length>str2.length) {
+function compareLength(str1: string, str2: string) {
+    if (str1.length > str2.length) {
         return 1
-    } else if (str1.length<str2.length){
+    } else if (str1.length < str2.length) {
         return -1
-    } else { 
+    } else {
         return 0
 
     }
 }
- 
+
 console.log(compareLength('Написать функцию, которая принимает 2 строки', 'строке больше символов, чем во второй'));
 
 
@@ -3665,9 +3667,9 @@ console.log(compareLength('Написать функцию, которая пр�
 //!  2. написать функцию, которая переводит в верхний регистр 
 //! первый символ переданной строки.
 
-function changeFirstLetterRegister (str:string) {
+function changeFirstLetterRegister(str: string) {
 
-    return str.slice(0,1).toUpperCase() + str.slice(1) 
+    return str.slice(0, 1).toUpperCase() + str.slice(1)
 }
 console.log(changeFirstLetterRegister('написать функцию, которая переводит в верхний регистр'));
 console.log(changeFirstLetterRegister('переводит в верхний регистр'));
@@ -3679,15 +3681,15 @@ console.log(changeFirstLetterRegister('переводит в верхний ре
 //!  3. Написать функцию, которая считает количество гласных 
 //! букв в переданной строке. 
 
-function findlowelSymbol (str:string) {
-    let mass = ['а','ы','о','э','ю','й','у','е','и','я',]
+function findlowelSymbol(str: string) {
+    let mass = ['а', 'ы', 'о', 'э', 'ю', 'й', 'у', 'е', 'и', 'я',]
     let acc = 0
     for (let i = 0; i < str.length; i++) {
         for (let j = 0; j < mass.length; j++) {
-            if (str[i]==mass[j]){
-                acc++            
-            } 
-        }        
+            if (str[i] == mass[j]) {
+                acc++
+            }
+        }
     }
     return acc
 
@@ -3702,14 +3704,14 @@ console.log(findlowelSymbol(`Написать`));
 //! увеличение продаж, только сегодня, не удаляйте, ххх. 
 //! Функция должна быть нечувствительна к регистру.
 
-function checkSpams (str:string) {
+function checkSpams(str: string) {
     let check = str.toLowerCase()
     let mass = ['100% бесплатно', 'увеличение продаж', 'только сегодня', 'не удаляйте', 'ххх']
     for (let i = 0; i < mass.length; i++) {
-        if (check.includes(mass[i])){
+        if (check.includes(mass[i])) {
             return 'спам'
         }
-    } 
+    }
     return 'это не спам'
 }
 console.log(checkSpams('Спамом считать увеличение продаж следующие слова: 100% беывпсПлатно'));
@@ -3724,8 +3726,8 @@ console.log(checkSpams('Функция возвращает true'));
 //! Например: truncate(“Hello, world!”, 8) должна вернуть 
 //! “Hello...”.
 
-function reduceStrings (str:string, num:number) {
-    return str.slice(0,num) + '...'
+function reduceStrings(str: string, num: number) {
+    return str.slice(0, num) + '...'
 }
 console.log(reduceStrings('добавив вместо них троеточие', 10));
 
@@ -3742,10 +3744,10 @@ console.log(reduceStrings('добавив вместо них троеточие
 //!  9. Написать функцию, которая считает среднюю длину слова 
 //! в предложении.
 
-function averageLongOfletter (str:string) {
+function averageLongOfletter(str: string) {
     let mass = str.split(' ').join('').length
     let word = str.split(' ').length
-    return (mass/word).toFixed(2)
+    return (mass / word).toFixed(2)
 }
 console.log(averageLongOfletter(`Написать функцию, которая считает среднюю длину слова в предложении`));
 
@@ -3756,13 +3758,13 @@ console.log(averageLongOfletter(`Написать функцию, которая
 //! строке. Также вывести, сколько всего раз встречается этот 
 //! символ в строке. 
 
-function showSymbolsAndIndex (str:string, symb:string) {
+function showSymbolsAndIndex(str: string, symb: string) {
     let mass = []
     let acc = 0
     for (let i = 0; i < str.length; i++) {
-        if (str[i]==symb) {
+        if (str[i] == symb) {
             mass.push(i)
-            acc++ 
+            acc++
         }
     }
 
@@ -3776,7 +3778,7 @@ console.log(showSymbolsAndIndex('Написать функцию, которая
 // console.log(globalThis);
 
 
-function sayHi () {
+function sayHi() {
     return this?.name;
 }
 console.log(sayHi());
@@ -3785,8 +3787,8 @@ console.log(sayHi());
 
 let user = {
     name: 'Ivan',
-    age:20,
-    sayHi:sayHi, 
+    age: 20,
+    sayHi: sayHi,
 }
 console.log(user.sayHi());
 console.log(user['sayHi']());
@@ -3807,26 +3809,26 @@ console.log(user['sayHi']());
 
 
 
- 
 
 
 
 
 
 
- let person = {
+
+let person = {
     name: 'Evgeniy',
     age: 25,
-    hello:hello,
+    hello: hello,
     liter() {
         console.log('test liter');
     }
- }
+}
 
 console.log(person);
 person.liter()
 
-function hello () {
+function hello() {
     return 'Привет ' + this.name
 }
 
@@ -3835,13 +3837,17 @@ console.log(person.hello());
 console.log(person);
 
 
-person.city = function() {
+person.city = function () {
     console.log('Moscow');
 }
- 
+person.city();
+
+
+
+
+
 //! Функцию, которая является свойством объекта, называют методом этого объекта.
 
-person.city();
 
 
 
@@ -3859,15 +3865,15 @@ console.log(JSON.stringify(person));
 
 
 
-person.number = ()=> {
+person.number = () => {
     console.log('555');
-    
+
 }
 
 person.number()
 
 
-person.test ='testt'
+person.test = 'testt'
 console.log(person);
 
 
@@ -3883,59 +3889,16 @@ console.log(person);
 
 
 
-//! Функцию, которая является свойством объекта, называют методом этого объекта.
-
-let telephone = {
-    screen: 6.5,
-    model: 'Poco',
-
-    //* 1-ый способ записи
-    city: function () { //! 'длинный' синтаксис для методов в литерале объекта:
-        return 'Sochi'
-    },
-
-    //* 2-ой способ записи
-    country: ()=> { //! короткий синтаксис для методов в литерале объекта:
-        return 'Russia'
-    }, 
-    
-    //* 3-ий способ записи
-    switchTelephone:switchTelephone 
-    
-}
-
-
-//* 3-ий способ записи
-function switchTelephone () {    
-     console.log('Включился')
-}
-// console.log(telephone.switchTelephone());
-
-
-//* 4-ый способ записи
-telephone.reduceFunc = () => {   
-    return 'Телефон включился'
-}
-
-console.log(telephone.reduceFunc());
-
-
-console.log(telephone.country()); 
-console.log(telephone.city()); 
-
-telephone.switchTelephone()
-
-
 
 let color = {
     green: 'Зеленый',
     yellow: function () {
         return 'Жёлтый'
     },
-    orange: ()=> {
+    orange: () => {
         console.log('Оранжевый')
     },
-    white:white
+    white: white
 }
 
 console.log(color);
@@ -3943,13 +3906,13 @@ console.log(color);
 console.log(color.yellow());
 color.orange()
 
-function white () {
+function white() {
     return 'Белый'
 }
 console.log(color.white())
 
 
-color.aliceblue = ()=> {
+color.aliceblue = () => {
     console.log('Слоновый')
 }
 
@@ -3975,11 +3938,11 @@ y()
 
 let buttons = {
     a: function () {
-        return('aaa');
-        
+        return ('aaa');
+
     },
     e: () => {
-        return'eee'
+        return 'eee'
     },
     i: i,
     y: y,
@@ -3989,7 +3952,10 @@ let buttons = {
     }
 }
 
-//! Для доступа к информации внутри объекта метод может использовать ключевое слово this.
+
+
+
+
 
 console.log(buttons.call());
 
@@ -3997,15 +3963,15 @@ console.log(buttons);
 console.log(buttons.a())
 console.log(buttons.e())
 
-function i () {
+function i() {
     console.log(buttons.name)
 }
 i()
 
 buttons.o = () => {
     console.log('ooo');
-    return'ooo';
-    
+    return 'ooo';
+
 }
 buttons.o()
 
@@ -4014,19 +3980,19 @@ buttons.o()
 
 
 
-function ppp () {
+function ppp() {
     console.log(this.name);
-    
+
 }
 
 buttons.check = ppp
 
 
- 
 
 
 
-  
+
+
 let calc = {
     read() {
         this.a = 5;
@@ -4047,15 +4013,15 @@ console.log(calc.mul());
 
 // up, down и showStep
 let ladder = {
-    step : 0,
-  up() {
-   this.step++
-      return this 
-   },
-   down() {
-   this.step--
-      return this 
-  },
+    step: 0,
+    up() {
+        this.step++
+        return this
+    },
+    down() {
+        this.step--
+        return this
+    },
 }
 console.log(ladder.up().up().down().up());
 
@@ -4063,7 +4029,7 @@ console.log(ladder.up().up().down().up());
 
 let hi = function () {
     console.log('hello');
-    
+
 }
 hi()
 console.log(typeof hi);
@@ -4074,30 +4040,12 @@ let bye = () => {
 bye()
 
 
-// hello Jhon через 2 сек
-
-
-
-// function hiJhon(name:string) {
-//     return 'привет ' + name
-// }
-
-// function writeName () {
-//     setTimeout(() => {
-//         console.log(hiJhon('Petya'));
-//     }, 2000);
-// }
-
-// writeName()
-
-
-
 
 //!!!!!!!!!!!!!!!!!!!!!! Функция конструктор !!!!!!!!!!!!!!!!!!!!!!1!
 
 //! Имя функции-конструктора должно начинаться с большой буквы.
 //! Функция-конструктор должна выполняться только с помощью оператора "new".
-function User (name:any, age:number) {
+function User(name: any, age: number) {
     this.name = name;
     this.age = age;
     this.group = 'web:45';
@@ -4122,31 +4070,259 @@ console.log(new User('usssser', 25))
 
 
 
+function Accumulator(startingValue: any) {
+    this.value = startingValue;
+    this.read = () => {
+        this.value += 5
+    }
 
 
-
-
-
-
-
-
-
-
-
-
-
-function Accumulator(startingValue:any) {
-    this.value = startingValue
 }
 
 let accumul1 = new Accumulator(1)
-console.log(accumul1.value +=3);
+accumul1.read()
+accumul1.read()
+accumul1.read()
+
+console.log(accumul1.value);
+
+
+
+
+let telephone = {
+    screen: 6.5,
+    model: 'Poco',
+    
+    //* 1-ый способ записи
+    city: function () { //! 'длинный' синтаксис для методов в литерале объекта:
+        return 'Sochi'
+    },
+
+    country: () => { //! короткий синтаксис для методов в литерале объекта:
+        return 'Russia'
+    },
+    
+    //* 3-ий способ записи
+    switchTelephone: switchTelephone
+
+}
+
+
+//* 3-ий способ записи
+function switchTelephone() {
+    console.log('Включился')
+}
+// console.log(telephone.switchTelephone());
+
+
+//* 4-ый способ записи
+telephone.reduceFunc = () => {
+    return 'Телефон включился'
+}
+
+console.log(telephone.reduceFunc());
+
+
+console.log(telephone.country());
+console.log(telephone.city());
+
+telephone.switchTelephone()
 
 
 
 
 
 
+
+//!  <=========================JS_DZ_Modul_2_Week_3======================>
+
+
+
+//! 1. Написать функцию, которая принимает строку и выводит 
+//! статистику о ней: количество букв, количество цифр и 
+//! количество других знаков.
+
+function showStringStatistic (str:string) {
+    
+    let strNum = str.split('').filter (el=>
+        Number(el)>=0 && Number(el)!='' )
+        
+        let strLetter = str.split('').filter (el=>
+            el>='а' && el<='я' || el>='a' && el<='z')
+            
+            return `
+            количество цифр: ${strNum.length}
+            количество букв: ${strLetter.length}
+            количество символов: ${str.length-strNum.length-strLetter.length}
+            `
+        }
+        console.log(showStringStatistic('ghfgh'));
+        
+        console.log();
+        
+        
+        
+        
+        
+        //! 2. Написать функцию, которая принимает двузначное число 
+        //! и возвращает его в текстовом виде. 
+        //! Например: 35 – тридцать пять, 89 – восемьдесят девять, 
+        //! 12 – двенадцать. 
+        
+        let mass1 = ['ноль', 'один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять', ] 
+        let mass2 = ['десять', 'одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать',
+            'шестнадцать', 'семнадцать', 'восемнадцать', 'девятнадцать',] 
+            let mass3 = ['двадцать', 'тридцать', 'сорок', 'пятьдесят', 'шестьдесят', 'семьдесят', 'восемьдесят', 'девяносто',] 
+            
+            
+            function transformNumber (num:number) {
+                if (num>0 && num<10) {
+                    return mass1[num]
+                } else if (num>10 && num<20) {
+                    return mass2[num-10]
+                } else if (num>20 && num<=99) {
+                    let firstnum = String(num)[0] 
+                    let secondnum = String(num)[1] 
+                    return mass3[Number(firstnum)-2] + ' ' + mass1[Number(secondnum)]
+                }
+                return 'введите число от ноля до ста'
+            }
+            
+            console.log(transformNumber(300))
+            // console.log(transformNumber(-300))
+            console.log(transformNumber(5))
+            console.log(transformNumber(16))
+console.log(transformNumber(99))
+
+//! 3. Написать функцию, которая заменяет в полученной строке 
+//! большие буквы на маленькие, маленькие – на большие, а 
+//! цифры – на знак нижнего подчеркивания. 
+
+function changeRegister(str:any) {
+    // let symbols = str.toLowerCase()
+    let mass:any[] = []
+    for (let i = 0; i < str.length; i++) {
+        if (str[i]>=1) {
+            mass.push('_')
+        } else if (str[i]==str[i].toLowerCase()) {
+            mass.push(str[i].toUpperCase())
+        } else if (str[i]==str[i].toUpperCase()) {
+            mass.push(str[i].toLowerCase())
+        } 
+    }
+    return mass.join('')
+}
+console.log(changeRegister('БоЛьшИе 1 2 буКВы 3 нА 4 маЛеНькИе 5'));
+
+
+//! 4. Написать функцию, которая преобразует названия css- 
+//! стилей с дефисом в название в СamelСase стиле: font-size 
+//! в fontSize, background-color в backgroundColor, text
+//! align в textAlign.
+
+function camelСase (str:string) {
+    let arr = []
+    let underStr = str.split('-')
+    
+    for (let i = 0; i < underStr.length; i++) {
+        
+        if (underStr[i]==underStr[0]) {
+            arr.push(underStr[0].slice(0,1).toLowerCase())
+        } else {
+            arr.push(underStr[i].slice(0,1).toUpperCase())
+        }
+        
+        let str2 = underStr[i].slice(1)
+        arr.push(str2)
+    }
+    return arr.join('')
+}
+console.log(camelСase('background-color'));
+console.log(camelСase('font-feature-settings'));
+
+
+//! 5. Написать функцию, которая принимает словосочетание 
+//! и превращает его в аббревиатуру. 
+//! Например: cascading style sheets в CSS, объектно
+//! ориентированное программирование в ООП. 
+
+
+function writeAbbreviation (str:string){
+    let mass:string[] = []
+    let newStr = str.split(' ')
+    for (let i = 0; i < newStr.length; i++) {
+        mass.push(newStr[i][0].toUpperCase())
+    }
+    return mass.join('')
+}
+
+console.log(writeAbbreviation('cascading style sheets'));
+
+
+
+
+//! 9. Написать функцию, которая принимает строку и раздели
+//! тель и возвращает массив подстрок, разбитых с помощью 
+//! указанного разделителя. 
+//! Например: строка “10/08/2020”, разделитель “/”, результат: 
+//! “10”, “08”, “2020”. 
+
+let numOfDate = '10/08/2020'
+console.log('"' + numOfDate.replaceAll('/', '","') +'"');
+
+
+
+
+
+
+
+//!  <=================Методы объекта, "this"======================>
+
+//! Функцию, которая является свойством объекта, называют методом этого объекта.
+
+//! Для доступа к информации внутри объекта метод может использовать ключевое слово this.
+
+
+let cat = {
+    name: 'Vasya',
+    age:30,
+    
+    //* 1-ый способ записи
+    voice: function () {  //! 'длинный' синтаксис для методов в литерале объекта:
+        return 'Мяу-мяу'
+    },
+
+    //* 2-ой способ записи
+    run : () => { //! короткий синтаксис для методов в литерале объекта:
+        return 'бег'
+    },
+
+      //* 3-ий способ записи
+      eat:eat
+}
+
+console.log(cat.voice());
+console.log(cat.run());
+
+
+//* 3-ий способ записи
+  function eat () {
+    return 'eat'
+  }
+
+
+//* 4-ый способ записи
+cat.lye = () => {
+    return 'лежать'
+}
+
+console.log(cat);
+
+
+
+//! this в JS — это ключевое слово, которое ссылается на текущий контекст выполнения.
+//! Его значение зависит от того, где и как была вызвана функция, а не от того, 
+//! где она была определена.
 
 
 
