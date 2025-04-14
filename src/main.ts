@@ -1,5 +1,7 @@
 // import './style.css'
 
+import { nam } from "./name";
+
 
 
 
@@ -3982,12 +3984,12 @@ let buttons = {
     i: i,
     y: y,
     name: 'кнопки кнопочки',
-
-//! Для доступа к информации внутри объекта метод может использовать ключевое слово this.
     call() {
         return 'нажмите ' + this.name
     }
 }
+
+//! Для доступа к информации внутри объекта метод может использовать ключевое слово this.
 
 console.log(buttons.call());
 
@@ -4020,7 +4022,131 @@ function ppp () {
 buttons.check = ppp
 
 
-
  
+
+
+
+  
+let calc = {
+    read() {
+        this.a = 5;
+        this.b = 6;
+    },
+    sum() {
+        return this.a + this.b
+    },
+    mul() {
+        return this.a * this.b
+    },
+};
+calc.read()
+console.log(calc.sum());
+console.log(calc.mul());
+
+
+
+// up, down и showStep
+let ladder = {
+    step : 0,
+  up() {
+   this.step++
+      return this 
+   },
+   down() {
+   this.step--
+      return this 
+  },
+}
+console.log(ladder.up().up().down().up());
+
+
+
+let hi = function () {
+    console.log('hello');
+    
+}
+hi()
+console.log(typeof hi);
+
+let bye = () => {
+    console.log('Bye');
+}
+bye()
+
+
+// hello Jhon через 2 сек
+
+
+
+// function hiJhon(name:string) {
+//     return 'привет ' + name
+// }
+
+// function writeName () {
+//     setTimeout(() => {
+//         console.log(hiJhon('Petya'));
+//     }, 2000);
+// }
+
+// writeName()
+
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!! Функция конструктор !!!!!!!!!!!!!!!!!!!!!!1!
+
+//! Имя функции-конструктора должно начинаться с большой буквы.
+//! Функция-конструктор должна выполняться только с помощью оператора "new".
+function User (name:any, age:number) {
+    this.name = name;
+    this.age = age;
+    this.group = 'web:45';
+    this.academy = 'Top';
+
+}
+
+//* С объявлением переменной
+let user1 = new User('Jack', 20)
+console.log(user1)
+
+//* БЕЗ объявления переменной
+console.log(new User('usssser', 25))
+
+
+//! Это и является основной целью конструкторов – 
+//! реализовать код для многократного создания однотипных объектов.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Accumulator(startingValue:any) {
+    this.value = startingValue
+}
+
+let accumul1 = new Accumulator(1)
+console.log(accumul1.value +=3);
+
+
+
+
+
+
+
 
 
