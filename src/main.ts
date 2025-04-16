@@ -3785,13 +3785,13 @@ console.log(sayHi());
 
 
 
-let user = {
-    name: 'Ivan',
-    age: 20,
-    sayHi: sayHi,
-}
-console.log(user.sayHi());
-console.log(user['sayHi']());
+// let user = {
+//     name: 'Ivan',
+//     age: 20,
+//     sayHi: sayHi,
+// }
+// console.log(user.sayHi());
+// console.log(user['sayHi']());
 
 
 //? let user2 = {
@@ -4316,7 +4316,7 @@ cat.lye = () => {
     return 'лежать'
 }
 
-console.log(cat);
+// console.log(cat);
 
 
 
@@ -4324,5 +4324,152 @@ console.log(cat);
 //! Его значение зависит от того, где и как была вызвана функция, а не от того, 
 //! где она была определена.
 
+
+
+
+
+
+
+
+
+let hasTreeLeaves = function () {
+    return 'tree has green leaves'
+}
+
+
+let tree = {
+    city: 'Sp-Peter',
+    name: 'oak',
+    age: 123,
+
+    // обычное написание свойства
+    eat: function () {
+        return 'tree eat'
+    },    
+    // укороченное написание свойства
+    breath: () => {
+        return 'tree breath'
+    },    
+    // вызов метода
+    grow() {
+        return `tree ${this.name}  grow`
+    },    
+    hasTreeLeaves:hasTreeLeaves,
+    everyGoog:everyGoog,
+}    
+
+
+console.log(tree.eat());
+console.log(tree.grow());
+
+tree.happy = 'happynes'
+console.log(tree);
+
+function everyGoog () {
+    return 'everyGoog everyGoog ' + this.city
+}
+
+console.log(tree.everyGoog());
+
+let secondTree = tree
+secondTree.name = 'new tree'
+console.log(secondTree.grow());
+
+
+
+
+
+
+
+
+//! font-size
+
+function changeRegisterFirstLetters (str:string) {
+    let words = str.split('-')
+    let newStr = ''
+    for (const e of words) {
+        newStr += e.slice(0,1).toUpperCase() + e.slice(1)
+    }
+    return newStr.slice(0,1).toLowerCase()+newStr.slice(1)
+}
+
+console.log(changeRegisterFirstLetters('font-size'));
+console.log(changeRegisterFirstLetters('font-size-size'));
+
+
+
+
+
+
+
+//! студенты
+let student = {
+    name: ['Olya', 'Natasha', 'Kris'],
+    sayHello () {
+        return  student.name.map(el=>{return el + ' Hello'})  
+    }
+}
+console.log(student.sayHello());
+
+
+console.log(student.name.toString().split(','));
+
+
+
+//!!!!!!!!!!!!!!!!!!!!! Опциональная цепочка !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+let car = {
+    // color : {
+        // 'black': 'чёрный'
+    // }
+}
+console.log(car.color?.black); //! underfined
+// console.log(car.color.black); //! ошибка
+
+// console.log(car.color ? car.color.black : undefined);
+
+
+if (car.color?.black) {
+    console.log(car.color = 'orange');
+} else {
+    console.log(car.color);
+}
+
+
+let user = {}
+
+console.log(user.address?.street?.house);
+
+
+
+
+
+//! посчитать буквы, числа и символы
+
+function scoreSymbols (str:any) {
+    let splitStr = str.split('')
+    let accNum = 0
+    let accLet = 0
+
+    for (let i = 0; i < splitStr.length; i++) {
+            if (splitStr[i]>='0' && splitStr[i]<='9') {
+                accNum++
+            }        
+            if (splitStr[i]>='а' && splitStr[i]<='я') {
+                accLet++
+            }        
+    }
+    
+    return `
+        количество цифр: ${accNum},
+        количество букв: ${accLet},
+        количество символов: ${splitStr.length -accNum -accLet}
+    `
+}
+
+console.log(scoreSymbols(' 0 на тек @#$ 9 ущий контекст 0123'));
+
+
+// на текущий контекст 0123
 
 
