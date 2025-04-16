@@ -4416,29 +4416,171 @@ console.log(student.name.toString().split(','));
 
 
 
+
+
+
+//!!!!!!!!!!!!!!!!!!!!! Стрелочные функции, основы !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//! обычная запись функции
+function summ (a:number, b:number) {
+    return a+b
+}
+console.log(summ(4,5));
+
+
+let summNum = function summ (a:number, b:number) {
+    return a+b
+}
+console.log(summNum(4,15));
+
+
+//! стрелочная функция представляет собой более короткую форму
+let summNumm2 = (a:number, b:number) => {
+    return a+b
+}
+console.log(summNumm2(4,10));
+
+
+
+let summNumm3 = a => {
+    return a
+}
+console.log(summNumm3(5));
+
+
+
+let summNumm3_1 = a => console.log(a);
+summNumm3_1(5)
+
+
+
+let summNumm4 = () => 'hello'
+console.log(summNumm4());
+
+
+
+let summNumm5 = (a:number[]) => {
+    return a.reduce((acc,el)=>acc+el,0)
+}
+console.log(summNumm5([5,6,4]));
+
+//! если идёт return то пишем фигурные скобки {}
+
+
+
+//!!!!!!!!!!!!!!!!!!!!! Повторяем стрелочные функции !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+let ourGroup = {
+    group:'web45',
+    students: ['aaa', 'bbb', 'ccc'],
+    showStudent() {
+       this.students.forEach(e=>{
+        console.log(e +'adf')
+       })
+       
+    },
+}
+
+ourGroup.showStudent()
+
+
+
+
+
+
+
 //!!!!!!!!!!!!!!!!!!!!! Опциональная цепочка !!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+//! Облегчает жизнь при работе с вложенными объектами
+
+
+//!      ?. - опциональный оператов
+
 let car = {
-    // color : {
-        // 'black': 'чёрный'
-    // }
+    country: 'China',
+    year: 2024,
+
+    color : {
+        black: 'чёрный',
+        stock : true
+    }
 }
-console.log(car.color?.black); //! underfined
-// console.log(car.color.black); //! ошибка
 
-// console.log(car.color ? car.color.black : undefined);
+console.log(car.color?.black);
+
+console.log(`страна: ${car.country},
+год: ${car.year}
+color : ${car.color?.black}
+    `)
 
 
-if (car.color?.black) {
-    console.log(car.color = 'orange');
+
+if (car.color) {
+    console.log(car.color.black);
 } else {
-    console.log(car.color);
+    console.log(undefined);
 }
 
 
-let user = {}
+car.color ? console.log(car.color.black) : console.log(undefined);
 
-console.log(user.address?.street?.house);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// console.log(car.color?.black); //! underfined
+// // console.log(car.color.black); //! ошибка
+
+// // console.log(car.color ? car.color.black : undefined);
+
+
+// if (car.color?.black) {
+//     console.log(car.color = 'orange');
+// } else {
+//     console.log(car.color);
+// }
+
+
+// let user = {}
+
+// console.log(user.address?.street?.house);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4467,9 +4609,7 @@ function scoreSymbols (str:any) {
     `
 }
 
-console.log(scoreSymbols(' 0 на тек @#$ 9 ущий контекст 0123'));
+console.log(scoreSymbols(' на тек @#$ 9 0123'));
 
-
-// на текущий контекст 0123
 
 
