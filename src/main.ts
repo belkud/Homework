@@ -4613,3 +4613,15 @@ console.log(scoreSymbols(' на тек @#$ 9 0123'));
 
 
 
+// 1 2 3 4 
+
+let test = 5
+let testAc = 1
+for (let i = 1; i <= test; i++) {
+    testAc*=i
+}
+console.log(testAc);
+
+
+
+
