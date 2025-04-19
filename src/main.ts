@@ -4486,7 +4486,7 @@ ourGroup.showStudent()
 
 
 
-
+ 
 
 
 //!!!!!!!!!!!!!!!!!!!!! Опциональная цепочка !!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -4623,5 +4623,75 @@ for (let i = 1; i <= test; i++) {
 console.log(testAc);
 
 
+
+
+
+const vehicles = ["?", "?", "?", "?", "?", "?️", "?", "?", "✈️", "?"];
+console.log(vehicles);
+
+vehicles.forEach((e,i)=> console.log(`Транспортное средство ${i}: ${e}`))
+
+
+
+let smile = '🙂'
+console.log(smile.codePointAt(0));
+
+
+console.log(String.fromCodePoint(128578));
+console.log('метод fromCodePoint преобразует в символ число с Unicode');
+
+
+
+let plain = '✈️'
+console.log(plain.codePointAt(0))
+console.log(String.fromCodePoint('9992'))
+
+
+
+
+
+
+
+
+
+
+
+console.log('а'.codePointAt(0));
+console.log('я'.codePointAt(0));
+console.log('А'.codePointAt(0));
+console.log('Я'.codePointAt(0));
+
+
+let strAlphabet = ''
+for (let i = 1072; i <= 1103; i++) {
+    strAlphabet+=String.fromCodePoint(i);
+}
+console.log(strAlphabet);
+
+
+
+
+let buttonsArrow = ['⏩','⏪','⏫','⏬']
+
+for (const e of buttonsArrow) {
+    console.log(e.codePointAt(0));    
+}
+
+
+for (let i = 9193; i <= 9196; i++) {
+    console.log(String.fromCodePoint(i));
+    
+}
+
+
+
+
+let alfhMass = strAlphabet.split('')
+console.log(Object.keys(alfhMass));
+console.log(Object.values(alfhMass));
+console.log(Object.entries(alfhMass));
+
+let extraMass = Object.entries(alfhMass)
+console.log(...extraMass);
 
 
