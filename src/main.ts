@@ -4815,20 +4815,7 @@ fruits.map(e=>{
 
 console.log(massEl);
 
-console.clear()
 
-
-let john = {
-    surname : 'Gates',
-    age: 35,
-}
-
-console.log(john);
-
-let {surname : srname, age:ages} = john
-
-console.log(srname);
-console.log(ages);
 
 
 let newWorkers = {
@@ -4837,10 +4824,111 @@ let newWorkers = {
     Sveta:1200,
 }
 
-function calcNum (a:number, b:number) {
 
-    return [a+b, a-b]
-    // return `${a+b}, ${a-b}`
+
+
+console.clear()
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!! Деструктуризации в JS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//! Деструктуризации - это специальный синтаксис, который позволяет нам 
+//! «распаковать» массивы или объекты в несколько переменных, так как иногда 
+//! они более удобны.
+
+//! Деструктуризация объекта
+let Vasya = {
+    surname: 'Vasilek',
+    age: 25,
+    city:'Moscow'
 }
-console.log(calcNum(10,3));
+console.log(Vasya);
 
+const {surname, age} = Vasya
+
+//! строчки равнозначны!
+console.log(surname, age);
+console.log(Vasya.surname, Vasya.age);
+
+
+let john = {
+    surname : 'Gates',
+    age: 35,
+}
+console.log(john);
+
+
+
+//! Деструктуризация массива
+
+let destMass = ['orange', 'yellow', 'green']
+console.log(destMass);
+
+let [оранжевый, желтый, зеленый] = destMass
+console.log(оранжевый, желтый, зеленый);
+
+console.log(оранжевый == destMass[0]);
+
+
+// function calcNum (a:number, b:number) {
+
+//     return [a+b, a-b, a*b]
+// }
+// console.log(calcNum(10,3));
+
+// const [sum, minus, mult] = calcNum(5,6);
+// console.log(mult);
+
+
+
+
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!! Все о LocalStorage !!!!!!!!!!!!!!!!!!!!!!!!!
+let num = 30
+console.log(num);
+
+localStorage.setItem('number', num.toString()) //! 'придумываем' ключ / значение
+console.log(localStorage.getItem('number')); //! localStorage работает только со строками!
+
+let num2 = 20
+localStorage.setItem('number2', num2.toString())
+console.log(localStorage.getItem('number2'));
+
+
+// localStorage.removeItem('number2');
+console.log(localStorage.getItem('number2'));
+
+console.log(localStorage.length);
+
+
+
+let num4 = 12
+localStorage.setItem('num4', num4.toString())
+
+
+localStorage.setItem('john', JSON.stringify(john))
+let newUs = JSON.parse(localStorage.getItem('john'))
+newUs.surname = 'chahgeSurname'
+
+console.log(newUs);
+console.log(john);
+
+//! Автосохранение поля формы
+//! Создайте поле textarea, значение которого будет автоматически 
+//! сохраняться при каждом его изменении.
+
+//! Когда пользователь закроет страницу и потом откроет её заново он 
+//! должен увидеть последнее введённое значение.
+
+let locText = document.getElementById('textFromLocStor') as HTMLTextAreaElement
+locText.addEventListener('input', () => {
+    localStorage.setItem('area', locText.value)
+});
+locText.value = localStorage.getItem ('area')
+
+
+console.log(locText.value);
+// elem.addEventListener( "click" , () => alert('Спасибо!'));
