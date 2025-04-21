@@ -1,6 +1,6 @@
 // import './style.css'
 
-import { nam } from "./name";
+import { nam, surname } from "./name";
 
 
 
@@ -4493,8 +4493,10 @@ ourGroup.showStudent()
 
 //! Облегчает жизнь при работе с вложенными объектами
 
+//! Опциональная цепочка ?. — это безопасный способ доступа к свойствам вложенных 
+//! объектов, даже если какое-либо из промежуточных свойств не существует.
 
-//!      ?. - опциональный оператов
+//!      ?. - опциональный оператор
 
 let car = {
     country: 'China',
@@ -4689,9 +4691,158 @@ for (let i = 9193; i <= 9196; i++) {
 let alfhMass = strAlphabet.split('')
 console.log(Object.keys(alfhMass));
 console.log(Object.values(alfhMass));
-console.log(Object.entries(alfhMass));
+console.log(...Object.entries(alfhMass));
 
-let extraMass = Object.entries(alfhMass)
-console.log(...extraMass);
+
+
+
+
+let workers = {
+    Katya: 1500,
+    Dasha: 1000,
+    Sveta:1200,
+}
+
+
+//! Деструктивное присваивание
+
+// let {Katya:K, Dasha:D, Sveta:S} = workers
+// console.log(K, D, S);
+
+let {Katya, Dasha, Sveta} = workers
+console.log(Katya, Dasha, Sveta);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//! Метод every - это когда ВСЕ элементы равны заданному условию 
+let massOdd = [2, 4, 6]
+let oddOrEven = massOdd.every(e=>e%2==0)
+
+
+console.log(oddOrEven);
+
+
+
+
+//! Напишите программу, которая будет выводить информацию о каждом транспортном средстве в консоль в таком формате:
+//! Транспортное средство <индекс>: <символ>
+
+
+const vehicles2 = ["1", "1", "1", "1", "1", "1", "1", "1", "1"];
+
+vehicles2.forEach((e, i)=>console.log(`Транспортное средство ${i + 1} : ${e}`));
+
+let checkTransport = vehicles2.every(e=>!e.includes('2'))
+console.log(checkTransport);
+
+
+
+
+//! Задача на метод sort()
+//! У вас есть массив с блюдами. Отсортируйте его по длине строк: от меньшего описания блюд к большему. Результат выведите в консоль:
+
+const foodDescriptions = [
+  "Салат Цезарь",
+  "Паста Болоньезе",
+  "Ролл Филадельфия",
+  "Суп Том Ям",
+  "Стейк Медиум",
+  "Пицца Маргарита",
+  "Чизкейк Нью-Йорк",
+  "Хот-дог с сыром",
+  "Суши Филадельфия",
+  "Фруктовый салат",
+];
+
+// console.log(foodDescriptions.sort((a,b)=>a.length-b.length));
+let length = foodDescriptions.reduce((a,e)=>a+=e.length,0)
+console.log(length);
+
+
+let filterTenLength = foodDescriptions.filter(e=>e.length>=16 )
+console.log(filterTenLength);
+
+
+
+// console.log(fruits.reduce((a,e)=>a+=e.length,0));
+
+
+//! посчитать количество элементов
+const fruits = ["яблоко", "банан", "киви", "яблоко", "груша"];
+let massEl = [] as any
+let cc = 0
+
+fruits.map(e=>{
+    if(!massEl.includes(e)) {
+        massEl.push(e)
+    } 
+    
+    
+})
+
+console.log(massEl);
+
+console.clear()
+
+
+let john = {
+    surname : 'Gates',
+    age: 35,
+}
+
+console.log(john);
+
+let {surname : srname, age:ages} = john
+
+console.log(srname);
+console.log(ages);
+
+
+let newWorkers = {
+    Katya: 1500,
+    Dasha: 1000,
+    Sveta:1200,
+}
+
+function topSalary (obj:object) {
+if (obj==null) {
+    return 123
+}
+    return Object.entries(obj).forEach(el=>console.log(el.values()))
+}
+topSalary(newWorkers);
 
 
