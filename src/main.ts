@@ -4837,12 +4837,10 @@ let newWorkers = {
     Sveta:1200,
 }
 
-function topSalary (obj:object) {
-if (obj==null) {
-    return 123
-}
-    return Object.entries(obj).forEach(el=>console.log(el.values()))
-}
-topSalary(newWorkers);
+function calcNum (a:number, b:number) {
 
+    return [a+b, a-b]
+    // return `${a+b}, ${a-b}`
+}
+console.log(calcNum(10,3));
 
