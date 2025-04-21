@@ -4831,56 +4831,6 @@ console.clear()
 
 
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!!! Деструктуризации в JS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-//! Деструктуризации - это специальный синтаксис, который позволяет нам 
-//! «распаковать» массивы или объекты в несколько переменных, так как иногда 
-//! они более удобны.
-
-//! Деструктуризация объекта
-let Vasya = {
-    surname: 'Vasilek',
-    age: 25,
-    city:'Moscow'
-}
-console.log(Vasya);
-
-const {surname, age} = Vasya
-
-//! строчки равнозначны!
-console.log(surname, age);
-console.log(Vasya.surname, Vasya.age);
-
-
-let john = {
-    surname : 'Gates',
-    age: 35,
-}
-console.log(john);
-
-
-
-//! Деструктуризация массива
-
-let destMass = ['orange', 'yellow', 'green']
-console.log(destMass);
-
-let [оранжевый, желтый, зеленый] = destMass
-console.log(оранжевый, желтый, зеленый);
-
-console.log(оранжевый == destMass[0]);
-
-
-// function calcNum (a:number, b:number) {
-
-//     return [a+b, a-b, a*b]
-// }
-// console.log(calcNum(10,3));
-
-// const [sum, minus, mult] = calcNum(5,6);
-// console.log(mult);
-
-
 
 
 
@@ -4905,17 +4855,6 @@ console.log(localStorage.length);
 
 
 
-let num4 = 12
-localStorage.setItem('num4', num4.toString())
-
-
-localStorage.setItem('john', JSON.stringify(john))
-let newUs = JSON.parse(localStorage.getItem('john'))
-newUs.surname = 'chahgeSurname'
-
-console.log(newUs);
-console.log(john);
-
 //! Автосохранение поля формы
 //! Создайте поле textarea, значение которого будет автоматически 
 //! сохраняться при каждом его изменении.
@@ -4924,6 +4863,7 @@ console.log(john);
 //! должен увидеть последнее введённое значение.
 
 let locText = document.getElementById('textFromLocStor') as HTMLTextAreaElement
+
 locText.addEventListener('input', () => {
     localStorage.setItem('area', locText.value)
 });
@@ -4931,4 +4871,117 @@ locText.value = localStorage.getItem ('area')
 
 
 console.log(locText.value);
-// elem.addEventListener( "click" , () => alert('Спасибо!'));
+
+
+
+
+//!!!!!!!!!!!!!!!!!! Object.keys, values, entries !!!!!!!!!!!!!!!!!!!!!!1
+
+let countryCapital = {
+    Russia: 'Moscow',
+    Germany: 'Berlin',
+    Portugue: 'Lissabon',
+}
+console.log(countryCapital);
+
+
+console.log(Object.keys(countryCapital));
+console.log(Object.values(countryCapital));
+let countries = Object.entries(countryCapital) 
+console.log(JSON.stringify(countries));
+
+
+for (const key of Object.values(countryCapital)) {
+    console.log(key);
+}
+
+
+let prices = {
+    banana: 1,
+    orange: 2,
+    meat: 4,
+  };
+
+  let doublePrice = (Object.values(prices)).reduce((a,e)=>a+=e,0)
+  
+  
+
+  
+  
+  
+  
+  
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!! Деструктуризации в JS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//! Деструктуризации - это специальный синтаксис, который позволяет нам 
+//! «распаковать» массивы или объекты в несколько переменных, так как иногда 
+//! они более удобны.
+
+//! Деструктуризация объекта
+let Vasya = {
+    surname: 'Vasilek',
+    age: 25,
+    // city:'Moscow'
+}
+console.log(Vasya);
+
+const {surname, age} = Vasya
+console.log(surname);
+
+
+
+let {surname:first, age:second, city='Vashington'} = Vasya
+console.log(first, second, city);
+
+
+
+//! строчки равнозначны!
+console.log(surname, age);
+console.log(Vasya.surname, Vasya.age);
+
+
+let john = {
+    surname : 'Gates',
+    age: 35,
+}
+console.log(john);
+
+
+//! Деструктуризация массива
+
+let destMass = ['orange', 'yellow', , '2', '3', '5']
+console.log(destMass);
+
+let [оранжевый, , зеленый='greeeen', ...dig] = destMass
+console.log(оранжевый, зеленый, dig);
+
+console.log(оранжевый == destMass[0]);
+
+
+// function calcNum (a:number, b:number) {
+
+//     return [a+b, a-b, a*b]
+// }
+// console.log(calcNum(10,3));
+
+// const [sum, minus, mult] = calcNum(5,6);
+// console.log(mult);
+console.log(john);
+
+
+
+
+
+let [a, b, c] = "abc"
+console.log(b);
+
+
+
+let [name, surname2] = ['ilya', 'Kantor'];
+console.log(name);
+
+
+
+
