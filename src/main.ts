@@ -3816,70 +3816,6 @@ console.log(sayHi());
 
 
 
-let person = {
-    name: 'Evgeniy',
-    age: 25,
-    hello: hello,
-    liter() {
-        console.log('test liter');
-    }
-}
-
-console.log(person);
-person.liter()
-
-function hello() {
-    return 'Привет ' + this.name
-}
-
-console.log(person.hello());
-
-console.log(person);
-
-
-person.city = function () {
-    console.log('Moscow');
-}
-person.city();
-
-
-
-
-
-//! Функцию, которая является свойством объекта, называют методом этого объекта.
-
-
-
-
-
-
-
-person.color = () => {
-    console.log('orange');
-}
-
-person.color()
-
-console.log(JSON.stringify(person));
-
-
-
-
-person.number = () => {
-    console.log('555');
-
-}
-
-person.number()
-
-
-person.test = 'testt'
-console.log(person);
-
-
-
-
-
 
 
 
@@ -3931,61 +3867,8 @@ color.aliceblue()
 
 
 
-let y = () => {
-    console.log('yyy')
-}
-y()
-
-let buttons = {
-    a: function () {
-        return ('aaa');
-
-    },
-    e: () => {
-        return 'eee'
-    },
-    i: i,
-    y: y,
-    name: 'кнопки кнопочки',
-    call() {
-        return 'нажмите ' + this.name
-    }
-}
 
 
-
-
-
-
-console.log(buttons.call());
-
-console.log(buttons);
-console.log(buttons.a())
-console.log(buttons.e())
-
-function i() {
-    console.log(buttons.name)
-}
-i()
-
-buttons.o = () => {
-    console.log('ooo');
-    return 'ooo';
-
-}
-buttons.o()
-
-
-
-
-
-
-function ppp() {
-    console.log(this.name);
-
-}
-
-buttons.check = ppp
 
 
 
@@ -4038,31 +3921,6 @@ let bye = () => {
     console.log('Bye');
 }
 bye()
-
-
-
-//!!!!!!!!!!!!!!!!!!!!!! Функция конструктор !!!!!!!!!!!!!!!!!!!!!!1!
-
-//! Имя функции-конструктора должно начинаться с большой буквы.
-//! Функция-конструктор должна выполняться только с помощью оператора "new".
-function User(name: any, age: number) {
-    this.name = name;
-    this.age = age;
-    this.group = 'web:45';
-    this.academy = 'Top';
-
-}
-
-//* С объявлением переменной
-let user1 = new User('Jack', 20)
-console.log(user1)
-
-//* БЕЗ объявления переменной
-console.log(new User('usssser', 25))
-
-
-//! Это и является основной целью конструкторов – 
-//! реализовать код для многократного создания однотипных объектов.
 
 
 
@@ -4274,114 +4132,6 @@ console.log('"' + numOfDate.replaceAll('/', '","') +'"');
 
 
 
-
-
-//!  <=================Методы объекта, "this"======================>
-
-//! Функцию, которая является свойством объекта, называют методом этого объекта.
-
-//! Для доступа к информации внутри объекта метод может использовать ключевое слово this.
-
-
-let cat = {
-    name: 'Vasya',
-    age:30,
-    
-    //* 1-ый способ записи
-    voice: function () {  //! 'длинный' синтаксис для методов в литерале объекта:
-        return 'Мяу-мяу'
-    },
-
-    //* 2-ой способ записи
-    run : () => { //! короткий синтаксис для методов в литерале объекта:
-        return 'бег'
-    },
-
-      //* 3-ий способ записи
-      eat:eat
-}
-
-console.log(cat.voice());
-console.log(cat.run());
-
-
-//* 3-ий способ записи
-  function eat () {
-    return 'eat'
-  }
-
-
-//* 4-ый способ записи
-cat.lye = () => {
-    return 'лежать'
-}
-
-// console.log(cat);
-
-
-
-//! this в JS — это ключевое слово, которое ссылается на текущий контекст выполнения.
-//! Его значение зависит от того, где и как была вызвана функция, а не от того, 
-//! где она была определена.
-
-
-
-
-
-
-
-
-
-let hasTreeLeaves = function () {
-    return 'tree has green leaves'
-}
-
-
-let tree = {
-    city: 'Sp-Peter',
-    name: 'oak',
-    age: 123,
-
-    // обычное написание свойства
-    eat: function () {
-        return 'tree eat'
-    },    
-    // укороченное написание свойства
-    breath: () => {
-        return 'tree breath'
-    },    
-    // вызов метода
-    grow() {
-        return `tree ${this.name}  grow`
-    },    
-    hasTreeLeaves:hasTreeLeaves,
-    everyGoog:everyGoog,
-}    
-
-
-console.log(tree.eat());
-console.log(tree.grow());
-
-tree.happy = 'happynes'
-console.log(tree);
-
-function everyGoog () {
-    return 'everyGoog everyGoog ' + this.city
-}
-
-console.log(tree.everyGoog());
-
-let secondTree = tree
-secondTree.name = 'new tree'
-console.log(secondTree.grow());
-
-
-
-
-
-
-
-
 //! font-size
 
 function changeRegisterFirstLetters (str:string) {
@@ -4413,6 +4163,48 @@ console.log(student.sayHello());
 
 
 console.log(student.name.toString().split(','));
+
+
+
+
+
+//! посчитать буквы, числа и символы
+
+function scoreSymbols (str:any) {
+    let splitStr = str.split('')
+    let accNum = 0
+    let accLet = 0
+
+    for (let i = 0; i < splitStr.length; i++) {
+            if (splitStr[i]>='0' && splitStr[i]<='9') {
+                accNum++
+            }        
+            if (splitStr[i]>='а' && splitStr[i]<='я') {
+                accLet++
+            }        
+    }
+    
+    return `
+        количество цифр: ${accNum},
+        количество букв: ${accLet},
+        количество символов: ${splitStr.length -accNum -accLet}
+    `
+}
+
+console.log(scoreSymbols(' на тек @#$ 9 0123'));
+
+
+
+
+
+console.clear()
+
+
+
+
+
+
+
 
 
 
@@ -4532,102 +4324,6 @@ car.color ? console.log(car.color.black) : console.log(undefined);
 
 
 
-
-
-
-
-
-
-
-
-
-// console.log(car.color?.black); //! underfined
-// // console.log(car.color.black); //! ошибка
-
-// // console.log(car.color ? car.color.black : undefined);
-
-
-// if (car.color?.black) {
-//     console.log(car.color = 'orange');
-// } else {
-//     console.log(car.color);
-// }
-
-
-// let user = {}
-
-// console.log(user.address?.street?.house);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//! посчитать буквы, числа и символы
-
-function scoreSymbols (str:any) {
-    let splitStr = str.split('')
-    let accNum = 0
-    let accLet = 0
-
-    for (let i = 0; i < splitStr.length; i++) {
-            if (splitStr[i]>='0' && splitStr[i]<='9') {
-                accNum++
-            }        
-            if (splitStr[i]>='а' && splitStr[i]<='я') {
-                accLet++
-            }        
-    }
-    
-    return `
-        количество цифр: ${accNum},
-        количество букв: ${accLet},
-        количество символов: ${splitStr.length -accNum -accLet}
-    `
-}
-
-console.log(scoreSymbols(' на тек @#$ 9 0123'));
-
-
-
-// 1 2 3 4 
-
-let test = 5
-let testAc = 1
-for (let i = 1; i <= test; i++) {
-    testAc*=i
-}
-console.log(testAc);
-
-
-
-
-
 const vehicles = ["?", "?", "?", "?", "?", "?️", "?", "?", "✈️", "?"];
 console.log(vehicles);
 
@@ -4716,37 +4412,6 @@ console.log(Katya, Dasha, Sveta);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //! Метод every - это когда ВСЕ элементы равны заданному условию 
 let massOdd = [2, 4, 6]
 let oddOrEven = massOdd.every(e=>e%2==0)
@@ -4756,17 +4421,6 @@ console.log(oddOrEven);
 
 
 
-
-//! Напишите программу, которая будет выводить информацию о каждом транспортном средстве в консоль в таком формате:
-//! Транспортное средство <индекс>: <символ>
-
-
-const vehicles2 = ["1", "1", "1", "1", "1", "1", "1", "1", "1"];
-
-vehicles2.forEach((e, i)=>console.log(`Транспортное средство ${i + 1} : ${e}`));
-
-let checkTransport = vehicles2.every(e=>!e.includes('2'))
-console.log(checkTransport);
 
 
 
@@ -4825,9 +4479,6 @@ let newWorkers = {
 }
 
 
-
-
-console.clear()
 
 
 
@@ -4907,10 +4558,9 @@ let prices = {
   
 
   
-  
-  
-  
-  
+console.clear()  
+
+
 
 
 //!!!!!!!!!!!!!!!!!!!!!!!!!!! Деструктуризации в JS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -4981,6 +4631,108 @@ console.log(b);
 
 let [name, surname2] = ['ilya', 'Kantor'];
 console.log(name);
+
+
+
+  
+
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!! Функция конструктор !!!!!!!!!!!!!!!!!!!!!!1!
+
+//! Имя функции-конструктора должно начинаться с большой буквы.
+//! Функция-конструктор должна выполняться только с помощью оператора "new".
+
+function User(name: any, age: number) {
+    this.name = name;
+    this.age = age;
+    this.group = 'web:45';
+    this.academy = 'Top';
+
+}
+
+let user1 = new User('Jack', 20)
+console.log(user1)
+
+
+
+
+function Dog (Nickname:string, color:string) {
+    this.Nickname = Nickname,
+    this.color = color
+    this.welcome = ()=> {
+return `Your Nickname is ${this.Nickname} 
+and color is ${this.color}
+welcome to our party
+`}
+}
+
+const dog1 = new Dog ('Spark', 'orange')
+console.log(dog1.welcome());
+
+
+
+//! Это и является основной целью конструкторов – 
+//! реализовать код для многократного создания однотипных объектов.
+
+//! Функцию, которая является свойством объекта, называют методом этого объекта.
+
+
+  
+ 
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!! Классы !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+//! Класс - это шаблон для создания объектов
+
+//! Конструктор - имя метода, специальный метод, который выполняется
+//! автоматически при создании экземпляра класса
+
+//! Конструктор - заполняет объект какими либо начальными данными
+
+//! Не надо перечислять через запятую как в синтаксисе объекта
+
+class Student {
+    
+    country = 'Russia' //! статические параметры
+    city = 'Sochi'
+
+    constructor(name:string, age:number) { //! динамические параметры
+        this.name = name
+        this.age = age
+    }
+
+
+sayHi() {
+     return `привет ${this.name}`
+    
+}
+
+set street(value:any) { //! set и get нужны для добавления кастомной логики (напр: написать слово с большой буквы)
+    this._street = value   //! в сеттере и геттере нижнее подчеркивание
+}
+
+get street() {
+    return 'Привет ' + this._street
+}
+
+}
+
+let firstStudent = new Student ('Ann', 25)
+console.log(firstStudent);
+
+
+
+console.log(firstStudent.sayHi())
+
+
+
+
 
 
 
