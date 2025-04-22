@@ -2226,6 +2226,20 @@ import { nam, surname } from "./name";
 
 // let dateObBirth = '28.03.1991'
 
+// let xxx = dateObBirth.replaceAll('.', '')
+// xxx.split('').reduce((a,e)=>a+= e,0)
+
+// let xxx2 = String(xxx).split('').reduce((a,e)=>a+= +e,0)
+
+// console.log(xxx);
+// console.log(xxx2);
+
+
+
+
+
+
+
 // let summNumbers = 
 // dateObBirth.split('.').reduce((acc,el)=>acc+=+el,0)
 // .toFixed().split('').reduce((acc,el)=>acc+=+el,0)
@@ -2293,7 +2307,7 @@ import { nam, surname } from "./name";
 
 // //! Найти сотрудника с наименьшей зарплатой и увеличить оклад на 20.000
 // let salaries = stuff.map(el=>{
-//     return el.salary
+    //     return el.salary
 // })
 // console.log(salaries);
 
@@ -2312,13 +2326,23 @@ import { nam, surname } from "./name";
 
 
 // let stuffs = [
-//     {name: 'Katya', age: 27, salary: 50000},
-//     {name: 'Natasha', age: 33, salary: 80000},
-//     {name: 'Masha', age: 23, salary: 32000},
-//     {name: 'Sveta', age: 36, salary: 95000},
-// ]
+//         {name: 'Katya', age: 27, salary: 50000},
+//         {name: 'Natasha', age: 33, salary: 80000},
+//         {name: 'Masha', age: 23, salary: 32000},
+//         {name: 'Sveta', age: 36, salary: 95000},
+//     ]
+    
+//     // //! Найти сотрудника с наименьшей зарплатой и увеличить оклад на 20.000
 
-// //! Найти сотрудника с наибольшим количеством символов в имени
+// let minSalary = stuffs.map(e=>e.salary)
+// console.log(Math.min(...minSalary));
+
+
+
+
+
+
+// // //! Найти сотрудника с наибольшим количеством символов в имени
 // let longestName = stuffs.map(el=>el.name.length).sort().pop()
 // console.log(longestName);
 
@@ -4634,6 +4658,48 @@ console.log(name);
 
 
 
+
+
+
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Добавление методов к объектам!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+let cat = {
+    name: 'Vasya',
+    age:30,
+    
+    //* 1-ый способ записи
+    voice: function () {  //! 'длинный' синтаксис для методов в литерале объекта:
+        return 'Мяу-мяу'
+    },
+
+    //* 2-ой способ записи
+    run : () => { //! короткий синтаксис для методов в литерале объекта:
+        return 'бег'
+    },
+
+      //* 3-ий способ записи
+      eat:eat
+}
+
+console.log(cat.voice());
+console.log(cat.run());
+
+
+//* 3-ий способ записи
+  function eat () {
+    return 'eat'
+  }
+
+
+//* 4-ый способ записи
+cat.lye = () => {
+    return 'лежать'
+}
+
+console.log(cat);
   
 
 
@@ -4644,17 +4710,22 @@ console.log(name);
 //! Имя функции-конструктора должно начинаться с большой буквы.
 //! Функция-конструктор должна выполняться только с помощью оператора "new".
 
+//!!!!!!!!! ВСЕ СВОЙСТВА / МЕТОДЫ ЧЕРЕЗ THIS
+
 function User(name: any, age: number) {
     this.name = name;
     this.age = age;
     this.group = 'web:45';
     this.academy = 'Top';
+    this.greeting = function () {
+        console.log('help ' + this.name);
+    }
 
 }
 
 let user1 = new User('Jack', 20)
 console.log(user1)
-
+user1.greeting()
 
 
 
@@ -4669,6 +4740,7 @@ welcome to our party
 }
 
 const dog1 = new Dog ('Spark', 'orange')
+console.log(dog1);
 console.log(dog1.welcome());
 
 
@@ -4693,9 +4765,11 @@ console.log(dog1.welcome());
 //! Конструктор - имя метода, специальный метод, который выполняется
 //! автоматически при создании экземпляра класса
 
-//! Конструктор - заполняет объект какими либо начальными данными
-
 //! Не надо перечислять через запятую как в синтаксисе объекта
+
+
+//! МЕТОДЫ ВЫЗЫВАЮТСЯ КАК В ОБЫЧНОМ ОБЪЕКТЕ 
+
 
 class Student {
     
@@ -4729,6 +4803,53 @@ console.log(firstStudent);
 
 
 console.log(firstStudent.sayHi())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Aircraft  {
+    company = 'Boeng'
+    country = 'Russia'
+    constructor(model:any, age:number) {
+        this.model = model
+        this.age = age
+        // this.details = {
+        //     wheels : 'колёса'
+        // }
+    }
+    fly () {
+        console.log(`
+    Самолет ${this.model}  
+    компании ${this.company} поднимается 
+    и у него есть ${this.details?.wheels}
+    `);
+        
+    }
+}
+
+let aircraftFirst = new Aircraft(777, 12)
+console.log(aircraftFirst);
+
+let aircraftSecond = new Aircraft(999, 3)
+console.log(aircraftSecond);
+aircraftSecond.fly()
+
+
+
+
+
+
 
 
 
