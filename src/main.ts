@@ -4821,13 +4821,13 @@ console.log(firstStudent.sayHi())
 class Aircraft  {
     company = 'Boeng'
     country = 'Russia'
-    constructor(model:any, age:number) {
-        this.model = model
-        this.age = age
-        // this.details = {
-        //     wheels : 'колёса'
-        // }
-    }
+    // constructor(model:any, age:number) {
+    //     this.model = model
+    //     this.age = age
+    //     // this.details = {
+    //     //     wheels : 'колёса'
+    //     // }
+    // }
     fly () {
         console.log(`
     Самолет ${this.model}  
@@ -4926,13 +4926,21 @@ class Marker {
     }
 
     print (text:string) {
-        let num = this.ink 
-        for (let i = 0; i < num; i++) {
-            symbols.innerHTML+=`<span style="color: ${this.color}; 
-            opacity: ${1-i/num};">${text[i]}</span>`
-        }
+        let num = this.ink
 
+        for (let i = 0; i < num; i++) {
+            if (text[i]=='_') {
+                symbols.innerHTML+=`<span style="color: ${this.color}; 
+                opacity: ${1+i/num};">${text[i]}</span>`
+            } else {
+                symbols.innerHTML+=`<span style="color: ${this.color}; 
+                opacity: ${1-i/num};">${text[i]}</span>`
+            }
+        }
         console.log(num);
+
+        symbols.innerHTML+='<br>'
+
         marker_info.innerHTML += `
         Цвет маркера:${this.color} <br>
         Количество введенных символов: ${this.ink}<br>
@@ -4940,15 +4948,14 @@ class Marker {
         
         <br>
         `
-        
 }
 }
 
 let marker1 = new Marker('red', 15)
-marker1.print('12345678901234567890')
+marker1.print('1_2_3_4_5_6_9_8_8901234567890')
 
 
-let marker2 = new Marker('orange', 5)
+let marker2 = new Marker('orange', 25)
 marker2.print('123456789')
 
 
