@@ -96,6 +96,9 @@ class Aircraft  {
     //! set и get нужны для добавления кастомной логики (напр: написать слово с большой буквы)
     //! в сеттере и геттере нижнее подчеркивание
     
+
+
+
     get age() {
         return  `${this._age}`
     }
@@ -111,29 +114,17 @@ class Aircraft  {
     }
 
     }
-    let aircraftFirst = new Aircraft(777, 15)
-    console.log(aircraftFirst.age);
+    let aircraftFirst = new Aircraft(1777, 15)
+    console.log(aircraftFirst);
     
     
-    // get name() {
-    //     return this._name;
-    //   }
+
     
-    //   set name(value) {
-    //     if (value.length < 4) {
-    //       alert("Имя слишком короткое.");
-    //       return;
-    //     }
-    //     this._name = value;
-    //   }
-
-
-
-
 
 
 // let aircraftSecond = new Aircraft(999, 3)
 // console.log(aircraftSecond);
+// 
 // aircraftSecond.fly()
 
 
@@ -188,6 +179,64 @@ class Aircraft  {
 
 
 
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!1! JS_DZ_Modul_2_Week_5 !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//! Задание 1
+//! Реализовать класс, описывающий простой маркер.  В классе 
+//! должны быть следующие компоненты:
+//! ■ поле, которое хранит цвет маркера;
+//! ■ поле, которое хранит количество чернил в маркере (в про
+//! центах);
+//! ■ метод для печати (метод принимает строку и выводит 
+//! текст соответствующим цветом; текст выводится до тех 
+//! пор, пока в маркере есть чернила; один не пробельный 
+//! символ – это 0,5% чернил в маркере).
+
+
+let symbols = document.getElementById('marker_symbol') as HTMLDivElement
+let marker_info = document.getElementById('marker_info') as HTMLDivElement
+
+class Marker {
+    constructor(color:string, ink:number){
+        this.color = color
+        this.ink = ink //количество чернил (на 50 символов)
+    }
+
+    print (text:string) {
+        let num = this.ink
+
+        for (let i = 0; i < num; i++) {
+            if (text[i]=='_') {
+                symbols.innerHTML+=`<span style="color: ${this.color}; 
+                opacity: ${1+i/num};">${text[i]}</span>`
+            } else {
+                symbols.innerHTML+=`<span style="color: ${this.color}; 
+                opacity: ${1-i/num};">${text[i]}</span>`
+            }
+        }
+        console.log(num);
+
+        symbols.innerHTML+='<br>'
+
+        marker_info.innerHTML += `
+        Цвет маркера:${this.color} <br>
+        Количество введенных символов: ${this.ink}<br>
+        Символов не напечаталось: ${text.length - this.ink} <br>
+        
+        <br>
+        `
+}
+}
+
+let marker1 = new Marker('red', 15)
+marker1.print('1_2_3_4_5_6_9_8_8901234567890')
+
+
+let marker2 = new Marker('orange', 25)
+marker2.print('123456789')
 
 
 
