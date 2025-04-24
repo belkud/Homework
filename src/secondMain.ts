@@ -208,14 +208,9 @@ class Marker {
     print (text:string) {
         let num = this.ink
 
-        for (let i = 0; i < num; i++) {
-            if (text[i]=='_') {
-                symbols.innerHTML+=`<span style="color: ${this.color}; 
-                opacity: ${1+i/num};">${text[i]}</span>`
-            } else {
-                symbols.innerHTML+=`<span style="color: ${this.color}; 
-                opacity: ${1-i/num};">${text[i]}</span>`
-            }
+        for (let i = 0; i < text.length; i++) {
+            symbols.innerHTML+=`<span style="color: ${this.color}; 
+            opacity: ${1-i/num};">${text[i]}</span>`
         }
         console.log(num);
 
@@ -231,18 +226,72 @@ class Marker {
 }
 }
 
-let marker1 = new Marker('red', 15)
-marker1.print('1_2_3_4_5_6_9_8_8901234567890')
+let marker1 = new Marker('red', 45)
+marker1.print('1_  s dfg sdf sdf dfsdfsdf 2_3_4_5_6_')
 
 
 let marker2 = new Marker('orange', 25)
-marker2.print('123456789')
+marker2.print('12345678 90 ')
 
 
 
+//! Задание 1 // JS_PZ_Modul_2_Week_4 
+//! Реализовать класс PrintMaсhine, которой состоит из:
+//! ■ размера шрифта;
+//! ■ цвета шрифта;
+//! ■ семейства шрифта;
+//! ■ метода print(), который принимает текст и печатает его 
+//! соответствующим шрифтом 
+
+let printText = document.getElementById('PrintMaсhine') as HTMLDivElement
+
+class PrintMaсhine {
+    
+    background = 'rgb(11, 66, 85)'
+
+    constructor(fontSize:any, color:any, fontFamily:string){
+        this.fontSize = fontSize
+        this.color = color
+        this.fontFamily = fontFamily
+    }
+    print(text:any) {
+        printText.innerHTML+= `
+        <div style="font-size: ${this.fontSize}; color: ${this.color}; 
+        font-family: ${this.fontFamily}; background:${this.background}">${text}</div>`
+    }
+}
+
+let writeText1 = new PrintMaсhine('2em', 'red', 'Franklin Gothic Medium')
+writeText1.print('Печатаем тестовый текст')
+
+let writeText2 = new PrintMaсhine('1.5em', 'green', 'Franklin Gothic Medium')
+writeText2.print('Печатаем ещё один текст')
 
 
 
+//! Задание 1 // JS_PZ_Modul_2_Week_5
+//! Реализовать класс Button, который содержит ширину, высоту, 
+//! текст кнопки и метод showBtn(), который выводит кнопку на экран 
+//! с помощью тега button и функции document.write(). 
+
+
+class Button {
+    constructor(width:any, height:any, value:any) {
+        this.width = width
+        this.height = height
+        this.value = value
+    }
+    showBtn() {
+        document.body.innerHTML += `
+<button style="width: ${this.width}; height: ${this.height}">${this.value}</button>`
+    }
+
+}
+let button1 = new Button ('120px', '20px', 'Нажми меня')
+button1.showBtn()
+
+let button2 = new Button ('80px', '20px', 'Удалить')
+button2.showBtn()
 
 
 
