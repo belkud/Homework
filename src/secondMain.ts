@@ -276,22 +276,102 @@ writeText2.print('Печатаем ещё один текст')
 
 
 class Button {
-    constructor(width:any, height:any, value:any) {
+    constructor(width:any, color:any, background:any, value:any) {
         this.width = width
-        this.height = height
+        this.color = color
+        this.background = background
         this.value = value
     }
     showBtn() {
         document.body.innerHTML += `
-<button style="width: ${this.width}; height: ${this.height}">${this.value}</button>`
+<button style="width: ${this.width}; color: ${this.color}; background: ${this.background}">${this.value}</button>`
     }
 
 }
-let button1 = new Button ('120px', '20px', 'Нажми меня')
+let button1 = new Button ('120px', 'white', 'red', 'Нажми меня')
 button1.showBtn()
 
-let button2 = new Button ('80px', '20px', 'Удалить')
+let button2 = new Button ('80px', 'red', 'black', 'Удалить')
 button2.showBtn()
+
+console.log(window);
+
+
+
+
+
+
+
+//!!!!!!!!!!!!! Прототипное наследование, Наследование классов!!!!!!!!!!!!!!!!!!!
+
+
+//! Таким образом, прототип используется для чтения свойств, 
+//! а get и set — для работы с данными при их присвоении и чтении.
+
+let transport = {
+    name : 'transport',
+    glass : true,
+    wheels: true,
+    brake () {
+        return `тормоза работают y ${this.name}`
+    }
+}
+
+let bus = {
+    name : 'bus',
+    stear : true,
+    drivers : false,
+    __proto__: transport, //! первый способ записи 'proto'
+}
+
+let car = {
+    name : 'car',
+    color: 'gray',
+    odometr: '100.000',
+    __proto__:bus,
+} as any
+
+let bycicle = {
+    name : 'bycicle',
+    cost : 18000,
+    color : 'red',
+     brake () {
+        return `давайте ремонтировать`
+    }
+} as any
+
+bycicle.__proto__  = car //! второй способ записи
+
+console.log(bus);
+
+
+// покажет свойства и прототипов тоже
+for (const key in car) {
+    console.log(key + ' ' + car[key]);
+}
+
+// покажет свойства объекта
+console.log(...Object.entries(car));
+
+
+console.log(car.brake());
+console.log(bycicle.brake());
+
+console.log(car.color);
+console.log(bycicle.color);
+
+delete bycicle.color //! удалить свойство
+console.log(bycicle.color);
+
+
+// transport.__proto__ = bycicle //! циклическое прото (ошибка)
+
+
+
+let note = {
+    display : 15.6,
+}
+// Object.getPrototypeOf(note) = bycicle
 
 
 
