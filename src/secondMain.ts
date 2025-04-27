@@ -313,8 +313,14 @@ let transport = {
     glass : true,
     wheels: true,
     brake () {
-        return `тормоза работают y ${this.name}`
-    }
+         `тормоза работают y ${this.name}`
+    },
+    gas() {
+        return this.fuel = true
+    },
+    benzin() {
+        return this.fuel = false
+    },
 }
 
 let bus = {
@@ -335,9 +341,10 @@ let bycicle = {
     name : 'bycicle',
     cost : 18000,
     color : 'red',
-     brake () {
+    brake () {
         return `давайте ремонтировать`
-    }
+    },
+
 } as any
 
 bycicle.__proto__  = car //! второй способ записи
@@ -345,20 +352,22 @@ bycicle.__proto__  = car //! второй способ записи
 console.log(bus);
 
 
-// покажет свойства и прототипов тоже
+//! покажет ТОЛЬКО свойства объекта
+console.log(...Object.entries(car));
+
+//! покажет ещё и унаследованные свойства
 for (const key in car) {
     console.log(key + ' ' + car[key]);
 }
 
-// покажет свойства объекта
-console.log(...Object.entries(car));
 
 
 console.log(car.brake());
 console.log(bycicle.brake());
 
+console.log(bycicle.brake);
+
 console.log(car.color);
-console.log(bycicle.color);
 
 delete bycicle.color //! удалить свойство
 console.log(bycicle.color);
@@ -367,12 +376,45 @@ console.log(bycicle.color);
 // transport.__proto__ = bycicle //! циклическое прото (ошибка)
 
 
+console.log(bycicle.fuel); //! без вызова false
+
+
+console.log(...Object.entries(bycicle));
+
+for (const key in bycicle) {
+    let own = bycicle.hasOwnProperty(key)
+    console.log(own ? `собственный ключ: ${key}` : `унаследованный ключ: ${key}`)
+    
+}
+
+
+console.log(transport.gas());
+
+
+
+
+
+
+
 
 let note = {
     display : 15.6,
 }
 // Object.getPrototypeOf(note) = bycicle
 
+
+let animal = {
+    eat: true,
+}
+
+function Anim (name:string) {
+    this.name = name
+}
+Anim.prototype = animal
+
+let cat = new Anim ('мяу')
+console.log(cat);
+console.log(cat.eat);
 
 
 
