@@ -296,6 +296,9 @@ button2.showBtn()
 
 console.log(window);
 
+let button3 = new button1.constructor  
+console.log(button1);
+console.log(button3);
 
 
 
@@ -407,6 +410,7 @@ let animal = {
     eat: true,
 }
 
+
 function Anim (name:string) {
     this.name = name
 }
@@ -418,4 +422,40 @@ console.log(cat.eat);
 
 
 
+
+
+
+
+
+
+
+let extraAnim  = {
+    eats:false,
+    toString() {
+        return 'что-то делает'
+    }
+}
+
+function Fox (name:string, forest:string) {
+    this.name = name
+    this.forest=forest
+    // Fox.prototype = {
+    //     eats:true
+    // }
+    this.sleep = () => {
+        return 'спать'
+    }
+}
+
+Fox.prototype = extraAnim
+
+
+let foxFirst = new Fox('Tricky', 'Local')
+console.log(foxFirst);
+console.log(foxFirst.eats);
+console.log(foxFirst.sleep());
+
+console.log(Fox.prototype.constructor());
+
+console.log(extraAnim.toString());
 
