@@ -356,12 +356,12 @@ console.log(bus);
 
 
 //! покажет ТОЛЬКО свойства объекта
-console.log(...Object.entries(car));
+// console.log(...Object.entries(car));
 
 //! покажет ещё и унаследованные свойства
-for (const key in car) {
-    console.log(key + ' ' + car[key]);
-}
+// for (const key in car) {
+//     console.log(key + ' ' + car[key]);
+// }
 
 
 
@@ -375,6 +375,9 @@ console.log(car.color);
 delete bycicle.color //! удалить свойство
 console.log(bycicle.color);
 
+let bycicle2 = bycicle
+console.log(bycicle);
+console.log(bycicle2);
 
 // transport.__proto__ = bycicle //! циклическое прото (ошибка)
 
@@ -384,11 +387,11 @@ console.log(bycicle.fuel); //! без вызова false
 
 console.log(...Object.entries(bycicle));
 
-for (const key in bycicle) {
-    let own = bycicle.hasOwnProperty(key)
-    console.log(own ? `собственный ключ: ${key}` : `унаследованный ключ: ${key}`)
+// for (const key in bycicle) {
+//     let own = bycicle.hasOwnProperty(key)
+//     console.log(own ? `собственный ключ: ${key}` : `унаследованный ключ: ${key}`)
     
-}
+// }
 
 
 console.log(transport.gas());
@@ -431,6 +434,7 @@ console.log(cat.eat);
 
 let extraAnim  = {
     eats:false,
+    runs:true,
     toString() {
         return 'что-то делает'
     }
@@ -448,14 +452,60 @@ function Fox (name:string, forest:string) {
 }
 
 Fox.prototype = extraAnim
+ 
+
 
 
 let foxFirst = new Fox('Tricky', 'Local')
-console.log(foxFirst);
-console.log(foxFirst.eats);
-console.log(foxFirst.sleep());
 
-console.log(Fox.prototype.constructor());
+
+//! prototype - это когда смотрим свойства самого объекта
+//! proto - ссылка на свойство prototype функции-конструктора.
+
+//! равнозначны!
+console.log(foxFirst.__proto__);
+console.log(Fox.prototype);
+
 
 console.log(extraAnim.toString());
 
+
+// console.log(foxFirst.__proto__.constructor == Fox);
+
+// console.log(foxFirst.sleep());
+// console.log(foxFirst.toString());
+// console.log(extraAnim.__proto__ == Object.prototype);
+
+
+//! проверка через typeof на object
+// console.log(Array.prototype);
+// console.log(Date.prototype);
+// console.log(Object.prototype);
+// console.log(Function.prototype());
+
+let mass = [1, 2, 3]
+// console.log(mass.__proto__ == Array.prototype) //!true
+// console.log(Fox.__proto__ == Function.prototype);
+
+console.log(String.prototype);
+
+
+console.log(Number.prototype);
+
+    Number.prototype.show = ()=>{console.log('Добавили новый метод');
+}
+let num = 12345 
+num.show();
+
+
+ 
+
+ 
+ 
+
+
+
+
+
+
+ 
