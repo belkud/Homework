@@ -494,6 +494,11 @@ class Button {
         document.body.innerHTML += `
 <button style="width: ${this.width}; color: ${this.color}; background: ${this.background}">${this.value}</button>`
     }
+   
+    
+delete() {
+   return 'удалить 123'
+}
 
 }
 let button1 = new Button ('120px', 'white', 'red', 'Нажми меня')
@@ -506,6 +511,61 @@ console.log(window);
 
 
 console.log(button1);
-console.log(button3);
+
+
+
+class Lights extends Button {
+//     brightness:any
+    // constructor (brightness:any) {
+    //     // this.brightness = brightness
+    //     this.color = color
+
+
+    // }
+
+
+
+
+
+
+ delete() {
+    super.delete()
+ }
+
+ //! если метод, то просто пишем, без 'прекрас'
+
+ delete2() {
+    return 'удалить'
+ }
+}
+
+let light1 = new Lights()
+console.log(light1.delete());
+console.log(light1.delete2());
+
+
+let input_marker = document.querySelector('#input_marker') as HTMLInputElement
+input_marker.addEventListener('input', (e)=>{
+    console.log(e.target.value);
+    
+})
+
+
+console.log(String('а').codePointAt(0));
+console.log(String('я').codePointAt(0));
+
+
+let firstLetter = String('а').codePointAt(0) as any
+let lastLetter = String('я').codePointAt(0) as any
+
+// let acc = 0
+// setInterval(() => {
+// for (let i = firstLetter; i <= lastLetter; i++) {
+//         acc++;
+//     console.log(acc);           
+// }
+// }, 10000);
+
+
 
 
