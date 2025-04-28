@@ -182,129 +182,6 @@ class Aircraft  {
 
 
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!1! JS_DZ_Modul_2_Week_5 !!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-//! Задание 1
-//! Реализовать класс, описывающий простой маркер.  В классе 
-//! должны быть следующие компоненты:
-//! ■ поле, которое хранит цвет маркера;
-//! ■ поле, которое хранит количество чернил в маркере (в про
-//! центах);
-//! ■ метод для печати (метод принимает строку и выводит 
-//! текст соответствующим цветом; текст выводится до тех 
-//! пор, пока в маркере есть чернила; один не пробельный 
-//! символ – это 0,5% чернил в маркере).
-
-
-let symbols = document.getElementById('marker_symbol') as HTMLDivElement
-let marker_info = document.getElementById('marker_info') as HTMLDivElement
-
-class Marker {
-    constructor(color:string, ink:number){
-        this.color = color
-        this.ink = ink //количество чернил (на 50 символов)
-    }
-
-    print (text:string) {
-        let num = this.ink
-
-        for (let i = 0; i < text.length; i++) {
-            symbols.innerHTML+=`<span style="color: ${this.color}; 
-            opacity: ${1-i/num};">${text[i]}</span>`
-        }
-        console.log(num);
-
-        symbols.innerHTML+='<br>'
-
-        marker_info.innerHTML += `
-        Цвет маркера:${this.color} <br>
-        Количество введенных символов: ${this.ink}<br>
-        Символов не напечаталось: ${text.length - this.ink} <br>
-        
-        <br>
-        `
-}
-}
-
-let marker1 = new Marker('red', 45)
-marker1.print('1_  s dfg sdf sdf dfsdfsdf 2_3_4_5_6_')
-
-
-let marker2 = new Marker('orange', 25)
-marker2.print('12345678 90 ')
-
-
-
-//! Задание 1 // JS_PZ_Modul_2_Week_4 
-//! Реализовать класс PrintMaсhine, которой состоит из:
-//! ■ размера шрифта;
-//! ■ цвета шрифта;
-//! ■ семейства шрифта;
-//! ■ метода print(), который принимает текст и печатает его 
-//! соответствующим шрифтом 
-
-let printText = document.getElementById('PrintMaсhine') as HTMLDivElement
-
-class PrintMaсhine {
-    
-    background = 'rgb(11, 66, 85)'
-
-    constructor(fontSize:any, color:any, fontFamily:string){
-        this.fontSize = fontSize
-        this.color = color
-        this.fontFamily = fontFamily
-    }
-    print(text:any) {
-        printText.innerHTML+= `
-        <div style="font-size: ${this.fontSize}; color: ${this.color}; 
-        font-family: ${this.fontFamily}; background:${this.background}">${text}</div>`
-    }
-}
-
-let writeText1 = new PrintMaсhine('2em', 'red', 'Franklin Gothic Medium')
-writeText1.print('Печатаем тестовый текст')
-
-let writeText2 = new PrintMaсhine('1.5em', 'green', 'Franklin Gothic Medium')
-writeText2.print('Печатаем ещё один текст')
-
-
-
-//! Задание 1 // JS_PZ_Modul_2_Week_5
-//! Реализовать класс Button, который содержит ширину, высоту, 
-//! текст кнопки и метод showBtn(), который выводит кнопку на экран 
-//! с помощью тега button и функции document.write(). 
-
-
-class Button {
-    constructor(width:any, color:any, background:any, value:any) {
-        this.width = width
-        this.color = color
-        this.background = background
-        this.value = value
-    }
-    showBtn() {
-        document.body.innerHTML += `
-<button style="width: ${this.width}; color: ${this.color}; background: ${this.background}">${this.value}</button>`
-    }
-
-}
-let button1 = new Button ('120px', 'white', 'red', 'Нажми меня')
-button1.showBtn()
-
-let button2 = new Button ('80px', 'red', 'black', 'Удалить')
-button2.showBtn()
-
-console.log(window);
-
-let button3 = new button1.constructor  
-console.log(button1);
-console.log(button3);
-
-
-
-
-
-
 //!!!!!!!!!!!!! Прототипное наследование, Наследование классов!!!!!!!!!!!!!!!!!!!
 
 
@@ -499,13 +376,136 @@ num.show();
 
 
  
-
- 
  
 
 
 
 
 
-
  
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!1! JS_DZ_Modul_2_Week_5 !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//! Задание 1
+//! Реализовать класс, описывающий простой маркер.  В классе 
+//! должны быть следующие компоненты:
+//! ■ поле, которое хранит цвет маркера;
+//! ■ поле, которое хранит количество чернил в маркере (в про
+//! центах);
+//! ■ метод для печати (метод принимает строку и выводит 
+//! текст соответствующим цветом; текст выводится до тех 
+//! пор, пока в маркере есть чернила; один не пробельный 
+//! символ – это 0,5% чернил в маркере).
+
+
+let symbols = document.getElementById('marker_symbol') as HTMLDivElement
+let marker_info = document.getElementById('marker_info') as HTMLDivElement
+
+class Marker {
+    constructor(color:string, ink:number){
+        this.color = color
+        this.ink = ink //количество чернил (на 50 символов)
+    }
+
+    print (text:string) {
+        let num = this.ink
+
+        for (let i = 0; i < text.length; i++) {
+            symbols.innerHTML+=`<span style="color: ${this.color}; 
+            opacity: ${1-i/num};">${text[i]}</span>`
+        }
+        console.log(num);
+
+        symbols.innerHTML+='<br>'
+
+        marker_info.innerHTML += `
+        Цвет маркера:${this.color} <br>
+        Количество введенных символов: ${this.ink}<br>
+        Символов не напечаталось: ${text.length - this.ink} <br>
+        
+        <br>
+        `
+}
+}
+
+let marker1 = new Marker('red', 45)
+marker1.print('1_  s dfg sdf sdf dfsdfsdf 2_3_4_5_6_')
+
+
+let marker2 = new Marker('orange', 25)
+marker2.print('12345678 90 ')
+
+
+
+//! Задание 1 // JS_PZ_Modul_2_Week_4 
+//! Реализовать класс PrintMaсhine, которой состоит из:
+//! ■ размера шрифта;
+//! ■ цвета шрифта;
+//! ■ семейства шрифта;
+//! ■ метода print(), который принимает текст и печатает его 
+//! соответствующим шрифтом 
+
+let printText = document.getElementById('PrintMaсhine') as HTMLDivElement
+
+class PrintMaсhine {
+    
+    background = 'rgb(11, 66, 85)'
+
+    constructor(fontSize:any, color:any, fontFamily:string){
+        this.fontSize = fontSize
+        this.color = color
+        this.fontFamily = fontFamily
+    }
+    print(text:any) {
+        printText.innerHTML+= `
+        <div style="font-size: ${this.fontSize}; color: ${this.color}; 
+        font-family: ${this.fontFamily}; background:${this.background}">${text}</div>`
+    }
+}
+
+let writeText1 = new PrintMaсhine('2em', 'red', 'Franklin Gothic Medium')
+writeText1.print('Печатаем тестовый текст')
+
+let writeText2 = new PrintMaсhine('1.5em', 'green', 'Franklin Gothic Medium')
+writeText2.print('Печатаем ещё один текст')
+
+
+
+//! Задание 1 // JS_PZ_Modul_2_Week_5
+//! Реализовать класс Button, который содержит ширину, высоту, 
+//! текст кнопки и метод showBtn(), который выводит кнопку на экран 
+//! с помощью тега button и функции document.write(). 
+
+
+class Button {
+    width:string
+    color:any
+    background:any
+    value:any
+    constructor(width:any, color:any, background:any, value:any) {
+        this.width = width
+        this.color = color
+        this.background = background
+        this.value = value
+    }
+    showBtn() {
+        document.body.innerHTML += `
+<button style="width: ${this.width}; color: ${this.color}; background: ${this.background}">${this.value}</button>`
+    }
+
+}
+let button1 = new Button ('120px', 'white', 'red', 'Нажми меня')
+button1.showBtn()
+
+let button2 = new Button ('80px', 'red', 'black', 'Удалить')
+button2.showBtn()
+
+console.log(window);
+
+
+console.log(button1);
+console.log(button3);
+
+
