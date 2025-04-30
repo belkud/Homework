@@ -393,59 +393,6 @@ num.show();
 
 
 
-//!!!!!!!!!!!!!!!!!!!!!!!!!1! JS_DZ_Modul_2_Week_5 !!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-//! Задание 1
-//! Реализовать класс, описывающий простой маркер.  В классе 
-//! должны быть следующие компоненты:
-//! ■ поле, которое хранит цвет маркера;
-//! ■ поле, которое хранит количество чернил в маркере (в про
-//! центах);
-//! ■ метод для печати (метод принимает строку и выводит 
-//! текст соответствующим цветом; текст выводится до тех 
-//! пор, пока в маркере есть чернила; один не пробельный 
-//! символ – это 0,5% чернил в маркере).
-
-
-let symbols = document.getElementById('marker_symbol') as HTMLDivElement
-let marker_info = document.getElementById('marker_info') as HTMLDivElement
-
-class Marker {
-    constructor(color:string, ink:number){
-        this.color = color
-        this.ink = ink //количество чернил (на 50 символов)
-    }
-
-    print (text:string) {
-        let num = this.ink
-
-        for (let i = 0; i < text.length; i++) {
-            symbols.innerHTML+=`<span style="color: ${this.color}; 
-            opacity: ${1-i/num};">${text[i]}</span>`
-        }
-        console.log(num);
-
-        symbols.innerHTML+='<br>'
-
-        marker_info.innerHTML += `
-        Цвет маркера:${this.color} <br>
-        Количество введенных символов: ${this.ink}<br>
-        Символов не напечаталось: ${text.length - this.ink} <br>
-        
-        <br>
-        `
-}
-}
-
-let marker1 = new Marker('red', 45)
-marker1.print('1_  s dfg sdf sdf dfsdfsdf 2_3_4_5_6_')
-
-
-let marker2 = new Marker('orange', 25)
-marker2.print('12345678 90 ')
-
-
-
 //! Задание 1 // JS_PZ_Modul_2_Week_4 
 //! Реализовать класс PrintMaсhine, которой состоит из:
 //! ■ размера шрифта;
@@ -645,41 +592,110 @@ console.log(Button.prototype);
 
 
 
-
+//!!!!!!!!!!!!!!!!!!!!!!!!!!! Наследование классов !!!!!!!!!!!!!!!!!!!!!!!!!1
 
 
 class City {
     name
     age
-    constructor(name:string, age:number) {
-        this.name = name,
+    constructor(name='nnnnnn', age =1000000) { //! задание параметров по умолчанию
+        this.name = name 
         this.age = age
+    }
+    welcome() {
+        return `Добро пожаловать в ${this.name} `
+    }
+    population = (people:number)=>{
+        return `население города ${this.name} = ${people} человек`
     }
 }
 
 class Country extends City {
+    speed
     country
-    constructor (name:string, age:number, country:string) {
-        super(name, age)
+    constructor (name:string,  country:string, age=55555, speed=100) { //! задание параметров по умолчанию
+        super(name, age)  //! super работает ТОЛЬКО внутри нашего конструктора
         this.country = country
+        this.speed = speed
+    }
+    run () {
+        return `${this.name} ${super.welcome()} едем со скоростью ${this.speed}` //!можем
+        //! возвращать родительский метод
     }
 }
 
 
-let Msc = new City('Moscow', 1005)
+let Msc = new City('Moscow')
 console.log(Msc);
 
 let Spb = new City('Saint-Petersburg', 300)
 console.log(Spb);
 
-let msc2 = new Country ('Moscow', 1005, 'Russia')
+let msc2 = new Country ('Moscow2','Russia')
 console.log(msc2);
 
+console.log(msc2.welcome()); //! вызов унаследованного метода
+console.log(msc2.run()); //! вызов собственного метода
+
+console.log(Msc.population(10_000_000));
+
+
+console.log(Msc.name);
 
 
 
 
 
+//!!!!!!!!!!!!!!!!!!!!!!!!!1! JS_DZ_Modul_2_Week_5 !!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//! Задание 1
+//! Реализовать класс, описывающий простой маркер.  В классе 
+//! должны быть следующие компоненты:
+//! ■ поле, которое хранит цвет маркера;
+//! ■ поле, которое хранит количество чернил в маркере (в про
+//! центах);
+//! ■ метод для печати (метод принимает строку и выводит 
+//! текст соответствующим цветом; текст выводится до тех 
+//! пор, пока в маркере есть чернила; один не пробельный 
+//! символ – это 0,5% чернил в маркере).
+
+
+let symbols = document.getElementById('marker_symbol') as HTMLDivElement
+let marker_info = document.getElementById('marker_info') as HTMLDivElement
+
+class Marker {
+    constructor(color:string, ink:number){
+        this.color = color
+        this.ink = ink //количество чернил (на 50 символов)
+    }
+
+    print (text:string) {
+        let num = this.ink
+
+        for (let i = 0; i < text.length; i++) {
+            symbols.innerHTML+=`<span style="color: ${this.color}; 
+            opacity: ${1-i/num};">${text[i]}</span>`
+        }
+        console.log(num);
+
+        symbols.innerHTML+='<br>'
+
+        marker_info.innerHTML += `
+        Цвет маркера:${this.color} <br>
+        Количество введенных символов: ${this.ink}<br>
+        Символов не напечаталось: ${text.length - this.ink} <br>
+        
+        <br>
+        `
+}
+}
+
+let marker1 = new Marker('red', 45)
+marker1.print('1_  s dfg sdf sdf dfsdfsdf 2_3_4_5_6_')
+
+
+let marker2 = new Marker('orange', 25)
+marker2.print('12345678 90 ')
 
 
 
