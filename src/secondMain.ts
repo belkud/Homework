@@ -306,7 +306,14 @@ console.log(cat.eat);
 
 
 
-
+//! Итого
+//! В JavaScript все объекты имеют скрытое свойство [[Prototype]], которое является либо другим объектом, либо null.
+//! Мы можем использовать obj.__proto__ для доступа к нему (исторически обусловленный геттер/сеттер, есть другие способы, которые скоро будут рассмотрены).
+//! Объект, на который ссылается [[Prototype]], называется «прототипом».
+//! Если мы хотим прочитать свойство obj или вызвать метод, которого не существует у obj, тогда JavaScript попытается найти его в прототипе.
+//! Операции записи/удаления работают непосредственно с объектом, они не используют прототип (если это обычное свойство, а не сеттер).
+//! Если мы вызываем obj.method(), а метод при этом взят из прототипа, то this всё равно ссылается на obj. Таким образом, методы всегда работают с текущим объектом, даже если они наследуются.
+//! Цикл for..in перебирает как свои, так и унаследованные свойства. Остальные методы получения ключей/значений работают только с собственными свойствами объекта.
 
 
 let extraAnim  = {
@@ -551,20 +558,127 @@ input_marker.addEventListener('input', (e)=>{
 })
 
 
-console.log(String('а').codePointAt(0));
-console.log(String('я').codePointAt(0));
 
 
-let firstLetter = String('а').codePointAt(0) as any
-let lastLetter = String('я').codePointAt(0) as any
 
-// let acc = 0
-// setInterval(() => {
+
+
+
+
+//!  счетчик букв
+
+// let firstLetter = String('а').codePointAt(0) as any
+// let lastLetter = String('я').codePointAt(0) as any
+// let massCode = []
 // for (let i = firstLetter; i <= lastLetter; i++) {
-//         acc++;
-//     console.log(acc);           
+//     massCode.push(i)
 // }
-// }, 10000);
+
+// console.log(massCode);
+
+// let letter_count = document.querySelector('#letter_count') as HTMLDivElement
+// let letter_count2 = document.querySelector('#letter_count2') as HTMLDivElement
+// let letter_count3 = document.querySelector('#letter_count3') as HTMLDivElement
+// let letter_count4 = document.querySelector('#letter_count4') as HTMLDivElement
+// let acc = 0
+// let acc2 = 0
+// let acc3 = 0
+// let acc4 = 0
+
+
+// let stopTimer = setInterval(() => {
+//     letter_count.innerHTML=String.fromCodePoint(firstLetter+acc).toUpperCase();
+//     acc++
+// }, 500);
+// let stopTimer2 = setInterval(() => {
+//     letter_count2.innerHTML=String.fromCodePoint(firstLetter+acc2).toUpperCase();
+//     acc2++
+// }, 500);
+// let stopTimer3 = setInterval(() => {
+//     letter_count3.innerHTML=String.fromCodePoint(firstLetter+acc3).toUpperCase();
+//     acc3++
+// }, 500);
+// let stopTimer4 = setInterval(() => {
+//     letter_count4.innerHTML=String.fromCodePoint(firstLetter+acc4).toUpperCase();
+//     acc4++
+// }, 500);
+
+
+
+ 
+
+// setInterval(() => {
+//         clearInterval(stopTimer)    
+// }, 1500);
+// setInterval(() => {
+//         clearInterval(stopTimer2)    
+// }, 7500);
+// setInterval(() => {
+//         clearInterval(stopTimer3)    
+// }, 1500);
+// setInterval(() => {
+//         clearInterval(stopTimer4)    
+// }, 500);
+
+
+
+
+console.log(Button.prototype);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class City {
+    name
+    age
+    constructor(name:string, age:number) {
+        this.name = name,
+        this.age = age
+    }
+}
+
+class Country extends City {
+    country
+    constructor (name:string, age:number, country:string) {
+        super(name, age)
+        this.country = country
+    }
+}
+
+
+let Msc = new City('Moscow', 1005)
+console.log(Msc);
+
+let Spb = new City('Saint-Petersburg', 300)
+console.log(Spb);
+
+let msc2 = new Country ('Moscow', 1005, 'Russia')
+console.log(msc2);
+
+
+
+
+
 
 
 
