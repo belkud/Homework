@@ -676,26 +676,25 @@ class Marker {
             symbols.innerHTML+=`<span style="color: ${this.color}; 
             opacity: ${1-i/num};">${text[i]}</span>`
         }
-        console.log(num);
+        console.log(text.length);
 
         symbols.innerHTML+='<br>'
-
-        marker_info.innerHTML += `
-        Цвет маркера:${this.color} <br>
-        Количество введенных символов: ${this.ink}<br>
-        Символов не напечаталось: ${text.length - this.ink} <br>
         
+        marker_info.innerHTML += `
+        Цвет маркера:<div style="color:${this.color}">${this.color}</div> <br>
+        Количество введенных символов: <span style="color: red; font-size:25px">
+        ${text.length<this.ink ? text.length : this.ink}</span><br>   
         <br>
         `
 }
 }
 
-let marker1 = new Marker('red', 45)
+let marker1 = new Marker('red', 15)
 marker1.print('1_  s dfg sdf sdf dfsdfsdf 2_3_4_5_6_')
 
 
 let marker2 = new Marker('orange', 25)
 marker2.print('12345678 90 ')
 
-
+let obje = 123
 
