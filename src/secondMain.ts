@@ -698,3 +698,113 @@ marker2.print('12345678 90 ')
 
 let obje = 123
 
+
+
+
+
+//? Задание 3
+//? Реализуйте класс ExtentedArray, унаследовав его от стандарт
+//? ного класса Array и добавив следующие методы:
+//? ■ метод getString(separator) – для получения строки со 
+//? всеми элементами массива, перечисленными через ука
+//? занный разделитель: запятая, тире, пробел и т. д.;
+//? ■ метод getHtml(tagName) – для получения строки с html 
+//? кодом, где каждый элемент массива будет обернут в ука
+//? занный тег (учтите, если указывается тег li, то все эле
+//? менты дополнительно необходимо обернуть в ul).
+//? Создайте объект класса ExtentedArray, заполните его данны
+//? ми и выведите на экран результаты работы методов getString() 
+//? и getHtml()
+
+// console.log(Array.prototype);
+
+// let  Test = {
+    
+// }
+// Test.prototype == Object.prototype
+// console.log(Test.__proto__== Object.prototype);
+// console.log(Test.prototype);
+
+
+
+// class ExtentedArray extends Test {
+//     constructor() {
+
+//     }
+
+// }
+
+
+
+//! Задание 3
+//!  Реализовать класс, который описывает css класс. 
+//! Класс CssClass должен содержать внутри себя:
+//!  ■ название css класса;
+//!  ■ массив стилей;
+//!  ■ метод для установки стиля;
+//!  ■ метод для удаления стиля;
+//!  ■ метод getCss(), который возвращает css код в виде стро
+//! ки.
+
+let cssClass = document.getElementById('cssClass') as HTMLDivElement
+
+
+class CssClass {
+    
+    className
+    cssArray
+    
+    constructor(className:string, cssArray:any[]) {
+        this.className = className
+        this.cssArray = cssArray
+    }
+    
+    
+    deleteStyle() {
+
+    }
+    
+    getCss() {
+        let string = ''            
+        for (const obj of this.cssArray) { //! массив закидываем в цикл
+            for (const key in obj) {
+                string += key + ':' + obj[key] + '; ';
+            }    
+        }
+        cssClass.innerHTML+=`<span style="${string}">${string}</span>`
+        console.log(string);
+                
+    }
+
+    writeStyle() {
+        
+    }
+
+
+    
+}
+
+let class1 = new CssClass('text1', [
+    {background:'orange'},
+    {color:'blue'}, 
+    {margin:'30px'}, 
+    {width: '120px'},
+    {display: 'inline-block'},
+])
+class1.getCss()
+
+let class2 = new CssClass('text1', [
+    {background:'pink'},
+    {color:'green'}, 
+    {padding:'5px'}, 
+    {width: '100px'},
+    {display: 'inline-block'},
+])
+class2.getCss()
+
+
+
+
+
+
+
