@@ -747,7 +747,7 @@ let obje = 123
 //! ки.
 
 let cssClass = document.getElementById('cssClass') as HTMLDivElement
-
+let string = ''
 
 class CssClass {
     
@@ -760,31 +760,36 @@ class CssClass {
     }
     
     
-    deleteStyle() {
-
+    deleteStyle(num:number) {
+        cssClass.innerHTML+=` 
+        <div id="${this.className}" style="${string}"> Удаление класса под индексом: ${num} = ${this.cssArray[num]} <br><br> 
+        </div> `
+                    
     }
     
-    getCss() {
-        let string = ''            
+    getCss() {  //! метод для установки стиля;
+                  
         for (const obj of this.cssArray) { //! массив закидываем в цикл
-            for (const key in obj) {
+            for (const key in obj) { //! объекты закидываем в цикл
                 string += key + ':' + obj[key] + '; ';
             }    
         }
-        cssClass.innerHTML+=`<span style="${string}">${string}</span>`
-        console.log(string);
-                
+        cssClass.innerHTML+=`
+        <div id="${this.className}" style="${string}"> Название класса: ${this.className} <br><br> 
+        </div>`
+        
     }
-
+    
     writeStyle() {
+        cssClass.innerHTML+=`<div>Стили класса: ${string}</div>`
         
     }
 
 
-    
+
 }
 
-let class1 = new CssClass('text1', [
+let class1 = new CssClass('block1', [
     {background:'orange'},
     {color:'blue'}, 
     {margin:'30px'}, 
@@ -792,15 +797,19 @@ let class1 = new CssClass('text1', [
     {display: 'inline-block'},
 ])
 class1.getCss()
+class1.writeStyle()
+class1.deleteStyle(2)
 
-let class2 = new CssClass('text1', [
+
+let class2 = new CssClass('block2', [
     {background:'pink'},
     {color:'green'}, 
     {padding:'5px'}, 
-    {width: '100px'},
+    {width: '300px'},
     {display: 'inline-block'},
 ])
 class2.getCss()
+class2.writeStyle()
 
 
 
