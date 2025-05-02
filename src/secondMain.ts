@@ -760,12 +760,6 @@ class CssClass {
     }
     
     
-    deleteStyle(num:number) {
-        cssClass.innerHTML+=` 
-        <div id="${this.className}" style="${string}"> Удаление класса под индексом: ${num} = ${this.cssArray[num]} <br><br> 
-        </div> `
-                    
-    }
     
     getCss() {  //! метод для установки стиля;
                   
@@ -777,16 +771,20 @@ class CssClass {
         cssClass.innerHTML+=`
         <div id="${this.className}" style="${string}"> Название класса: ${this.className} <br><br> 
         </div>`
-        
+        console.log(this.cssArray[0]);
     }
     
-    writeStyle() {
-        cssClass.innerHTML+=`<div>Стили класса: ${string}</div>`
+    writeStyle() { //! метод для вывода стилей тестом в HTML
+        cssClass.innerHTML+=`<div id="del">Стили класса ${this.className}: ${string}</div> <br>`
         
     }
 
-
-
+    deleteStyle() {
+        // cssClass.innerHTML = '' //! вообще все полностью удалить
+        delete this.cssArray[0]
+        console.log(this.cssArray[0]);        
+    }
+    
 }
 
 let class1 = new CssClass('block1', [
@@ -796,9 +794,12 @@ let class1 = new CssClass('block1', [
     {width: '120px'},
     {display: 'inline-block'},
 ])
-class1.getCss()
-class1.writeStyle()
-class1.deleteStyle(2)
+// class1.getCss()
+// class1.writeStyle()
+// class1.deleteStyle()
+
+
+
 
 
 let class2 = new CssClass('block2', [
@@ -806,8 +807,10 @@ let class2 = new CssClass('block2', [
     {color:'green'}, 
     {padding:'5px'}, 
     {width: '300px'},
+    {height: '300px'},
     {display: 'inline-block'},
 ])
+class2.deleteStyle()
 class2.getCss()
 class2.writeStyle()
 
