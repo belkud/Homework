@@ -750,39 +750,30 @@ let cssClass = document.getElementById('cssClass') as HTMLDivElement
 let string = ''
 
 class CssClass {
-    
     className
     cssArray
-    
     constructor(className:string, cssArray:any[]) {
         this.className = className
         this.cssArray = cssArray
     }
     
-    
-    
     getCss() {  //! метод для установки стиля;
-                  
         for (const obj of this.cssArray) { //! массив закидываем в цикл
             for (const key in obj) { //! объекты закидываем в цикл
                 string += key + ':' + obj[key] + '; ';
             }    
         }
         cssClass.innerHTML+=`
-        <div id="${this.className}" style="${string}"> Название класса: ${this.className} <br><br> 
-        </div>`
-        console.log(this.cssArray[0]);
+        <div id="${this.className}" style="${string}"> Название класса: ${this.className} <br><br> </div>`
     }
     
     writeStyle() { //! метод для вывода стилей тестом в HTML
-        cssClass.innerHTML+=`<div id="del">Стили класса ${this.className}: ${string}</div> <br>`
-        
+        cssClass.innerHTML+=`Стили класса ${this.className}: ${string}`
     }
 
-    deleteStyle() {
+    deleteStyle(num:number) {
+        delete this.cssArray[num]
         // cssClass.innerHTML = '' //! вообще все полностью удалить
-        delete this.cssArray[0]
-        console.log(this.cssArray[0]);        
     }
     
 }
@@ -794,12 +785,8 @@ let class1 = new CssClass('block1', [
     {width: '120px'},
     {display: 'inline-block'},
 ])
-// class1.getCss()
-// class1.writeStyle()
-// class1.deleteStyle()
-
-
-
+class1.getCss()
+class1.writeStyle()
 
 
 let class2 = new CssClass('block2', [
@@ -810,9 +797,90 @@ let class2 = new CssClass('block2', [
     {height: '300px'},
     {display: 'inline-block'},
 ])
-class2.deleteStyle()
+class2.deleteStyle(1) //! метод удаления должен идти первым
 class2.getCss()
 class2.writeStyle()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function findInd (str:string, symb:any) {
+    let mass = str.split('')
+    let acc = 0
+    let accIndex = ''
+    for (let i = 0; i < mass.length; i++) {
+        if (str[i]==symb) {
+            acc+=symb.length
+            accIndex+= i + ' ' 
+        }
+    }
+
+    return `буква '${symb}' встречается ${acc} ${acc>=2 && acc<=4 ? 'раза' : 'раз'} на индексах: ${accIndex}`
+}
+
+console.log(findInd('Написать функцию, которая принимает строку и символ и выводит индексы, по которым находится этот символ в строке', 'е'))
+console.log(findInd('которым находится этот символ в старкоторым находится этот символ в старкоторым находится этот символ в староке', 'а'))
+
+
+
+let test  = 10
+console.log(test < 5 ? 'число большое' : 'число маленькое');
+
+
+
+
+
+
+
+
+// Задча 10. Написать функцию, которая принимает строку и символ
+// и выводит индексы, по которым находится этот символ в
+// строке. Также вывести, сколько всего раз встречается этот
+// символ в строке.
+
+function findIn (str:string, symb:any) {
+let acc = 0
+let mass = [] as any
+    str.split('').forEach((el,i)=> {
+        if (el==symb) {
+            acc++
+            mass.push(i)
+        }
+    })
+    return console.log(`символ '${symb}' повторяется ${acc} раз под индексами: ${mass}`)
+}
+findIn('выводит индексы, по которым находится этот символ', 'т')
+
+
+
+
+
+
+
+
+
+
 
 
 
