@@ -657,90 +657,6 @@ let obje = 123
 
 
 
-//! Задание 3
-//!  Реализовать класс, который описывает css класс. 
-//! Класс CssClass должен содержать внутри себя:
-//!  ■ название css класса;
-//!  ■ массив стилей;
-//!  ■ метод для установки стиля;
-//!  ■ метод для удаления стиля;
-//!  ■ метод getCss(), который возвращает css код в виде стро
-//! ки.
-
-let cssClass = document.getElementById('cssClass') as HTMLDivElement
-let string = ''
-
-class CssClass {
-    className
-    cssArray
-    constructor(className:string, cssArray:any[]) {
-        this.className = className
-        this.cssArray = cssArray
-    }
-    
-    getCss() {  //! метод для установки стиля;
-        for (const obj of this.cssArray) { //! массив закидываем в цикл
-            for (const key in obj) { //! объекты закидываем в цикл
-                string += key + ':' + obj[key] + '; ';
-            }    
-        }
-        cssClass.innerHTML+=`
-        <div id="${this.className}" style="${string}"> Название класса: ${this.className} <br><br> </div>`
-    }
-    
-    writeStyle() { //! метод для вывода стилей текстом в HTML
-        cssClass.innerHTML+=`Стили класса ${this.className}: ${string}`
-    }
-
-    deleteStyle(num:number) {
-        delete this.cssArray[num]
-        // cssClass.innerHTML = '' //! вообще все полностью удалить
-    }
-    
-}
-
-let class1 = new CssClass('block1', [
-    {background:'orange'},
-    {color:'blue'}, 
-    {margin:'30px'}, 
-    {width: '120px'},
-    {display: 'inline-block'},
-])
-class1.getCss()
-class1.writeStyle()
-
-
-let class2 = new CssClass('block2', [
-    {background:'pink'},
-    {color:'green'}, 
-    {padding:'5px'}, 
-    {width: '300px'},
-    {height: '300px'},
-    {display: 'inline-block'},
-])
-class2.deleteStyle(1) //! метод удаления должен идти первым
-class2.getCss()
-class2.writeStyle()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -910,6 +826,103 @@ light1.showBtn()
 
 
 
+//! Задание 3
+//!  Реализовать класс, который описывает css класс. 
+//! Класс CssClass должен содержать внутри себя:
+//!  ■ название css класса;
+//!  ■ массив стилей;
+//!  ■ метод для установки стиля;
+//!  ■ метод для удаления стиля;
+//!  ■ метод getCss(), который возвращает css код в виде стро
+//! ки.
+
+let cssClass = document.getElementById('cssClass') as HTMLDivElement
+let string = ''
+
+class CssClass {
+    className
+    cssArray
+    constructor(className:string, cssArray:any[]) {
+        this.className = className
+        this.cssArray = cssArray
+    }
+    
+    getCss() {  //! метод для установки стиля;
+        for (const obj of this.cssArray) { //! массив закидываем в цикл
+            for (const key in obj) { //! объекты закидываем в цикл
+                string += key + ':' + obj[key] + '; ';
+            }    
+        }
+        cssClass.innerHTML+=`
+        <div id="${this.className}" style="${string}"> Название класса: ${this.className} <br><br> </div>`
+    }
+    
+    writeStyle() { //! метод для вывода стилей текстом в HTML
+        cssClass.innerHTML+=`Стили класса ${this.className}: ${string}`
+    }
+
+    deleteStyle(num:number) {
+        delete this.cssArray[num]
+        // cssClass.innerHTML = '' //! вообще все полностью удалить
+    }
+    
+}
 
 
+let class2 = new CssClass('block2', [
+    {background:'pink'},
+    {color:'green'}, 
+    {padding:'5px'}, 
+    {width: '300px'},
+    {height: '300px'},
+    {display: 'inline-block'},
+])
+class2.deleteStyle(1) //! метод удаления должен идти первым
+class2.getCss()
+class2.writeStyle()
+
+
+
+
+// //! Task 3. Реализовать класс, который описывает css класс. 
+// //! Класс CssClass должен содержать внутри себя:
+// //! ■ название css класса;
+// //! ■ массив стилей;
+// //! ■ метод для установки стиля;
+// //! ■ метод для удаления стиля;
+// //! ■ метод getCss(), который возвращает css код в виде строки.
+
+
+// class CssClass2 {
+//     className
+//     mass
+//     constructor(className:string,  mass:any[]) {
+//         this.className = className
+//         this.mass = mass
+//     }
+
+// setStyle () {
+// setStyle () {
+//     let x = this.mass[0]
+//     let x = this.mass[0]
+//     document.body.innerHTML += `<div class="${this.className}" style="${this.mass[0]}">123 </div>`
+//     document.body.innerHTML += `<div class="${this.className}" style="${this.mass[0]}">123 </div>`
+//     console.log(`<div class="${this.className}" style="${this.mass[0]}">123 </div>`);
+//     console.log(`<div class="${this.className}" style="${this.mass[0]}">123 </div>`);
+//     console.log(x);
+//     console.log(x);
+    
+    
+// }
+// }
+
+
+
+
+// }
+// }
+// let st = new CssClass2 ('newClass', [{color:'red'}])
+// let st = new CssClass2 ('newClass', [{color:'red'}])
+// st.setStyle()
+// st.setStyle()
 
