@@ -884,8 +884,12 @@ findIn('выводит индексы, по которым находится э
 
 
 
+console.log(Date.prototype);
 
-let date2 = new Date()
+ 
+
+
+let date2 = new Date() //! рендеринг документа
 console.log(date2.getMilliseconds());
 
 console.log(`документ отрендерился за ${Number(date2)-Number(date1)} миллисекунды`);
@@ -897,8 +901,31 @@ console.log(date3.getTime()); //! перевод в timestamp
 let date4 = date3.getTime() 
 console.log(new Date(date4)); //! перевод обратно в дату !
 
-let date5 = new Date('1991-03-28')
+let date5 = new Date('1991-03-28') //! первый способ записи
 console.log(date5);
 console.log(date5.getDay());
+
+let date6 = new Date(1991,2,28)  //! второй способ записи
+console.log(date6);
+
+
+let date7 = new Date()
+console.log(date7);
+
+date7.setHours(36)
+console.log(date7);
+
+// date7.setDate(20)
+// console.log(date7);
+
+let newYear = new Date(2026,0,1) //!считаем дни до Нового года
+console.log(newYear);
+
+let quantityDays = Number(newYear) - Number(date3)  
+console.log(`до нового года осталось: ${parseInt(quantityDays/24/60/60/1000)} дней`);
+
+console.log(Date.parse('2019-10-05')); //! :DDD
+
+
 
 
