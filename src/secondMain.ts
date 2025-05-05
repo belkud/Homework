@@ -430,77 +430,6 @@ writeText2.print('Печатаем ещё один текст')
 
 
 
-//! Задание 1 // JS_PZ_Modul_2_Week_5
-//! Реализовать класс Button, который содержит ширину, высоту, 
-//! текст кнопки и метод showBtn(), который выводит кнопку на экран 
-//! с помощью тега button и функции document.write(). 
-
-
-class Button {
-    width:string
-    color:any
-    background:any
-    value:any
-    constructor(width:any, color:any, background:any, value:any) {
-        this.width = width
-        this.color = color
-        this.background = background
-        this.value = value
-    }
-    showBtn() {
-        document.body.innerHTML += `
-<button style="width: ${this.width}; color: ${this.color}; background: ${this.background}">${this.value}</button>`
-    }
-   
-    
-delete() {
-   return 'удалить 123'
-}
-
-}
-let button1 = new Button ('120px', 'white', 'red', 'Нажми меня')
-button1.showBtn()
-
-let button2 = new Button ('80px', 'red', 'black', 'Удалить')
-button2.showBtn()
-
-console.log(window);
-
-
-console.log(button1);
-
-
-
-class Lights extends Button {
-//     brightness:any
-    // constructor (brightness:any) {
-    //     // this.brightness = brightness
-    //     this.color = color
-
-
-    // }
-
-
-
-
-
-
- delete() {
-    super.delete()
- }
-
- //! если метод, то просто пишем, без 'прекрас'
-
- delete2() {
-    return 'удалить'
- }
-}
-
-let light1 = new Lights()
-console.log(light1.delete());
-console.log(light1.delete2());
-
-
 let input_marker = document.querySelector('#input_marker') as HTMLInputElement
 input_marker.addEventListener('input', (e)=>{
     console.log(e.target.value);
@@ -569,17 +498,6 @@ input_marker.addEventListener('input', (e)=>{
 // setInterval(() => {
 //         clearInterval(stopTimer4)    
 // }, 500);
-
-
-
-
-console.log(Button.prototype);
-
-
-
-
-
-
 
 
 
@@ -925,6 +843,72 @@ let quantityDays = Number(newYear) - Number(date3)
 console.log(`до нового года осталось: ${parseInt(quantityDays/24/60/60/1000)} дней`);
 
 console.log(Date.parse('2019-10-05')); //! :DDD
+
+
+
+
+
+//! Задание 1 // JS_PZ_Modul_2_Week_5
+//! Реализовать класс Button, который содержит ширину, высоту, 
+//! текст кнопки и метод showBtn(), который выводит кнопку на экран 
+//! с помощью тега button и функции document.write(). 
+
+
+class Button {
+    width:string
+    color:any
+    background:any
+    value:any
+    constructor(width:any, color:any, background:any, value:any) {
+        this.width = width
+        this.color = color
+        this.background = background
+        this.value = value
+    }
+    showBtn() {
+        document.body.innerHTML += `
+<button style="width: ${this.width}; color: ${this.color}; background: ${this.background}">${this.value}</button>`
+    }
+   
+    
+delete() {
+   return 'удалить 123'
+}
+
+}
+let button1 = new Button ('120px', 'white', 'red', 'Нажми меня')
+button1.showBtn()
+console.log(button1);
+
+
+let button2 = new Button ('80px', 'red', 'black', 'Удалить')
+button2.showBtn()
+
+
+
+
+
+
+//! Реализовать класс BootstrapButton, унаследовав его от класса 
+//! Button. Добавить поле color и переопределить метод showBtn() 
+//! так, чтобы кнопка выводилась со стилями и указанным цветом. 
+
+class BootstrapButton extends Button {
+    fontSize
+    constructor(width:any, color:any, background:any, value:any, fontSize:number) {
+        super(width, color, background, value)
+        this.fontSize = fontSize
+    }
+    showBtn() {
+        document.body.innerHTML += `
+<button style="width: ${this.width}; color: ${this.color}; background: ${this.background}; font-size:${this.fontSize}px">${this.value}</button>`
+    }
+}
+
+let light1 = new BootstrapButton(300, 'green', 'yellow', 'Кнопочка', 30)
+light1.showBtn()
+
+
 
 
 
