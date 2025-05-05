@@ -2,6 +2,9 @@
 console.clear()
 
 
+let date1 = new Date()
+console.log(date1.getMilliseconds());
+
 //!!!!!!!!!!!!!!!!!!!!!! Функция конструктор !!!!!!!!!!!!!!!!!!!!!!1!
 
 //! Имя функции-конструктора должно начинаться с большой буквы.
@@ -36,7 +39,7 @@ welcome to our party
 `}
 }
 
-const dog1 = new Dog ('Spark', 'orange')
+const dog1 = new Dog('Spark', 'orange')
 console.log(dog1);
 console.log(dog1.welcome());
 
@@ -767,7 +770,7 @@ class CssClass {
         <div id="${this.className}" style="${string}"> Название класса: ${this.className} <br><br> </div>`
     }
     
-    writeStyle() { //! метод для вывода стилей тестом в HTML
+    writeStyle() { //! метод для вывода стилей текстом в HTML
         cssClass.innerHTML+=`Стили класса ${this.className}: ${string}`
     }
 
@@ -882,9 +885,20 @@ findIn('выводит индексы, по которым находится э
 
 
 
+let date2 = new Date()
+console.log(date2.getMilliseconds());
+
+console.log(`документ отрендерился за ${Number(date2)-Number(date1)} миллисекунды`);
 
 
+let date3 = new Date() 
+console.log(date3.getTime()); //! перевод в timestamp
 
+let date4 = date3.getTime() 
+console.log(new Date(date4)); //! перевод обратно в дату !
 
+let date5 = new Date('1991-03-28')
+console.log(date5);
+console.log(date5.getDay());
 
 
