@@ -902,27 +902,100 @@ class2.writeStyle()
 //     }
 
 // setStyle () {
-// setStyle () {
-//     let x = this.mass[0]
 //     let x = this.mass[0]
 //     document.body.innerHTML += `<div class="${this.className}" style="${this.mass[0]}">123 </div>`
-//     document.body.innerHTML += `<div class="${this.className}" style="${this.mass[0]}">123 </div>`
-//     console.log(`<div class="${this.className}" style="${this.mass[0]}">123 </div>`);
 //     console.log(`<div class="${this.className}" style="${this.mass[0]}">123 </div>`);
 //     console.log(x);
-//     console.log(x);
-    
     
 // }
-// }
 
 
-
-
-// }
 // }
 // let st = new CssClass2 ('newClass', [{color:'red'}])
-// let st = new CssClass2 ('newClass', [{color:'red'}])
 // st.setStyle()
-// st.setStyle()
+
+
+
+
+
+
+//! Задание 2 
+//! Реализуйте класс ExtendedDate, унаследовав его от стандарт
+//! ного класса Date и добавив следующие возможности:
+//!  ■ метод для вывода даты (числа и месяца) текстом;
+//!  ■ метод для проверки – это прошедшая дата или будущая 
+//! (если прошедшая, то метод возвращает false; если буду
+//! щая или текущая, то true); 
+//! ■ метод для проверки – високосный год или нет;
+//!  ■ метод, возвращающий следующую дату.
+//!  Создайте объект класса ExtendedDate и выведите на экран 
+//! результаты работы новых методов
+
+
+class Data {
+    data
+    constructor(data:any) {
+        this.data = data
+    }
+}
+
+let day = new Data(new Date())
+console.log(day);
+// console.log(data);
+
+
+
+
+class ExtendedDate extends Data{
+    constructor(data:any) {
+        super(data)
+        let datas = new Date(2020, 10, 5)
+
+    }
+}
+
+let newDay = new ExtendedDate(new Date())
+console.log(newDay);
+
+//! СДЕЛАТЬ ВНАЧАЛЕ БЕЗ КОНСТРУКТОРА!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//! Задание 2
+//!  Реализовать класс, описывающий новость (заголовок, текст, 
+//! массив тегов, дата публикации). В классе необходимо реализовать 
+//! один метод print, который выводит всю информацию в таком 
+//! виде, как на рисунке 1.
+//!  Обратите внимание на то, как выводится дата:
+//!  ■ если с даты публикации прошло менее дня, то выводится 
+//! «сегодня»;
+//!  ■ если с даты публикации прошло менее недели, то выво
+//! дится «N дней назад»;
+//!  ■ в остальных случаях, полная дата в формате «дд.мм.гггг».
+
 
