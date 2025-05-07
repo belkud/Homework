@@ -1140,3 +1140,12 @@ setTimeout(() => {
 }, 5000);
 
 
+
+//? let acc = 0 
+//? setInterval(() => {
+//?     setInterval(() => {
+//?         acc+=1
+//?         console.log(acc);
+        
+//?     }, 1000);
+//? }, 1000);
