@@ -994,6 +994,7 @@ console.log(sum2);
 //!  Создайте объект класса ExtendedDate и выведите на экран 
 //! результаты работы новых методов
 
+let today = new Date()
 
 class ExtendedDate{
     year
@@ -1004,6 +1005,8 @@ class ExtendedDate{
         this.month = month
         this.day = day
     }
+    
+    
     printDate() {   //!  ■ метод для вывода даты (числа и месяца) текстом;
         let massWithDays = ['первое', 'второе', 'третье', 'четвертое', 'пятое', 'шестое', 'седьмое', 'восьмое', 'девятое', 'десятое',
             'одиннадцатое', 'двеннадцатое', 'триннадцатое', 'четырнадцатое', 'пятнадцатое', 'шестнадцатое', 'семьнадцатое',
@@ -1026,60 +1029,79 @@ class ExtendedDate{
         }
     }
     
+    
     //! ■ метод для проверки – это прошедшая дата или будущая (если прошедшая, то метод 
     //! возвращает false; если будущая или текущая, то true); 
     checkDate() {
         let str = ''
         let strToday = ''
-        let today = new Date()
+        
         str+=this.year+''+this.month+''+this.day 
         strToday+=today.getFullYear()+''+ 0 +(today.getMonth()+1) + '' + 0 + (today.getDate())
         
         if (strToday>=str) {
-            console.log('true');
+            console.log('true, дата текущая или будущая');
         } else {
-            console.log('false');
+            console.log('false, дата прошлая');
         }
 
-        // console.log(today.getFullYear());
+        console.log(today.getFullYear());
         // console.log(today.getMonth());
         // console.log(today.getDate());
         // console.log(str);
-        // console.log(strToday);
-        
+        // console.log(strToday);        
     }
-
+    
+    
     //! ■ метод для проверки – високосный год или нет;
     checkLeapYear() {
-            
+            console.log(this.year%4==0 ? 'Год високосный' : 'Год не високосный');            
     }
+
+
+    
+    //!  ■ метод, возвращающий следующую дату.
+    nextDay() {
+        let year = this.year 
+        let mounth = this.month 
+        let day = this.day 
+  
+    if (day>=32) return 'Введите корректный день'
+    if (day==31 && (mounth==4 || mounth==6 ||mounth==9 || mounth==11)) return 'Введите корректный день'
+    if (day>=30 && mounth==2 || day==29 && mounth==2 && year%4!=0) return 'Введите корректный день'
+    if (mounth>=13) return 'Введите корректный месяц'
+    if (day<=0 || mounth<=0 || year<=0) return 'введите положительное число'
+    
+    if (day==31 && mounth==12){
+        year+=1, mounth=1, day=1
+    } else if (day==30 && (mounth==4 || mounth==6 ||mounth==9 || mounth==11)) {
+        day=1
+        mounth+=1
+    } else if (day==31 && (mounth==3 || mounth==5 ||mounth==7 || mounth==8 || mounth==10 || mounth==12)) {
+        day=1
+        mounth+=1
+    } else if(day==28 && mounth==2 && year%4!=0 || day==29 && mounth==2 && year%4==0){
+        day=1
+        mounth+=1
+    } else {
+        day+=1
+    }
+     return `«${year}.${mounth}.${day}»`
+}
 
 }
 
-let newDay2 = new ExtendedDate(2021, 10, 10)
+let newDay2 = new ExtendedDate(2012, 10, 10)
 newDay2.printDate()
 newDay2.checkDate()
 newDay2.checkLeapYear()
+console.log(newDay2.nextDay())
 
 
-// console.log(newDay2);
+var tomorrow = new Date();  //! возвращает завтрашний день от текущего дня
+ tomorrow.setDate(tomorrow.getDate() + 1);
 
-
-
-// console.log(newDay.data.getDate());
-
-
-
-
-
-// //! СДЕЛАТЬ ВНАЧАЛЕ БЕЗ КОНСТРУКТОРА!
-
-
-
-
-
-
-
+ 
 
 
 
