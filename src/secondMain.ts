@@ -919,46 +919,6 @@ class2.writeStyle()
 
 
 
-//! Задание 2 
-//! Реализуйте класс ExtendedDate, унаследовав его от стандарт
-//! ного класса Date и добавив следующие возможности:
-//!  ■ метод для вывода даты (числа и месяца) текстом;
-//!  ■ метод для проверки – это прошедшая дата или будущая 
-//! (если прошедшая, то метод возвращает false; если буду
-//! щая или текущая, то true); 
-//! ■ метод для проверки – високосный год или нет;
-//!  ■ метод, возвращающий следующую дату.
-//!  Создайте объект класса ExtendedDate и выведите на экран 
-//! результаты работы новых методов
-
-
-class Data {
-    data
-    constructor(data:any) {
-        this.data = data
-    }
-}
-
-let day = new Data(new Date())
-console.log(day);
-// console.log(data);
-
-
-
-
-class ExtendedDate extends Data{
-    constructor(data:any) {
-        super(data)
-        let datas = new Date(2020, 10, 5)
-
-    }
-}
-
-let newDay = new ExtendedDate(new Date())
-console.log(newDay);
-
-//! СДЕЛАТЬ ВНАЧАЛЕ БЕЗ КОНСТРУКТОРА!
-
 
 //Отсортируйте 5 случайных чисел от 1 до 10 в порядке возрастания и затем в 
 // порядке убывания.
@@ -1004,6 +964,83 @@ console.log(sum2);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//! Задание 2 
+//! Реализуйте класс ExtendedDate, унаследовав его от стандарт
+//! ного класса Date и добавив следующие возможности:
+//!  ■ метод для вывода даты (числа и месяца) текстом;
+//!  ■ метод для проверки – это прошедшая дата или будущая 
+//! (если прошедшая, то метод возвращает false; если буду
+//! щая или текущая, то true); 
+//! ■ метод для проверки – високосный год или нет;
+//!  ■ метод, возвращающий следующую дату.
+//!  Создайте объект класса ExtendedDate и выведите на экран 
+//! результаты работы новых методов
+
+
+
+
+class ExtendedDate{
+    year
+    month
+    day
+    constructor(year:number, month:number, day:number) {
+        this.year = year
+        this.month = month
+        this.day = day
+    }
+    printDate() {
+let massWithDays = ['первое', 'второе', 'третье', 'четвертое', 'пятое', 'шестое', 'седьмое', 'восьмое', 'девятое', 'десятое',
+    'одиннадцатое', 'двеннадцатое', 'триннадцатое', 'четырнадцатое', 'пятнадцатое', 'шестнадцатое', 'семьнадцатое',
+    'восемьнадцатое', 'девятьнадцатое', 'двадцать', 'тридцать']
+
+        let days = this.day
+        if (days>=1 && days<=20) {
+            console.log(massWithDays[days-1]);
+        } else if (days<30){
+            console.log(massWithDays[19], massWithDays[days-21])
+        } else if (days==30) {
+            console.log(massWithDays[20])
+        } else if (days==31) {
+            console.log(massWithDays[20], massWithDays[days-31])
+        } else {
+            console.log(`Число ${days} вне диапазона`);
+        }
+    }
+}
+
+let newDay2 = new ExtendedDate(2020, 10, 25)
+newDay2.printDate()
+
+
+console.log(newDay2);
+
+
+
+// console.log(newDay.data.getDate());
+
+
+
+
+
+// //! СДЕЛАТЬ ВНАЧАЛЕ БЕЗ КОНСТРУКТОРА!
 
 
 
