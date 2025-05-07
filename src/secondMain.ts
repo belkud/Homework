@@ -960,18 +960,47 @@ console.log(newDay);
 //! СДЕЛАТЬ ВНАЧАЛЕ БЕЗ КОНСТРУКТОРА!
 
 
+//Отсортируйте 5 случайных чисел от 1 до 10 в порядке возрастания и затем в 
+// порядке убывания.
+
+let randomNumbers:number[] = []
+    for (let i = 1; i <= 5; i++) {
+            randomNumbers.push(Math.round(Math.random()*10));
+    }
+console.log(randomNumbers.sort((a,b)=>a-b));
+
+//У нас есть объект:
+let obj = {
+'name':['Вася', 'Петя', 'Коля'],
+'age':[11, 30, 20],
+}
+//Получите Петю из массива arr.
+//Посчитайте, сколько элементов находится в name.
+
+console.log(Object.values(obj)[0][1]);
+console.log(obj.name[1]);
 
 
 
+//Дан массив с числами. Числа могут быть положительными и отрицательными. 
+//Найдите сумму положительных элементов массива. 
 
 
+let myArrr = [5,7,-2,-6,4,1,-8]
+let ac = 0
+let sum = myArrr.map(e=>{
+    if(e>0){
+    ac+=e
+}})
+console.log(ac);
 
-
-
-
-
-
-
+let sum2 = myArrr.reduce((a,e)=>{
+    if (e>0) {
+        a+=e
+    }
+    return a //! фигурные скобки и return  тогда сработает!
+},0)
+console.log(sum2);
 
 
 
