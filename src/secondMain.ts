@@ -995,8 +995,6 @@ console.log(sum2);
 //! результаты работы новых методов
 
 
-
-
 class ExtendedDate{
     year
     month
@@ -1006,31 +1004,65 @@ class ExtendedDate{
         this.month = month
         this.day = day
     }
-    printDate() {
-let massWithDays = ['первое', 'второе', 'третье', 'четвертое', 'пятое', 'шестое', 'седьмое', 'восьмое', 'девятое', 'десятое',
-    'одиннадцатое', 'двеннадцатое', 'триннадцатое', 'четырнадцатое', 'пятнадцатое', 'шестнадцатое', 'семьнадцатое',
-    'восемьнадцатое', 'девятьнадцатое', 'двадцать', 'тридцать']
+    printDate() {   //!  ■ метод для вывода даты (числа и месяца) текстом;
+        let massWithDays = ['первое', 'второе', 'третье', 'четвертое', 'пятое', 'шестое', 'седьмое', 'восьмое', 'девятое', 'десятое',
+            'одиннадцатое', 'двеннадцатое', 'триннадцатое', 'четырнадцатое', 'пятнадцатое', 'шестнадцатое', 'семьнадцатое',
+            'восемьнадцатое', 'девятьнадцатое', 'двадцать', 'тридцать']
+            let massWithMounth = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабрь']
+            
 
         let days = this.day
+        let mounths = this.month
         if (days>=1 && days<=20) {
-            console.log(massWithDays[days-1]);
+            console.log(massWithDays[days-1], massWithMounth[mounths-1]);
         } else if (days<30){
-            console.log(massWithDays[19], massWithDays[days-21])
+            console.log(massWithDays[19], massWithDays[days-21], massWithMounth[mounths-1])
         } else if (days==30) {
-            console.log(massWithDays[20])
+            console.log(massWithDays[20], massWithMounth[mounths-1])
         } else if (days==31) {
-            console.log(massWithDays[20], massWithDays[days-31])
+            console.log(massWithDays[20], massWithDays[days-31], massWithMounth[mounths-1])
         } else {
             console.log(`Число ${days} вне диапазона`);
         }
     }
+    
+    //! ■ метод для проверки – это прошедшая дата или будущая (если прошедшая, то метод 
+    //! возвращает false; если будущая или текущая, то true); 
+    checkDate() {
+        let str = ''
+        let strToday = ''
+        let today = new Date()
+        str+=this.year+''+this.month+''+this.day 
+        strToday+=today.getFullYear()+''+ 0 +(today.getMonth()+1) + '' + 0 + (today.getDate())
+        
+        if (strToday>=str) {
+            console.log('true');
+        } else {
+            console.log('false');
+        }
+
+        // console.log(today.getFullYear());
+        // console.log(today.getMonth());
+        // console.log(today.getDate());
+        // console.log(str);
+        // console.log(strToday);
+        
+    }
+
+    //! ■ метод для проверки – високосный год или нет;
+    checkLeapYear() {
+            
+    }
+
 }
 
-let newDay2 = new ExtendedDate(2020, 10, 25)
+let newDay2 = new ExtendedDate(2021, 10, 10)
 newDay2.printDate()
+newDay2.checkDate()
+newDay2.checkLeapYear()
 
 
-console.log(newDay2);
+// console.log(newDay2);
 
 
 
