@@ -995,6 +995,7 @@ console.log(sum2);
 //! результаты работы новых методов
 
 let today = new Date()
+let today2 = new Date()
 
 class ExtendedDate{
     year
