@@ -29,11 +29,11 @@ user1.greeting()
 
 
 
-function Dog (Nickname:string, color:string) {
+function Dog(Nickname: string, color: string) {
     this.Nickname = Nickname,
-    this.color = color
-    this.welcome = ()=> {
-return `Your Nickname is ${this.Nickname} 
+        this.color = color
+    this.welcome = () => {
+        return `Your Nickname is ${this.Nickname} 
 and color is ${this.color}
 welcome to our party
 `}
@@ -51,8 +51,8 @@ console.log(dog1.welcome());
 //! Функцию, которая является свойством объекта, называют методом этого объекта.
 
 
-  
- 
+
+
 
 
 
@@ -74,23 +74,23 @@ console.log(dog1.welcome());
 
 
 //! let superAir = class Aircraft {}  -  можно присвоить переменной
-class Aircraft  {
+class Aircraft {
     company = 'Boeng'
     country = 'Russia'
-    constructor(model:any, age:number) {
+    constructor(model: any, age: number) {
         this.model = model
         this.age = age
         // this.details = {
         //     wheels : 'колёса'
         // }
     }
-    fly () { //!  метод без параметров
+    fly() { //!  метод без параметров
         console.log(`
     Самолет ${this.model}  
     компании ${this.company} поднимается 
     и у него есть ${this.details?.wheels}
     `);
-        
+
     }
 
     //! Как и в литеральных объектах, в классах можно объявлять вычисляемые 
@@ -98,31 +98,31 @@ class Aircraft  {
 
     //! set и get нужны для добавления кастомной логики (напр: написать слово с большой буквы)
     //! в сеттере и геттере нижнее подчеркивание
-    
+
 
 
 
     get age() {
-        return  `${this._age}`
+        return `${this._age}`
     }
-    
-    set age(value:any) { 
-        if(value<10) {
-                this._age = value + ' лет, самолет новый'; 
+
+    set age(value: any) {
+        if (value < 10) {
+            this._age = value + ' лет, самолет новый';
             //  return
         } else {
             this._age = value + ' лет, самолет старый'
-        // return
-        }   
+            // return
+        }
     }
 
-    }
-    let aircraftFirst = new Aircraft(1777, 15)
-    console.log(aircraftFirst);
-    
-    
+}
+let aircraftFirst = new Aircraft(1777, 15)
+console.log(aircraftFirst);
 
-    
+
+
+
 
 
 // let aircraftSecond = new Aircraft(999, 3)
@@ -166,7 +166,7 @@ class Aircraft  {
 // }
 //     write(text:any) {
 //         console.log(text);
-        
+
 //     }
 // }
 
@@ -192,11 +192,11 @@ class Aircraft  {
 //! а get и set — для работы с данными при их присвоении и чтении.
 
 let transport = {
-    name : 'transport',
-    glass : true,
+    name: 'transport',
+    glass: true,
     wheels: true,
-    brake () {
-         `тормоза работают y ${this.name}`
+    brake() {
+        `тормоза работают y ${this.name}`
     },
     gas() {
         return this.fuel = true
@@ -207,30 +207,30 @@ let transport = {
 }
 
 let bus = {
-    name : 'bus',
-    stear : true,
-    drivers : false,
+    name: 'bus',
+    stear: true,
+    drivers: false,
     __proto__: transport, //! первый способ записи 'proto'
 }
 
 let car = {
-    name : 'car',
+    name: 'car',
     color: 'gray',
     odometr: '100.000',
-    __proto__:bus,
+    __proto__: bus,
 } as any
 
 let bycicle = {
-    name : 'bycicle',
-    cost : 18000,
-    color : 'red',
-    brake () {
+    name: 'bycicle',
+    cost: 18000,
+    color: 'red',
+    brake() {
         return `давайте ремонтировать`
     },
 
 } as any
 
-bycicle.__proto__  = car //! второй способ записи
+bycicle.__proto__ = car //! второй способ записи
 
 console.log(bus);
 
@@ -270,7 +270,7 @@ console.log(...Object.entries(bycicle));
 // for (const key in bycicle) {
 //     let own = bycicle.hasOwnProperty(key)
 //     console.log(own ? `собственный ключ: ${key}` : `унаследованный ключ: ${key}`)
-    
+
 // }
 
 
@@ -284,7 +284,7 @@ console.log(transport.gas());
 
 
 let note = {
-    display : 15.6,
+    display: 15.6,
 }
 // Object.getPrototypeOf(note) = bycicle
 
@@ -294,12 +294,12 @@ let animal = {
 }
 
 
-function Anim (name:string) {
+function Anim(name: string) {
     this.name = name
 }
 Anim.prototype = animal
 
-let cat = new Anim ('мяу')
+let cat = new Anim('мяу')
 console.log(cat);
 console.log(cat.eat);
 
@@ -319,17 +319,17 @@ console.log(cat.eat);
 //! Цикл for..in перебирает как свои, так и унаследованные свойства. Остальные методы получения ключей/значений работают только с собственными свойствами объекта.
 
 
-let extraAnim  = {
-    eats:false,
-    runs:true,
+let extraAnim = {
+    eats: false,
+    runs: true,
     toString() {
         return 'что-то делает'
     }
 }
 
-function Fox (name:string, forest:string) {
+function Fox(name: string, forest: string) {
     this.name = name
-    this.forest=forest
+    this.forest = forest
     // Fox.prototype = {
     //     eats:true
     // }
@@ -339,7 +339,7 @@ function Fox (name:string, forest:string) {
 }
 
 Fox.prototype = extraAnim
- 
+
 
 
 
@@ -379,20 +379,21 @@ console.log(String.prototype);
 
 console.log(Number.prototype);
 
-    Number.prototype.show = ()=>{console.log('Добавили новый метод');
+Number.prototype.show = () => {
+    console.log('Добавили новый метод');
 }
-let num = 12345 
+let num = 12345
 num.show();
 
 
- 
- 
 
 
 
 
 
- 
+
+
+
 
 
 
@@ -407,16 +408,16 @@ num.show();
 let printText = document.getElementById('PrintMaсhine') as HTMLDivElement
 
 class PrintMaсhine {
-    
+
     background = 'rgb(11, 66, 85)'
 
-    constructor(fontSize:any, color:any, fontFamily:string){
+    constructor(fontSize: any, color: any, fontFamily: string) {
         this.fontSize = fontSize
         this.color = color
         this.fontFamily = fontFamily
     }
-    print(text:any) {
-        printText.innerHTML+= `
+    print(text: any) {
+        printText.innerHTML += `
         <div style="font-size: ${this.fontSize}; color: ${this.color}; 
         font-family: ${this.fontFamily}; background:${this.background}">${text}</div>`
     }
@@ -431,9 +432,9 @@ writeText2.print('Печатаем ещё один текст')
 
 
 let input_marker = document.querySelector('#input_marker') as HTMLInputElement
-input_marker.addEventListener('input', (e)=>{
+input_marker.addEventListener('input', (e) => {
     console.log(e.target.value);
-    
+
 })
 
 
@@ -484,7 +485,7 @@ input_marker.addEventListener('input', (e)=>{
 
 
 
- 
+
 
 // setInterval(() => {
 //         clearInterval(stopTimer)    
@@ -519,14 +520,14 @@ input_marker.addEventListener('input', (e)=>{
 class City {
     name
     age
-    constructor(name='nnnnnn', age =1000000) { //! задание параметров по умолчанию
-        this.name = name 
+    constructor(name = 'nnnnnn', age = 1000000) { //! задание параметров по умолчанию
+        this.name = name
         this.age = age
     }
     welcome() {
         return `Добро пожаловать в ${this.name} `
     }
-    population = (people:number)=>{
+    population = (people: number) => {
         return `население города ${this.name} = ${people} человек`
     }
 }
@@ -534,12 +535,12 @@ class City {
 class Country extends City {
     speed
     country
-    constructor (name:string,  country:string, age=55555, speed=100) { //! задание параметров по умолчанию
+    constructor(name: string, country: string, age = 55555, speed = 100) { //! задание параметров по умолчанию
         super(name, age)  //! super работает ТОЛЬКО внутри нашего конструктора
         this.country = country
         this.speed = speed
     }
-    run () {
+    run() {
         return `${this.name} ${super.welcome()} едем со скоростью ${this.speed}` //!можем
         //! возвращать родительский метод
     }
@@ -552,7 +553,7 @@ console.log(Msc);
 let Spb = new City('Saint-Petersburg', 300)
 console.log(Spb);
 
-let msc2 = new Country ('Moscow2','Russia')
+let msc2 = new Country('Moscow2', 'Russia')
 console.log(msc2);
 
 console.log(msc2.welcome()); //! вызов унаследованного метода
@@ -585,29 +586,29 @@ let symbols = document.getElementById('marker_symbol') as HTMLDivElement
 let marker_info = document.getElementById('marker_info') as HTMLDivElement
 
 class Marker {
-    constructor(color:string, ink:number){
+    constructor(color: string, ink: number) {
         this.color = color
         this.ink = ink //количество чернил (на 50 символов)
     }
 
-    print (text:string) {
+    print(text: string) {
         let num = this.ink
 
         for (let i = 0; i < text.length; i++) {
-            symbols.innerHTML+=`<span style="color: ${this.color}; 
-            opacity: ${1-i/num};">${text[i]}</span>`
+            symbols.innerHTML += `<span style="color: ${this.color}; 
+            opacity: ${1 - i / num};">${text[i]}</span>`
         }
         console.log(text.length);
 
-        symbols.innerHTML+='<br>'
-        
+        symbols.innerHTML += '<br>'
+
         marker_info.innerHTML += `
         Цвет маркера:<div style="color:${this.color}">${this.color}</div> <br>
         Количество введенных символов: <span style="color: red; font-size:25px">
-        ${text.length<this.ink ? text.length : this.ink}</span><br>   
+        ${text.length < this.ink ? text.length : this.ink}</span><br>   
         <br>
         `
-}
+    }
 }
 
 let marker1 = new Marker('red', 15)
@@ -640,7 +641,7 @@ let obje = 123
 // console.log(Array.prototype);
 
 // let  Test = {
-    
+
 // }
 // Test.prototype == Object.prototype
 // console.log(Test.__proto__== Object.prototype);
@@ -662,18 +663,18 @@ let obje = 123
 
 
 
-function findInd (str:string, symb:any) {
+function findInd(str: string, symb: any) {
     let mass = str.split('')
     let acc = 0
     let accIndex = ''
     for (let i = 0; i < mass.length; i++) {
-        if (str[i]==symb) {
-            acc+=symb.length
-            accIndex+= i + ' ' 
+        if (str[i] == symb) {
+            acc += symb.length
+            accIndex += i + ' '
         }
     }
 
-    return `буква '${symb}' встречается ${acc} ${acc>=2 && acc<=4 ? 'раза' : 'раз'} на индексах: ${accIndex}`
+    return `буква '${symb}' встречается ${acc} ${acc >= 2 && acc <= 4 ? 'раза' : 'раз'} на индексах: ${accIndex}`
 }
 
 console.log(findInd('Написать функцию, которая принимает строку и символ и выводит индексы, по которым находится этот символ в строке', 'е'))
@@ -681,7 +682,7 @@ console.log(findInd('которым находится этот символ в 
 
 
 
-let test  = 10
+let test = 10
 console.log(test < 5 ? 'число большое' : 'число маленькое');
 
 
@@ -696,11 +697,11 @@ console.log(test < 5 ? 'число большое' : 'число маленьк�
 // строке. Также вывести, сколько всего раз встречается этот
 // символ в строке.
 
-function findIn (str:string, symb:any) {
-let acc = 0
-let mass = [] as any
-    str.split('').forEach((el,i)=> {
-        if (el==symb) {
+function findIn(str: string, symb: any) {
+    let acc = 0
+    let mass = [] as any
+    str.split('').forEach((el, i) => {
+        if (el == symb) {
             acc++
             mass.push(i)
         }
@@ -720,26 +721,26 @@ findIn('выводит индексы, по которым находится э
 
 console.log(Date.prototype);
 
- 
+
 
 
 let date2 = new Date() //! рендеринг документа
 console.log(date2.getMilliseconds());
 
-console.log(`документ отрендерился за ${Number(date2)-Number(date1)} миллисекунды`);
+console.log(`документ отрендерился за ${Number(date2) - Number(date1)} миллисекунды`);
 
 
-let date3 = new Date() 
+let date3 = new Date()
 console.log(date3.getTime()); //! перевод в timestamp
 
-let date4 = date3.getTime() 
+let date4 = date3.getTime()
 console.log(new Date(date4)); //! перевод обратно в дату !
 
 let date5 = new Date('1991-03-28') //! первый способ записи
 console.log(date5);
 console.log(date5.getDay());
 
-let date6 = new Date(1991,2,28)  //! второй способ записи
+let date6 = new Date(1991, 2, 28)  //! второй способ записи
 console.log(date6);
 
 
@@ -752,11 +753,11 @@ console.log(date7);
 // date7.setDate(20)
 // console.log(date7);
 
-let newYear = new Date(2026,0,1) //!считаем дни до Нового года
+let newYear = new Date(2026, 0, 1) //!считаем дни до Нового года
 console.log(newYear);
 
-let quantityDays = Number(newYear) - Number(date3)  
-console.log(`до нового года осталось: ${parseInt(quantityDays/24/60/60/1000)} дней`);
+let quantityDays = Number(newYear) - Number(date3)
+console.log(`до нового года осталось: ${parseInt(quantityDays / 24 / 60 / 60 / 1000)} дней`);
 
 console.log(Date.parse('2019-10-05')); //! :DDD
 
@@ -771,11 +772,11 @@ console.log(Date.parse('2019-10-05')); //! :DDD
 
 
 class Button {
-    width:string
-    color:any
-    background:any
-    value:any
-    constructor(width:any, color:any, background:any, value:any) {
+    width: string
+    color: any
+    background: any
+    value: any
+    constructor(width: any, color: any, background: any, value: any) {
         this.width = width
         this.color = color
         this.background = background
@@ -785,19 +786,19 @@ class Button {
         document.body.innerHTML += `
 <button style="width: ${this.width}; color: ${this.color}; background: ${this.background}">${this.value}</button>`
     }
-   
-    
-delete() {
-   return 'удалить 123'
-}
+
+
+    delete() {
+        return 'удалить 123'
+    }
 
 }
-let button1 = new Button ('120px', 'white', 'red', 'Нажми меня')
+let button1 = new Button('120px', 'white', 'red', 'Нажми меня')
 button1.showBtn()
 console.log(button1);
 
 
-let button2 = new Button ('80px', 'red', 'black', 'Удалить')
+let button2 = new Button('80px', 'red', 'black', 'Удалить')
 button2.showBtn()
 
 
@@ -811,7 +812,7 @@ button2.showBtn()
 
 class BootstrapButton extends Button {
     fontSize
-    constructor(width:any, color:any, background:any, value:any, fontSize:number) {
+    constructor(width: any, color: any, background: any, value: any, fontSize: number) {
         super(width, color, background, value)
         this.fontSize = fontSize
     }
@@ -842,40 +843,40 @@ let string = ''
 class CssClass {
     className
     cssArray
-    constructor(className:string, cssArray:any[]) {
+    constructor(className: string, cssArray: any[]) {
         this.className = className
         this.cssArray = cssArray
     }
-    
+
     getCss() {  //! метод для установки стиля;
         for (const obj of this.cssArray) { //! массив закидываем в цикл
             for (const key in obj) { //! объекты закидываем в цикл
                 string += key + ':' + obj[key] + '; ';
-            }    
+            }
         }
-        cssClass.innerHTML+=`
+        cssClass.innerHTML += `
         <div id="${this.className}" style="${string}"> Название класса: ${this.className} <br><br> </div>`
     }
-    
+
     writeStyle() { //! метод для вывода стилей текстом в HTML
-        cssClass.innerHTML+=`Стили класса ${this.className}: ${string}`
+        cssClass.innerHTML += `Стили класса ${this.className}: ${string}`
     }
 
-    deleteStyle(num:number) {
+    deleteStyle(num: number) {
         delete this.cssArray[num]
         // cssClass.innerHTML = '' //! вообще все полностью удалить
     }
-    
+
 }
 
 
 let class2 = new CssClass('block2', [
-    {background:'pink'},
-    {color:'green'}, 
-    {padding:'5px'}, 
-    {width: '300px'},
-    {height: '300px'},
-    {display: 'inline-block'},
+    { background: 'pink' },
+    { color: 'green' },
+    { padding: '5px' },
+    { width: '300px' },
+    { height: '300px' },
+    { display: 'inline-block' },
 ])
 class2.deleteStyle(1) //! метод удаления должен идти первым
 class2.getCss()
@@ -906,7 +907,7 @@ class2.writeStyle()
 //     document.body.innerHTML += `<div class="${this.className}" style="${this.mass[0]}">123 </div>`
 //     console.log(`<div class="${this.className}" style="${this.mass[0]}">123 </div>`);
 //     console.log(x);
-    
+
 // }
 
 
@@ -923,16 +924,16 @@ class2.writeStyle()
 //Отсортируйте 5 случайных чисел от 1 до 10 в порядке возрастания и затем в 
 // порядке убывания.
 
-let randomNumbers:number[] = []
-    for (let i = 1; i <= 5; i++) {
-            randomNumbers.push(Math.round(Math.random()*10));
-    }
-console.log(randomNumbers.sort((a,b)=>a-b));
+let randomNumbers: number[] = []
+for (let i = 1; i <= 5; i++) {
+    randomNumbers.push(Math.round(Math.random() * 10));
+}
+console.log(randomNumbers.sort((a, b) => a - b));
 
 //У нас есть объект:
 let obj = {
-'name':['Вася', 'Петя', 'Коля'],
-'age':[11, 30, 20],
+    'name': ['Вася', 'Петя', 'Коля'],
+    'age': [11, 30, 20],
 }
 //Получите Петю из массива arr.
 //Посчитайте, сколько элементов находится в name.
@@ -946,20 +947,21 @@ console.log(obj.name[1]);
 //Найдите сумму положительных элементов массива. 
 
 
-let myArrr = [5,7,-2,-6,4,1,-8]
+let myArrr = [5, 7, -2, -6, 4, 1, -8]
 let ac = 0
-let sum = myArrr.map(e=>{
-    if(e>0){
-    ac+=e
-}})
+let sum = myArrr.map(e => {
+    if (e > 0) {
+        ac += e
+    }
+})
 console.log(ac);
 
-let sum2 = myArrr.reduce((a,e)=>{
-    if (e>0) {
-        a+=e
+let sum2 = myArrr.reduce((a, e) => {
+    if (e > 0) {
+        a += e
     }
     return a //! фигурные скобки и return  тогда сработает!
-},0)
+}, 0)
 console.log(sum2);
 
 
@@ -997,50 +999,50 @@ console.log(sum2);
 let today = new Date()
 let today2 = new Date()
 
-class ExtendedDate{
+class ExtendedDate {
     year
     month
     day
-    constructor(year:number, month:number, day:number) {
+    constructor(year: number, month: number, day: number) {
         this.year = year
         this.month = month
         this.day = day
     }
-    
-    
+
+
     printDate() {   //!  ■ метод для вывода даты (числа и месяца) текстом;
         let massWithDays = ['первое', 'второе', 'третье', 'четвертое', 'пятое', 'шестое', 'седьмое', 'восьмое', 'девятое', 'десятое',
             'одиннадцатое', 'двеннадцатое', 'триннадцатое', 'четырнадцатое', 'пятнадцатое', 'шестнадцатое', 'семьнадцатое',
             'восемьнадцатое', 'девятьнадцатое', 'двадцать', 'тридцать']
-            let massWithMounth = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабрь']
-            
+        let massWithMounth = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабрь']
+
 
         let days = this.day
         let mounths = this.month
-        if (days>=1 && days<=20) {
-            console.log(massWithDays[days-1], massWithMounth[mounths-1]);
-        } else if (days<30){
-            console.log(massWithDays[19], massWithDays[days-21], massWithMounth[mounths-1])
-        } else if (days==30) {
-            console.log(massWithDays[20], massWithMounth[mounths-1])
-        } else if (days==31) {
-            console.log(massWithDays[20], massWithDays[days-31], massWithMounth[mounths-1])
+        if (days >= 1 && days <= 20) {
+            console.log(massWithDays[days - 1], massWithMounth[mounths - 1]);
+        } else if (days < 30) {
+            console.log(massWithDays[19], massWithDays[days - 21], massWithMounth[mounths - 1])
+        } else if (days == 30) {
+            console.log(massWithDays[20], massWithMounth[mounths - 1])
+        } else if (days == 31) {
+            console.log(massWithDays[20], massWithDays[days - 31], massWithMounth[mounths - 1])
         } else {
             console.log(`Число ${days} вне диапазона`);
         }
     }
-    
-    
+
+
     //! ■ метод для проверки – это прошедшая дата или будущая (если прошедшая, то метод 
     //! возвращает false; если будущая или текущая, то true); 
     checkDate() {
         let str = ''
         let strToday = ''
-        
-        str+=this.year+''+this.month+''+this.day 
-        strToday+=today.getFullYear()+''+ 0 +(today.getMonth()+1) + '' + 0 + (today.getDate())
-        
-        if (strToday>=str) {
+
+        str += this.year + '' + this.month + '' + this.day
+        strToday += today.getFullYear() + '' + 0 + (today.getMonth() + 1) + '' + 0 + (today.getDate())
+
+        if (strToday >= str) {
             console.log('true, дата текущая или будущая');
         } else {
             console.log('false, дата прошлая');
@@ -1052,43 +1054,43 @@ class ExtendedDate{
         // console.log(str);
         // console.log(strToday);        
     }
-    
-    
+
+
     //! ■ метод для проверки – високосный год или нет;
     checkLeapYear() {
-            console.log(this.year%4==0 ? 'Год високосный' : 'Год не високосный');            
+        console.log(this.year % 4 == 0 ? 'Год високосный' : 'Год не високосный');
     }
 
 
-    
+
     //!  ■ метод, возвращающий следующую дату.
     nextDay() {
-        let year = this.year 
-        let mounth = this.month 
-        let day = this.day 
-  
-    if (day>=32) return 'Введите корректный день'
-    if (day==31 && (mounth==4 || mounth==6 ||mounth==9 || mounth==11)) return 'Введите корректный день'
-    if (day>=30 && mounth==2 || day==29 && mounth==2 && year%4!=0) return 'Введите корректный день'
-    if (mounth>=13) return 'Введите корректный месяц'
-    if (day<=0 || mounth<=0 || year<=0) return 'введите положительное число'
-    
-    if (day==31 && mounth==12){
-        year+=1, mounth=1, day=1
-    } else if (day==30 && (mounth==4 || mounth==6 ||mounth==9 || mounth==11)) {
-        day=1
-        mounth+=1
-    } else if (day==31 && (mounth==3 || mounth==5 ||mounth==7 || mounth==8 || mounth==10 || mounth==12)) {
-        day=1
-        mounth+=1
-    } else if(day==28 && mounth==2 && year%4!=0 || day==29 && mounth==2 && year%4==0){
-        day=1
-        mounth+=1
-    } else {
-        day+=1
+        let year = this.year
+        let mounth = this.month
+        let day = this.day
+
+        if (day >= 32) return 'Введите корректный день'
+        if (day == 31 && (mounth == 4 || mounth == 6 || mounth == 9 || mounth == 11)) return 'Введите корректный день'
+        if (day >= 30 && mounth == 2 || day == 29 && mounth == 2 && year % 4 != 0) return 'Введите корректный день'
+        if (mounth >= 13) return 'Введите корректный месяц'
+        if (day <= 0 || mounth <= 0 || year <= 0) return 'введите положительное число'
+
+        if (day == 31 && mounth == 12) {
+            year += 1, mounth = 1, day = 1
+        } else if (day == 30 && (mounth == 4 || mounth == 6 || mounth == 9 || mounth == 11)) {
+            day = 1
+            mounth += 1
+        } else if (day == 31 && (mounth == 3 || mounth == 5 || mounth == 7 || mounth == 8 || mounth == 10 || mounth == 12)) {
+            day = 1
+            mounth += 1
+        } else if (day == 28 && mounth == 2 && year % 4 != 0 || day == 29 && mounth == 2 && year % 4 == 0) {
+            day = 1
+            mounth += 1
+        } else {
+            day += 1
+        }
+        return `«${year}.${mounth}.${day}»`
     }
-     return `«${year}.${mounth}.${day}»`
-}
 
 }
 
@@ -1100,12 +1102,41 @@ console.log(newDay2.nextDay())
 
 
 var tomorrow = new Date();  //! возвращает завтрашний день от текущего дня
- tomorrow.setDate(tomorrow.getDate() + 1);
-
- 
+tomorrow.setDate(tomorrow.getDate() + 1);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // повторить с интервалом 2 секунды
+// let timerId = setInterval(() => console.log('tick'), 2000);
+
+// // остановить вывод через 5 секунд
+// setTimeout(() => { 
+//     clearInterval(timerId); console.log('stop'); 
+// }, 5000);
+
+
+
+//? let acc = 0 
+//? setInterval(() => {
+//?     setInterval(() => {
+//?         acc+=1
+//?         console.log(acc);
+
+//?     }, 1000);
+//? }, 1000);
 
 
 
@@ -1124,29 +1155,39 @@ var tomorrow = new Date();  //! возвращает завтрашний ден
 //! дится «N дней назад»;
 //!  ■ в остальных случаях, полная дата в формате «дд.мм.гггг».
 
+let news = document.getElementById('news') as HTMLDivElement
 
-
-
-
-
-
-
- 
-// повторить с интервалом 2 секунды
-let timerId = setInterval(() => console.log('tick'), 2000);
-
-// остановить вывод через 5 секунд
-setTimeout(() => { 
-    clearInterval(timerId); console.log('stop'); 
-}, 5000);
-
-
-
-//? let acc = 0 
-//? setInterval(() => {
-//?     setInterval(() => {
-//?         acc+=1
-//?         console.log(acc);
+class News {
+    header
+    tag
+    date
+    constructor(header:any, tag:string, date:any) {
+        this.header = header
+        this.tag = tag
+        this.date = date
+    }
+    printText(text: any) {
+        if (today.getDate()) {
+            return 'сегодня'
+        }
+        news.innerHTML += `
+        <${this.header}>Заголовок</${this.header}>
+        <${this.tag}>${this.date}</${this.tag}>
+        <${this.tag}>${text}</${this.tag}>
+        <${this.tag}>${text}</${this.tag}>
         
-//?     }, 1000);
-//? }, 1000);
+        `
+        this.date.split('');
+    }
+}
+
+
+
+let new1 = new News('h2', 'p', '2012.10.10')
+new1.printText('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
+
+console.log(new1.date);
+
+console.log(today.getDate());
+
+
