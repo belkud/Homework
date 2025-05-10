@@ -1167,9 +1167,9 @@ class News {
         this.date = date
     }
     printText(text: any) {
-        if (today.getDate()) {
-            return 'сегодня'
-        }
+        // if (today.getDate()) {
+        //     return 'сегодня'
+        // }
         news.innerHTML += `
         <${this.header}>Заголовок</${this.header}>
         <${this.tag}>${this.date}</${this.tag}>
@@ -1177,7 +1177,9 @@ class News {
         <${this.tag}>${text}</${this.tag}>
         
         `
-        this.date.split('');
+        console.log(this.date.split('.'));
+        
+        // this.date.split('');
     }
 }
 
@@ -1189,5 +1191,8 @@ new1.printText('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facili
 console.log(new1.date);
 
 console.log(today.getDate());
+
+
+
 
 
