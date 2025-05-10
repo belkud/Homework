@@ -1167,30 +1167,47 @@ class News {
         this.date = date
     }
     printText(text: any) {
-        // if (today.getDate()) {
-        //     return 'сегодня'
-        // }
+    let todayDateString = today.toLocaleDateString().split('.').reverse().join('') //! перевод даты в строку
+    console.log(todayDateString)
+
+    let userDate = this.date.split('.').join('')
+    let userDate2 = this.date.split('.').reverse().join('.')
+    console.log(userDate);
+
+    console.log(Number(todayDateString)-userDate);
+    
+    let infoAboutDate = ''
+        if (Number(todayDateString)-userDate==0) {
+            infoAboutDate =  '"сегодня"'
+        } else if (Number(todayDateString)-userDate>=0 && Number(todayDateString)-userDate<=7 ) {
+            infoAboutDate =  `${Number(todayDateString)-userDate} ${Number(todayDateString)-userDate<=4 ? 'дня' : 'дней' } назад`
+        } else if (Number(todayDateString)-userDate>7) {
+            infoAboutDate =  userDate2
+            }
+        
+        
         news.innerHTML += `
         <${this.header}>Заголовок</${this.header}>
-        <${this.tag}>${this.date}</${this.tag}>
+        <${this.tag}>Новость опубликована: ${infoAboutDate}</${this.tag}>
         <${this.tag}>${text}</${this.tag}>
         <${this.tag}>${text}</${this.tag}>
         
         `
-        console.log(this.date.split('.'));
         
-        // this.date.split('');
     }
 }
 
 
 
-let new1 = new News('h2', 'p', '2012.10.10')
+
+let new1 = new News('h3', 'p', '2025.05.10')
 new1.printText('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
 
-console.log(new1.date);
+let new2 = new News('h2', 'p', '2025.05.02')
+new2.printText('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
 
-console.log(today.getDate());
+let new3 = new News('h2', 'p', '2012.10.10')
+new3.printText('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
 
 
 
