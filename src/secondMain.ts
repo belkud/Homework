@@ -5,6 +5,10 @@ console.clear()
 let date1 = new Date()
 console.log(date1.getMilliseconds());
 
+
+
+
+
 //!!!!!!!!!!!!!!!!!!!!!! Функция конструктор !!!!!!!!!!!!!!!!!!!!!!1!
 
 //! Имя функции-конструктора должно начинаться с большой буквы.
@@ -1217,7 +1221,8 @@ new3.printText('Что-то хорошее','Lorem, ipsum dolor sit amet consect
 
 
 
-
+let calc = document.getElementById('calc') as HTMLInputElement
+calc.value+=232+10+5
 
 
 
