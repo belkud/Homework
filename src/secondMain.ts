@@ -1166,15 +1166,11 @@ class News {
         this.tag = tag
         this.date = date
     }
-    printText(text: any) {
+    printText(titleName:any, text:any) {
     let todayDateString = today.toLocaleDateString().split('.').reverse().join('') //! перевод даты в строку
-    console.log(todayDateString)
 
     let userDate = this.date.split('.').join('')
     let userDate2 = this.date.split('.').reverse().join('.')
-    console.log(userDate);
-
-    console.log(Number(todayDateString)-userDate);
     
     let infoAboutDate = ''
         if (Number(todayDateString)-userDate==0) {
@@ -1187,7 +1183,7 @@ class News {
         
         
         news.innerHTML += `
-        <${this.header}>Заголовок</${this.header}>
+        <${this.header}>${titleName}</${this.header}>
         <${this.tag}>Новость опубликована: ${infoAboutDate}</${this.tag}>
         <${this.tag}>${text}</${this.tag}>
         <${this.tag}>${text}</${this.tag}>
@@ -1201,13 +1197,31 @@ class News {
 
 
 let new1 = new News('h3', 'p', '2025.05.10')
-new1.printText('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
+new1.printText(
+    'Просто заголовок', 
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
 
-let new2 = new News('h2', 'p', '2025.05.02')
-new2.printText('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
+let new2 = new News('h2', 'p', '2025.05.08')
+new2.printText('Новая информация', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
 
 let new3 = new News('h2', 'p', '2012.10.10')
-new3.printText('Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
+new3.printText('Что-то хорошее','Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
