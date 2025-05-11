@@ -1222,9 +1222,24 @@ new3.printText('Что-то хорошее','Lorem, ipsum dolor sit amet consect
 
 
 let calc = document.getElementById('calc') as HTMLInputElement
-calc.value+=232+10+5
 
+let seven = document.getElementById('7') as HTMLDivElement
+console.log(Number(seven.innerHTML));
 
+calc.value+=232+10+Number(seven.innerHTML)
+// let 8 = 8
+// let 9 = 9
+// let + = +
+// let 4 = 4
+// let 5 = 5
+// let 6 = 6
+// let - = -
+// let 1 = 1
+// let 2 = 2
+// let 3 = 3
+// let * = *
+// let 0 = 0
+// let = = =
 
 
 
