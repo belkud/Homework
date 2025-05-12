@@ -1,4 +1,4 @@
-import { surname } from "./name";
+import { nam, surname } from "./name";
 
 console.clear()
 
@@ -1148,78 +1148,6 @@ tomorrow.setDate(tomorrow.getDate() + 1);
 
 
 
-//! Задание 2
-//!  Реализовать класс, описывающий новость (заголовок, текст, 
-//! массив тегов, дата публикации). В классе необходимо реализовать 
-//! один метод print, который выводит всю информацию в таком 
-//! виде, как на рисунке 1.
-//!  Обратите внимание на то, как выводится дата:
-//!  ■ если с даты публикации прошло менее дня, то выводится 
-//! «сегодня»;
-//!  ■ если с даты публикации прошло менее недели, то выво
-//! дится «N дней назад»;
-//!  ■ в остальных случаях, полная дата в формате «дд.мм.гггг».
-
-let news = document.getElementById('news') as HTMLDivElement
-
-class News {
-    header
-    tag
-    date
-    constructor(header:any, tag:string, date:any) {
-        this.header = header
-        this.tag = tag
-        this.date = date
-    }
-    printText(titleName:any, text:any) {
-    let todayDateString = today.toLocaleDateString().split('.').reverse().join('') //! перевод даты в строку
-
-    let userDate = this.date.split('.').join('')
-    let userDate2 = this.date.split('.').reverse().join('.')
-    
-    let infoAboutDate = ''
-        if (Number(todayDateString)-userDate==0) {
-            infoAboutDate =  '"сегодня"'
-        } else if (Number(todayDateString)-userDate>=0 && Number(todayDateString)-userDate<=7 ) {
-            infoAboutDate =  `${Number(todayDateString)-userDate} ${Number(todayDateString)-userDate<=4 ? 'дня' : 'дней' } назад`
-        } else if (Number(todayDateString)-userDate>7) {
-            infoAboutDate =  userDate2
-            }
-        
-        
-        news.innerHTML += `
-        <${this.header}>${titleName}</${this.header}>
-        <${this.tag}>Новость опубликована: ${infoAboutDate}</${this.tag}>
-        <${this.tag}>${text}</${this.tag}>
-        <${this.tag}>${text}</${this.tag}>
-        
-        `
-        
-    }
-}
-
-
-
-
-let new1 = new News('h3', 'p', '2025.05.10')
-new1.printText(
-    'Просто заголовок', 
-    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
-
-let new2 = new News('h2', 'p', '2025.05.08')
-new2.printText('Новая информация', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
-
-let new3 = new News('h2', 'p', '2012.10.10')
-new3.printText('Что-то хорошее','Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
-
-
-
-
-
-
-
-
-
 
 //!!!!!!!!!!!!!!!!!!!!!!!!! КАЛЬКУЛЯТОР!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -1255,33 +1183,6 @@ console.log(today);
 
 
 
-
-
-//!!!!!!!!!!!!!!!!!!!!!!! getter и setter !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-
-let user = {
-    name:'Ivan',
-    surname: 'Ivanov',
-    get fullname() {
-        return `${this.name} ${this.surname}`
-    },
-
-    set fullname (val) { //! обязательно один параметр
-        [this.name, this.surname] = val.split(',') 
-    }
-    
-}
-console.log(user.fullname);
-
-
-
-user.fullname = 'Petya, Petrov' as any //! устанавливаю сеттер
-console.log(user);
-
-
-
 //! Задание 2 
 //! Реализовать класс, описывающий геометрическую фигуру со 
 //! свойствами и методами:
@@ -1298,16 +1199,161 @@ console.log(user);
 
 class Figure {
     name
-    constructor(name:string, side:number, sideLength:number) {
+    side
+    sideLength
+    constructor(name:string, side:number, sideLength:number[]) {
         this.name = name
+        this.side = side
+        this.sideLength = sideLength
     }
     get figureName () {
-        return this.name
+        return console.log(this.name);
     }
+    set figureName (value) {
+         console.log(this.name + ' = ' + value);
+          
+    }
+        
     showInfo () {
-
+        console.log(`фигура ${this.name} имеет ${this.side} стороны длинной ${this.sideLength} метров` );
+    }
+    showSquare() {
+        console.log(`площадь фигуры: ${this.sideLength[0] * this.sideLength[1]} метров`);
+    }
+    showPerimetr() {
+        console.log(`периметр фигуры: ${(this.sideLength[0] * this.sideLength[1]) * 2} метров`);
     }
 }
+let figures = ['figure1','figure2','figure3'] //! массив с фигурами
+
+let square = new Figure (figures[0], 4, [10])
+square.figureName
+square.showInfo()
+square.showSquare()
+square.showPerimetr()
+
+console.log(square.sideLength);
+
+square.figureName = '300' as any 
+square.figureName
+
+
+
+
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!! getter и setter !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+let user = {
+    name:'Ivan',
+    surname: 'Ivanov',
+    get fullname() {
+        return `${this.name} ${this.surname}` //! в gete всегда пишем return
+    },
+
+    set fullname (val) { //! обязательно один параметр
+        if (this.name.length<=4) {
+            console.log(val = 'имя короткое!');
+         return   
+        }
+        [this.name, this.surname] = val.split(',') 
+    }
+    
+}
+console.log(user.fullname);
+
+
+
+user.fullname = 'Petya, Petrov' as any //! устанавливаю сеттер
+console.log(user);
+
+console.log('______________');
+
+
+
+
+
+
+
+
+
+
+
+//! Задание 2
+//!  Реализовать класс, описывающий новость (заголовок, текст, 
+//! массив тегов, дата публикации). В классе необходимо реализовать 
+//! один метод print, который выводит всю информацию в таком 
+//! виде, как на рисунке 1.
+//!  Обратите внимание на то, как выводится дата:
+//!  ■ если с даты публикации прошло менее дня, то выводится 
+//! «сегодня»;
+//!  ■ если с даты публикации прошло менее недели, то выво
+//! дится «N дней назад»;
+//!  ■ в остальных случаях, полная дата в формате «дд.мм.гггг».
+
+let news = document.getElementById('news') as HTMLDivElement
+
+class News {
+    header
+    tag
+    date
+    #test = 100 //! защищенное свойство
+    constructor(header:any, tag:string, date:any) {
+        this.header = header
+        this.tag = tag
+        this.date = date
+    }
+    printText(titleName:any, text:any) {
+    let todayDateString = today.toLocaleDateString().split('.').reverse().join('') //! перевод даты в строку
+
+    let userDate = this.date.split('.').join('')
+    let userDate2 = this.date.split('.').reverse().join('.')
+    
+    let infoAboutDate = ''
+        if (Number(todayDateString)-userDate==0) {
+            infoAboutDate =  '"сегодня"' + this.#test
+        } else if (Number(todayDateString)-userDate>=0 && Number(todayDateString)-userDate<=7 ) {
+            infoAboutDate =  `${Number(todayDateString)-userDate} ${Number(todayDateString)-userDate<=4 ? 'дня' : 'дней' } назад`
+        } else if (Number(todayDateString)-userDate>7) {
+            infoAboutDate =  userDate2
+            }
+        
+        
+        news.innerHTML += `
+        <${this.header}>${titleName}</${this.header}>
+        <${this.tag}>Новость опубликована: ${infoAboutDate}</${this.tag}>
+        <${this.tag}>${text}</${this.tag}>
+        <${this.tag}>${text}</${this.tag}>
+        
+        `
+        
+    }
+   
+}
+
+
+class Films extends News {
+
+}
+let film1 = new Films('12sd', 'sdf', '234')
+
+
+let new1 = new News('h3', 'p', '2025.05.12')
+console.log(new1.test);
+
+
+new1.printText(
+    'Просто заголовок', 
+    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
+
+let new2 = new News('h2', 'p', '2025.05.08')
+new2.printText('Новая информация', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
+
+let new3 = new News('h2', 'p', '2012.10.10')
+new3.printText('Что-то хорошее','Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsa quos voluptatum modi perferendis excepturi sit omnis iste sint error veritatis quo')
 
 
 
