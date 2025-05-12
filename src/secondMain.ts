@@ -1,3 +1,4 @@
+import { surname } from "./name";
 
 console.clear()
 
@@ -1220,6 +1221,7 @@ new3.printText('Что-то хорошее','Lorem, ipsum dolor sit amet consect
 
 
 
+//!!!!!!!!!!!!!!!!!!!!!!!!! КАЛЬКУЛЯТОР!!!!!!!!!!!!!!!!!!!!!!!!!
 
 let calc = document.getElementById('calc') as HTMLInputElement
 
@@ -1240,6 +1242,73 @@ calc.value+=232+10+Number(seven.innerHTML)
 // let * = *
 // let 0 = 0
 // let = = =
+
+
+
+
+
+console.log(today.getDate());
+today.setDate(23)
+console.log(today);
+
+
+
+
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!! getter и setter !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+let user = {
+    name:'Ivan',
+    surname: 'Ivanov',
+    get fullname() {
+        return `${this.name} ${this.surname}`
+    },
+
+    set fullname (val) { //! обязательно один параметр
+        [this.name, this.surname] = val.split(',') 
+    }
+    
+}
+console.log(user.fullname);
+
+
+
+user.fullname = 'Petya, Petrov' as any //! устанавливаю сеттер
+console.log(user);
+
+
+
+//! Задание 2 
+//! Реализовать класс, описывающий геометрическую фигуру со 
+//! свойствами и методами:
+//!  ■ get-свойство для получения названия фигуры;
+//!  ■ метод для вывода информации о фигуре (стороны и их 
+//! длина);
+//!  ■ метод для вычисления площади фигуры;
+//!  ■ метод для вычисления периметра фигуры.
+//!  Реализуйте классы-наследники: квадрат, прямоугольник и 
+//! треугольник. Переопределите методы вывода и вычислений в 
+//! классах-наследниках.
+//!  Создайте массив с различными фигурами и выведите инфор
+//! мацию о каждой фигуре, включая площадь и периметр.
+
+class Figure {
+    name
+    constructor(name:string, side:number, sideLength:number) {
+        this.name = name
+    }
+    get figureName () {
+        return this.name
+    }
+    showInfo () {
+
+    }
+}
+
 
 
 
