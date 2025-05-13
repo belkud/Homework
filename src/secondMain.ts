@@ -1359,6 +1359,44 @@ new3.printText('Что-то хорошее','Lorem, ipsum dolor sit amet consect
 
 
 
+//!!!!!!!!!!!!!!!!!!! Задача на setTimeout и setInterval !!!!!!!!!!!!!!!!!!!!!!!!1
+
+//! При перезагрузке страницы у пользователя выскакивает реклама (модальное окно)
+//! задание:
+//! - модальное окно появляется через 3 секунды после загрузки страницы
+//! - сделать так, чтобы пользователь мог закрыть рекламу по прошествии 10 секунд
+//! (выскакивает крестик)
+//! - в модальном окне реализовать таймер, который будет отсчитывать время
+
+let window = document.getElementById('window') as HTMLDivElement
+let timer = document.getElementById('timer') as HTMLDivElement
+let cross = document.getElementById('cross') as HTMLDivElement
+
+setTimeout(() => {
+    window.style.display = 'block'
+}, 3000);
+
+
+let time = -3 as any
+let stopTimer =  setInterval(() => {
+    time++
+    timer.innerHTML=time
+}, 1000);
+
+
+setTimeout(() => {
+    clearInterval(stopTimer)
+    cross.style.display = 'block'
+}, 13000);
+
+cross.addEventListener('click', ()=>{
+    window.style.display = 'none'
+})
+
+
+
+
+
 
 
 
