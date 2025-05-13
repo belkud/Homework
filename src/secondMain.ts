@@ -123,7 +123,7 @@ class Aircraft {
 
 }
 let aircraftFirst = new Aircraft(1777, 15)
-console.log(aircraftFirst);
+console.log(aircraftFirst.age);
 
 
 
@@ -1342,7 +1342,7 @@ let film1 = new Films('12sd', 'sdf', '234')
 
 
 let new1 = new News('h3', 'p', '2025.05.12')
-console.log(new1.test);
+// console.log(new1.test);
 
 
 new1.printText(
@@ -1368,35 +1368,82 @@ new3.printText('Что-то хорошее','Lorem, ipsum dolor sit amet consect
 //! (выскакивает крестик)
 //! - в модальном окне реализовать таймер, который будет отсчитывать время
 
-let window = document.getElementById('window') as HTMLDivElement
-let timer = document.getElementById('timer') as HTMLDivElement
-let cross = document.getElementById('cross') as HTMLDivElement
+// let window = document.getElementById('window') as HTMLDivElement
+// let timer = document.getElementById('timer') as HTMLDivElement
+// let cross = document.getElementById('cross') as HTMLDivElement
 
-setTimeout(() => {
-    window.style.display = 'block'
-}, 3000);
-
-
-let time = -3 as any
-let stopTimer =  setInterval(() => {
-    time++
-    timer.innerHTML=time
-}, 1000);
+// setTimeout(() => {
+//     window.style.display = 'block'
+// }, 3000);
 
 
-setTimeout(() => {
-    clearInterval(stopTimer)
-    cross.style.display = 'block'
-}, 13000);
-
-cross.addEventListener('click', ()=>{
-    window.style.display = 'none'
-})
+// let time = 13 as any
+// let stopTimer =  setInterval(() => {
+//     time--
+//     timer.innerHTML=time
+// }, 1000);
 
 
+// setTimeout(() => {
+//     clearInterval(stopTimer)
+//     cross.style.display = 'block'
+// }, 13000);
+
+// cross.addEventListener('click', ()=>{
+//     window.style.display = 'none'
+// })
 
 
 
 
 
 
+
+
+//! Задание 1
+//!  Реализовать класс, описывающий окружность. В классе долж
+//! ны быть следующие компоненты:
+//!  ■ поле, хранящее радиус окружности;
+//!  ■ get-свойство, возвращающее радиус окружности;
+//!  ■ set-свойство, устанавливающее радиус окружности;
+//!  ■ get-свойство, возвращающее диаметр окружности;
+//!  ■ метод, вычисляющий площадь окружности;
+//!  ■ метод, вычисляющий длину окружности.
+//!  Продемонстрировать работу свойств и методов.
+
+class Circle {
+    radius
+    constructor(radius:number) {
+        this.radius = radius
+    }
+    get Radius(){
+        return console.log('радиус = ' + this.radius + ' метров')
+    }
+    set Radius(value:any) {
+        console.log(`радиус установлен на ${this.radius = value} метров`)
+    }
+    get Diametr() {
+        return console.log(`диаметр = ${this.radius * 2} метров`);  
+    }
+    circleLength() {
+        console.log(`длина окружности = ${Math.round(2 * this.radius * Math.PI)} метров`);
+    }
+    circleSquare() {
+        console.log(`площадь окружности= ${Math.round(this.radius * this.radius * Math.PI)} метров`);
+    }
+
+}
+
+let circle1 = new Circle(10)
+circle1.Diametr
+
+circle1.Radius = 5
+circle1.Diametr
+circle1.circleLength()
+circle1.circleSquare()
+
+
+
+circle1.Radius = 100
+circle1.circleLength()
+circle1.circleSquare()
