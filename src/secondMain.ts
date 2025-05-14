@@ -1183,62 +1183,6 @@ console.log(today);
 
 
 
-//! Задание 2 
-//! Реализовать класс, описывающий геометрическую фигуру со 
-//! свойствами и методами:
-//!  ■ get-свойство для получения названия фигуры;
-//!  ■ метод для вывода информации о фигуре (стороны и их 
-//! длина);
-//!  ■ метод для вычисления площади фигуры;
-//!  ■ метод для вычисления периметра фигуры.
-//!  Реализуйте классы-наследники: квадрат, прямоугольник и 
-//! треугольник. Переопределите методы вывода и вычислений в 
-//! классах-наследниках.
-//!  Создайте массив с различными фигурами и выведите инфор
-//! мацию о каждой фигуре, включая площадь и периметр.
-
-class Figure {
-    name
-    side
-    sideLength
-    constructor(name:string, side:number, sideLength:number[]) {
-        this.name = name
-        this.side = side
-        this.sideLength = sideLength
-    }
-    get figureName () {
-        return console.log(this.name);
-    }
-    set figureName (value) {
-         console.log(this.name + ' = ' + value);
-          
-    }
-        
-    showInfo () {
-        console.log(`фигура ${this.name} имеет ${this.side} стороны длинной ${this.sideLength} метров` );
-    }
-    showSquare() {
-        console.log(`площадь фигуры: ${this.sideLength[0] * this.sideLength[1]} метров`);
-    }
-    showPerimetr() {
-        console.log(`периметр фигуры: ${(this.sideLength[0] * this.sideLength[1]) * 2} метров`);
-    }
-}
-let figures = ['figure1','figure2','figure3'] //! массив с фигурами
-
-let square = new Figure (figures[0], 4, [10])
-square.figureName
-square.showInfo()
-square.showSquare()
-square.showPerimetr()
-
-console.log(square.sideLength);
-
-square.figureName = '300' as any 
-square.figureName
-
-
-
 
 
 
@@ -1413,6 +1357,7 @@ new3.printText('Что-то хорошее','Lorem, ipsum dolor sit amet consect
 
 class Circle {
     radius
+
     constructor(radius:number) {
         this.radius = radius
     }
@@ -1447,3 +1392,204 @@ circle1.circleSquare()
 circle1.Radius = 100
 circle1.circleLength()
 circle1.circleSquare()
+
+//! Задание 2 
+//! Реализовать класс, описывающий геометрическую фигуру со 
+//! свойствами и методами:
+//!  ■ get-свойство для получения названия фигуры;
+//!  ■ метод для вывода информации о фигуре (стороны и их 
+//! длина);
+//!  ■ метод для вычисления площади фигуры;
+//!  ■ метод для вычисления периметра фигуры.
+//!  Реализуйте классы-наследники: квадрат, прямоугольник и 
+//! треугольник. Переопределите методы вывода и вычислений в 
+//! классах-наследниках.
+//!  Создайте массив с различными фигурами и выведите инфор
+//! мацию о каждой фигуре, включая площадь и периметр.
+
+// class Figure {
+//     name
+//     side
+//     sideLength
+//     constructor(name:string, side:number, sideLength:number[]) {
+//         this.name = name
+//         this.side = side
+//         this.sideLength = sideLength
+//     }
+//     get figureName () {
+//         return console.log(this.name);
+//     }
+//     set figureName (value) {
+//          console.log(this.name + ' = ' + value);
+          
+//     }
+        
+//     showInfo () {
+//         console.log(`фигура ${this.name} имеет ${this.side} стороны длинной ${this.sideLength} метров` );
+//     }
+//     showSquare() {
+//         console.log(`площадь фигуры: ${this.sideLength[0] * this.sideLength[1]} метров`);
+//     }
+//     showPerimetr() {
+//         console.log(`периметр фигуры: ${(this.sideLength[0] * this.sideLength[1]) * 2} метров`);
+//     }
+// }
+// let figures = ['figure1','figure2','figure3'] //! массив с фигурами
+
+// let square = new Figure (figures[0], 4, [10])
+// square.figureName
+// square.showInfo()
+// square.showSquare()
+// square.showPerimetr()
+
+// console.log(square.sideLength);
+
+// square.figureName = '300' as any 
+// square.figureName
+
+
+console.log('==============')
+console.log('==============')
+console.log('==============')
+
+
+//! Реализовать класс, описывающий геометрическую фигуру со 
+//! свойствами и методами: 
+//! ■ get-свойство для получения названия фигуры;
+//! ■ метод для вывода информации о фигуре (стороны и их длина);
+//! ■ метод для вычисления площади фигуры; 
+//! ■ метод для вычисления периметра фигуры.
+
+//! Реализуйте классы-наследники: квадрат, прямоугольник и треугольник. 
+
+//! Переопределите методы вывода и вычислений в 
+//! классах-наследниках. 
+
+//! Создайте массив с различными фигурами и выведите информацию о каждой фигуре, 
+//! включая площадь и периметр.
+
+
+class Figures {
+    name
+    side
+    constructor(name:string, side:any[]=[]) {
+        this.name = name
+        this.side = side
+    }
+    get showName() {
+        return console.log(`Название фигуры: ${this.name}`)
+    }
+    showInfo() {
+        console.log(`Информация о сторонах фигуры: ${JSON.stringify(this.side)}`);
+        // console.log(...this.side);
+    }
+    findSquare() {
+        console.log('Площадь фигуры = ' + this.side[0].a * this.side[1].b);
+    }
+    findPerimetr() {
+        let acc = 0
+        for (const el of this.side) {
+                for (const key in el) {
+                    acc+= el[key]
+                }            
+        }
+        return('Периметр фигуры = ' + acc);
+    }
+}
+
+// let testFigure = new Figures('square', [{a:5}, {b:7}, {c:5}, {d:7}])
+// testFigure.showName
+// testFigure.showInfo()
+// testFigure.findSquare()
+// console.log(testFigure.findPerimetr())
+
+
+
+
+//! Реализуйте классы-наследники: квадрат, прямоугольник и треугольник. 
+
+//! Переопределите методы вывода и вычислений в 
+//! классах-наследниках. 
+
+//! Создайте массив с различными фигурами и выведите информацию о каждой фигуре, 
+//! включая площадь и периметр.
+
+
+//! КВАДРАТ
+class Square extends Figures {
+    constructor(name:string, side:any[]=[]) {
+        super(name, side)
+    }
+   
+    findPerimetr(): any {
+        let a = this.side[0].a
+        return 'Периметр квадрата = ' + a * 4 + ' метров'
+    }
+    findSquare() {
+        let a = this.side[0].a 
+        return 'Площадь квадрата = ' + (a * a)  + ' метров'
+    }
+
+}
+
+let square = new Square('квадрат', [{a:30}])
+square.showName
+square.showInfo()
+console.log(square.findPerimetr())
+console.log(square.findSquare())
+console.log('==============')
+
+
+//! ТРЕУГОЛЬНИК
+class Triangle extends Figures {
+    constructor(name:string, side:any[]=[]) {
+        super(name, side)
+    }
+    findSquare() {
+        let perimetr = (super.findPerimetr())
+        const onlyNums = Number(perimetr.replace(/\D/g, '')) //! ТОЛЬКО  числа
+        const per = onlyNums/2  //! находим полупериметр!
+        let a = this.side[0].a 
+        let b = this.side[1].b 
+        let c = this.side[2].c 
+        return 'Площадь треугольника = ' + Math.sqrt(per*(per-a)*(per-b)*(per-c))
+    }
+}
+
+let triangle = new Triangle('треугольник', [{a:30}, {b:40}, {c:50}])
+
+triangle.showName
+triangle.showInfo()
+console.log(triangle.findPerimetr())
+console.log(triangle.findSquare())
+
+
+
+
+
+//! ПРЯМОУГОЛЬНИК
+class Rectangle extends Figures {
+    constructor(name:string, side:any[]=[]) {
+        super(name, side)
+    }
+    findPerimetr(): any {
+        return 'Периметр ' +  this.name + 'a = '  + (this.side[0].a + this.side[1].b) * 2 + ' метров'
+    }
+
+}
+let rectangle = new Rectangle('прямоугольник', [{a:30}, {b:40}])
+rectangle.showName
+rectangle.showInfo()
+console.log(rectangle.findPerimetr())
+console.log(rectangle.findSquare())
+
+
+
+
+
+
+
+// let abr = "Абра23кадабра"
+//!РАВНОЗНАЧНЫ
+// console.log(abr.replace(/[^0-9]/g, '')); 
+// console.log(abr.replace(/\D/g, ''));
