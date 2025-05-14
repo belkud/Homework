@@ -1480,7 +1480,7 @@ class Figures {
         return console.log(`Название фигуры: ${this.name}`)
     }
     showInfo() {
-        console.log(`Информация о сторонах фигуры: ${JSON.stringify(this.side)}`);
+        console.log(`Информация о сторонах фигуры:${JSON.stringify(this.side)}`);
         // console.log(...this.side);
     }
     findSquare() {
@@ -1589,3 +1589,45 @@ console.log('==============')
 
 
 
+let a = 10
+console.log(a);
+
+console.log(window);
+
+
+setInterval(() => {
+    document.body.style.color = 'red'
+}, 2000);
+
+setTimeout(() => {
+    setInterval(() => {
+        document.body.style.color = 'white'
+    }, 2000);
+}, 1000);
+
+
+//! НАВИГАЦИЯ!
+
+console.log(document.head);
+console.log(document.body.lastElementChild);
+
+let letter_acc = document.getElementById('letter_acc') as HTMLDivElement
+console.log(letter_acc.childNodes[2]);
+
+
+console.log(letter_acc.previousElementSibling.placeholder);
+console.log(letter_acc.nextElementSibling);
+
+console.log(letter_acc.childNodes[0] == letter_acc.firstChild); //! с 'текстом'
+console.log(letter_acc.childNodes[0]); //! с 'текстом'
+console.log(letter_acc.children[1]); //! сами дивы
+console.log(letter_acc.hasChildNodes()); //! есть ли дети
+
+
+for (const el of letter_acc.childNodes) {
+    console.log(el);  
+}
+
+
+
+console.log(letter_acc.parentNode); //! показывает родителя

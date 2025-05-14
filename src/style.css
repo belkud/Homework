@@ -6,6 +6,7 @@ body {
   /* min-height: 100vh; */
   background-color: rgb(6, 6, 6);
   color: aliceblue;
+  transition: 1s !important;
 }
 
 
