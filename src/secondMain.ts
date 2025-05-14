@@ -1484,7 +1484,7 @@ class Figures {
         // console.log(...this.side);
     }
     findSquare() {
-        console.log('Площадь фигуры = ' + this.side[0].a * this.side[1].b);
+        return 'Площадь фигуры = ' + this.side[0].a * this.side[1].b + ' метров'
     }
     findPerimetr() {
         let acc = 0
@@ -1504,15 +1504,6 @@ class Figures {
 // console.log(testFigure.findPerimetr())
 
 
-
-
-//! Реализуйте классы-наследники: квадрат, прямоугольник и треугольник. 
-
-//! Переопределите методы вывода и вычислений в 
-//! классах-наследниках. 
-
-//! Создайте массив с различными фигурами и выведите информацию о каждой фигуре, 
-//! включая площадь и периметр.
 
 
 //! КВАДРАТ
@@ -1562,7 +1553,7 @@ triangle.showName
 triangle.showInfo()
 console.log(triangle.findPerimetr())
 console.log(triangle.findSquare())
-
+console.log('==============')
 
 
 
@@ -1582,7 +1573,7 @@ rectangle.showName
 rectangle.showInfo()
 console.log(rectangle.findPerimetr())
 console.log(rectangle.findSquare())
-
+console.log('==============')
 
 
 
@@ -1593,3 +1584,8 @@ console.log(rectangle.findSquare())
 //!РАВНОЗНАЧНЫ
 // console.log(abr.replace(/[^0-9]/g, '')); 
 // console.log(abr.replace(/\D/g, ''));
+
+
+
+
+
