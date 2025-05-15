@@ -1589,21 +1589,26 @@ console.log('==============')
 
 
 
-let a = 10
-console.log(a);
+// let a = 10
+// console.log(a);
 
-console.log(window);
+// console.log(window);
 
 
-setInterval(() => {
-    document.body.style.color = 'red'
-}, 2000);
 
-setTimeout(() => {
-    setInterval(() => {
-        document.body.style.color = 'white'
-    }, 2000);
-}, 1000);
+
+//! Изменение цвета шрифта у body
+// setInterval(() => {
+//     document.body.style.color = 'red'
+// }, 2000);
+
+// setTimeout(() => {
+//     setInterval(() => {
+//         document.body.style.color = 'white'
+//     }, 2000);
+// }, 1000);
+
+
 
 
 //! НАВИГАЦИЯ!
@@ -1611,23 +1616,48 @@ setTimeout(() => {
 console.log(document.head);
 console.log(document.body.lastElementChild);
 
-let letter_acc = document.getElementById('letter_acc') as HTMLDivElement
-console.log(letter_acc.childNodes[2]);
+let letter_acc = document.getElementById('letter_acc')  as HTMLDivElement
+// console.log(letter_acc.childNodes[2]);
 
 
-console.log(letter_acc.previousElementSibling.placeholder);
-console.log(letter_acc.nextElementSibling);
+// console.log(letter_acc.previousElementSibling.placeholder);
+// console.log(letter_acc.nextElementSibling);
 
-console.log(letter_acc.childNodes[0] == letter_acc.firstChild); //! с 'текстом'
-console.log(letter_acc.childNodes[0]); //! с 'текстом'
-console.log(letter_acc.children[1]); //! сами дивы
-console.log(letter_acc.hasChildNodes()); //! есть ли дети
-
-
-for (const el of letter_acc.childNodes) {
-    console.log(el);  
-}
+// console.log(letter_acc.childNodes[0] == letter_acc.firstChild); //! с 'текстом'
+// console.log(letter_acc.childNodes[0]); //! с 'текстом'
+// console.log(letter_acc.children[1]); //! сами дивы
+// console.log(letter_acc.hasChildNodes()); //! есть ли дети
 
 
+// for (const el of letter_acc.childNodes) {
+//     console.log(el);  
+// }
 
-console.log(letter_acc.parentNode); //! показывает родителя
+
+
+
+
+
+// console.log(letter_acc.parentNode); //! показывает родителя
+console.log(letter_acc);
+
+// let d1 = new Date()
+// console.log(d1.getTime());
+
+
+// let showBodyElement = document.querySelector('#showBodyElement') as HTMLDivElement
+// for (const el of document.body.childNodes) {
+//     showBodyElement.innerHTML+= el  + '<br>'
+//     console.log(el);
+    
+// }
+
+
+// let d2 = new Date()
+// console.log(d2.getTime());
+// console.log(Number(d2)-Number(d1));
+
+// console.log(document.body.getHTML());
+
+console.log(letter_acc.parentElement?.style);
+
