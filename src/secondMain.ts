@@ -1453,6 +1453,8 @@ console.log('==============')
 console.log('==============')
 
 
+
+
 //! Реализовать класс, описывающий геометрическую фигуру со 
 //! свойствами и методами: 
 //! ■ get-свойство для получения названия фигуры;
@@ -1584,15 +1586,9 @@ console.log('==============')
 //!РАВНОЗНАЧНЫ
 // console.log(abr.replace(/[^0-9]/g, '')); 
 // console.log(abr.replace(/\D/g, ''));
+ 
 
 
-
-
-
-// let a = 10
-// console.log(a);
-
-// console.log(window);
 
 
 
@@ -1646,6 +1642,7 @@ console.log(letter_acc);
 
 
 // let showBodyElement = document.querySelector('#showBodyElement') as HTMLDivElement
+
 // for (const el of document.body.childNodes) {
 //     showBodyElement.innerHTML+= el  + '<br>'
 //     console.log(el);
@@ -1660,4 +1657,21 @@ console.log(letter_acc);
 // console.log(document.body.getHTML());
 
 console.log(letter_acc.parentElement?.style);
+
+ 
+
+console.log(window.innerHeight);
+
+
+console.log(document.body.previousElementSibling);
+
+let digitals = document.querySelector('#digitals') as HTMLDivElement
+console.log(digitals.parentNode == digitals.parentElement);
+console.log(digitals.firstElementChild);
+
+
+
+
+console.log(digitals.lastElementChild);
+
 
