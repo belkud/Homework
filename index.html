@@ -394,10 +394,10 @@ ghfgjhfghfyguj
   <li>пройден</li>
 </ul>
 <script>
-  let elements = document.querySelectorAll('ul > li:last-child'); //найдет
-  // let elements = document.getElementById('ul > li:last-child');    НЕ найдет
+  // let elements = document.querySelectorAll('ul > li:last-child'); //найдет
+  let elements = document.getElementById('ul > li:last-child'); // НЕ найдет
   for (let elem of elements) {
-    alert(elem.innerHTML); // "тест", "пройден"
+    console.log(elem.innerHTML); // "тест", "пройден"
   }
 </script>
 
