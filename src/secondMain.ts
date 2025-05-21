@@ -1762,16 +1762,6 @@ calc.children[13].addEventListener('click', ()=> {
 // console.log(calc.children[5]);
 
 
-// let digitCalc = document.querySelector('.digitCalc') //! возвращает первый элемент  
-// let digitCalc = document.querySelectorAll('.digitCalc') //! возвращает ВСЕ элементы  
-// console.log(digitCalc);
-
-// let show = document.getElementById('show') as HTMLElement
-// console.log(show.closest('button')); //! ищет первого предка сосответствующего условия
-
-// let btns = document.getElementsByTagName('button')
-// console.log(btns);
-
 
 
 //!  Задание 3
@@ -1811,8 +1801,7 @@ class ExtentedArray {
                 arrStr.innerHTML+=`<ul><${this.teg}>${strWithInfo.split('|')[i]}</${this.teg}</ul>`
             } else {
                 arrStr.innerHTML+=`<${this.teg}>${strWithInfo.split('|')[i]}</${this.teg}> `
-            }
-            
+            }       
         }
     }
 }
@@ -1826,3 +1815,73 @@ str.getHtml()
 let str2 = new ExtentedArray('Вторая проверочная : строчка которая : проверяет', ':', 'div')
 str2.getString()
 str2.getHtml()
+
+
+
+let inp = document.getElementsByTagName('input')
+console.log(`количество input в элементе = ${inp.length}`);
+
+let div = document.getElementsByTagName('div')
+console.log(`количество input в элементе = ${div.length}`);
+
+
+//! принадлежность классу-конструктору!
+console.log(aircraftFirst instanceof Aircraft); 
+
+console.dir(aircraftFirst)
+console.log(aircraftFirst)
+
+console.dir(Aircraft)
+console.log(Aircraft)
+
+
+let lorem = document.getElementById('lorem') as HTMLDivElement
+
+
+
+// //! querySelector возвращает первый элемент  
+// let digitCalc = document.querySelector('.digitCalc') 
+
+// //! querySelectorAll - возвращает ВСЕ элементы  
+// let digitCalc = document.querySelectorAll('.digitCalc') 
+// console.log(digitCalc);
+
+
+// //! closest ищет первого предка соответствующему условию
+// let show = document.getElementById('show') as HTMLElement
+// console.log(show.closest('button')); 
+
+//! getElementsByTagName - ищет все теги документа
+let btns = document.getElementsByTagName('button')
+console.log(btns.length);
+
+console.dir(btns);
+
+//! nodeName и tagName- сообщает имя тега в CAPSLOCK
+console.log(lorem.nodeName);
+console.log(lorem.tagName);
+
+//! - textContent - срезает и оставляет только текст
+console.log(lorem.textContent); 
+
+
+//! -  на innerHTML лучше не навешивать события, т.к. кнопки могут перезаписываться
+// lorem.innerHTML='555'
+console.log(lorem.innerHTML);
+
+//! outerHTML -  выводи текст вместе с тегами(редко используется)
+console.log(lorem.outerHTML); 
+
+
+//! textContent -  выводи текст (похож на innerHTML)
+console.log(lorem.textContent); 
+
+let comment = lorem.nextSibling
+console.log(comment); 
+
+//!  hidden - самый простой способ скрыть элемент а index.HTML
+// lorem.hidden = 'true' as any спрятали div
+// $0.hidden = 'true'
+// $0.style.color = 'red'
+
+
