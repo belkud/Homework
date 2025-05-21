@@ -1807,8 +1807,13 @@ class ExtentedArray {
     }
     getHtml() {
         for (let i = 0; i < strWithInfo.split('|').length; i++) {
+            if (this.teg=='li') {
+                arrStr.innerHTML+=`<ul><${this.teg}>${strWithInfo.split('|')[i]}</${this.teg}</ul>`
+            } else {
                 arrStr.innerHTML+=`<${this.teg}>${strWithInfo.split('|')[i]}</${this.teg}> `
             }
+            
+        }
     }
 }
 
@@ -1818,6 +1823,6 @@ let str = new ExtentedArray('Через указанный разделител�
 str.getString()
 str.getHtml()
 
-let str2 = new ExtentedArray('Вторая проверочная : строчка которая : проверяет', ':', 'h2')
+let str2 = new ExtentedArray('Вторая проверочная : строчка которая : проверяет', ':', 'div')
 str2.getString()
 str2.getHtml()
