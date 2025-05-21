@@ -1149,30 +1149,6 @@ tomorrow.setDate(tomorrow.getDate() + 1);
 
 
 
-//!!!!!!!!!!!!!!!!!!!!!!!!! КАЛЬКУЛЯТОР!!!!!!!!!!!!!!!!!!!!!!!!!
-
-let calc = document.getElementById('calc') as HTMLInputElement
-
-let seven = document.getElementById('7') as HTMLDivElement
-console.log(Number(seven.innerHTML));
-
-calc.value+=232+10+Number(seven.innerHTML)
-// let 8 = 8
-// let 9 = 9
-// let + = +
-// let 4 = 4
-// let 5 = 5
-// let 6 = 6
-// let - = -
-// let 1 = 1
-// let 2 = 2
-// let 3 = 3
-// let * = *
-// let 0 = 0
-// let = = =
-
-
-
 
 
 console.log(today.getDate());
@@ -1675,3 +1651,173 @@ console.log(digitals.firstElementChild);
 console.log(digitals.lastElementChild);
 
 
+
+
+
+//  let divs = document.getElementsByTagName('div')
+//  divs[5].style.color = 'red'
+//  for (const el of divs) {
+     
+// }
+//  console.log(divs.length); //!количество дивов
+//  console.log(divs[5]);
+ 
+
+
+
+
+
+//!!!!!!!!!!!!!!!!!!!!!!!!! КАЛЬКУЛЯТОР!!!!!!!!!!!!!!!!!!!!!!!!!
+ 
+// calc.value+=232+10+Number(seven.innerHTML)
+// let 8 = 8
+// let 9 = 9
+// let + = +
+// let 4 = 4
+// let 5 = 5
+// let 6 = 6
+// let - = -
+// let 1 = 1
+// let 2 = 2
+// let 3 = 3
+// let * = *
+// let 0 = 0
+// let = = =
+
+
+
+
+
+let calc = document.getElementById('calc_buttons') as any
+let calcInput = document.getElementById('calcInput') as any
+
+
+
+
+
+
+for (const el of calc.children) {
+    el.addEventListener('click', ()=> {
+        let symb = el.innerHTML
+        if (symb>=0 && symb<=9) {
+            calcInput.value+= Number(symb)
+            console.log(calcInput.value);
+            console.log(Number(calcInput.value));
+            console.log(Number(symb));
+        } else {
+            calcInput.value+=symb
+            console.log(calcInput.value);
+        }
+
+    })
+}
+
+
+calc.children[13].addEventListener('click', ()=> {
+    
+    let a = 5
+    let b = 4
+    let symb = ''
+            switch (symb) {
+                case '+':
+                    console.log(a + b);
+                    break;
+                case '-':
+                    console.log(a - b);
+                    break;
+                case '/':
+                    console.log(a / b);
+                    break;
+                case '*':
+                    console.log(a * b);
+                    break;
+                default:
+                    console.log('не могу обработать');
+                    break;
+            }
+    // console.log(calcInput.value); 
+} )
+
+
+// console.log(calcInput.value);
+
+
+
+// for (let i = 0; i < calc.children.length; i++) {    
+    //     calc.children[i].addEventListener('click', ()=> {
+        //         let symb = calc.children[i].innerHTML
+        //         if (symb>=0 && symb<=9) {
+            //             console.log(Number(symb));
+            //         } else {
+                //             console.log(symb);
+                //         }
+                
+                //     })
+                
+                // }
+                
+                // console.log(calc.children.length);  
+                
+// console.log(calc.firstElementChild);
+// console.log(calc.children[5]);
+
+
+// let digitCalc = document.querySelector('.digitCalc') //! возвращает первый элемент  
+// let digitCalc = document.querySelectorAll('.digitCalc') //! возвращает ВСЕ элементы  
+// console.log(digitCalc);
+
+// let show = document.getElementById('show') as HTMLElement
+// console.log(show.closest('button')); //! ищет первого предка сосответствующего условия
+
+// let btns = document.getElementsByTagName('button')
+// console.log(btns);
+
+
+
+//!  Задание 3
+//!  Реализуйте класс ExtentedArray, унаследовав его от стандарт
+//! ного класса Array и добавив следующие методы:
+//!  ■ метод getString(separator) – для получения строки со 
+//! всеми элементами массива, перечисленными через ука
+//! занный разделитель: запятая, тире, пробел и т. д.;
+//!  ■ метод getHtml(tagName) – для получения строки с html 
+//! кодом, где каждый элемент массива будет обернут в ука
+//! занный тег (учтите, если указывается тег li, то все эле
+//! менты дополнительно необходимо обернуть в ul).
+//!  Создайте объект класса ExtentedArray, заполните его данны
+//! ми и выведите на экран результаты работы методов getString() 
+//! и getHtml().
+
+let arrStr = document.querySelector('.ExtentedArr') as HTMLDivElement
+let strWithInfo = ''
+
+class ExtentedArray {
+    text
+    separate
+    teg
+    constructor(text:any, separate:any, teg:any) {
+            this.text = text
+            this.separate = separate
+            this.teg = teg
+    }
+    getString() {
+        let separatedText = this.text 
+        strWithInfo = separatedText.split(`${this.separate}`).join(' | ')
+         arrStr.innerHTML+= strWithInfo + ' - разделитель : "' + this.separate + '"' + '<br>' 
+    }
+    getHtml() {
+        for (let i = 0; i < strWithInfo.split('|').length; i++) {
+                arrStr.innerHTML+=`<${this.teg}>${strWithInfo.split('|')[i]}</${this.teg}> `
+            }
+    }
+}
+
+
+
+let str = new ExtentedArray('Через указанный разделитель: запятая, тире, пробел и т. д.', ',', 'li')
+str.getString()
+str.getHtml()
+
+let str2 = new ExtentedArray('Вторая проверочная : строчка которая : проверяет', ':', 'h2')
+str2.getString()
+str2.getHtml()

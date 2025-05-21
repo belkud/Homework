@@ -17,6 +17,9 @@
     <br>
     <br>
     
+<div class="ExtentedArr"></div>
+
+
 <!--! Модальное окно -->
 <!-- <div id="window">
   <div id="cross">X</div>
@@ -25,7 +28,11 @@
   <div style="text-align: center; margin-top: 65px;">Рекламное окно</div>
 </div> -->
 
-<div id="showBodyElement"></div>
+<div id="showBodyElement">
+  <p id="paragraph">
+    <button id="show">кн</button>
+  </p>
+</div>
 
 <style>
   #window{
@@ -81,23 +88,23 @@
 <br>
 <br>
 <br>
-  <input id="calc" style="width: 193px; height: 25px;" type="text">
+  <input id="calcInput" style="width: 193px; height: 25px; font-size: 2em;" type="text">
 <div id="calc_buttons">
-  <div id="7">7</div>
-  <div id="8">8</div>
-  <div id="9">9</div>
-  <div id="+">+</div>
-  <div id="4">4</div>
-  <div id="5">5</div>
-  <div id="6">6</div>
-  <div id="-">-</div>
-  <div id="1">1</div>
-  <div id="2">2</div>
-  <div id="3">3</div>
-  <div id="*">*</div>
-  <div id="0">0</div>
-  <div id="=" style="grid-column: 2/4;">=</div>
-  <div>/</div>
+  <div class="digitCalc">7</div>
+  <div class="digitCalc">8</div>
+  <div class="digitCalc">9</div>
+  <div class="digitCalc">+</div>
+  <div class="digitCalc">4</div>
+  <div class="digitCalc">5</div>
+  <div class="digitCalc">6</div>
+  <div class="digitCalc">-</div>
+  <div class="digitCalc">1</div>
+  <div class="digitCalc">2</div>
+  <div class="digitCalc">3</div>
+  <div class="digitCalc">*</div>
+  <div class="digitCalc">0</div>
+  <div class="digitCalc" style="grid-column: 2/4;">=</div>
+  <div class="digitCalc">/</div>
 
 </div>
 
@@ -394,15 +401,14 @@ ghfgjhfghfyguj
   <li>пройден</li>
 </ul>
 <script>
-  // let elements = document.querySelectorAll('ul > li:last-child'); //найдет
-  let elements = document.getElementById('ul > li:last-child'); // НЕ найдет
+  let elements = document.querySelector('ul > li:last-child'); //найдет
+  // let elements = document.getElementById('ul > li:last-child'); // НЕ найдет
   for (let elem of elements) {
-    console.log(elem.innerHTML); // "тест", "пройден"
+    alert(elem.innerHTML); // "тест", "пройден"
   }
 </script>
 
 
-    
     
     <!-- <div id="digitalColor"></div> -->
 
@@ -412,7 +418,7 @@ ghfgjhfghfyguj
     <script type="module" src="/src/secondMain.ts"></script>
   </body>
   
-  
+ 
 
 
 
