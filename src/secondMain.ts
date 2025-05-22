@@ -1885,3 +1885,72 @@ console.log(comment);
 // $0.style.color = 'red'
 
 
+
+
+
+
+//! Задание 3 //?JS_DZ_Modul_2_Week_5
+//!  Реализовать класс Employee, описывающий работника, и со
+//! здать массив работников банка.
+//!  Реализовать класс EmpTable для генерации html кода таблицы 
+//! со списком работников банка. Массив работников необходимо 
+//! передавать через конструктор, а получать html код с помощью 
+//! метода getHtml().
+//!  Создать объект класса EmpTable и вывести на экран результат 
+//! работы метода getHtml().
+
+// let workers = [
+//     {name: 'Dima', age:30},
+//     {name: 'Pasha', age:27},
+//     {name: 'Slava', age:35},
+//     {name: 'Vitya', age:25},
+//     {name: 'Kolya', age:31},
+// ]
+let workers = document.querySelector('#workers') as HTMLDivElement
+
+class Employee {
+    name
+    age
+    city
+    position
+    constructor(name:string, age:number, city:string, position:string) {
+            this.name = name
+            this.age = age
+            this.city = city
+            this.position = position
+    }
+    pushInMassive() {
+        workers.innerHTML+=`<div>${JSON.stringify(this)}<div>`
+        // workers.innerHTML+=`<div>Имя: ${this.name}, возраст: ${this.age}, город: ${this.city}, должность: ${this.position},</div>`
+    }
+} 
+
+
+
+let worker1 = new Employee('Dima', 30, 'Sochi', 'programmer')
+worker1.pushInMassive()
+
+let worker2 = new Employee('Pasha', 27, 'Moscow', 'designer')
+worker2.pushInMassive()
+
+
+
+
+//!  Реализовать класс EmpTable для генерации html кода таблицы 
+//! со списком работников банка. Массив работников необходимо 
+//! передавать через конструктор, а получать html код с помощью 
+//! метода getHtml().
+
+class EmpTable extends Employee {
+    constructor (name:string, age:number, city:string, position:string) {
+        super(name, age, city, position) 
+    }
+    getHTML() {
+        
+    }
+} 
+
+let worker3 = new EmpTable('Slava', 35, 'Krasnodar', 'software tester')
+worker3.pushInMassive()
+
+
