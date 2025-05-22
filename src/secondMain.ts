@@ -1899,13 +1899,6 @@ console.log(comment);
 //!  Создать объект класса EmpTable и вывести на экран результат 
 //! работы метода getHtml().
 
-// let workers = [
-//     {name: 'Dima', age:30},
-//     {name: 'Pasha', age:27},
-//     {name: 'Slava', age:35},
-//     {name: 'Vitya', age:25},
-//     {name: 'Kolya', age:31},
-// ]
 let workers = document.querySelector('#workers') as HTMLDivElement
 
 class Employee {
@@ -1941,16 +1934,39 @@ worker2.pushInMassive()
 //! передавать через конструктор, а получать html код с помощью 
 //! метода getHtml().
 
+let workerTable = document.querySelector('#workerTable') as HTMLElement
+
 class EmpTable extends Employee {
     constructor (name:string, age:number, city:string, position:string) {
         super(name, age, city, position) 
     }
     getHTML() {
-        
-    }
+  workerTable.innerHTML+=`<tr><td>${this.name}</td>
+  <td>${this.age}</td><td>${this.city}</td><td>${this.position}</td></tr>`
+    }       
 } 
 
-let worker3 = new EmpTable('Slava', 35, 'Krasnodar', 'software tester')
+let worker3 = new EmpTable('Slava', 35, 'Krasnodar', 'programmer')
 worker3.pushInMassive()
+worker3.getHTML()
+
+let worker4 = new EmpTable('Sveta', 23, 'Voronezh', 'software tester')
+worker4.pushInMassive()
+worker4.getHTML()
+
+let worker5 = new EmpTable('Dasha', 28, 'Peterburg', 'software tester')
+worker5.pushInMassive()
+worker5.getHTML()
+
+let worker6 = new EmpTable('Lena', 25, 'Voronezh', 'programmer')
+worker6.pushInMassive()
+worker6.getHTML()
+
+let worker7 = new EmpTable('Natasha', 27, 'Krasnodar', 'software tester')
+worker7.pushInMassive()
+worker7.getHTML()
+
+
+
 
 
