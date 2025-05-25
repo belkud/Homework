@@ -3,432 +3,457 @@
 
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-    <link rel="stylesheet" href="src/style.css">
-  </head>
 
-  <body>
-    <br>
-    <br>
-    <br>
-    <br>
-    <input type="button" value="123">
-<br>
-<br>
-<br>
-<br>
-<select name="sex" id="">
-  <option value="men">men</option>
-  <option value="women">women</option>
-</select>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + TS</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
 
-<br>
-<br>
-<br>
-<br>
+<body>
+  <br>
+  <br>
+  <br>
+  <br>
+  <input type="button" value="123">
+  <br>
+  <br>
+  <br>
+  <br>
+  <select name="sex" id="">
+    <option value="men">men</option>
+    <option value="women">women</option>
+  </select>
 
-<div id="workers"></div>
+  <br>
+  <br>
+  <br>
+  <br>
 
-<table id="workerTable">
-  <tr>
-    <th>Имя</th>
-    <th>Возраст</th>
-    <th>Город</th>
-    <th>Дожность</th>
-  </tr>
-  <tr>
-    <td></th>
-    <td></th>
-    <td></th>
-    <td></th>
-  </tr>
-</table>
+  
+<div id="newsPage"></div>
 
 <style>
-  #workerTable {
-    width: 650px;
-    margin-top: 25px;
-    background-color: rgb(4, 77, 99);
-    color: black;
-    font-size: 2em;
-    text-align: center;
-    border: 1px solid white;
-  }
+#newsPage {
+  font-size: 1.8em;
+}
 
-  #workerTable tr:last-child {
-    background-color: rgb(152, 140, 12) !important;
-  }
 
 </style>
+  
+  <br>
+  <br>
+  <br>
+  <br>
+<div id="workers"></div>
 
-<br>
-<br>
-<br>
-<br>
+  <table id="workerTable">
+    <tr>
+      <th>Имя</th>
+      <th>Возраст</th>
+      <th>Город</th>
+      <th>Должность</th>
+    </tr>
+    <tr>
+      <td>
+        </th>
+      <td>
+        </th>
+      <td>
+        </th>
+      <td>
+        </th>
+    </tr>
+  </table>
 
 
-<div id="lorem">
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus quasi, a sapiente natus veniam temporibus, harum provident, laudantium debitis cumque dolor! Dolor asperiores expedita consequatur quos harum. Reprehenderit, officiis?
-</div>
-<!-- смотрим комментарий -->
+  <style>
+    #workerTable {
+      width: 650px;
+      margin-top: 25px;
+      background-color: rgb(4, 77, 99);
+      color: black;
+      font-size: 2em;
+      text-align: center;
+      border: 1px solid white;
+    }
 
-<div class="ExtentedArr"></div>
+    #workerTable tr:last-child {
+      background-color: rgb(152, 140, 12) !important;
+    }
+  </style>
+
+  <br>
+  <br>
+  <br>
+  <br>
 
 
-<!--! Модальное окно -->
-<!-- <div id="window">
+  <div id="lorem">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae possimus quasi, a sapiente natus veniam
+    temporibus, harum provident, laudantium debitis cumque dolor! Dolor asperiores expedita consequatur quos harum.
+    Reprehenderit, officiis?
+  </div>
+  <!-- смотрим комментарий -->
+
+  <div class="ExtentedArr"></div>
+
+
+  <!--! Модальное окно -->
+  <!-- <div id="window">
   <div id="cross">X</div>
   <div id="circle"></div>
   <div id="timer">timer</div>
   <div style="text-align: center; margin-top: 65px;">Рекламное окно</div>
 </div> -->
 
-<div id="showBodyElement">
-  <p id="paragraph">
-    <button id="show">кн</button>
-  </p>
-</div>
-
-<style>
-  #window{
-    background-color: lightgrey;
-    width: 300px;
-    height: 150px;
-    border-radius: 10px;
-    color: black;
-    position:fixed;
-    margin-top: 500px;
-    margin-left: calc(50% - 160px);
-    display: none;
-  }
-  #cross{
-    color: red;
-    font-size: 2em;
-    font-weight: 900;
-    position: absolute;
-    margin-left: 265px;
-    display: none;
-    cursor: pointer;
-  }
-  #timer {
-    position: absolute;
-    margin-left: 249px;
-    margin-top: 35px;
-  }
-  #circle {
-    position: absolute;
-    margin-left: 269px;
-    margin-top: 35px;
-    width: 16px;
-    height: 20px;
-    border-radius: 50%;
-    border-right: 3px solid red;  
-    border-left: 3px solid red;
-    animation: circ 10s linear;
- }
-@keyframes circ{
-  from {
-
-  }
-  to {
-    transform: rotate(1080deg);
-  }
-}
-
-</style>
-
-
-
-<br>
-<br>
-<br>
-<br>
-  <input id="calcInput" style="width: 193px; height: 25px; font-size: 2em;" type="text">
-<div id="calc_buttons">
-  <div class="digitCalc">7</div>
-  <div class="digitCalc">8</div>
-  <div class="digitCalc">9</div>
-  <div class="digitCalc">+</div>
-  <div class="digitCalc">4</div>
-  <div class="digitCalc">5</div>
-  <div class="digitCalc">6</div>
-  <div class="digitCalc">-</div>
-  <div class="digitCalc">1</div>
-  <div class="digitCalc">2</div>
-  <div class="digitCalc">3</div>
-  <div class="digitCalc">*</div>
-  <div class="digitCalc">0</div>
-  <div class="digitCalc" style="grid-column: 2/4;">=</div>
-  <div class="digitCalc">/</div>
-
-</div>
-
-<style>
-#calc_buttons {
-  font-size: 25px;
-  display: grid;
-  grid-template-columns: repeat(4,50px); 
-  grid-template-rows: repeat(4,50px);
-  margin-top: 25px; 
-}
-
-#calc_buttons div {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-  border: 1px solid gainsboro;
-  /* transition: .3s; */
-}
-
-#calc_buttons div:hover {
-  background-color: aqua;
-}
-  
-</style>    
-
-
-
-
-
-    <div id="marker_symbol" ></div>
-    <div id="marker_info" ></div>
-    <style>
-      #marker_symbol{
-        border: 1px solid aliceblue;
-        width: 500px;
-        /* display: flex; */
-        /* flex-wrap: wrap; */
-        margin: 20px;
-        padding: 10px;
-        font-size: 25px;
-        /* font-family:; */
-      }
-      </style>
-
-<br>
-<div id="news"></div>
-
-
-<br>
-<br>
-<br>
-<br>
-
-<input name="input_test" id="input_marker" type="password" placeholder="Прогонка через консоль"></input>
-<div id="idd" class="cll">
-
-  <div id="letter_acc" style="display: flex; font-size: 2em; color: red; letter-spacing: 10px;">
-    <div id="letter_count1">1</div>
-    <div id="letter_count2">2</div> 
-    <div id="letter_count3">3</div>
-    <div id="letter_count4">4</div>
+  <div id="showBodyElement">
+    <p id="paragraph">
+      <button id="show">кн</button>
+    </p>
   </div>
-</div>
 
+  <style>
+    #window {
+      background-color: lightgrey;
+      width: 300px;
+      height: 150px;
+      border-radius: 10px;
+      color: black;
+      position: fixed;
+      margin-top: 500px;
+      margin-left: calc(50% - 160px);
+      display: none;
+    }
 
-<br>
-<br>
-<br>
+    #cross {
+      color: red;
+      font-size: 2em;
+      font-weight: 900;
+      position: absolute;
+      margin-left: 265px;
+      display: none;
+      cursor: pointer;
+    }
 
+    #timer {
+      position: absolute;
+      margin-left: 249px;
+      margin-top: 35px;
+    }
 
+    #circle {
+      position: absolute;
+      margin-left: 269px;
+      margin-top: 35px;
+      width: 16px;
+      height: 20px;
+      border-radius: 50%;
+      border-right: 3px solid red;
+      border-left: 3px solid red;
+      animation: circ 10s linear;
+    }
 
-<div style="display: flex; flex-direction: column;" id="cssClass"></div>
+    @keyframes circ {
+      from {}
 
-<div style=""></div>
-
-<br>
-<br>
-
-
-
-
-
-
-<div id="PrintMaсhine"></div>
-
-
-
-
-
-
-<div>
-  <textarea name="locc" id="textFromLocStor"></textarea>
-  
-</div>
-
-    <a href="https://dzen.ru/?clid=2233626&yredirect=true&utm_referrer=ntp.msn.com">Ссылка на сайт</a>
-
-
-    <!-- div, p, h1-h6 и так далее это всё теги -->
-
-    
-    <!-- 6 уровней заголовков -->
-    
-    
-    <h1>Заголовок первого уровня</h1>
-    <h2>Заголовок второго уровня</h2>
-    <h3>Заголовок третьего уровня</h3>
-    <h4>Заголовок четвертого уровня</h4>
-    <h5>Заголовок пятого уровня</h5>
-    <h6>Заголовок шестого уровня</h6>
-
-    <div>Заголовок в теге div</div>
-    <div>Заголовок в теге div</div>
-    <div>Заголовок в теге div</div>
-
-    <p>Заголовок в теге p </p>
-    <p>Заголовок в теге p </p>
-    <p>Заголовок в теге p </p>
-    
+      to {
+        transform: rotate(1080deg);
+      }
+    }
+  </style>
 
 
 
-<!-- теги бывают: блочные, строчные и строчно-белочные -->
+  <br>
+  <br>
+  <br>
+  <br>
+  <input id="calcInput" style="width: 193px; height: 25px; font-size: 2em;" type="text">
+  <div id="calc_buttons">
+    <div class="digitCalc">7</div>
+    <div class="digitCalc">8</div>
+    <div class="digitCalc">9</div>
+    <div class="digitCalc">+</div>
+    <div class="digitCalc">4</div>
+    <div class="digitCalc">5</div>
+    <div class="digitCalc">6</div>
+    <div class="digitCalc">-</div>
+    <div class="digitCalc">1</div>
+    <div class="digitCalc">2</div>
+    <div class="digitCalc">3</div>
+    <div class="digitCalc">*</div>
+    <div class="digitCalc">0</div>
+    <div class="digitCalc" style="grid-column: 2/4;">=</div>
+    <div class="digitCalc">/</div>
 
-    <div id="header" > Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-    Nobis id omnis neque quos vitae quia <hr> doloremque veritatis accusamus possimus vero. 
-    Praesentium quam, maiores dolor neque <br>repellendus eveniet iste beatae nesciunt.</div>
-ghfgjhfghfyguj
-<!-- <div></div> <p></p> -->
+  </div>
 
+  <style>
+    #calc_buttons {
+      font-size: 25px;
+      display: grid;
+      grid-template-columns: repeat(4, 50px);
+      grid-template-rows: repeat(4, 50px);
+      margin-top: 25px;
+    }
 
-<!-- <div class="text">'Заголовок'</div> -->    
- 
+    #calc_buttons div {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: center;
+      border: 1px solid gainsboro;
+      /* transition: .3s; */
+    }
 
-
-
-
- 
-
-
-
-    <!-- div - это тег -->
-    <!-- одновременное нажатие ctrl и '.' создает комментарий (подсказку) -->
-
-
-
-
-    <div class="title2">1234</div>
-    <div class="title2">1234</div>
-    <div class="title2">1234</div>
-    <div class="name">1234</div>
-
-<div id="menu">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-</div>
-
-
-
-
-
-
-
+    #calc_buttons div:hover {
+      background-color: aqua;
+    }
+  </style>
 
 
 
 
 
-    <div style="display: flex;">
-      <div>Сегодня у нас </div>
-       <div class="test"></div>
+  <div id="marker_symbol"></div>
+  <div id="marker_info"></div>
+  <style>
+    #marker_symbol {
+      border: 1px solid aliceblue;
+      width: 500px;
+      /* display: flex; */
+      /* flex-wrap: wrap; */
+      margin: 20px;
+      padding: 10px;
+      font-size: 25px;
+      /* font-family:; */
+    }
+  </style>
+
+  <br>
+  <div id="news"></div>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <input name="input_test" id="input_marker" type="password" placeholder="Прогонка через консоль"></input>
+  <div id="idd" class="cll">
+
+    <div id="letter_acc" style="display: flex; font-size: 2em; color: red; letter-spacing: 10px;">
+      <div id="letter_count1">1</div>
+      <div id="letter_count2">2</div>
+      <div id="letter_count3">3</div>
+      <div id="letter_count4">4</div>
     </div>
-    
-    <div id="advertismentBox">
-      <div id="advertisment">Здесь могла бы быть Ваша реклама, но к сожалению её пока что нет...</div>
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+
+
+
+  <div style="display: flex; flex-direction: column;" id="cssClass"></div>
+
+  <div style=""></div>
+
+  <br>
+  <br>
+
+
+
+
+
+
+  <div id="PrintMaсhine"></div>
+
+
+
+
+
+
+  <div>
+    <textarea name="locc" id="textFromLocStor"></textarea>
+
+  </div>
+
+  <a href="https://dzen.ru/?clid=2233626&yredirect=true&utm_referrer=ntp.msn.com">Ссылка на сайт</a>
+
+
+  <!-- div, p, h1-h6 и так далее это всё теги -->
+
+
+  <!-- 6 уровней заголовков -->
+
+
+  <h1>Заголовок первого уровня</h1>
+  <h2>Заголовок второго уровня</h2>
+  <h3>Заголовок третьего уровня</h3>
+  <h4>Заголовок четвертого уровня</h4>
+  <h5>Заголовок пятого уровня</h5>
+  <h6>Заголовок шестого уровня</h6>
+
+  <div>Заголовок в теге div</div>
+  <div>Заголовок в теге div</div>
+  <div>Заголовок в теге div</div>
+
+  <p>Заголовок в теге p </p>
+  <p>Заголовок в теге p </p>
+  <p>Заголовок в теге p </p>
+
+
+
+
+  <!-- теги бывают: блочные, строчные и строчно-белочные -->
+
+  <div id="header"> Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+    Nobis id omnis neque quos vitae quia
+    <hr> doloremque veritatis accusamus possimus vero.
+    Praesentium quam, maiores dolor neque <br>repellendus eveniet iste beatae nesciunt.
+  </div>
+  ghfgjhfghfyguj
+  <!-- <div></div> <p></p> -->
+
+
+  <!-- <div class="text">'Заголовок'</div> -->
+
+
+
+
+
+
+
+
+
+  <!-- div - это тег -->
+  <!-- одновременное нажатие ctrl и '.' создает комментарий (подсказку) -->
+
+
+
+
+  <div class="title2">1234</div>
+  <div class="title2">1234</div>
+  <div class="title2">1234</div>
+  <div class="name">1234</div>
+
+  <div id="menu">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <div style="display: flex;">
+    <div>Сегодня у нас </div>
+    <div class="test"></div>
+  </div>
+
+  <div id="advertismentBox">
+    <div id="advertisment">Здесь могла бы быть Ваша реклама, но к сожалению её пока что нет...</div>
+  </div>
+
+  <div id="name"></div>
+
+  <div id="btn">
+    <button data-set="1">1</button>
+    <button data-set="2">2</button>
+    <button data-set="3">3</button>
+  </div>
+
+
+
+  <div id="diagram">
+    <div data-set="1">1</div>
+    <div data-set="2">2</div>
+    <div data-set="3">3</div>
+    <div data-set="4">4</div>
+    <div data-set="5">5</div>
+    <div data-set="6">6</div>
+    <div data-set="7">7</div>
+  </div>
+  <div style="display: flex; margin-top: 25px;">
+    <div id="createDiv">Создать</div>
+    <div id="deleteDiv">Удалить</div>
+  </div>
+  <div id="containDiv"> </div>
+
+
+
+  <div class="switcher"></div>
+
+  <div id="star" style="background-color: rgb(77, 202, 55);">
+    <div data-set="1">1&#9733;</div>
+    <div data-set="2">2&#9733;</div>
+    <div data-set="3">3&#9733;</div>
+    <div data-set="4">4&#9733;</div>
+    <div data-set="5">5&#9733;</div>
+  </div>
+
+  <div style="color: red; padding: 10px;">REST - архитектурный стиль для сложных интернет сервисов</div>
+  <div id="hi">
+    <div id="friend">
+      <div id="whatsUp"></div>
     </div>
-      
-    <div id="name"></div>
-
-    <div id="btn">
-      <button data-set="1">1</button>
-      <button data-set="2">2</button>
-      <button data-set="3">3</button>
-    </div>
+  </div>
 
 
+  <img style="width: 400px; padding: 10px;" src="public/file1.png" alt="" srcset="">
+  <img style="width: 400px; padding: 10px;" src="public/file2.png" alt="" srcset="">
 
-    <div id="diagram">
-        <div data-set="1">1</div>
-        <div data-set="2">2</div>
-        <div data-set="3">3</div>
-        <div data-set="4">4</div>
-        <div data-set="5">5</div>
-        <div data-set="6">6</div>
-        <div data-set="7">7</div>
-    </div>
-<div style="display: flex; margin-top: 25px;">
-  <div id="createDiv">Создать</div>
-  <div id="deleteDiv">Удалить</div>
-</div>
-<div id="containDiv"> </div>
+  <div id="persons">pers</div>
+  <div id="check">check</div>
+
+  <form action="">zdf</form>
 
 
+  <form id="formElem" style="background-color: rgb(230, 158, 63); padding: 5px;">
+    <input type="text" name="name" value="John">
+    <input type="text" name="surname" value="Smith">
+    <input type="submit">
+  </form>
 
-<div class="switcher"></div>
+  <script>
+    // const form1 = document.forms.formElem /*или document.forms[0]*/
+    // const form2 = document.querySelector('#formElem')
 
-    <div id="star" style="background-color: rgb(77, 202, 55);">
-      <div data-set="1">1&#9733;</div>
-      <div data-set="2">2&#9733;</div>
-      <div data-set="3">3&#9733;</div>
-      <div data-set="4">4&#9733;</div>
-      <div data-set="5">5&#9733;</div>
-    </div>
+    // console.log(form1)
+    // console.log(form2)
+    // console.log(form1 == form2)
 
-    <div style="color: red; padding: 10px;">REST - архитектурный стиль для сложных интернет сервисов</div>
-    <div id="hi">
-      <div id="friend">
-        <div id="whatsUp"></div>
-      </div>
-    </div>
-   
-   
-    <img style="width: 400px; padding: 10px;" src="public/file1.png" alt="" srcset="">
-   <img style="width: 400px; padding: 10px;" src="public/file2.png" alt="" srcset="">
+    // const formData1 = new FormData(form1)
+    // const formData2 = new FormData(form2)
 
-<div id="persons" >pers</div>
-<div id="check">check</div>
-
-<form action="">zdf</form>
-
-
-<form id="formElem" style="background-color: rgb(230, 158, 63); padding: 5px;">
-  <input type="text" name="name" value="John">
-  <input type="text" name="surname" value="Smith">
-  <input type="submit">
-</form>
-
-<script>
-  // const form1 = document.forms.formElem /*или document.forms[0]*/
-  // const form2 = document.querySelector('#formElem')
-
-  // console.log(form1)
-  // console.log(form2)
-  // console.log(form1 == form2)
-
-  // const formData1 = new FormData(form1)
-  // const formData2 = new FormData(form2)
-
-  // console.log(formData1)
-  // console.log(formData2)
-  // console.log(formData1.get('surname'))
-  // console.log(formData2.get('surname'))
-</script>
+    // console.log(formData1)
+    // console.log(formData2)
+    // console.log(formData1.get('surname'))
+    // console.log(formData2.get('surname'))
+  </script>
 
 
 
-<div id="pig">piggy animal</div>
+  <div id="pig">piggy animal</div>
 
 
-<input id="name" type="text" name="Vladimir" value="Vladimir" placeholder="name">
+  <input id="name" type="text" name="Vladimir" value="Vladimir" placeholder="name">
 
-<img src="public/vite.svg" alt="">
+  <img src="public/vite.svg" alt="">
 
 
 
@@ -442,42 +467,42 @@ ghfgjhfghfyguj
 
 
 
-    
-    
-    <div id="digitals">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-    </div>
 
 
-<ul>
-  <li>Этот</li>
-  <li>тест</li>
-</ul>
-<ul>
-  <li>полностью</li>
-  <li>пройден</li>
-</ul>
-<script>
-  let elements = document.querySelector('ul > li:last-child'); //найдет
-  // let elements = document.getElementById('ul > li:last-child'); // НЕ найдет
-  for (let elem of elements) {
-    alert(elem.innerHTML); // "тест", "пройден"
-  }
-</script>
+  <div id="digitals">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
 
 
-    
-    <!-- <div id="digitalColor"></div> -->
+  <ul>
+    <li>Этот</li>
+    <li>тест</li>
+  </ul>
+  <ul>
+    <li>полностью</li>
+    <li>пройден</li>
+  </ul>
+  <script>
+    let elements = document.querySelector('ul > li:last-child'); //найдет
+    // let elements = document.getElementById('ul > li:last-child'); // НЕ найдет
+    for (let elem of elements) {
+      alert(elem.innerHTML); // "тест", "пройден"
+    }
+  </script>
 
-    <div id="check2">check нажать сюда</div>
-    
-    <!-- <script type="module" src="/src/main.ts"></script> -->
-    <script type="module" src="/src/secondMain.ts"></script>
-  </body>
-  
- 
+
+
+  <!-- <div id="digitalColor"></div> -->
+
+  <div id="check2">check нажать сюда</div>
+
+  <!-- <script type="module" src="/src/main.ts"></script> -->
+  <script type="module" src="/src/secondMain.ts"></script>
+</body>
+
+
 
 
 
