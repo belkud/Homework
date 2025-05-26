@@ -2070,9 +2070,17 @@ let massive2 = [
     {c:4},
     {d:3},
 ]
+
+// massive2.forEach(el=> 
+//     console.log(Object.values(el).sort((a, b)=> a - b))
+// )
+
+
+
+
 // console.log(...massive2.sort((a, b) => a - b));
-console.log(massive2[0].a);
-console.log(massive2[1].b);
+// console.log(massive2[0].a);
+// console.log(massive2[1].b);
 
 // for (let i = 0; i < massive2.length; i++) {
 //     Object.values(massive2[i])
@@ -2086,21 +2094,95 @@ console.log(massive2[1].b);
 
 
 
+ 
+// console.log(document.body instanceof HTMLBodyElement);
+// console.log(document.body instanceof HTMLElement);
+// console.log(newsPage instanceof HTMLElement);
+// console.log(newsPage instanceof EventTarget);
+// console.log(newsPage instanceof Node);
+// console.log(newsPage.parentNode);
 
 
-//   <p> News1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, magnam quibusdam explicabo quod ipsam officiis
-//     nemo alias illum labore. Esse ipsum qui eaque eius doloribus voluptates dolor facere aut. Commodi?</p>
-//   <p> News2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, magnam quibusdam explicabo quod ipsam officiis
-//     nemo alias illum labore. Esse ipsum qui eaque eius doloribus voluptates dolor facere aut. Commodi?</p>
-//   <p> News3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, magnam quibusdam explicabo quod ipsam officiis
-//     nemo alias illum labore. Esse ipsum qui eaque eius doloribus voluptates dolor facere aut. Commodi?</p>
 
-console.log(document.body instanceof HTMLBodyElement);
-console.log(document.body instanceof HTMLElement);
-console.log(newsPage instanceof HTMLElement);
-console.log(newsPage instanceof EventTarget);
-console.log(newsPage instanceof Node);
-console.log(newsPage.parentNode);
+// document.body.imperator = {
+//     name: 'Caesar',
+//     age : 2000,
+// }
+// console.log(imperator.name);
+
+
+// document.body.myData = {
+//   name: 'Caesar',
+//   title: 'Imperator'
+// }
+// console.log(myData);
+
+// document.body.myData.innerHTML = '333'
+
+let myData = document.querySelector('#myData') as HTMLDivElement
+// console.log(myData.hasAttribute('class'));
+// console.log(myData.hasAttribute('id'));
+// console.log(myData.getAttributeNames());
+
+// myData.setAttribute('class', "test")
+
+// console.log(myData.hasAttribute('class'));
+// console.log(myData.getAttributeNames());
+
+
+// console.log(myData.outerHTML);
+
+
+console.log(document.body.dataset.aboutNew)
+
+console.log(myData.getAttributeNames());
+
+let attr = document.querySelector('[data-about]') //можем извлекать также как обычный id
+console.log(attr);
+
+// myData.myDat = {
+//   name: 'Caesar',
+//   title: 'Imperator'
+// };
+
+// console.log(myData.myDat.title);
+
+console.log(myData.hasAttribute('data-about')); // наличие атрибута
+console.log(myData.getAttribute('data-about')); // значение атрибута
+
+myData.setAttribute('data-about2', 'newAtrr') //устанавливает атрибут
+// console.log(myData.removeAttribute('data-about2')) //удаляет атрибут
+
+console.log(myData.dataset.about2);
+console.log(myData.attributes); // коллекция ВСЕХ атрибутов 
+
+
+
+let inputId = document.querySelector('#inputId') as HTMLInputElement
+console.log(inputId.getAttribute('value'));
+console.log(inputId.getAttribute('type'));
+console.log(inputId.dataset.colorOrangeRed);// в кэмелкэйснотэйшэн читаеется
+
+
+console.log(inputId.attributes);
+
+
+//!!!!!!!!!!!!!!!!!!11 Изменение документа !!!!!!!!!!!!!!!!!!!!1
+
+let divStart =  document.createElement('div')  // в скобках имя тега
+divStart.innerHTML= 'начало документа (через prepend)'
+document.body.prepend(divStart) //! добавление в НАЧАЛО документа
+
+let divEnd =  document.createElement('div')  // в скобках имя тега
+divEnd.innerHTML = 'конец документа (через append)'
+document.body.append(divEnd) //! добавление в КОНЕЦ документа
+// console.log(div2.innerHTML);
+
+
+
+
+
+
 
 
 
