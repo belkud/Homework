@@ -1892,87 +1892,6 @@ str2.getHtml()
 
 
 
-
-//! Задание 3 //?JS_DZ_Modul_2_Week_5
-//!  Реализовать класс Employee, описывающий работника, и со
-//! здать массив работников банка.
-//!  Реализовать класс EmpTable для генерации html кода таблицы 
-//! со списком работников банка. Массив работников необходимо 
-//! передавать через конструктор, а получать html код с помощью 
-//! метода getHtml().
-//!  Создать объект класса EmpTable и вывести на экран результат 
-//! работы метода getHtml().
-
-let workers = document.querySelector('#workers') as HTMLDivElement
-
-class Employee {
-    name
-    age
-    city
-    position
-    constructor(name:string, age:number, city:string, position:string) {
-            this.name = name
-            this.age = age
-            this.city = city
-            this.position = position
-    }
-    pushInMassive() {
-        workers.innerHTML+=`<div>${JSON.stringify(this)}<div>`
-    }
-} 
-
-
-
-let worker1 = new Employee('Dima', 30, 'Sochi', 'programmer')
-worker1.pushInMassive()
-
-let worker2 = new Employee('Pasha', 27, 'Moscow', 'designer')
-worker2.pushInMassive()
-
-
-
-
-//!  Реализовать класс EmpTable для генерации html кода таблицы 
-//! со списком работников банка. Массив работников необходимо 
-//! передавать через конструктор, а получать html код с помощью 
-//! метода getHtml().
-
-let workerTable = document.querySelector('#workerTable') as HTMLElement
-
-class EmpTable extends Employee {
-    constructor (name:string, age:number, city:string, position:string) {
-        super(name, age, city, position) 
-    }
-    getHTML() {
-  workerTable.innerHTML+=`<tr><td>${this.name}</td>
-  <td>${this.age}</td><td>${this.city}</td><td>${this.position}</td></tr>`
-    }       
-} 
-
-let worker3 = new EmpTable('Slava', 35, 'Krasnodar', 'programmer')
-worker3.pushInMassive()
-worker3.getHTML()
-
-let worker4 = new EmpTable('Sveta', 23, 'Voronezh', 'software tester')
-worker4.pushInMassive()
-worker4.getHTML()
-
-let worker5 = new EmpTable('Dasha', 28, 'Peterburg', 'software tester')
-worker5.pushInMassive()
-worker5.getHTML()
-
-let worker6 = new EmpTable('Lena', 25, 'Voronezh', 'programmer')
-worker6.pushInMassive()
-worker6.getHTML()
-
-let worker7 = new EmpTable('Natasha', 27, 'Krasnodar', 'software tester')
-worker7.pushInMassive()
-worker7.getHTML()
-
-
-
-
-
 //! Задание 3
 //!  Реализовать класс, описывающий новостную ленту. 
 //! Класс должен содержать:
@@ -2147,14 +2066,13 @@ console.log(attr);
 
 // console.log(myData.myDat.title);
 
-console.log(myData.hasAttribute('data-about')); // наличие атрибута
-console.log(myData.getAttribute('data-about')); // значение атрибута
-
-myData.setAttribute('data-about2', 'newAtrr') //устанавливает атрибут
-// console.log(myData.removeAttribute('data-about2')) //удаляет атрибут
+console.log(myData.hasAttribute('data-about')); //! наличие атрибута
+console.log(myData.getAttribute('data-about')); //! значение атрибута
+myData.setAttribute('data-about2', 'newAtrr') //! устанавливает атрибут
+// console.log(myData.removeAttribute('data-about2')) //! удаляет атрибут
 
 console.log(myData.dataset.about2);
-console.log(myData.attributes); // коллекция ВСЕХ атрибутов 
+console.log(myData.attributes); //! коллекция ВСЕХ атрибутов 
 
 
 
@@ -2165,6 +2083,7 @@ console.log(inputId.dataset.colorOrangeRed);// в кэмелкэйснотэйш
 
 
 console.log(inputId.attributes);
+
 
 
 //!!!!!!!!!!!!!!!!!!11 Изменение документа !!!!!!!!!!!!!!!!!!!!1
@@ -2186,3 +2105,83 @@ document.body.append(divEnd) //! добавление в КОНЕЦ докуме
 
 
 
+
+
+
+
+
+//! Задание 3 //?JS_DZ_Modul_2_Week_5
+//!  Реализовать класс Employee, описывающий работника, и со
+//! здать массив работников банка.
+//!  Реализовать класс EmpTable для генерации html кода таблицы 
+//! со списком работников банка. Массив работников необходимо 
+//! передавать через конструктор, а получать html код с помощью 
+//! метода getHtml().
+//!  Создать объект класса EmpTable и вывести на экран результат 
+//! работы метода getHtml().
+
+let workers = document.querySelector('#workers') as HTMLDivElement
+
+class Employee {
+    name
+    age
+    city
+    position
+    constructor(name:string, age:number, city:string, position:string) {
+            this.name = name
+            this.age = age
+            this.city = city
+            this.position = position
+    }
+    pushInMassive() {
+        workers.innerHTML+=`<div>${JSON.stringify(this)}<div>`
+    }
+} 
+
+
+
+let worker1 = new Employee('Dima', 30, 'Sochi', 'programmer')
+worker1.pushInMassive()
+
+let worker2 = new Employee('Pasha', 27, 'Moscow', 'designer')
+worker2.pushInMassive()
+
+
+//!  Реализовать класс EmpTable для генерации html кода таблицы 
+//! со списком работников банка. Массив работников необходимо 
+//! передавать через конструктор, а получать html код с помощью 
+//! метода getHtml().
+
+let workerTable = document.querySelector('#workerTable') as HTMLElement
+
+class EmpTable extends Employee {
+    constructor (name:string, age:number, city:string, position:string) {
+        super(name, age, city, position) 
+    }
+    getHTML() {
+  workerTable.innerHTML+=`<tr><td>${this.name}</td>
+  <td>${this.age}</td><td>${this.city}</td><td>${this.position}</td></tr>`
+    }       
+} 
+
+let worker3 = new EmpTable('Slava', 35, 'Krasnodar', 'programmer')
+worker3.pushInMassive()
+worker3.getHTML()
+
+let worker4 = new EmpTable('Sveta', 23, 'Voronezh', 'software tester')
+worker4.pushInMassive()
+worker4.getHTML()
+
+let worker5 = new EmpTable('Dasha', 28, 'Peterburg', 'software tester')
+worker5.pushInMassive()
+worker5.getHTML()
+
+let worker6 = new EmpTable('Lena', 25, 'Voronezh', 'programmer')
+worker6.pushInMassive()
+worker6.getHTML()
+
+let worker7 = new EmpTable('Natasha', 27, 'Krasnodar', 'software tester')
+worker7.pushInMassive()
+worker7.getHTML()
+
+ 
