@@ -17,6 +17,57 @@
   <br>
   <br>
   <br>
+
+  <table id="table_with_workers">
+    <tr>
+        <th>Имя</th>
+        <th>Возраст</th>
+        <th>Город</th>
+        <th>Должность</th>
+    </tr>
+    <tr>
+        <th>Имя</th>
+        <th>Возраст</th>
+        <th>Город</th>
+        <th>Должность</th>
+    </tr>
+</table>
+
+<style>
+    #table_with_workers {
+        background-color: gray;
+        margin: 50px;
+        text-align: center;
+        border-collapse: collapse;
+    }
+
+    #table_with_workers td, #table_with_workers th  {
+        border: 1px solid black;
+        padding: 10px 5px;
+    }
+
+</style>
+
+<form id="new_worker_form" style="margin-bottom: 20px;">
+    <input type="text" placeholder="Введите имя">
+    <input type="text" placeholder="Введите возраст">
+    <input type="text" placeholder="Введите город">
+    <input type="text" placeholder="Введите должность">
+</form>
+
+<style>
+    #new_worker_form input {
+        width: 100px;
+    }
+</style>
+
+ 
+
+<button id="add_worker">Добавить работника</button>
+<button id="clean_inputs">Очистить inputs</button>
+<button id="delete_worker">Удалить работника</button>
+
+
   <input type="button" value="123">
   <br>
   <br>
@@ -29,7 +80,7 @@
 
   <div id="myData"  data-about="testing" >12345</div>
 
-  <input type="checkbox" id="inputId" data-color-orange-red="colored" value="123eee" checked>
+  <input type="checkbox" id="inputId" data-color-orange-red="" value="123eee" checked>
 
   <style>
    /* ['testing'] {
