@@ -2188,52 +2188,85 @@ worker7.getHTML()
 
 
 
-let testMass = ['gd', 'fgh', 'iku', 'ws', 'xcv']
-testMass.splice(0,1)
-console.log(testMass);
 
 
-let add_worker = document.querySelector('#add_worker') as HTMLButtonElement // кнопка добавления работника
+// let add_worker = document.querySelector('#add_worker') as HTMLButtonElement // кнопка добавления работника
 
-let delete_inputs = document.querySelector('#clean_inputs') as HTMLButtonElement // кнопка добавления работника
+// let delete_inputs = document.querySelector('#clean_inputs') as HTMLButtonElement // кнопка добавления работника
 
-let delete_worker = document.querySelector('#delete_worker') as HTMLButtonElement // кнопка удаления работника
+// let delete_worker = document.querySelector('#delete_worker') as HTMLButtonElement // кнопка удаления работника
 
-let new_worker_form = document.querySelector('#new_worker_form') as HTMLFormElement // окошки, с вводимой информацией
+// let new_worker_form = document.querySelector('#new_worker_form') as HTMLFormElement // окошки, с вводимой информацией
 
-let table_with_workers = document.querySelector('#table_with_workers') as HTMLFormElement // таблица
+// let table_with_workers = document.querySelector('#table_with_workers') as HTMLFormElement // таблица
 
-// console.log(new_worker_form.children[0]);
-// console.log(new_worker_form.children[1]);
-// console.log(new_worker_form.children[2]);
-// console.log(new_worker_form.children[3]);
+// // console.log(new_worker_form.children[0]);
+// // console.log(new_worker_form.children[1]);
+// // console.log(new_worker_form.children[2]);
+// // console.log(new_worker_form.children[3]);
 
 
-add_worker.addEventListener('click', ()=> {
-    console.log(new_worker_form.children[0].value);
-    table_with_workers.innerHTML+=`<tr>
-    <td>${new_worker_form.children[0].value}</td>
-    <td>${new_worker_form.children[1].value}</td>
-    <td>${new_worker_form.children[2].value}</td>
-    <td>${new_worker_form.children[3].value}</td>
-    </tr>`
-})
+// add_worker.addEventListener('click', ()=> {
+//     console.log(new_worker_form.children[0].value);
+//     table_with_workers.innerHTML+=`<tr>
+//     <td>${new_worker_form.children[0].value}</td>
+//     <td>${new_worker_form.children[1].value}</td>
+//     <td>${new_worker_form.children[2].value}</td>
+//     <td>${new_worker_form.children[3].value}</td>
+//     </tr>`
+// })
 
-delete_inputs.addEventListener('click', ()=> {
-    new_worker_form.children[0].value = ''
-    new_worker_form.children[1].value = ''
-    new_worker_form.children[2].value = ''
-    new_worker_form.children[3].value = ''
-    // console.log();
+// delete_inputs.addEventListener('click', ()=> {
+//     new_worker_form.children[0].value = ''
+//     new_worker_form.children[1].value = ''
+//     new_worker_form.children[2].value = ''
+//     new_worker_form.children[3].value = ''
+//     // console.log();
     
-})
+// })
 
-delete_worker.addEventListener('click', ()=> {
-    // console.log(table_with_workers.children[0]);
+// delete_worker.addEventListener('click', ()=> {
+//     // console.log(table_with_workers.children[0]);
     
-    // table_with_workers.children[1].innerHTML=''
-    table_with_workers.lastChild.innerHTML = ''
-})
+//     // table_with_workers.children[1].innerHTML=''
+//     table_with_workers.lastChild.innerHTML = ''
+// })
 
-console.log(table_with_workers.children[0]);
+// console.log(table_with_workers.children);
 
+
+
+let addElem = document.querySelector('#addElem') as HTMLDivElement
+
+let prepand = document.createElement('div')
+prepand.innerHTML = ' prepand'
+addElem.prepend(prepand)
+
+
+let append = document.createElement('div')
+append.innerHTML = ' append'
+addElem.append(append)
+
+let before = document.createElement('div')
+before.innerHTML = ' before'
+addElem.before (before)
+
+let after = document.createElement('div')
+after.innerHTML = 'after'
+addElem.after(after, document.createElement('br'))
+
+
+
+let masive = ['fg', 'sgfh', 'fgfdg', 'werwt']
+console.log(masive);
+
+
+
+// document.body.insertAdjacentText('div', `<i>123</i>`)
+// document.body.innerText= `<i>123</i>`
+let sortTable = document.querySelectorAll('#workerTable tbody tr') 
+let tableArr = Array.from(sortTable)
+// tableArr.sort((el)=>(el.children[1], el.children[1])=> {
+    // el.children[1] - el.children[1]})
+// let tableAge = tableArr[3].children[1]
+// console.log(tableArr[3].children[1]);
