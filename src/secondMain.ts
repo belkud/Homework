@@ -1836,150 +1836,6 @@ console.log(comment);
 
 
 
-
-//!  Задание 3
-//!  Реализуйте класс ExtentedArray, унаследовав его от стандарт
-//! ного класса Array и добавив следующие методы:
-//!  ■ метод getString(separator) – для получения строки со 
-//! всеми элементами массива, перечисленными через ука
-//! занный разделитель: запятая, тире, пробел и т. д.;
-//!  ■ метод getHtml(tagName) – для получения строки с html 
-//! кодом, где каждый элемент массива будет обернут в ука
-//! занный тег (учтите, если указывается тег li, то все эле
-//! менты дополнительно необходимо обернуть в ul).
-//!  Создайте объект класса ExtentedArray, заполните его данны
-//! ми и выведите на экран результаты работы методов getString() 
-//! и getHtml().
-
-let arrStr = document.querySelector('.ExtentedArr') as HTMLDivElement
-let strWithInfo = ''
-
-class ExtentedArray {
-    text
-    separate
-    teg
-    constructor(text:any, separate:any, teg:any) {
-            this.text = text
-            this.separate = separate
-            this.teg = teg
-    }
-    getString() {
-        let separatedText = this.text 
-        strWithInfo = separatedText.split(`${this.separate}`).join(' | ')
-         arrStr.innerHTML+= strWithInfo + ' - разделитель : "' + this.separate + '"' + '<br>' 
-    }
-    getHtml() {
-        for (let i = 0; i < strWithInfo.split('|').length; i++) {
-            if (this.teg=='li') {
-                arrStr.innerHTML+=`<ul><${this.teg}>${strWithInfo.split('|')[i]}</${this.teg}</ul>`
-            } else {
-                arrStr.innerHTML+=`<${this.teg}>${strWithInfo.split('|')[i]}</${this.teg}> `
-            }       
-        }
-    }
-}
-
-
-
-let str = new ExtentedArray('Через указанный разделитель: запятая, тире, пробел и т. д.', ',', 'li')
-str.getString()
-str.getHtml()
-
-let str2 = new ExtentedArray('Вторая проверочная : строчка которая : проверяет', ':', 'div')
-str2.getString()
-str2.getHtml()
-
-
-
-
-//! Задание 3
-//!  Реализовать класс, описывающий новостную ленту. 
-//! Класс должен содержать:
-//!  ■ массив новостей;
-//!  ■ get-свойство, которое возвращает количество новостей;
-//!  ■ метод для вывода на экран всех новостей;
-//!  ■ метод для добавления новости;
-//!  ■ метод для удаления новости;
-//!  ■ метод для сортировки новостей по дате (от последних но
-//! востей до старых);
-//!  ■ метод для поиска новостей по тегу (возвращает массив 
-//! новостей, в которых указан переданный в метод тег).
-//!  Продемонстрировать работу написанных методов.
-
-let newsPage = document.querySelector('#newsPage') as HTMLDivElement
-let newsArray = [['Consectetur, adipisicing elit ', '30.06.2020'], 
-['Lorem ipsum dolor sit ', '20.08.2021'], 
-['Esse ipsum qui eaque eius', '18.06.2019']
-] as any
-
-let accNews = newsArray.length
-class newsLine {
-    text
-    date
-    constructor (text:string, date:string) {
-        this.text = text
-        this.date = date
-    }
-    
-    get quantatyNews () {
-        return  newsPage.innerHTML+=`Количество новостей : ${accNews}`
-    }
-
-    showMassNews () {
-        // console.log(this.text[0][1]);
-        for (let i = 0; i < newsArray.length; i++)
-             {
-            newsPage.innerHTML+=`<div>Новость: ${newsArray[i][0]}; <br>
-            Дата публикации: ${newsArray[i][1]}<br><br>
-            </div>`
-        }
-        return newsPage.innerHTML
-    }
-
-    addNews() {
-        newsArray.push([this.text, this.date])
-        accNews++
-    }
-
-    deleteNews(num:number) {
-        newsPage.children[num].innerHTML = ''
-        accNews--
-    }
-    sortByDate() {
-        let mass = [] as any
-        for (let i = 0; i < newsArray.length; i++) {
-            // .sort((a,b)=>{a-b})
-            mass.push()
-            let dates = newsArray[i][1].split('.').reverse().join('')
-            // console.log(dates.sort((a, b) => a - b));
-            
-            newsPage.innerHTML+=`<div>[i]Новость: ${newsArray[i][0]}; <br>
-            Дата публикации: ${newsArray[i][1]}<br><br>
-            </div>`
-        }
-        
-    }
-
-}
-let news1 = new newsLine ('jewsArray', '23.08.2019')
-let news2 = new newsLine ('12345jewsArray', '15.06.2018')
-
-
-news1.addNews()
-news2.addNews()
-
-news1.showMassNews() // потом show
-news1.deleteNews(0) // delete потом show
-
-news1.quantatyNews // показывает количество новостей 
-
-news1.sortByDate()
-
-// console.log(newsArray);
-
- 
-
-
 let massive = [0, 5, 2, 4, 3, 8 ]
 // console.log(massive.sort((a, b) => a - b));
 
@@ -2086,7 +1942,7 @@ console.log(inputId.attributes);
 
 
 
-//!!!!!!!!!!!!!!!!!!11 Изменение документа !!!!!!!!!!!!!!!!!!!!1
+//!!!!!!!!!!!!!!!!!!!!! Изменение документа !!!!!!!!!!!!!!!!!!!!1
 
 let divStart =  document.createElement('div')  // в скобках имя тега
 divStart.innerHTML= 'начало документа (через prepend)'
@@ -2270,3 +2126,169 @@ let tableArr = Array.from(sortTable)
     // el.children[1] - el.children[1]})
 // let tableAge = tableArr[3].children[1]
 // console.log(tableArr[3].children[1]);
+
+
+
+// console.log(cssClass.className);
+
+
+
+// document.body.addEventListener('click', ()=> {
+// document.body.classList.toggle('styleForbody')
+
+// console.log(document.body.getAttribute('class')); //название класса
+// console.log(document.body.className); // тоже название класса
+// console.log(document.body.contains('styleForbody'));
+// })
+
+
+
+
+
+
+//!  Задание 3
+//!  Реализуйте класс ExtentedArray, унаследовав его от стандарт
+//! ного класса Array и добавив следующие методы:
+//!  ■ метод getString(separator) – для получения строки со 
+//! всеми элементами массива, перечисленными через ука
+//! занный разделитель: запятая, тире, пробел и т. д.;
+//!  ■ метод getHtml(tagName) – для получения строки с html 
+//! кодом, где каждый элемент массива будет обернут в ука
+//! занный тег (учтите, если указывается тег li, то все эле
+//! менты дополнительно необходимо обернуть в ul).
+//!  Создайте объект класса ExtentedArray, заполните его данны
+//! ми и выведите на экран результаты работы методов getString() 
+//! и getHtml().
+
+let arrStr = document.querySelector('.ExtentedArr') as HTMLDivElement
+let strWithInfo = ''
+
+class ExtentedArray {
+    text
+    separate
+    teg
+    constructor(text:any, separate:any, teg:any) {
+            this.text = text
+            this.separate = separate
+            this.teg = teg
+    }
+    getString() {
+        let separatedText = this.text 
+        strWithInfo = separatedText.split(`${this.separate}`).join(' | ')
+         arrStr.innerHTML+= strWithInfo + ' - разделитель : "' + this.separate + '"' + '<br>' 
+    }
+    getHtml() {
+        for (let i = 0; i < strWithInfo.split('|').length; i++) {
+            if (this.teg=='li') {
+                arrStr.innerHTML+=`<ul><${this.teg}>${strWithInfo.split('|')[i]}</${this.teg}</ul>`
+            } else {
+                arrStr.innerHTML+=`<${this.teg}>${strWithInfo.split('|')[i]}</${this.teg}> `
+            }       
+        }
+    }
+}
+
+
+
+let str = new ExtentedArray('Через указанный разделитель: запятая, тире, пробел и т. д.', ',', 'li')
+str.getString()
+str.getHtml()
+
+let str2 = new ExtentedArray('Вторая проверочная : строчка которая : проверяет', ':', 'div')
+str2.getString()
+str2.getHtml()
+
+
+
+
+//! Задание 3
+//!  Реализовать класс, описывающий новостную ленту. 
+//! Класс должен содержать:
+//!  ■ массив новостей;
+//!  ■ get-свойство, которое возвращает количество новостей;
+//!  ■ метод для вывода на экран всех новостей;
+//!  ■ метод для добавления новости;
+//!  ■ метод для удаления новости;
+//!  ■ метод для сортировки новостей по дате (от последних но
+//! востей до старых);
+//!  ■ метод для поиска новостей по тегу (возвращает массив 
+//! новостей, в которых указан переданный в метод тег).
+//!  Продемонстрировать работу написанных методов.
+
+let newsPage = document.querySelector('#newsPage') as HTMLDivElement
+let newsArray = [['Consectetur, adipisicing elit ', '30.06.2020'], 
+['Lorem ipsum dolor sit ', '20.08.2021'], 
+['Esse ipsum qui eaque eius', '18.06.2019']
+] as any
+
+let accNews = newsArray.length
+class newsLine {
+    text
+    date
+    constructor (text:string, date:string) {
+        this.text = text
+        this.date = date
+    }
+    
+    get quantatyNews () {
+        return  newsPage.innerHTML+=`Количество новостей : ${accNews}`
+    }
+
+    showMassNews () {
+        // console.log(this.text[0][1]);
+        for (let i = 0; i < newsArray.length; i++)
+             {
+            newsPage.innerHTML+=`<div>Новость: ${newsArray[i][0]}; <br>
+            Дата публикации: ${newsArray[i][1]}<br><br>
+            </div>`
+        }
+        return newsPage.innerHTML
+    }
+
+    addNews() {
+        newsArray.push([this.text, this.date])
+        accNews++
+    }
+
+    deleteNews(num:number) {
+        newsPage.children[num].innerHTML = ''
+        accNews--
+    }
+    sortByDate() {
+        let mass = [] as any
+        for (let i = 0; i < newsArray.length; i++) {
+            // .sort((a,b)=>{a-b})
+            mass.push()
+            let dates = newsArray[i][1].split('.').reverse().join('')
+            // let a = newsArray[i]
+            // let b = newsArray[i]
+            console.log(...newsArray);
+            
+            newsPage.innerHTML+=`<div>[i]Новость: ${newsArray[i][0]}; <br>
+            Дата публикации: ${newsArray[i][1]}<br><br>
+            </div>`
+        }
+        
+    }
+
+}
+let news1 = new newsLine ('jewsArray', '23.08.2019')
+let news2 = new newsLine ('12345jewsArray', '15.06.2018')
+
+
+news1.addNews()
+news2.addNews()
+
+news1.showMassNews() // потом show
+news1.deleteNews(0) // delete потом show
+
+news1.quantatyNews // показывает количество новостей 
+
+news1.sortByDate()
+
+console.log(news1.sortByDate());
+
+console.log(newsArray[0]);
+
+ 
+
