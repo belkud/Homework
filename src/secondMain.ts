@@ -2292,3 +2292,23 @@ console.log(newsArray[0]);
 
  
 
+let table_calender = document.querySelector('#table_calender')as HTMLTableElement
+
+console.log(table_calender);
+
+let calender_day = new Date ('1991-03-28')
+console.log(calender_day);
+
+console.log(calender_day.getDate()); // календарный день
+console.log(calender_day.getDay()); // день недели
+
+
+console.log(calender_day.getDate()%7); // начало месяца
+console.log(calender_day.getDay()-calender_day.getDate()%7+1);  // начало месяца
+
+
+
+
+
+
+
