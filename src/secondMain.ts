@@ -2307,8 +2307,23 @@ console.log(calender_day.getDate()%7); // начало месяца
 console.log(calender_day.getDay()-calender_day.getDate()%7+1);  // начало месяца
 
 
+let coordinate = document.querySelector('#coordinate') as HTMLDivElement
 
-
+document.addEventListener('mousemove', (e)=> {
+    coordinate.innerHTML= `
+    <br>
+    по документу:
+    ось Х = ${e.pageX} px
+    ось Y = ${e.pageY} px
+    <br>
+    по окну:
+    ось Х = ${e.clientX} px
+    ось Y = ${e.clientY} px
+    ` as any
+    console.log(document);
+    
+    
+})
 
 
 
