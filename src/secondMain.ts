@@ -2329,16 +2329,12 @@ document.addEventListener('mousemove', (e)=> {
 
 })
 
-let moveOnTop = document.querySelector('#moveOnTop') as HTMLButtonElement
-moveOnTop.addEventListener('click', ()=> {
-    // window.scrollTo(0,0)
-    
-    workerTable.scrollIntoView({ //! переходим на начало тега или diva по id 
-        behavior: 'smooth', //! плавный переход
-        block:'end', //! на низ или верх экрана
-        inline:'center',
-    })
-})
+
+
+
+//!!!!!!!!!!!! Размеры и прокрутка элементов!!!!!!!!!!!!!
+
+
 
 let checkDiv = document.querySelector('#checkDiv') as HTMLButtonElement
 console.log(checkDiv.clientWidth);  
@@ -2360,16 +2356,55 @@ document.addEventListener('keydown', (e)=> {
     // checkDiv.style.scrollMarginTop = accc+ 'px'
     
     console.log(checkDiv.offsetTop);
+    console.log(checkDiv.scrollTop);
     
-    console.log(getComputedStyle(checkDiv).length);
+    console.log(getComputedStyle(checkDiv).length); // количество css-свойств
 })
 
 console.log(document.body.offsetHeight);
 console.log(document.body.clientHeight);
 console.log(document.body.scrollHeight);
+console.log(document.body.scrollTop);
+
+
+// if (document.body.scrollTop>=1550) {
+//     console.log('scroll');
+    
+// }
+ 
+
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Размеры и прокрутка окна!!!!!!!!!!!!!!!!!
+
+let moveOnTop = document.querySelector('#moveOnTop') as HTMLButtonElement
+moveOnTop.addEventListener('click', ()=> {
+    // window.scrollTo(0,0)
+    
+    workerTable.scrollIntoView({ //! переходим на начало тега или diva по id 
+        behavior: 'smooth', //! плавный переход
+        block:'end', //! на низ или верх экрана
+        inline:'center',
+    })
+})
 
 
 
 
 
+let data = {
+  "Рыбы": {
+    "форель": {},
+    "лосось": {}
+  },
 
+  "Деревья": {
+    "Огромные": {
+      "секвойя": {},
+      "дуб": {}
+    },
+    "Цветковые": {
+      "яблоня": {},
+      "магнолия": {}
+    }
+  }
+};
+console.log(data.Деревья);
