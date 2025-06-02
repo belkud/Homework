@@ -2319,11 +2319,29 @@ document.addEventListener('mousemove', (e)=> {
     по окну:
     ось Х = ${e.clientX} px
     ось Y = ${e.clientY} px
-    ` as any
-    console.log(document);
+    <br>
+    ось Х = ${e.screenX} px
+    <br>
     
+    ` as any
+    
+    
+
+})
+
+let moveOnTop = document.querySelector('#moveOnTop') as HTMLButtonElement
+moveOnTop.addEventListener('click', (e)=> {
+    // e.screenY = 0 + 'px'
+    document.body.style.scrollBehavior = 'smooth'
+    window.scrollTo(0,0)
+    // console.log(e.X);
     
 })
+
+
+
+
+
 
 
 
