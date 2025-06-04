@@ -25,10 +25,19 @@
   <br>
   <br>
   <br>
-  <div id="checkDiv" style="background-color: gray; width: 300px; height: 200px; margin: 25px; padding: 20px; border: 25px solid; box-sizing: border-box;
+
+  <div id="checkDiv" style="
+  background-color: gray; 
+  width: 300px; 
+  height: 200px; 
+  margin: 25px; 
+  padding: 20px; 
+  border: 15px solid; 
+  /* box-sizing: border-box; */
   overflow: scroll;
   position: absolute;
   margin-top: 100px;
+  /* border: 10px solid red; */
   ">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus totam molestiae nobis culpa atque odio
     dignissimos qui, quia fugiat enim praesentium quam, ab officiis ratione tenetur? Harum reiciendis repellendus
@@ -600,9 +609,7 @@ background: gray; width: 300px; text-align: center; "> вставка элеме
   <script>
     let elements = document.querySelector('ul > li:last-child'); //найдет
     // let elements = document.getElementById('ul > li:last-child'); // НЕ найдет
-    for (let elem of elements) {
-      alert(elem.innerHTML); // "тест", "пройден"
-    }
+   
   </script>
 
 
@@ -612,8 +619,9 @@ background: gray; width: 300px; text-align: center; "> вставка элеме
   <div id="check2">check нажать сюда</div>
   <div id="moveOnTop" style="background: red; width: 130px; padding: 5px;">Наверх документа</div>
 
+  <!-- <script type="module" src="/src/secondMain.ts"></script> -->
   <!-- <script type="module" src="/src/main.ts"></script> -->
-  <script type="module" src="/src/secondMain.ts"></script>
+  <script type="module" src="/src/thirdMain.ts"></script>
 </body>
 
 
