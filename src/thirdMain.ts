@@ -18,15 +18,13 @@ console.log(getComputedStyle(checkDiv).height);
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Размеры и прокрутка окна!!!!!!!!!!!!!!!!!
 
 let moveOnTop = document.querySelector('#moveOnTop') as HTMLButtonElement
-moveOnTop.addEventListener('click', ()=> {
-    // window.scrollTo(0,0)
-    
-    workerTable.scrollIntoView({ //! переходим на начало тега или diva по id 
-        behavior: 'smooth', //! плавный переход
-        block:'end', //! на низ или верх экрана
-        inline:'center',
-    })
-})
+// moveOnTop.addEventListener('click', ()=> {
+//         workerTable.scrollIntoView({ //! переходим на начало тега или diva по id 
+//         behavior: 'smooth', //! плавный переход
+//         block:'end', //! на низ или верх экрана
+//         inline:'center',
+//     })
+// })
 
 document.body.scrollHeight
 console.log(document.body.scrollHeight);
@@ -34,6 +32,7 @@ console.log(document.body.scrollHeight);
 
 let scrollDiv = document.querySelector('#scrollDiv') as HTMLDivElement
 let showDiv = document.querySelector('#showDiv') as HTMLDivElement
+let calc_buttons = document.querySelector('#calc_buttons') as HTMLDivElement
 
 // console.log(document.body.);
 
@@ -45,11 +44,11 @@ document.addEventListener ('scroll', (e)=> {
         // alert('вы дошли до элемента')
     }
     // console.log(e.pageY);
-    console.log(window.pageYOffset);
-    console.log(window.scrollY);
-    console.log(window.scrollTo);
-    console.log(window.pageYOffset + window.innerHeight);
-    console.log(scrollDiv.offsetTop);
+    // console.log(window.pageYOffset);
+    // console.log(window.scrollY);
+    // console.log(window.scrollTo);
+    // console.log(window.pageYOffset + window.innerHeight);
+    // console.log(scrollDiv.offsetTop);
 })
 
 
@@ -73,24 +72,169 @@ console.log(window.innerHeight);
 
 
 
-//! Прокрутка: scrollTo, scrollBy, scrollIntoView
+//!!!!!!!!!!!!!! Прокрутка: scrollTo, scrollBy, scrollIntoView !!!!!!!!!!!!!111
+
+//! Метод scrollBy(x,y) прокручивает страницу относительно её текущего положения.
 let moveOnButton = document.querySelector('#moveOnButton') as HTMLButtonElement
 moveOnButton.addEventListener('click', ()=> {
-    window.scroll(0, document.body.scrollHeight)
-    
+    // window.scrollTo({
+    //     top: 500,
+    //     behavior:'smooth'
+    // })
 })
-
 
 
 let calcInput = document.querySelector('#calcInput') as HTMLInputElement
 
 
+//! Метод scrollTo(pageX,pageY) прокручивает страницу на абсолютные координаты
+moveOnButton.addEventListener('click', ()=> {
+    // window.scrollTo({
+    //     top: 50,
+    //     left: 0,
+    //     behavior: "smooth"
+    // });
+})
 
-// //! Прокрутка: scrollTo, scrollBy, scrollIntoView
+
+//! Метод scrollIntoView прокручивает страницу ДО элемента
+moveOnButton.addEventListener('click', ()=> {
+    // calcInput.scrollIntoView({
+    //     behavior:'smooth',
+    //     block:'center',
+    // })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // moveOnButton.addEventListener('click', ()=> {
-//     calcInput.scrollTo(0, 0)
+//     calcInput.scrollIntoView({
+//         behavior:'smooth'
+//     })
     
 // })
+
+
+document.addEventListener('keydown', ()=> {
+    if(calc_buttons.offsetTop< window.scrollY+window.innerHeight/2) {
+        calc_buttons.style.color = 'red'
+        calc_buttons.style.transition = '5s'   
+    } else {
+        calc_buttons.style.color = ''
+    }
+    // console.log(calc_buttons.offsetTop);
+    // console.log(window.scrollY);
+    // console.log(window.innerHeight);
+    
+})
+
+
+
+
+
+let moveOnTop2 = document.querySelector('#moveOnTop2') as HTMLButtonElement
+console.log((window.innerHeight));
+console.log((document.body.scrollHeight));
+console.log((document.body.clientHeight));
+console.log((document.body.offsetHeight));
+console.log((document.body.offsetHeight));
+console.log((moveOnTop2.offsetTop));
+
+document.addEventListener('keydown', (e)=> {
+    if (window.scrollY +window.innerHeight>moveOnTop2.offsetTop) {
+        moveOnTop2.style.background = 'green'
+        moveOnTop2.style.transition = '5s'
+    } else {
+        moveOnTop2.style.background = 'orange'
+        moveOnTop2.style.transition = '5s'
+    }
+        
+    // console.log((moveOnTop2.offsetTop));
+    // console.log(window.scrollY +window.innerHeight);
+    // console.log(window.scrollY);
+// console.log(getComputedStyle(moveOnTop2).marginTop);
+    
+})
+
+
+moveOnButton.addEventListener('click', ()=> {
+    calcInput.scrollIntoView({
+        inline:'center',
+        behavior: 'smooth'
+    })
+    // window.scrollTo({
+    //     top:0,
+    //     behavior:'smooth',
+    // })
+})
+
+
+
+moveOnTop.addEventListener('click', ()=> {
+    window.scrollTo({
+        top: 0,
+        behavior:'smooth'
+    })
+})
+
+
+window.addEventListener('keydown',(e)=> {
+    if (window.scrollY>3700) {
+        moveOnTop.style.background = 'greenyellow'
+    } else {
+        moveOnTop.style.background = 'red'
+        
+    }
+        
+    moveOnTop.innerHTML= `${(window.scrollY).toFixed()} px`
+    
+})
+
+
+
+
+
+let uparrow = document.querySelector('#uparrow') as HTMLDivElement
+
+
+
+window.addEventListener('scroll',()=> {
+    if(window.scrollY>2000) {
+        uparrow.style.display = 'block'
+    } else {
+        uparrow.style.display = 'none'
+    }
+})
+
+console.log(window.innerWidth);
+console.log(window.outerWidth);
+console.log(getComputedStyle(uparrow).width);
+
+let container_news = document.querySelectorAll('#container_news div') as any
+console.log(container_news.length);
+console.log(container_news[0].firstElementChild);
+console.log(container_news[0].lastElementChild);
+
+for (let i = 0; i < container_news.length; i++) {
+    container_news[i].firstElementChild?.addEventListener('click', ()=>{
+        // getComputedStyle().display = 'none'
+        console.log(container_news[i].lastElementChild?.innerHTML);
+        container_news[i].style.display = 'none'
+    })
+}
 
 
 

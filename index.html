@@ -19,9 +19,86 @@
   <br>
 
 <button id="moveOnButton">Прокрутка вниз страницы</button>
+
+<div id="box_progress_bar">
+  <div id="progress_bar"></div>
+</div>
+<button  id="button_progress_bar"> увеличить progress_bar на 5%</button>
   
+  <style>
+    #progress_bar {
+      background-color: greenyellow;
+      height: 30px;
+      width: 0px;
+      transition:.2s;
+    }
+    #box_progress_bar {
+      border: 1px solid white;
+      height: 30px;
+      width: 200px;
+      margin: 20px;
+      overflow: hidden;
+    }
+  </style>  
+<script>
+  let progress_bar = document.getElementById('progress_bar')
+  let button_progress_bar = document.getElementById('button_progress_bar')
+  let widthAcc = 0
+  button_progress_bar.addEventListener('click', ()=> {
+    widthAcc+=10  
+    progress_bar.style.width =  `${widthAcc}px`
+})
+
+</script>
+
+<div id="container_news">
+  <div>
+    <button> X</button>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat porro eligendi dignissimos laboriosam optio ipsa, consequuntur provident qui quidem quis commodi quod deserunt odio. Consectetur itaque reiciendis maxime obcaecati et.</p>
+</div> 
+
+<div>
+  <button> X</button>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat porro eligendi dignissimos laboriosam optio ipsa, consequuntur provident qui quidem quis commodi quod deserunt odio. Consectetur itaque reiciendis maxime obcaecati et.</p>
+</div> 
+
+<div>
+  <button> X</button>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat porro eligendi dignissimos laboriosam optio ipsa, consequuntur provident qui quidem quis commodi quod deserunt odio. Consectetur itaque reiciendis maxime obcaecati et.</p>
+</div> 
+</div>
+
+<style>
+  #container_news div {
+    border: 1px solid white;
+    padding: 10px;
+  }
+
+  #container_news button {
+    margin-left:calc(100% - 20px); 
+    background: red; 
+    color: wheat;
+  }
+  </style>
 
 
+
+
+
+<div id="uparrow">&uparrow;</div>
+<style>
+  #uparrow {
+      background-color: red;
+      width: 50px;
+      padding: 3px;
+      text-align: center;
+      margin-left: auto;
+      display: none;
+      position: fixed;
+      left: calc(100% - 60px);
+  }
+
+</style>
   <br>
   <br>
   <br>
@@ -612,12 +689,18 @@ background: gray; width: 300px; text-align: center; "> вставка элеме
    
   </script>
 
+<div id="moveOnTop2" style="background: red; margin-left: auto; width: 130px; padding: 5px;"></div>
 
 
   <!-- <div id="digitalColor"></div> -->
 
   <div id="check2">check нажать сюда</div>
-  <div id="moveOnTop" style="background: red; width: 130px; padding: 5px;">Наверх документа</div>
+  <div id="moveOnTop" style="
+  background: red; width: 130px; padding: 5px;
+  position: fixed;
+  top: 80%;
+  left: calc(100% - 150px);
+  ">Наверх документа fixed</div>
 
   <!-- <script type="module" src="/src/secondMain.ts"></script> -->
   <!-- <script type="module" src="/src/main.ts"></script> -->
