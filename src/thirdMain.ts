@@ -225,22 +225,59 @@ console.log(getComputedStyle(uparrow).width);
 
 
 
+
+
+
+//! контейнер с новостями (там где нажать на крестик  и закрыть новость)
+
 let container_news = document.querySelectorAll('#container_news div') as any
 
 for (let i = 0; i < container_news.length; i++) {
-    container_news[i].firstElementChild.addEventListener('click', ()=>{
+    container_news[i].firstElementChild.addEventListener('click', (e:any)=>{
         container_news[i].style.height = '0px'
         container_news[i].style.opacity = 0
         container_news[i].firstElementChild.style.background = 'blue'
-        console.log(123);
-        
+        console.log(e.target);
+        console.log(e.currentTarget);
+        console.log(e.button);
+
     })
     setTimeout(() => {
 container_news[i].style.display = 'block'
         
     }, 1000);
 }
+// !!!!!!!!!!!!   конец контейнера с новостями
 
 
+
+
+
+document.body.addEventListener('mousedown',(e)=> {
+    console.log(e.button);    
+    console.log(e.buttons);    
+})
+
+
+
+document.body.addEventListener('contextmenu', (e)=> {
+        // e.preventDefault() //! меню не выходит при нажатии правой кнопкой мыши
+})
+
+
+
+//!!!!!!!!!!!!!!! removeEventListener !!!!!!!!!
+
+let count = document.querySelector('#count') as HTMLDivElement
+count.addEventListener('click', counter)
+
+let counts = 0
+function counter () {
+    counts+=1
+    count.innerHTML=counts as any
+    if (counts>=3) {
+        count.removeEventListener('click', counter) //! как и в addEventListener        
+    }
+}
 
 

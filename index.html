@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="src/style.css">
 </head>
 
-<body data-about-new="Elephants">
+<body>
 
 
 <div id="smile_container">
@@ -24,6 +24,9 @@
 </div>
 <button id="back">назад</button>
 <button id="forward">вперёд</button>
+
+<div id="count">0</div>
+
 
 <style>
   #smile_container {
@@ -47,11 +50,26 @@ forward.addEventListener('click', ()=> {
   console.log(accSmile);
 })
 
-back.addEventListener('click', ()=> {
+back.addEventListener('click', (e)=> {
   accSmile+=133
   inner_box_smile.style.marginTop = `${accSmile}px`
   console.log(accSmile);
+  console.log(e.target);
+  console.log(e.currentTarget);
 })
+smile_container.addEventListener('click', (e)=> {
+  console.log(e.target);
+  console.log(e.currentTarget);
+  
+})
+
+document.body.addEventListener('click', (e)=> {
+  // console.log(e.target);
+  // console.log(e.currentTarget);
+  // console.log(e.eventPhase);
+  
+  }, {capture :'true'})
+
 
 
 </script>
@@ -80,9 +98,17 @@ back.addEventListener('click', ()=> {
 <div id="box_progress_bar">
   <div id="progress_bar"></div>
 </div>
-<button  id="button_progress_bar"> увеличить progress_bar на 5%</button>
+<button data-word="hello"  id="button_progress_bar"> увеличить progress_bar на 5%</button>
 
+<script>
+document.addEventListener('click', (e)=> {
+  if (e.target.dataset.word) {
+    console.log(e.target.dataset);
+    
+  }
+})
 
+</script>
 
 
 
