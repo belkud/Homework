@@ -223,18 +223,24 @@ console.log(window.innerWidth);
 console.log(window.outerWidth);
 console.log(getComputedStyle(uparrow).width);
 
+
+
 let container_news = document.querySelectorAll('#container_news div') as any
-console.log(container_news.length);
-console.log(container_news[0].firstElementChild);
-console.log(container_news[0].lastElementChild);
 
 for (let i = 0; i < container_news.length; i++) {
-    container_news[i].firstElementChild?.addEventListener('click', ()=>{
-        // getComputedStyle().display = 'none'
-        console.log(container_news[i].lastElementChild?.innerHTML);
-        container_news[i].style.display = 'none'
+    container_news[i].firstElementChild.addEventListener('click', ()=>{
+        container_news[i].style.height = '0px'
+        container_news[i].style.opacity = 0
+        container_news[i].firstElementChild.style.background = 'blue'
+        console.log(123);
+        
     })
+    setTimeout(() => {
+container_news[i].style.display = 'block'
+        
+    }, 1000);
 }
+
 
 
 

@@ -13,6 +13,63 @@
 </head>
 
 <body data-about-new="Elephants">
+
+
+<div id="smile_container">
+  <div id="inner_box_smile" style="transition: .5s;">
+    <img src="public/smile1.png" alt="">
+    <img src="public/smile2.png" alt="">
+    <img src="public/smile3.png" alt="">
+  </div>
+</div>
+<button id="back">назад</button>
+<button id="forward">вперёд</button>
+
+<style>
+  #smile_container {
+    border: 1px solid wheat;
+    height: 133px;
+    width: 133px;
+    overflow: hidden;
+  }
+</style>
+
+<script>
+  let smile_container = document.getElementById('smile_container')
+  let inner_box_smile = document.getElementById('inner_box_smile')
+  let back = document.getElementById('back')
+  let forward = document.getElementById('forward')
+  let accSmile = 0
+
+forward.addEventListener('click', ()=> {
+  accSmile-=133
+  inner_box_smile.style.marginTop = `${accSmile}px`
+  console.log(accSmile);
+})
+
+back.addEventListener('click', ()=> {
+  accSmile+=133
+  inner_box_smile.style.marginTop = `${accSmile}px`
+  console.log(accSmile);
+})
+
+
+</script>
+
+
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div style="border: 1px solid white;">div
+    <p>p 
+      <form action="">form</form>
+    </p>
+  </div>
+
   <br>
   <br>
   <br>
@@ -24,7 +81,12 @@
   <div id="progress_bar"></div>
 </div>
 <button  id="button_progress_bar"> увеличить progress_bar на 5%</button>
-  
+
+
+
+
+
+
   <style>
     #progress_bar {
       background-color: greenyellow;
@@ -51,6 +113,23 @@
 
 </script>
 
+<form action="" style="margin: 25px;">
+  <input type="text" id="inputString">
+</form>
+
+<script>
+  let inputString = document.querySelector('#inputString')
+  inputString.addEventListener('keydown', (e)=> {
+    if (e.key>=0 || e.key<=9) {
+      e.preventDefault()
+    }
+  })
+
+
+</script>
+
+
+
 <div id="container_news">
   <div>
     <button> X</button>
@@ -72,6 +151,8 @@
   #container_news div {
     border: 1px solid white;
     padding: 10px;
+    transition: 1s;
+    height: 100px;
   }
 
   #container_news button {
