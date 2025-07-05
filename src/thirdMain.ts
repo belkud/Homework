@@ -109,7 +109,12 @@ moveOnButton.addEventListener('click', ()=> {
 
 
 
+console.log(document.forms[0]);
+console.log(document.forms.userSurname);
+console.log(document.forms.userId);
 
+console.log(document.forms[0].elements[2].type);
+console.log(document.forms.userId);
 
 
 
@@ -145,29 +150,6 @@ document.addEventListener('keydown', ()=> {
 
 
 
-let moveOnTop2 = document.querySelector('#moveOnTop2') as HTMLButtonElement
-console.log((window.innerHeight));
-console.log((document.body.scrollHeight));
-console.log((document.body.clientHeight));
-console.log((document.body.offsetHeight));
-console.log((document.body.offsetHeight));
-console.log((moveOnTop2.offsetTop));
-
-document.addEventListener('keydown', (e)=> {
-    if (window.scrollY +window.innerHeight>moveOnTop2.offsetTop) {
-        moveOnTop2.style.background = 'green'
-        moveOnTop2.style.transition = '5s'
-    } else {
-        moveOnTop2.style.background = 'orange'
-        moveOnTop2.style.transition = '5s'
-    }
-        
-    // console.log((moveOnTop2.offsetTop));
-    // console.log(window.scrollY +window.innerHeight);
-    // console.log(window.scrollY);
-// console.log(getComputedStyle(moveOnTop2).marginTop);
-    
-})
 
 
 moveOnButton.addEventListener('click', ()=> {
@@ -219,9 +201,9 @@ window.addEventListener('scroll',()=> {
     }
 })
 
-console.log(window.innerWidth);
-console.log(window.outerWidth);
-console.log(getComputedStyle(uparrow).width);
+// console.log(window.innerWidth);
+// console.log(window.outerWidth);
+// console.log(getComputedStyle(uparrow).width);
 
 
 
@@ -254,8 +236,8 @@ container_news[i].style.display = 'block'
 
 
 document.body.addEventListener('mousedown',(e)=> {
-    console.log(e.button);    
-    console.log(e.buttons);    
+    // console.log(e.button);    
+    // console.log(e.buttons);    
 })
 
 
@@ -279,5 +261,42 @@ function counter () {
         count.removeEventListener('click', counter) //! как и в addEventListener        
     }
 }
+
+
+let moveOnTop2 = document.querySelector('#moveOnTop2') as HTMLButtonElement
+
+document.addEventListener('keydown', (e)=> {
+    if (window.scrollY +window.innerHeight>moveOnTop2.offsetTop) {
+        moveOnTop2.style.background = 'green'
+        moveOnTop2.style.transition = '5s'
+    } else {
+        moveOnTop2.style.background = 'orange'
+        moveOnTop2.style.transition = '5s'
+    }
+        
+// найти высоту нижней линии документа
+
+// console.log(window.pageYOffset);//! - насколько px страница прокручивается вниз
+// console.log(window.scrollY);//! - насколько px страница прокручивается вниз
+
+
+
+})
+
+// console.log(document.forms.namedItem('newUserForm')) //! обращение к форме через name (НЕ через id)
+
+let newUserForm = document.forms.namedItem('newUserForm') as any
+newUserForm[3].addEventListener('click',(e:any)=> {
+    e.preventDefault()
+    if(newUserForm[2].checked==true) {
+       return console.log(`Привет ${newUserForm[0].value}! Я тебя запомнил`);
+    }
+    return console.log(`Привет ${newUserForm[0].value}! Я тебя не запомнил`);
+    // console.log(newUserForm[2].checked);
+})
+
+
+
+
 
 
