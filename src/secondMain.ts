@@ -1,4 +1,4 @@
-import { nam, surname } from "./name";
+// import { nam, surname } from "./name";
 
 console.clear()
 
@@ -1837,7 +1837,7 @@ console.log(comment);
 
 
 let massive = [0, 5, 2, 4, 3, 8 ]
-// console.log(massive.sort((a, b) => a - b));
+console.log(massive.sort((a, b) => a - b));
 
 let massive2 = [
     {a:1},
@@ -1846,9 +1846,9 @@ let massive2 = [
     {d:3},
 ]
 
-// massive2.forEach(el=> 
-//     console.log(Object.values(el).sort((a, b)=> a - b))
-// )
+massive2.forEach(el=> 
+    console.log(Object.values(el).sort((a, b)=> a - b))
+)
 
 
 
@@ -2259,7 +2259,6 @@ class newsLine {
         for (let i = 0; i < newsArray.length; i++) {
             // .sort((a,b)=>{a-b})
             mass.push()
-            let dates = newsArray[i][1].split('.').reverse().join('')
             // let a = newsArray[i]
             // let b = newsArray[i]
             console.log(...newsArray);
@@ -2334,21 +2333,21 @@ document.addEventListener('mousemove', (e)=> {
 
 
 
-let data = {
-  "Рыбы": {
-    "форель": {},
-    "лосось": {}
-  },
+// let data = {
+//   "Рыбы": {
+//     "форель": {},
+//     "лосось": {}
+//   },
 
-  "Деревья": {
-    "Огромные": {
-      "секвойя": {},
-      "дуб": {}
-    },
-    "Цветковые": {
-      "яблоня": {},
-      "магнолия": {}
-    }
-  }
-};
-console.log(data.Деревья);
+//   "Деревья": {
+//     "Огромные": {
+//       "секвойя": {},
+//       "дуб": {}
+//     },
+//     "Цветковые": {
+//       "яблоня": {},
+//       "магнолия": {}
+//     }
+//   }
+// };
+// console.log(data.Деревья);

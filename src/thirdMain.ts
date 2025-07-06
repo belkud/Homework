@@ -295,8 +295,29 @@ newUserForm[3].addEventListener('click',(e:any)=> {
     // console.log(newUserForm[2].checked);
 })
 
+// let testtIdd = document.querySelector('#testtIdd') as HTMLInputElement
+// testtIdd.addEventListener('keydown',()=> {
+    // testtIdd.style.background = 'red'
+    // if (testtIdd.value=='') {
+    // } else {
+    //     testtIdd.style.background = ''
+    // }
+// })
 
 
+let advertisment = document.querySelector('#advertisment') as HTMLDivElement
 
+let data = new Date()
+console.log(data);
+advertisment.innerText = data as any
+
+
+console.log(document.getElementsByTagName('div'));
+
+console.log(document.activeElement);
+
+document.addEventListener('keydown',()=> {
+    console.log(document.activeElement);
+})
 
 

@@ -23,26 +23,25 @@
   </div>
 </div>
 <button id="back">назад</button>
-<button id="forward">вперёд</button>
+<button tabindex="3" id="forward">вперёд</button>
 
 <div id="count">0</div>
 
 
-
 <!-- ! Форма пользователя -->
 <form  name="newUserForm" id="userId" action="" style="width: 150px; display: flex; flex-direction: column; gap: 5px; border: 1px solid gray; margin: 25px; padding: 10px;">
-  <div style="display: flex; flex-direction: column;">
-    <label for="">Ваше имя</label>
-    <input name="nameUser" type="text" placeholder="Имя">
+  <div style="display: flex;  flex-direction: column;">
+    <label>Ваше имя</label>
+    <input  name="nameUser" type="text" placeholder="Имя">
   </div>
   
   <div style="display: flex; flex-direction: column;">
-    <label for="">Ваш пароль</label>
-    <input name="namePass" type="text" placeholder="Пароль">
+    <label>Ваш пароль</label>
+    <input name="namePass" type="password" placeholder="Пароль">
   </div>
 
   <div style="display: flex;">
-    <label for="">Запомнить меня</label>
+    <label>Запомнить меня</label>
     <input name="saved" type="checkbox">
   </div>
 
@@ -61,7 +60,7 @@
 </form>
 
 
-<form action="">
+<form  action="">
   <div>
     <label for="nums1" name="">X</label>
     <input type="radio" id="nums1" name="KeyX" id="">
@@ -613,7 +612,6 @@ background: gray; width: 300px; text-align: center; "> вставка элеме
 
   <div style="display: flex; flex-direction: column;" id="cssClass"></div>
 
-  <div style=""></div>
 
   <br>
   <br>
@@ -859,7 +857,7 @@ background: gray; width: 300px; text-align: center; "> вставка элеме
   ">Наверх документа fixed</div>
 
   <!-- <script type="module" src="/src/secondMain.ts"></script> -->
-  <!-- <script type="module" src="/src/main.ts"></script> -->
+  <script type="module" src="/src/main.ts"></script>
   <script type="module" src="/src/thirdMain.ts"></script>
 </body>
 
