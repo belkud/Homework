@@ -316,8 +316,19 @@ console.log(document.getElementsByTagName('div'));
 
 console.log(document.activeElement);
 
-document.addEventListener('keydown',()=> {
+document.addEventListener('keydown',(e)=> {
     console.log(document.activeElement);
+    console.log(e.target);
 })
 
+let userId = document.querySelector('#userId') as any
+userId[0].addEventListener('focus',()=> {
+    console.log('Зашли на элемент');
+    userId[0].style.background = 'red' 
+})
+
+userId[0].addEventListener('blur',()=> {
+    console.log('Вышли с элемента');    
+    userId[0].style.background = '' 
+})
 
