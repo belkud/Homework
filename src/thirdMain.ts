@@ -109,12 +109,12 @@ moveOnButton.addEventListener('click', ()=> {
 
 
 
-console.log(document.forms[0]);
-console.log(document.forms.userSurname);
-console.log(document.forms.userId);
+// console.log(document.forms[0]);
+// console.log(document.forms.userSurname);
+// console.log(document.forms.userId);
 
-console.log(document.forms[0].elements[2].type);
-console.log(document.forms.userId);
+// console.log(document.forms[0].elements[2].type);
+// console.log(document.forms.userId);
 
 
 
@@ -321,14 +321,45 @@ document.addEventListener('keydown',(e)=> {
     console.log(e.target);
 })
 
+
+
+
 let userId = document.querySelector('#userId') as any
-userId[0].addEventListener('focus',()=> {
+userId[0].addEventListener('focus',(e:any)=> {
     console.log('Зашли на элемент');
     userId[0].style.background = 'red' 
 })
+userId[0].style.background = 'red' 
 
-userId[0].addEventListener('blur',()=> {
+userId[0].addEventListener('blur',(e)=> {
     console.log('Вышли с элемента');    
-    userId[0].style.background = '' 
 })
 
+
+
+document.addEventListener('copy', (e:any)=>{
+    const text = window.getSelection() + ' этот текст скопирован'
+    navigator.clipboard.writeText(text)
+    
+
+    
+})
+
+// let testForm = document.createElement('img') as any
+// testForm.src = 'src="/public/smile1.png" '
+// document.append('testForm')
+
+// console.log(testForm.src);
+
+
+
+// let testForm = document.createElement('img') as any
+// testForm.src = 'public/ball.svg'
+// document.body.append(testForm)
+
+
+
+console.log(document.cookie);
+
+console.log(document.cookie);
+console.log(document.cookie);
