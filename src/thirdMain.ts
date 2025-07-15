@@ -5,13 +5,13 @@
 
 
 let checkDiv = document.querySelector('#checkDiv') as HTMLButtonElement
-console.log(checkDiv.scrollTop); //! высота от родителя
-console.log(checkDiv.clientTop); // border элемента
-console.log(checkDiv.clientHeight); //! видимая внутренняя высота (сам текст)
-console.log(checkDiv.offsetHeight); //! видимая общая высота
-console.log(checkDiv.scrollHeight); //! высота вместе с невидимой частью элемента
-console.log(checkDiv.offsetTop); //! высота от начала родителя (страницы)
-console.log(getComputedStyle(checkDiv).height);
+// console.log(checkDiv.scrollTop); //! высота от родителя
+// console.log(checkDiv.clientTop); //! border элемента
+// console.log(checkDiv.clientHeight); //! видимая внутренняя высота (сам текст)
+// console.log(checkDiv.offsetHeight); //! видимая общая высота
+// console.log(checkDiv.scrollHeight); //! высота вместе с невидимой частью элемента
+// console.log(checkDiv.offsetTop); //! высота от начала родителя (страницы)
+// console.log(getComputedStyle(checkDiv).height);
 
 
 
@@ -27,7 +27,7 @@ let moveOnTop = document.querySelector('#moveOnTop') as HTMLButtonElement
 // })
 
 document.body.scrollHeight
-console.log(document.body.scrollHeight);
+// console.log(document.body.scrollHeight);
 
 
 let scrollDiv = document.querySelector('#scrollDiv') as HTMLDivElement
@@ -53,15 +53,15 @@ document.addEventListener ('scroll', (e)=> {
 
 
 
-console.log(window.innerHeight);
+// console.log(window.innerHeight);
 
-console.log(window.outerWidth); //! общая ширина
-console.log(document.body.clientWidth); //! ширина за вычетом полосы прокрутки и панели разработчика =)
-console.log(document.body.clientHeight);
-console.log(document.body.offsetHeight);
-console.log(document.body.scrollHeight);
-console.log(document.body.scrollTop);
-console.log(window.innerHeight);
+// console.log(window.outerWidth); //! общая ширина
+// console.log(document.body.clientWidth); //! ширина за вычетом полосы прокрутки и панели разработчика =)
+// console.log(document.body.clientHeight);
+// console.log(document.body.offsetHeight);
+// console.log(document.body.scrollHeight);
+// console.log(document.body.scrollTop);
+// console.log(window.innerHeight);
 
 // document.body.scrollTop = '300px'
 
@@ -308,13 +308,12 @@ newUserForm[3].addEventListener('click',(e:any)=> {
 let advertisment = document.querySelector('#advertisment') as HTMLDivElement
 
 let data = new Date()
-console.log(data);
 advertisment.innerText = data as any
 
 
-console.log(document.getElementsByTagName('div'));
+// console.log(document.getElementsByTagName('div'));
 
-console.log(document.activeElement);
+// console.log(document.activeElement);
 
 document.addEventListener('keydown',(e)=> {
     console.log(document.activeElement);
@@ -360,6 +359,47 @@ document.addEventListener('copy', (e:any)=>{
 
 
 console.log(document.cookie);
+console.log(document.cookie);
 
+console.log(localStorage.length);
+console.log(localStorage);
+
+
+
+
+
+
+
+console.log(localStorage.length); //! количество
+
+
+localStorage.setItem('name', 'ivan') //! добавление
+
+console.log(localStorage.getItem('name')); //! просмотр
+
+
+localStorage.name = 'Dmitriy'  //! перезапись
+console.log(localStorage);
+
+delete localStorage.name  //! удаление
+console.log(localStorage);
+
+
+for (let i = 0; i < localStorage.length; i++) {  //! перебор в цикле
+    console.log(localStorage.key(i));
+}
+
+
+let users = {
+    country: 'Russia'
+}
+
+console.log(users);
+console.log(JSON.stringify(users));
+
+
+console.log(document.cookie = ('digitals : 999'));
 console.log(document.cookie);
-console.log(document.cookie);
+
+
+
