@@ -316,8 +316,7 @@ advertisment.innerText = data as any
 // console.log(document.activeElement);
 
 document.addEventListener('keydown',(e)=> {
-    console.log(document.activeElement);
-    console.log(e.target);
+    // console.log(document.activeElement);
 })
 
 
@@ -390,14 +389,8 @@ for (let i = 0; i < localStorage.length; i++) {  //! перебор в цикл�
 }
 
 
-let users = {
-    country: 'Russia'
-}
 
 
-
-console.log(users);
-console.log(JSON.stringify(users));
 
 
 console.log(document.cookie = ('digitals : 999'));
@@ -421,20 +414,19 @@ let smile_container = document.querySelector('#smile_container') as HTMLDivEleme
 
 let style = document.createElement('style')
 
-document.body.onclick= (e) => {
-    console.log(e.target);
-    }
+setTimeout (()=> {
 
-    setTimeout (()=> {
+    style.innerHTML = ` #smile_container {
+        background-color: greenyellow;
+        transition:.2s;
+        }`
+        smile_container.append(style)
+    },1000)
 
-        style.innerHTML = ` #smile_container {
-            background-color: greenyellow;
-            height: 30px;
-            width: 0px;
-            transition:.2s;
-            }`
-            smile_container.append(style)
-        },1000)
+    // document.body.onclick= (e) => {
+    // console.log(e.target);
+    // }
+
 
  
 
@@ -453,14 +445,14 @@ document.body.onclick= (e) => {
 
 //! фон за 10 сек плавно меняется в прозрачный, затем акк остановка
 
-// console.log(3.3333.toFixed(1));
 
 // let opacityAcc = 1
 
-// let smile = setInterval(()=> {
-//     opacityAcc -= 0.1
-//     console.log(opacityAcc.toFixed(1));
-//     smile_container.style.opacity = `${opacityAcc}`
+    
+//     let smile = setInterval(()=> {
+//         opacityAcc -= 0.1
+//         console.log(opacityAcc.toFixed(1));
+//         smile_container.style.opacity = `${opacityAcc}`
     
 // },1000)
 
@@ -471,44 +463,105 @@ document.body.onclick= (e) => {
 
 
 
-let prom = new Promise ((resolve, reject) => {
-    console.log('promise start');
-        setTimeout(() => {
-            console.log('promise end');
-            resolve ('Выполнено')
-            reject (new Error ('Oooops'))
+//! let prom = new Promise ((resolve, reject) => {
+//     console.log('promise start');
+//         setTimeout(() => {
+//             console.log('promise end');
+//             resolve ('Выполнено')
+//             reject (new Error ('Oooops'))
             
-        }, 1000);        
-})
-.then ((data)=> {
-    console.log(data);
-})
-.catch ((error)=> {
-    console.log(error);
-})
+//         }, 1000);        
+// })
+// .then ((data)=> {
+//     console.log(data);
+// })
+// .catch ((error)=> {
+//     console.log(error);
+// })
+// .finally (()=> {
+//     console.log('Промис завершен');
+// })  
     
+
+
+// fetch('http://localhost:5174/Homework/') //! здесь сделать ошибку
+// .then ((data)=> {
+//     dfssdf
+//     console.log(data) //!выводятся данные //! или здесь
+// })
+// .catch((error)=>{
+//     // document.body.style.background = 'yellow'
+//     console.log(error + ' где-то ошибка');
+// })
+
+
+
+
+
+
+
+
+// try {
+//     sgsddf
+// } catch (error:any) {
+//     console.log(error);
+//     console.log(error.name);
+//     console.log(error.message);
+// }
+
+
+
+// try {
+//     sdgsfgdfhgdhdg
+// } catch { 
+//     console.log('error'); //! можно просто написать ошибка, тогда мы не узнаем что за ошибка
+// }
+
+
+
+
+
+
+
+
+
+//! Создать html-страницу с формой для ввода стилизованного 
+//! текста. После заполнения формы, вывести текст на экран в соот
+//! ветствии с указанными стилями.
+
+let text_from_form = document.querySelector('#text_from_form') as HTMLDivElement
+
+let formMenu = document.querySelector('#formMenu') as any
+let textArea = document.querySelector('#textArea') as HTMLTextAreaElement
+let print_text = document.querySelector('#print_text') as HTMLButtonElement
+
+print_text.addEventListener('click',(e)=> {
+    e.preventDefault()
+    text_from_form.innerHTML=`<div class="">${textArea.value}<div>`
     
+    if (formMenu.children[0].checked == true) {
+          text_from_form.classList.add('bold')        
+    } else {
+          text_from_form.classList.remove('bold')  
+    } 
+
+    if (formMenu.children[2].checked == true) {
+          text_from_form.classList.add('underline')        
+    } else {
+          text_from_form.classList.remove('underline')  
+    }  
+
+
+console.log(formMenu.children[0].checked);
+
+})
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//    if(newUserForm[2].checked==true) {
+    //    return console.log(`Привет ${newUserForm[0].value}! Я тебя запомнил`);
+    // }
 

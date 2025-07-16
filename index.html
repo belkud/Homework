@@ -16,120 +16,174 @@
 <body>
 
 
-<div id="smile_container">
-  <div id="inner_box_smile" style="transition: .5s;">
-    <img src="public/smile1.png" alt="">
-    <img src="public/smile2.png" alt="">
-    <img src="public/smile3.png" alt="">
+  <div id="smile_container">
+    <div id="inner_box_smile" style="transition: .5s;">
+      <img src="public/smile1.png" alt="">
+      <img src="public/smile2.png" alt="">
+      <img src="public/smile3.png" alt="">
+    </div>
   </div>
+
+
+
+  <button id="back">назад</button>
+  <button tabindex="3" id="forward">вперёд</button>
+
+  <div id="count">0</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div id="text_from_form" style="background: gray; width: 300px;">3234</div>
+
+
+<form   action="">
+
+<div id="formMenu">
+  <input type="checkbox">
+  <label for="">Bold</label>
+
+  <input type="checkbox">
+  <label for="">Underline</label>
 </div>
+<!-- <div>
+  <input type="checkbox">
+  <label for="">Bold</label>
+</div> -->
 
+  <textarea id="textArea" style="width: 300px; height: 120px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque neque sequi nemo, temporibus atque, excepturi
+    iusto ea libero provident, animi illum quia corrupti. Aliquam quibusdam dolores voluptate.
+  </textarea>
+  <input id="print_text" type="submit">
 
-
-<button id="back">назад</button>
-<button tabindex="3" id="forward">вперёд</button>
-
-<div id="count">0</div>
-
-
-<form action="">
-  <button>qweqwe</button>
-</form>
-<input type="submit">
-<!-- ! Форма пользователя -->
-<form  name="newUserForm" id="userId" action="" style="width: 150px; display: flex; flex-direction: column; gap: 5px; border: 1px solid gray; margin: 25px; padding: 10px;">
-  <div style="display: flex;  flex-direction: column;">
-    <label>Ваше имя</label>
-    <input required name="nameUser" type="text" placeholder="Имя">
-  </div>
-  
-  <div style="display: flex; flex-direction: column;">
-    <label >Ваш пароль</label>
-    <input name="namePass" type="password" placeholder="Пароль">
-  </div>
-
-  <div style="display: flex;">
-    <label>Запомнить меня</label>
-    <input name="saved" type="checkbox">
-  </div>
-
-  <input type="submit">
-  <a href="">Забыли пароль?</a>
-
-</form>
-
- 
-
-<form action="">
-  <select name="languages"   size="1" >
-    <option value="html">HTML</option>
-    <option value="css" >CSS</option>
-    <option value="js">JavaScript</option>
-  </select>  
-</form>
-
-
-<form  action="">
-  <div>
-    <label for="nums1" name="">X</label>
-    <input type="radio" id="nums1" name="KeyX" id="">
-  </div>
-  <div>
-    <label for="nums2" name="">Y</label>
-    <input type="radio" id="nums2" name="KeyY" id="">
-  </div>
-  <div>
-    <label for="nums3" name="">Z</label>
-    <input type="radio" id="nums3" name="keyZ" id="">
-  </div>
-  <input type="submit" value="Send">
 </form>
 
 <style>
-  #smile_container {
-    border: 1px solid wheat;
-    height: 133px;
-    width: 133px;
-    overflow: hidden;
+  .bold {
+    font-weight: 900;
   }
+  .underline {
+    text-decoration: underline;
+  }
+
 </style>
 
-<script>
-  let smile_container = document.getElementById('smile_container')
-  let inner_box_smile = document.getElementById('inner_box_smile')
-  let back = document.getElementById('back')
-  let forward = document.getElementById('forward')
-  let accSmile = 0
 
-forward.addEventListener('click', ()=> {
-  accSmile-=133
-  inner_box_smile.style.marginTop = `${accSmile}px`
-  console.log(accSmile);
-})
 
-back.addEventListener('click', (e)=> {
-  accSmile+=133
-  inner_box_smile.style.marginTop = `${accSmile}px`
-  console.log(accSmile);
-  console.log(e.target);
-  console.log(e.currentTarget);
-})
-smile_container.addEventListener('click', (e)=> {
-  console.log(e.target);
-  console.log(e.currentTarget);
-  
-})
-
-document.body.addEventListener('click', (e)=> {
-  // console.log(e.target);
-  // console.log(e.currentTarget);
-  // console.log(e.eventPhase);
-  
-  }, {capture :'true'})
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
 
-</script>
+
+
+
+  <form action="">
+    <button>qweqwe</button>
+  </form>
+  <input type="submit">
+  <!-- ! Форма пользователя -->
+  <form name="newUserForm" id="userId" action=""
+    style="width: 150px; display: flex; flex-direction: column; gap: 5px; border: 1px solid gray; margin: 25px; padding: 10px;">
+    <div style="display: flex;  flex-direction: column;">
+      <label>Ваше имя</label>
+      <input required name="nameUser" type="text" placeholder="Имя">
+    </div>
+
+    <div style="display: flex; flex-direction: column;">
+      <label>Ваш пароль</label>
+      <input name="namePass" type="password" placeholder="Пароль">
+    </div>
+
+    <div style="display: flex;">
+      <label>Запомнить меня</label>
+      <input name="saved" type="checkbox">
+    </div>
+
+    <input type="submit">
+    <a href="">Забыли пароль?</a>
+
+  </form>
+
+
+
+  <form action="">
+    <select name="languages" size="1">
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <option value="js">JavaScript</option>
+    </select>
+  </form>
+
+
+  <form action="">
+    <div>
+      <label for="nums1" name="">X</label>
+      <input type="radio" id="nums1" name="KeyX" id="">
+    </div>
+    <div>
+      <label for="nums2" name="">Y</label>
+      <input type="radio" id="nums2" name="KeyY" id="">
+    </div>
+    <div>
+      <label for="nums3" name="">Z</label>
+      <input type="radio" id="nums3" name="keyZ" id="">
+    </div>
+    <input type="submit" value="Send">
+  </form>
+
+  <style>
+    #smile_container {
+      border: 1px solid wheat;
+      height: 133px;
+      width: 133px;
+      overflow: hidden;
+    }
+  </style>
+
+  <script>
+    let smile_container = document.getElementById('smile_container')
+    let inner_box_smile = document.getElementById('inner_box_smile')
+    let back = document.getElementById('back')
+    let forward = document.getElementById('forward')
+    let accSmile = 0
+
+    forward.addEventListener('click', () => {
+      accSmile -= 133
+      inner_box_smile.style.marginTop = `${accSmile}px`
+      console.log(accSmile);
+    })
+
+    back.addEventListener('click', (e) => {
+      accSmile += 133
+      inner_box_smile.style.marginTop = `${accSmile}px`
+      console.log(accSmile);
+      console.log(e.target);
+      console.log(e.currentTarget);
+    })
+    smile_container.addEventListener('click', (e) => {
+      console.log(e.target);
+      console.log(e.currentTarget);
+
+    })
+
+    document.body.addEventListener('click', (e) => {
+      // console.log(e.target);
+      // console.log(e.currentTarget);
+      // console.log(e.eventPhase);
+
+    }, { capture: 'true' })
+
+
+
+  </script>
 
 
 
@@ -140,8 +194,8 @@ document.body.addEventListener('click', (e)=> {
   <br>
 
   <div style="border: 1px solid white;">div
-    <p>p 
-      <form action="">form</form>
+    <p>p
+    <form action="">form</form>
     </p>
   </div>
 
@@ -150,22 +204,22 @@ document.body.addEventListener('click', (e)=> {
   <br>
   <br>
 
-<button id="moveOnButton">Прокрутка вниз страницы</button>
+  <button id="moveOnButton">Прокрутка вниз страницы</button>
 
-<div id="box_progress_bar">
-  <div id="progress_bar"></div>
-</div>
-<button data-word="hello"  id="button_progress_bar"> увеличить progress_bar на 5%</button>
+  <div id="box_progress_bar">
+    <div id="progress_bar"></div>
+  </div>
+  <button data-word="hello" id="button_progress_bar"> увеличить progress_bar на 5%</button>
 
-<script>
-document.addEventListener('click', (e)=> {
-  if (e.target.dataset.word) {
-    console.log(e.target.dataset);
-    
-  }
-})
+  <script>
+    document.addEventListener('click', (e) => {
+      if (e.target.dataset.word) {
+        console.log(e.target.dataset);
 
-</script>
+      }
+    })
+
+  </script>
 
 
 
@@ -175,8 +229,9 @@ document.addEventListener('click', (e)=> {
       background-color: greenyellow;
       height: 30px;
       width: 0px;
-      transition:.2s;
+      transition: .2s;
     }
+
     #box_progress_bar {
       border: 1px solid white;
       height: 30px;
@@ -184,74 +239,80 @@ document.addEventListener('click', (e)=> {
       margin: 20px;
       overflow: hidden;
     }
-  </style>  
-<script>
-  let progress_bar = document.getElementById('progress_bar')
-  let button_progress_bar = document.getElementById('button_progress_bar')
-  let widthAcc = 0
-  button_progress_bar.addEventListener('click', ()=> {
-    widthAcc+=10  
-    progress_bar.style.width =  `${widthAcc}px`
-})
+  </style>
+  <script>
+    let progress_bar = document.getElementById('progress_bar')
+    let button_progress_bar = document.getElementById('button_progress_bar')
+    let widthAcc = 0
+    button_progress_bar.addEventListener('click', () => {
+      widthAcc += 10
+      progress_bar.style.width = `${widthAcc}px`
+    })
 
-</script>
+  </script>
 
-<form action="" style="margin: 25px;">
-  <input type="text" id="inputString">
-</form>
+  <form action="" style="margin: 25px;">
+    <input type="text" id="inputString">
+  </form>
 
-<script>
-  let inputString = document.querySelector('#inputString')
-  inputString.addEventListener('keydown', (e)=> {
-    if (e.key>=0 || e.key<=9) {
-      e.preventDefault()
+  <script>
+    let inputString = document.querySelector('#inputString')
+    inputString.addEventListener('keydown', (e) => {
+      if (e.key >= 0 || e.key <= 9) {
+        e.preventDefault()
+      }
+    })
+
+
+  </script>
+
+
+
+  <div id="container_news">
+    <div>
+      <button> X</button>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat porro eligendi dignissimos laboriosam optio
+        ipsa, consequuntur provident qui quidem quis commodi quod deserunt odio. Consectetur itaque reiciendis maxime
+        obcaecati et.</p>
+    </div>
+
+    <div>
+      <button> X</button>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat porro eligendi dignissimos laboriosam optio
+        ipsa, consequuntur provident qui quidem quis commodi quod deserunt odio. Consectetur itaque reiciendis maxime
+        obcaecati et.</p>
+    </div>
+
+    <div>
+      <button> X</button>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat porro eligendi dignissimos laboriosam optio
+        ipsa, consequuntur provident qui quidem quis commodi quod deserunt odio. Consectetur itaque reiciendis maxime
+        obcaecati et.</p>
+    </div>
+  </div>
+
+  <style>
+    #container_news div {
+      border: 1px solid white;
+      padding: 10px;
+      transition: 1s;
+      height: 100px;
     }
-  })
 
-
-</script>
-
-
-
-<div id="container_news">
-  <div>
-    <button> X</button>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat porro eligendi dignissimos laboriosam optio ipsa, consequuntur provident qui quidem quis commodi quod deserunt odio. Consectetur itaque reiciendis maxime obcaecati et.</p>
-</div> 
-
-<div>
-  <button> X</button>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat porro eligendi dignissimos laboriosam optio ipsa, consequuntur provident qui quidem quis commodi quod deserunt odio. Consectetur itaque reiciendis maxime obcaecati et.</p>
-</div> 
-
-<div>
-  <button> X</button>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat porro eligendi dignissimos laboriosam optio ipsa, consequuntur provident qui quidem quis commodi quod deserunt odio. Consectetur itaque reiciendis maxime obcaecati et.</p>
-</div> 
-</div>
-
-<style>
-  #container_news div {
-    border: 1px solid white;
-    padding: 10px;
-    transition: 1s;
-    height: 100px;
-  }
-
-  #container_news button {
-    margin-left:calc(100% - 20px); 
-    background: red; 
-    color: wheat;
-  }
+    #container_news button {
+      margin-left: calc(100% - 20px);
+      background: red;
+      color: wheat;
+    }
   </style>
 
 
 
 
 
-<div id="uparrow">&uparrow;</div>
-<style>
-  #uparrow {
+  <div id="uparrow">&uparrow;</div>
+  <style>
+    #uparrow {
       background-color: red;
       width: 50px;
       padding: 3px;
@@ -260,9 +321,8 @@ document.addEventListener('click', (e)=> {
       display: none;
       position: fixed;
       left: calc(100% - 60px);
-  }
-
-</style>
+    }
+  </style>
   <br>
   <br>
   <br>
@@ -645,9 +705,9 @@ background: gray; width: 300px; text-align: center; "> вставка элеме
   <a href="https://dzen.ru/?clid=2233626&yredirect=true&utm_referrer=ntp.msn.com">Ссылка на сайт</a>
 
 
-<div id="scrollDiv"> scroll scroll scroll scroll scroll scroll scroll scroll scroll</div>
+  <div id="scrollDiv"> scroll scroll scroll scroll scroll scroll scroll scroll scroll</div>
 
-<div id="showDiv" style="background: gray; display: none;"> реклама !!!!!!!!</div>
+  <div id="showDiv" style="background: gray; display: none;"> реклама !!!!!!!!</div>
   <!-- 6 уровней заголовков -->
 
 
@@ -849,10 +909,10 @@ background: gray; width: 300px; text-align: center; "> вставка элеме
   <script>
     let elements = document.querySelector('ul > li:last-child'); //найдет
     // let elements = document.getElementById('ul > li:last-child'); // НЕ найдет
-   
+
   </script>
 
-<div id="moveOnTop2" style="background: red; margin-left: auto; width: 130px; padding: 5px;"></div>
+  <div id="moveOnTop2" style="background: red; margin-left: auto; width: 130px; padding: 5px;"></div>
 
 
   <!-- <div id="digitalColor"></div> -->
@@ -869,8 +929,9 @@ background: gray; width: 300px; text-align: center; "> вставка элеме
 
 
 
-    <!-- <script type="module" src="/src/secondMain.ts"></script> -->
-    <!-- <script type="module" src="/src/main.ts"></script> -->
-    <script type="module" src="/src/thirdMain.ts"></script>
+  <!-- <script type="module" src="/src/secondMain.ts"></script> -->
+  <!-- <script type="module" src="/src/main.ts"></script> -->
+  <script type="module" src="/src/thirdMain.ts"></script>
 </body>
+
 </html>
