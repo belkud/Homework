@@ -538,18 +538,22 @@ let print_text = document.querySelector('#print_text') as HTMLButtonElement
 print_text.addEventListener('click',(e)=> {
     e.preventDefault()
     text_from_form.innerHTML=`<div class="">${textArea.value}<div>`
-    
-    if (formMenu.children[0].checked == true) {
-          text_from_form.classList.add('bold')        
-    } else {
-          text_from_form.classList.remove('bold')  
-    } 
+    let mass = ['bold', 'underline'] 
 
-    if (formMenu.children[2].checked == true) {
-          text_from_form.classList.add('underline')        
-    } else {
-          text_from_form.classList.remove('underline')  
-    }  
+    for (let i = 0; i < mass.length; i+=1) {
+        
+        if (formMenu.children[i].checked == true) {
+            text_from_form.classList.add(mass[i])        
+        } else {
+            text_from_form.classList.remove(mass[i])  
+        } 
+    }
+
+    // if (formMenu.children[2].checked == true) {
+    //       text_from_form.classList.add('underline')        
+    // } else {
+    //       text_from_form.classList.remove('underline')  
+    // }  
 
 
 console.log(formMenu.children[0].checked);
