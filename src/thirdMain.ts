@@ -394,12 +394,121 @@ let users = {
     country: 'Russia'
 }
 
+
+
 console.log(users);
 console.log(JSON.stringify(users));
 
 
 console.log(document.cookie = ('digitals : 999'));
 console.log(document.cookie);
+
+
+
+//! блокировка потока
+// function sleep(ms:number) {
+//   const start = Date.now();
+//   while (Date.now() - start < ms) {} // Блокирует поток!
+// }
+
+// console.log("Начало");
+// sleep(2000); // Блокирует на 2 секунды
+// console.log("Конец");
+
+
+//! добавление тэга style в smile_container через js
+let smile_container = document.querySelector('#smile_container') as HTMLDivElement
+
+let style = document.createElement('style')
+
+document.body.onclick= (e) => {
+    console.log(e.target);
+    }
+
+    setTimeout (()=> {
+
+        style.innerHTML = ` #smile_container {
+            background-color: greenyellow;
+            height: 30px;
+            width: 0px;
+            transition:.2s;
+            }`
+            smile_container.append(style)
+        },1000)
+
+ 
+
+//! остановка setInterval
+// let testAcc = 0
+// let stopInt = setInterval (()=> {
+//     testAcc+=1
+//     console.log(testAcc);
+// },1000)
+
+// setTimeout(()=>{
+// clearInterval (stopInt)
+// },3000)
+
+
+
+//! фон за 10 сек плавно меняется в прозрачный, затем акк остановка
+
+// console.log(3.3333.toFixed(1));
+
+// let opacityAcc = 1
+
+// let smile = setInterval(()=> {
+//     opacityAcc -= 0.1
+//     console.log(opacityAcc.toFixed(1));
+//     smile_container.style.opacity = `${opacityAcc}`
+    
+// },1000)
+
+// setTimeout(() => {
+//     clearInterval(smile)
+// }, 5000);
+
+
+
+
+let prom = new Promise ((resolve, reject) => {
+    console.log('promise start');
+        setTimeout(() => {
+            console.log('promise end');
+            resolve ('Выполнено')
+            reject (new Error ('Oooops'))
+            
+        }, 1000);        
+})
+.then ((data)=> {
+    console.log(data);
+})
+.catch ((error)=> {
+    console.log(error);
+})
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
