@@ -531,7 +531,7 @@ setTimeout (()=> {
 
 let text_from_form = document.querySelector('#text_from_form') as HTMLDivElement
 
-let formMenu = document.querySelector('#formMenu') as any
+let formMenu = document.querySelectorAll('#formMenu input') as any
 let textArea = document.querySelector('#textArea') as HTMLTextAreaElement
 let print_text = document.querySelector('#print_text') as HTMLButtonElement
 
@@ -542,7 +542,7 @@ print_text.addEventListener('click',(e)=> {
 
     for (let i = 0; i < mass.length; i+=1) {
         
-        if (formMenu.children[i].checked == true) {
+        if (formMenu[i].checked == true) {
             text_from_form.classList.add(mass[i])        
         } else {
             text_from_form.classList.remove(mass[i])  
@@ -556,9 +556,10 @@ print_text.addEventListener('click',(e)=> {
     // }  
 
 
-console.log(formMenu.children[0].checked);
+// console.log(formMenu.children[0].checked);
 
 })
+console.log(formMenu[1]);
 
 
 
